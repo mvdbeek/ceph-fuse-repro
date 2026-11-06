@@ -15,7 +15,7 @@ Results so far: [results.md](results.md).
 | `harness/capture.sh` | Capture bundle: client admin sockets, D-state tasks, ps/wchan, fusectl, dmesg, MDS sessions/ops, OSD ops |
 | `results/` | One directory per run, plus `runs.tsv` |
 
-Everything runs under rootless docker. State (keyrings, OSD files, logs, control dir) lives in `state/` (git-ignored). Memory caps: mon 384 MB, mgr 640 MB, 3 × OSD 768 MB, MDS 512 MB, 2 × client 1 GB, about 5.9 GB in total; actual use is about 2–3 GB.
+Everything runs under rootless docker. State (keyrings, OSD files, logs, control dir) lives in `state/` (git-ignored). Memory caps: mon 320 MB, mgr 640 MB, 3 × OSD 576 MB, MDS 448 MB, 2 × client 1.4 GB, 5.94 GB in total; actual use is about 2.5–3.5 GB. A client at 1 GB got its ceph-fuse OOM-killed (ceph-fuse alone reaches ~400 MB RSS with the default 200 MB object cacher); `run.py` marks any run with an OOM kill INVALID.
 
 ## Usage
 

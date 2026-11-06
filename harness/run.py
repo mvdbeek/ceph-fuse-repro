@@ -11,6 +11,7 @@ results/runs.tsv.
 import argparse
 import json
 import os
+import shlex
 import shutil
 import subprocess
 import sys
@@ -20,6 +21,49 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CTL = os.path.join(ROOT, "state", "ctl")
 FAULTS = ("netem", "osdnetem", "msinject", "mdsrecall", "slowosd", "debugclient")
 CLIENTS = ("head", "node")
+# Stage B: the "node" client is the KVM guest inside the cfr-vm container.
+NODE_VM = False
+SSH_GUEST = ["ssh", "-i", "/vm/id_ed25519", "-o", "StrictHostKeyChecking=no", "-o", "UserKnownHostsFile=/dev/null",
+             "-o", "LogLevel=ERROR", "-o", "ConnectTimeout=10", "-p", "2222", "root@127.0.0.1"]
+
+
+def prefix(name, *cmd):
+    """argv that runs cmd in the container cfr-<name>, or in the guest for node in Stage B."""
+    if name == "node" and NODE_VM:
+        return ["docker", "exec", "cfr-vm"] + SSH_GUEST + [shlex.join(cmd)]
+    return ["docker", "exec", "cfr-" + name] + list(cmd)
+
+
+def netns(name):
+    """Container whose eth0 carries name's traffic (for tc netem)."""
+    return "vm" if name == "node" and NODE_VM else name
+
+
+def start_detached(name, script):
+    if name == "node" and NODE_VM:
+        # all fds redirected, or ssh waits for the detached process
+        sh(*prefix(name, "sh", "-c", 'setsid -f sh -c "$1" </dev/null >/dev/null 2>&1', "sh", script))
+    else:
+        subprocess.run(["docker", "exec", "-d", "cfr-" + name, "sh", "-c", script], check=True)
+
+
+def running(name, pattern):
+    return subprocess.run(prefix(name, "pgrep", "-f", pattern), capture_output=True).returncode == 0
+
+
+def fusectl(name):
+    """waiting/max_background/congestion_threshold of name's /mnt/scratch FUSE connection."""
+    keys = ("waiting", "max_background", "congestion_threshold")
+    try:
+        dev = sh(*prefix(name, "stat", "-c", "%d", "/mnt/scratch"))
+        if name == "node" and NODE_VM:
+            out = sh(*prefix(name, "sh", "-c", "cd /sys/fs/fuse/connections/%s && cat %s" % (dev, " ".join(keys))))
+            return dict(zip(keys, out.split()))
+        # Stage A: the host's fusectl; the files belong to the mounting uid (rootless docker = us).
+        d = "/sys/fs/fuse/connections/%s" % dev
+        return {k: open(os.path.join(d, k)).read().strip() for k in keys}
+    except (OSError, RuntimeError) as e:
+        return {"error": str(e)[:200]}
 
 
 def sh(*cmd, check=True, quiet=False):
@@ -30,7 +74,7 @@ def sh(*cmd, check=True, quiet=False):
 
 
 def dexec(container, *cmd, check=True):
-    return sh("docker", "exec", "cfr-" + container, *cmd, check=check)
+    return sh(*prefix(container, *cmd), check=check)
 
 
 def asok(client, *cmd):
@@ -50,10 +94,10 @@ def fault_actions(args):
     def tc(containers, spec):
         def apply():
             for c in containers:
-                dexec(c, "tc", "qdisc", "replace", "dev", "eth0", "root", "netem", *spec.split())
+                sh("docker", "exec", "cfr-" + netns(c), "tc", "qdisc", "replace", "dev", "eth0", "root", "netem", *spec.split())
         def remove():
             for c in containers:
-                dexec(c, "tc", "qdisc", "del", "dev", "eth0", "root", check=False)
+                sh("docker", "exec", "cfr-" + netns(c), "tc", "qdisc", "del", "dev", "eth0", "root", check=False)
         return apply, remove
 
     def client_conf(settings):
@@ -123,6 +167,35 @@ def describe_faults(args):
     return d
 
 
+def host_mem_available_mb():
+    with open("/proc/meminfo") as f:
+        for line in f:
+            if line.startswith("MemAvailable:"):
+                return int(line.split()[1]) // 1024
+    return 1 << 30
+
+
+def running_in_container_node():
+    return subprocess.run(["docker", "exec", "cfr-node", "pgrep", "-f", "workload.py"], capture_output=True).returncode == 0
+
+
+def container_state(name):
+    """(running, oom_killed) of cfr-<name> according to docker."""
+    out = sh("docker", "inspect", "-f", "{{.State.Running}} {{.State.OOMKilled}}", "cfr-" + name, check=False).split()
+    return (out[:1] == ["true"], out[1:2] == ["true"])
+
+
+def oom_kills(name):
+    if not container_state(name)[0]:
+        return 1 << 20 if container_state(name)[1] else 0  # dead from an OOM kill: memory.events is gone with it
+    if name == "node" and NODE_VM:
+        # No cgroup inside the guest's view of itself to speak of: count kernel OOM kills.
+        out = sh(*prefix(name, "sh", "-c", "dmesg | grep -c 'Killed process' || true"), check=False)
+        return int(out or 0)
+    ev = dexec(name, "cat", "/sys/fs/cgroup/memory.events", check=False)
+    return int(dict(l.split() for l in ev.splitlines()).get("oom_kill", 0)) if ev else 0
+
+
 def read_json(path, default=None):
     try:
         with open(path) as f:
@@ -136,9 +209,10 @@ def main():
     ap.add_argument("--duration", type=int, default=3600, help="seconds")
     ap.add_argument("--faults", default="", help="comma list of: " + ",".join(FAULTS))
     ap.add_argument("--label", default="")
-    ap.add_argument("--stage", default="A")
+    ap.add_argument("--stage", default="A", choices=["A", "B"], help="B: node is the KVM guest (scripts/vm.sh)")
     ap.add_argument("--stop-on-repro", action="store_true")
     ap.add_argument("--max-captures", type=int, default=5)
+    ap.add_argument("--min-host-mem", type=int, default=600, help="abort if host MemAvailable (MB) drops below")
     ap.add_argument("--netem", default="delay 10ms loss 0.2%")
     ap.add_argument("--osd-netem", default="delay 5ms")
     ap.add_argument("--ms-socket-failures", type=int, default=2000)
@@ -156,10 +230,15 @@ def main():
         if f not in FAULTS:
             sys.exit("unknown fault %r" % f)
     wargs = [a for a in args.workload_args if a != "--"]
+    global NODE_VM
+    NODE_VM = args.stage == "B"
+    os.environ["CFR_STAGE"] = args.stage  # for capture.sh
 
     for c in CLIENTS:
-        if subprocess.run(["docker", "exec", "cfr-" + c, "mountpoint", "-q", "/mnt/scratch"]).returncode:
-            sys.exit("cfr-%s: /mnt/scratch not mounted; run `make up`" % c)
+        if subprocess.run(prefix(c, "mountpoint", "-q", "/mnt/scratch")).returncode:
+            sys.exit("%s: /mnt/scratch not mounted; run `make up` (and `make vm-up vm-mount` for stage B)" % c)
+    if NODE_VM and running_in_container_node():
+        sys.exit("stage B: stop the workload in cfr-node first")
 
     run_id = time.strftime("%Y%m%d-%H%M%S") + ("-" + args.label if args.label else "")
     rdir = os.path.join(ROOT, "results", run_id)
@@ -185,6 +264,10 @@ def main():
             shutil.rmtree(p) if os.path.isdir(p) else os.unlink(p)
     os.makedirs(os.path.join(CTL, "trigger"), exist_ok=True)
 
+    containers = ("mon", "mgr", "mds", "osd0", "osd1", "osd2") + CLIENTS
+    oom_before = {c: oom_kills(c) for c in containers}
+    fusectl_tsv = open(os.path.join(rdir, "fusectl.tsv"), "w")
+    fusectl_tsv.write("elapsed\tclient\twaiting\tmax_background\tcongestion_threshold\n")
     actions = fault_actions(args)
     applied = []
     try:
@@ -192,12 +275,16 @@ def main():
             actions[f][0]()
             applied.append(f)
             log("fault on: %s" % f)
+        # Move the previous run's trees aside (instant) and delete them in the background.
+        dexec("head", "sh", "-c", "mkdir -p /mnt/scratch/trash && for d in jobs probe hot; do "
+              "[ -e /mnt/scratch/$d ] && mv /mnt/scratch/$d /mnt/scratch/trash/$d.$$; done; "
+              "(nohup rm -rf /mnt/scratch/trash >/dev/null 2>&1 &); true")
         common = ["--run-id", run_id] + wargs
         for role, container in (("head", "head"), ("node", "node"), ("failcheck", "node")):
-            subprocess.run(["docker", "exec", "-d", "cfr-" + container, "sh", "-c",
-                            "exec python3 -u /harness/workload.py %s %s > /results/%s/%s.log 2>&1"
-                            % (role, " ".join(common), run_id, role)], check=True)
+            start_detached(container, "exec python3 -u /harness/workload.py %s %s > /results/%s/%s.log 2>&1"
+                           % (role, " ".join(common), run_id, role))
         t0 = time.time()
+        last_fusectl = 0
         captures = 0
         repro = []
         triggers = []
@@ -218,13 +305,31 @@ def main():
                 if captures < args.max_captures:
                     captures += 1
                     cdir = os.path.join(rdir, "capture-%03d-%s" % (trig["elapsed"], trig.get("kind")))
+                    trig["fusectl_host"] = {c: fusectl(c) for c in CLIENTS}
                     subprocess.run([os.path.join(ROOT, "harness", "capture.sh"), cdir, json.dumps(trig)])
             if args.stop_on_repro and repro:
                 break
+            if time.time() - last_fusectl >= 10:
+                last_fusectl = time.time()
+                for c in CLIENTS:
+                    v = fusectl(c)
+                    fusectl_tsv.write("%d\t%s\t%s\t%s\t%s\n" % (time.time() - t0, c, v.get("waiting"), v.get("max_background"),
+                                                               v.get("congestion_threshold", v.get("error"))))
+                fusectl_tsv.flush()
+            # chonk is shared: back off rather than push the host into OOM.
+            if host_mem_available_mb() < args.min_host_mem:
+                log("host MemAvailable %d MB < %d MB; aborting run" % (host_mem_available_mb(), args.min_host_mem))
+                aborted = ["host-memory-pressure"]
+                break
+            # A cluster daemon that died (e.g. OOM-killed) makes the rest of the run meaningless.
+            down = [c for c in ("mon", "mgr", "mds", "osd0", "osd1", "osd2") if not container_state(c)[0]]
+            if down:
+                log("cluster container(s) not running: %s; aborting run" % ",".join(down))
+                aborted = ["daemon-down:" + ",".join(down)]
+                break
             # A role that exits early would make the rest of the run meaningless.
             dead = [role for role, c in (("head", "head"), ("node", "node"), ("failcheck", "node"))
-                    if subprocess.run(["docker", "exec", "cfr-" + c, "pgrep", "-f", "workload.py %s " % role],
-                                      capture_output=True).returncode]
+                    if not running(c, "workload.py %s " % role)]
             if dead:
                 log("workload role(s) exited early: %s; aborting run" % ",".join(dead))
                 aborted = dead
@@ -244,8 +349,7 @@ def main():
         deadline = time.time() + 60
         left = True
         while time.time() < deadline:
-            left = any(subprocess.run(["docker", "exec", "cfr-" + c, "pgrep", "-f", "workload.py"],
-                                      capture_output=True).returncode == 0 for c in CLIENTS)
+            left = any(running(c, "workload.py") for c in CLIENTS)
             if not left:
                 break
             time.sleep(2)
@@ -253,17 +357,25 @@ def main():
             log("workload processes still running after stop; capturing and killing")
             subprocess.run([os.path.join(ROOT, "harness", "capture.sh"), os.path.join(rdir, "capture-end-hang"), "end-hang"])
             for c in CLIENTS:
-                subprocess.run(["docker", "exec", "cfr-" + c, "pkill", "-9", "-f", "workload.py|md5sum|dd if=|cp -R"])
+                subprocess.run(prefix(c, "pkill", "-9", "-f", "workload.py|md5sum|dd if=|cp -R"))
         for f in reversed(applied):
             actions[f][1]()
             log("fault off: %s" % f)
 
+    fusectl_tsv.close()
+    ooms = {}
+    for c in containers:
+        n = oom_kills(c)
+        if n > oom_before.get(c, 0):
+            ooms[c] = n - oom_before.get(c, 0)
     stats = {r: read_json(os.path.join(CTL, "stats-%s.json" % r), {}) for r in ("head", "node", "failcheck")}
     blocklist = ceph("osd", "blocklist", "ls", check=False)
     shutil.copy(os.path.join(CTL, "events.jsonl"), rdir)
     kinds = sorted({t.get("kind") for t in repro})
-    if aborted:
-        outcome = "INVALID: role(s) %s exited early" % ",".join(aborted)
+    if ooms:
+        outcome = "INVALID: OOM kill in %s" % ",".join(sorted(ooms))
+    elif aborted:
+        outcome = "INVALID: aborted (%s)" % ",".join(aborted)
     elif any(t.get("kind") == "buffered_hang_direct_ok" for t in repro):
         outcome = "REPRODUCED: buffered read hung, O_DIRECT ok"
     elif repro:
@@ -274,7 +386,7 @@ def main():
         outcome = "no repro"
     if left:
         outcome += "; workload hung at stop"
-    summary = dict(meta, elapsed=elapsed, aborted=aborted, outcome=outcome, triggers=triggers, stats=stats,
+    summary = dict(meta, elapsed=elapsed, aborted=aborted, oom_kills=ooms, outcome=outcome, triggers=triggers, stats=stats,
                    blocklist=blocklist, workload_left_running=left,
                    first_repro_after=repro[0]["elapsed"] if repro else None)
     with open(os.path.join(rdir, "summary.json"), "w") as f:

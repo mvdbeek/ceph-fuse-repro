@@ -241,11 +241,14 @@ def head_probe_writer(args):
 
 def head_hot_writer(args):
     rng = random.Random(os.getpid() + 11)
-    hd = os.path.join(MNT, "hot")
+    # Per-run directory; files appear by rename, fully written, so a node
+    # reader never maps a file that later shrinks (that would be a SIGBUS).
+    hd = os.path.join(MNT, "hot", args.run_id)
     os.makedirs(hd, exist_ok=True)
     paths = [os.path.join(hd, "hot%02d.dat" % i) for i in range(args.hot)]
     for p in paths:
-        write_file(p, rand_bytes(256 * 1024, rng))
+        write_file(p + ".tmp", rand_bytes(256 * 1024, rng))
+        os.rename(p + ".tmp", p)
     while not stopping():
         p = rng.choice(paths)
         try:
@@ -382,12 +385,22 @@ def node_worker(wid, args):
         bump("node_jobs_done")
 
 
+HOT_MMAP_READ = """
+import mmap, os, sys
+fd = os.open(sys.argv[1], os.O_RDONLY)
+os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
+if os.fstat(fd).st_size:
+    with mmap.mmap(fd, 0, prot=mmap.PROT_READ) as m:
+        m[:]
+"""
+
+
 def node_hot_reader(wid, args):
     rng = random.Random(os.getpid() * 1000 + 500 + wid)
-    hd = os.path.join(MNT, "hot")
+    hd = os.path.join(MNT, "hot", args.run_id)
     while not stopping():
         try:
-            names = os.listdir(hd)
+            names = [n for n in os.listdir(hd) if not n.endswith(".tmp")]
         except FileNotFoundError:
             time.sleep(1)
             continue
@@ -396,16 +409,23 @@ def node_hot_reader(wid, args):
             continue
         path = os.path.join(hd, rng.choice(names))
         try:
-            with open(path, "rb") as f:
-                # Drop our cached pages so the read goes to ceph-fuse (readahead
-                # = FUSE background requests) while head keeps rewriting.
-                os.posix_fadvise(f.fileno(), 0, 0, os.POSIX_FADV_DONTNEED)
-                if rng.random() < 0.3:
-                    size = os.fstat(f.fileno()).st_size
-                    if size:
-                        with mmap.mmap(f.fileno(), 0, prot=mmap.PROT_READ) as m:
-                            m[:]
-                else:
+            if rng.random() < 0.3:
+                # In a child: a short READ reply from ceph-fuse makes the kernel
+                # shrink i_size (fuse_short_read), and touching a mapped page
+                # past it is a SIGBUS, which would kill this whole process.
+                r = subprocess.run([sys.executable, "-c", HOT_MMAP_READ, path], capture_output=True)
+                if r.returncode == -7:
+                    bump("node_hot_mmap_sigbus")
+                    if counters["node_hot_mmap_sigbus"] <= 5:
+                        event("hot_mmap_sigbus", path=path)
+                elif r.returncode:
+                    raise OSError(r.stderr.decode()[-200:])
+                bump("node_hot_mmap_reads")
+            else:
+                with open(path, "rb") as f:
+                    # Drop our cached pages so the read goes to ceph-fuse (readahead
+                    # = FUSE background requests) while head keeps rewriting.
+                    os.posix_fadvise(f.fileno(), 0, 0, os.POSIX_FADV_DONTNEED)
                     while f.read(128 * 1024):
                         pass
             bump("node_hot_reads")
@@ -443,9 +463,12 @@ def read_proc(path):
 
 def fusectl_snapshot():
     out = {}
+    # A VM has fusectl at the usual place; in a rootless container it is
+    # missing (run.py reads the host's copy instead).
+    base = "/sys/fs/fuse/connections" if os.listdir("/sys/fs/fuse/connections") else "/fusectl"
     try:
-        for c in os.listdir("/fusectl"):
-            out[c] = {k: read_proc("/fusectl/%s/%s" % (c, k)) for k in ("waiting", "max_background", "congestion_threshold")}
+        for c in os.listdir(base):
+            out[c] = {k: read_proc("%s/%s/%s" % (base, c, k)) for k in ("waiting", "max_background", "congestion_threshold")}
     except OSError as e:
         out["error"] = repr(e)
     return out
@@ -473,23 +496,46 @@ def dstate_tasks():
     return tasks
 
 
+DROPPED_CACHE_MD5 = """
+import hashlib, os, sys
+fd = os.open(sys.argv[1], os.O_RDONLY)
+os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
+h = hashlib.md5()
+for b in iter(lambda: os.read(fd, 1 << 17), b""):
+    h.update(b)
+print(h.hexdigest(), sys.argv[1])
+"""
+
+
 def failcheck_probes(args):
     pdir = os.path.join(CTL, "probe")
     seen = set()
     failing_since = None
+    last_probe, last_check = None, 0
     while not stopping():
         names = sorted(n for n in os.listdir(pdir) if not n.startswith(".") and n not in seen)
-        if not names:
+        if names:
+            # Only the newest probe matters; mark older ones seen.
+            seen.update(names[:-1])
+            name = names[-1]
+            seen.add(name)
+            with open(os.path.join(pdir, name)) as f:
+                p = json.load(f)
+            last_probe = p
+            cmd = ["md5sum", p["path"]]
+        elif last_probe and time.time() - last_check > args.probe_interval:
+            # No fresh probe (head may be blocked on this client's caps): re-read
+            # the last one with our cached pages dropped, so the read still goes
+            # out as readahead (FUSE background requests).
+            p = last_probe
+            cmd = [sys.executable, "-c", DROPPED_CACHE_MD5, p["path"]]
+            bump("probe_rechecks")
+        else:
             time.sleep(0.5)
             continue
-        # Only the newest probe matters; mark older ones seen.
-        seen.update(names[:-1])
-        name = names[-1]
-        seen.add(name)
-        with open(os.path.join(pdir, name)) as f:
-            p = json.load(f)
+        last_check = time.time()
         age = time.time() - p["t"]
-        rc, out, dt = timed_run(["md5sum", p["path"]], args.read_timeout)
+        rc, out, dt = timed_run(cmd, args.read_timeout)
         ok = rc == 0 and out.split()[:1] == [p["md5"]]
         if ok:
             bump("probe_ok")
@@ -549,12 +595,16 @@ def failcheck_misc(args):
                 event("dmesg_unavailable", error=r.stderr.decode().strip())
             dmesg_ok = False
         else:
-            dmesg_ok = True
             hung = [l for l in r.stdout.decode(errors="replace").splitlines() if "blocked for more than" in l]
             new = [l for l in hung if l not in hung_seen]
+            if dmesg_ok is None:
+                # Lines already in the log when we started belong to earlier runs.
+                hung_seen.update(new)
+                new = []
             if new:
                 hung_seen.update(new)
                 trigger("hung_task_dmesg", lines=new[-20:])
+            dmesg_ok = True
         # Workload progress stall: node jobs not completing while head produces.
         try:
             with open(os.path.join(CTL, "stats-node.json")) as f:

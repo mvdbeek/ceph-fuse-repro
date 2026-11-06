@@ -32,3 +32,23 @@ run:
 
 capture:
 	harness/capture.sh results/manual-capture-$$(date +%Y%m%d-%H%M%S) manual
+
+# Stage B: KVM guest with the production kernel as the "node" client.
+.PHONY: vm-up vm-down vm-mount vm-umount vm-status vm-ssh run-b
+vm-up:
+	scripts/vm.sh up && scripts/vm.sh mount
+
+vm-down:
+	scripts/vm.sh down
+
+vm-mount:
+	scripts/vm.sh mount
+
+vm-umount:
+	scripts/vm.sh umount
+
+vm-status:
+	scripts/vm.sh status
+
+run-b:
+	python3 harness/run.py --stage B --duration $(DURATION) --faults "$(FAULTS)" --label "$(LABEL)" -- $(WORKLOAD)
