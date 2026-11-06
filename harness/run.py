@@ -15,11 +15,12 @@ import shlex
 import shutil
 import subprocess
 import sys
+import threading
 import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CTL = os.path.join(ROOT, "state", "ctl")
-FAULTS = ("netem", "osdnetem", "msinject", "mdsrecall", "slowosd", "debugclient")
+FAULTS = ("netem", "osdnetem", "msinject", "mdsrecall", "slowosd", "debugclient", "fullflap", "octrim")
 CLIENTS = ("head", "node")
 # Stage B: the "node" client is the KVM guest inside the cfr-vm container.
 NODE_VM = False
@@ -143,6 +144,9 @@ def fault_actions(args):
             "osd_debug_inject_dispatch_delay_probability": str(args.osd_delay_p),
             "osd_debug_inject_dispatch_delay_duration": str(args.osd_delay),
         }),
+        # Tiny ObjectCacher: trim() evicts clean/zero buffers on nearly every op,
+        # widening the discard-then-trim window for in-flight reads.
+        "octrim": client_conf({"client_oc_size": str(args.oc_size)}),
         "debugclient": client_conf({
             "debug_client": "1/20",
             "debug_objectcacher": "1/20",
@@ -154,6 +158,27 @@ def fault_actions(args):
     }
 
 
+DEFAULT_RATIOS = (("full", "0.95"), ("backfillfull", "0.90"), ("nearfull", "0.85"))
+
+
+def full_flapper(args, stop, tsv):
+    """Make the cluster briefly FULL: ratios just below current OSD use for
+    args.flap_seconds, every args.flap_interval seconds. Seen once by accident:
+    6 s of OSD_FULL, then a 15 min fn_anonymous invalidation stall."""
+    t0 = time.time()
+    while not stop.wait(args.flap_interval):
+        util = max(n["utilization"] for n in json.loads(ceph("osd", "df", "-f", "json"))["nodes"]) / 100
+        low = max(util - 0.01, 0.03)
+        for name, v in (("nearfull", low - 0.02), ("backfillfull", low - 0.01), ("full", low)):
+            ceph("osd", "set-%s-ratio" % name, "%.4f" % v)
+        a = time.time()
+        stop.wait(args.flap_seconds)
+        for name, v in DEFAULT_RATIOS:
+            ceph("osd", "set-%s-ratio" % name, v)
+        tsv.write("%d\t%d\t%.4f\n" % (a - t0, time.time() - t0, util))
+        tsv.flush()
+
+
 def describe_faults(args):
     d = {}
     for f in args.faults:
@@ -163,6 +188,8 @@ def describe_faults(args):
             "mdsrecall": "cache_limit=%d max_caps_per_client=%d" % (args.mds_cache_limit, args.mds_max_caps),
             "slowosd": "dispatch_delay p=%s %ss" % (args.osd_delay_p, args.osd_delay),
             "debugclient": "debug_client=1/20 (in-memory ring)",
+            "octrim": "client_oc_size=%d" % args.oc_size,
+            "fullflap": "cluster FULL for %ss every %ss (ratios below current use)" % (args.flap_seconds, args.flap_interval),
         }[f]
     return d
 
@@ -222,6 +249,9 @@ def main():
     ap.add_argument("--mds-max-caps", type=int, default=2000)
     ap.add_argument("--osd-delay-p", type=float, default=0.01)
     ap.add_argument("--osd-delay", type=float, default=0.2)
+    ap.add_argument("--oc-size", type=int, default=1 << 20)
+    ap.add_argument("--flap-seconds", type=float, default=6)
+    ap.add_argument("--flap-interval", type=float, default=600)
     ap.add_argument("workload_args", nargs=argparse.REMAINDER,
                     help="after --: extra args for workload.py (e.g. -- --workers 6 --hot 4)")
     args = ap.parse_args()
@@ -269,6 +299,14 @@ def main():
     fusectl_tsv = open(os.path.join(rdir, "fusectl.tsv"), "w")
     fusectl_tsv.write("elapsed\tclient\twaiting\tmax_background\tcongestion_threshold\n")
     actions = fault_actions(args)
+    flap_stop = threading.Event()
+    if "fullflap" in args.faults:
+        flap_tsv = open(os.path.join(rdir, "fullflap.tsv"), "w")
+        flap_tsv.write("start_elapsed\tend_elapsed\tmax_osd_util\n")
+        actions["fullflap"] = (
+            lambda: threading.Thread(target=full_flapper, args=(args, flap_stop, flap_tsv), daemon=True).start(),
+            lambda: (flap_stop.set(), time.sleep(args.flap_seconds + 2),
+                     [ceph("osd", "set-%s-ratio" % n, v) for n, v in DEFAULT_RATIOS]))
     applied = []
     try:
         for f in args.faults:
@@ -362,12 +400,24 @@ def main():
             actions[f][1]()
             log("fault off: %s" % f)
 
+    # H1 check: with the workload gone and faults off, every FUSE request should
+    # have been answered. Anything still "waiting" was never answered.
+    time.sleep(30)
+    idle_waiting = {c: fusectl(c) for c in CLIENTS}
+    leaked = {c: int(v["waiting"]) for c, v in idle_waiting.items() if v.get("waiting", "0").isdigit() and int(v["waiting"]) > 0}
+    if leaked:
+        log("idle FUSE requests not answered: %s; capturing" % leaked)
+        subprocess.run([os.path.join(ROOT, "harness", "capture.sh"), os.path.join(rdir, "capture-idle-leak"), "idle-leak %s" % leaked])
     fusectl_tsv.close()
     ooms = {}
     for c in containers:
         n = oom_kills(c)
         if n > oom_before.get(c, 0):
             ooms[c] = n - oom_before.get(c, 0)
+    mem_peak_mb = {}
+    for c in containers + (("vm",) if NODE_VM else ()):
+        pk = sh("docker", "exec", "cfr-" + c, "cat", "/sys/fs/cgroup/memory.peak", check=False)
+        mem_peak_mb[c] = int(pk) >> 20 if pk.isdigit() else None
     stats = {r: read_json(os.path.join(CTL, "stats-%s.json" % r), {}) for r in ("head", "node", "failcheck")}
     blocklist = ceph("osd", "blocklist", "ls", check=False)
     shutil.copy(os.path.join(CTL, "events.jsonl"), rdir)
@@ -376,6 +426,8 @@ def main():
         outcome = "INVALID: OOM kill in %s" % ",".join(sorted(ooms))
     elif aborted:
         outcome = "INVALID: aborted (%s)" % ",".join(aborted)
+    elif leaked:
+        outcome = "LEAK: FUSE requests unanswered after the workload stopped: %s" % leaked
     elif any(t.get("kind") == "buffered_hang_direct_ok" for t in repro):
         outcome = "REPRODUCED: buffered read hung, O_DIRECT ok"
     elif repro:
@@ -386,7 +438,7 @@ def main():
         outcome = "no repro"
     if left:
         outcome += "; workload hung at stop"
-    summary = dict(meta, elapsed=elapsed, aborted=aborted, oom_kills=ooms, outcome=outcome, triggers=triggers, stats=stats,
+    summary = dict(meta, elapsed=elapsed, aborted=aborted, oom_kills=ooms, mem_peak_mb=mem_peak_mb, idle_fusectl=idle_waiting, outcome=outcome, triggers=triggers, stats=stats,
                    blocklist=blocklist, workload_left_running=left,
                    first_repro_after=repro[0]["elapsed"] if repro else None)
     with open(os.path.join(rdir, "summary.json"), "w") as f:

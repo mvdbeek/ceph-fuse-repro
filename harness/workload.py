@@ -252,6 +252,15 @@ def head_hot_writer(args):
     while not stopping():
         p = rng.choice(paths)
         try:
+            if args.hot_truncate and rng.random() < 0.5:
+                # Truncating rewrite (like `cp`/`>` over a file node is reading):
+                # on node this is a truncate_seq bump -> _invalidate_inode_cache ->
+                # ObjectCacher discard of in-flight readahead + kernel invalidate.
+                write_file(p, rand_bytes(rng.randint(16 * 1024, 2 * MiB), rng))
+                bump("head_hot_truncates")
+                bump("head_hot_writes")
+                time.sleep(rng.uniform(0.02, args.hot_interval))
+                continue
             # Overwrite in place or append, never shrink: node mmaps these
             # files, and a page beyond a truncated EOF would be a SIGBUS.
             fd = os.open(p, os.O_WRONLY)
@@ -642,6 +651,7 @@ def main():
     ap.add_argument("--hot", type=int, default=0, help="number of hot files head keeps rewriting")
     ap.add_argument("--hot-readers", type=int, default=4)
     ap.add_argument("--hot-interval", type=float, default=0.2)
+    ap.add_argument("--hot-truncate", action="store_true", help="head also rewrites hot files with O_TRUNC")
     ap.add_argument("--read-timeout", type=int, default=20)
     ap.add_argument("--dstate-limit", type=int, default=60)
     ap.add_argument("--stall-limit", type=int, default=180)

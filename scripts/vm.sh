@@ -17,7 +17,7 @@ BASE=Rocky-9-GenericCloud-Base-9.8-20260525.0.x86_64.qcow2
 KVER=6.1.188-1.el9.elrepo
 KURL=https://mirrors.coreix.net/elrepo-archive-archive/kernel/el9/x86_64/RPMS
 CEPH_VERSION=17.2.9
-VM_MEM_MB=${VM_MEM_MB:-3072}
+VM_MEM_MB=${VM_MEM_MB:-4096}
 VM_CPUS=${VM_CPUS:-4}
 
 log() { echo "[vm] $*" >&2; }
@@ -54,6 +54,8 @@ write_files:
     content: |
       # report every hung task, not just the first 10 (production ran out)
       kernel.hung_task_warnings = -1
+      # all sysrq functions, so the qemu monitor (sendkey alt-sysrq-w) works when ssh doesn't
+      kernel.sysrq = 1
 runcmd:
   - [sh, -xc, "mkdir -p /share && (mountpoint -q /share || mount -t virtiofs share /share)"]
   - [sh, -xc, "dnf -y install epel-release dnf-plugins-core && dnf config-manager --set-enabled crb"]
@@ -103,7 +105,7 @@ EOF
     chmod +x "$VM/run-vm.sh"
     log "starting cfr-vm (guest ${VM_MEM_MB} MB, $VM_CPUS vCPUs)"
     docker run -d --name cfr-vm --hostname vmhost --network "$NET" --ip 10.177.77.40 \
-        --device /dev/kvm --memory $((VM_MEM_MB + 512))m --memory-swap $((VM_MEM_MB + 512))m \
+        --device /dev/kvm --memory $((VM_MEM_MB + 1024))m --memory-swap $((VM_MEM_MB + 1024))m \
         -v "$VM:/vm" -v "$ROOT/harness:/share/harness:ro" -v "$STATE/ctl:/share/ctl" \
         -v "$ROOT/results:/share/results" -v "$STATE/etc:/share/etc:ro" -v "$STATE/log-vm:/share/log" \
         --entrypoint /vm/run-vm.sh cfr-qemu >/dev/null
@@ -126,7 +128,8 @@ setup_guest() {
         cp /share/etc/ceph.conf /share/etc/ceph.client.galaxy-node.keyring /share/etc/subvol_path /etc/ceph/
         # same log location as the node container, but visible on the host as state/log-vm
         sed -i "s|^log_file = .*|log_file = /share/log/\$cluster-\$name.log|" /etc/ceph/ceph.conf
-        sysctl -q kernel.hung_task_warnings=-1'
+        sysctl -q kernel.hung_task_warnings=-1 kernel.sysrq=1
+        rpm -q elfutils >/dev/null || dnf -y -q install elfutils'
 }
 
 mount_node() {
@@ -134,7 +137,9 @@ mount_node() {
     guest sh -ec '
         mountpoint -q /mnt/scratch && exit 0
         mkdir -p /mnt/scratch
-        ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint="$(cat /etc/ceph/subvol_path)" /mnt/scratch
+        # foreground + detached, keeping libfuse stderr (see cluster.sh)
+        setsid -f sh -c "exec ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=$(cat /etc/ceph/subvol_path) /mnt/scratch </dev/null >>/share/log/ceph-fuse-node.stderr 2>&1"
+        for i in $(seq 30); do mountpoint -q /mnt/scratch && break; sleep 1; done
         mountpoint /mnt/scratch'
 }
 

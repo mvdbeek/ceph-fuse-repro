@@ -16,7 +16,7 @@ SUBVOL=${SUBVOL:-9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11}
 CLIENTS=(head node)
 # Memory caps (chonk is shared). OSDs at 576 MB were OOM-killed by the burst
 # of resent ops after a 150 s pause, so they get 768 MB.
-MEM_MON=320m MEM_MGR=640m MEM_OSD=768m MEM_MDS=448m MEM_CLIENT=1400m
+MEM_MON=320m MEM_MGR=640m MEM_OSD=1g MEM_MDS=448m MEM_CLIENT=1400m
 
 log() { echo "[cluster] $*" >&2; }
 
@@ -67,11 +67,14 @@ mon_data_avail_warn = 2
 [osd]
 osd_objectstore = bluestore
 bluestore_block_create = true
-bluestore_block_size = 8589934592
+bluestore_block_size = 42949672960
 osd_memory_target = 536870912
 osd_memory_base = 268435456
 osd_memory_cache_min = 67108864
-bluestore_cache_autotune = true
+# Fixed cache: with autotune and a 512 MB target, RSS still reached the
+# 768 MB container cap (allocator overhead) and the OSD was OOM-killed.
+bluestore_cache_autotune = false
+bluestore_cache_size = 134217728
 
 [mds]
 mds_cache_memory_limit = 268435456
@@ -190,9 +193,11 @@ mount_clients() {
     for c in "${CLIENTS[@]}"; do
         if cexec "$c" mountpoint -q /mnt/scratch; then continue; fi
         cexec "$c" mkdir -p /mnt/scratch
-        # Same invocation as production, apart from the id and the mountpoint.
-        cexec "$c" ceph-fuse --id="galaxy-$c" --conf=/etc/ceph/ceph.conf \
-            --client_mountpoint="$path" /mnt/scratch "$@"
+        # Same invocation as production, apart from the id and the mountpoint. Run in
+        # the foreground (detached) so libfuse's stderr, e.g. "fuse: writing device:
+        # Invalid argument" for a reply the kernel rejected, is kept.
+        docker exec -d "cfr-$c" sh -c "exec ceph-fuse -f --id=galaxy-$c --conf=/etc/ceph/ceph.conf \
+            --client_mountpoint=$path /mnt/scratch $* </dev/null >>/var/log/ceph/ceph-fuse-$c.stderr 2>&1"
         wait_for "$c mount" 30 cexec "$c" mountpoint -q /mnt/scratch
         log "$c: mounted $path at /mnt/scratch"
     done

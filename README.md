@@ -12,10 +12,13 @@ Results so far: [results.md](results.md).
 | `scripts/cluster.sh` | `up` / `down [--purge]` / `status` / `mount` / `umount`: 1 mon, 1 mgr, 3 bluestore OSDs (8 GB sparse files), 1 MDS, CephFS `cephfs` with a Manila-style subvolume, and two client containers `cfr-head` and `cfr-node`, each with its own `ceph-fuse` mount (`client.galaxy-head`, `client.galaxy-node`) |
 | `harness/workload.py` | Runs inside the client containers: `head`, `node` and `failcheck` roles (see below) |
 | `harness/run.py` | Host-side runner: switches faults on, starts the roles, captures state on each trigger, switches faults off, writes `results/<run>/summary.json` and a line in `results/runs.tsv` |
+| `harness/h1_mechanics.sh` | Fills the FUSE background slots on purpose (OSDs paused, many readers) and probes stat / O_DIRECT / buffered reads |
+| `harness/batch.sh` | The long runs behind results.md |
+| `scripts/vm.sh`, `docker/qemu/` | Stage B KVM guest |
 | `harness/capture.sh` | Capture bundle: client admin sockets, D-state tasks, ps/wchan, fusectl, dmesg, MDS sessions/ops, OSD ops |
 | `results/` | One directory per run, plus `runs.tsv` |
 
-Everything runs under rootless docker. State (keyrings, OSD files, logs, control dir) lives in `state/` (git-ignored). Memory caps: mon 320 MB, mgr 640 MB, 3 × OSD 576 MB, MDS 448 MB, 2 × client 1.4 GB, 5.94 GB in total; actual use is about 2.5–3.5 GB. A client at 1 GB got its ceph-fuse OOM-killed (ceph-fuse alone reaches ~400 MB RSS with the default 200 MB object cacher); `run.py` marks any run with an OOM kill INVALID.
+Everything runs under rootless docker. State (keyrings, OSD files, logs, control dir) lives in `state/` (git-ignored). Memory caps: mon 320 MB, mgr 640 MB, 3 × OSD 768 MB, MDS 448 MB, 2 × client 1.4 GB (6.5 GB), plus the Stage B guest (3 GB, container cap 3.5 GB); actual use is about 3–5 GB. OSDs at 576 MB were OOM-killed by the burst after a 150 s OSD pause. A client at 1 GB got its ceph-fuse OOM-killed (ceph-fuse alone reaches ~400 MB RSS with the default 200 MB object cacher); `run.py` marks any run with an OOM kill INVALID.
 
 ## Usage
 
@@ -60,13 +63,35 @@ Modelled on Galaxy (head) and Pulsar (node) sharing a job directory on CephFS. T
 
 Per client: `asok-{status,mds_sessions,mds_requests,objecter_requests,perf_dump,config_diff,dump_cache}`, `ps.txt` (all threads with `wchan`), `dstate.txt` (each D-state task: wchan, syscall, `/proc/<pid>/stack`), `fusectl.txt`, `dmesg.txt`, the tail of the client log after `log dump`. Cluster: `ceph -s`, health, blocklist, MDS `session ls` / `dump_ops_in_flight` / `dump_blocked_ops` / `perf dump`, OSD `dump_ops_in_flight`, `ceph config dump`; plus `events.jsonl`.
 
-## Limits of this environment (Stage A)
+## Stage B: the production kernel in a KVM guest
 
-chonk runs **rootless** docker (container root = host uid 1001) and this agent has no sudo (no-new-privs). As a result:
+`scripts/vm.sh` boots Rocky 9.8 GenericCloud with elrepo **`kernel-lt-6.1.188-1.el9.elrepo`** (the exact production build, from the elrepo archive) and ceph-fuse 17.2.9 from download.ceph.com. The guest is the "node" client; "head" stays in its container.
 
-- `/sys/fs/fuse/connections` (fusectl) is not mounted where dockerd can see it, and fusectl cannot be mounted from inside a user namespace, so `waiting` / `max_background` / `congestion_threshold` cannot be read. `fusectl.txt` records the failure.
-- `dmesg` fails (`dmesg_restrict=1`, needs CAP_SYSLOG in the initial namespace), so hung-task messages can't be watched; `/proc/<pid>/stack` and `/proc/sysrq-trigger` need CAP_SYS_ADMIN in the initial namespace. `wchan` works and is recorded instead.
+- qemu runs in the `cfr-vm` container (`docker/qemu/Dockerfile`, qemu 8.2) on the `cfr` network: rootless docker's network is not routable from the host, but the guest's user-mode (slirp) network gets out through the container. The guest has 3 GB RAM and 4 vCPUs (`VM_MEM_MB`, `VM_CPUS`).
+- First boot provisions with cloud-init (packages, kernel, `grubby --set-default`) and reboots into 6.1.188, which takes about 5 minutes. The guest disk is a qcow2 overlay in `state/vm/`.
+- `harness/`, `state/ctl`, `results/`, `state/etc` and the guest's ceph log (`state/log-vm`) are shared with the guest over virtiofs (`/share`, `cache=never`).
+- `run.py --stage B` / `capture.sh` / `h1_mechanics.sh` (with `CFR_STAGE=B`) reach the guest over ssh. netem for the VM node goes on `cfr-vm`'s `eth0`, the guest's only path out.
+- In the guest everything is available as root: fusectl, `dmesg` (hung-task reports, `hung_task_warnings=-1`), `/proc/<pid>/stack`, sysrq-w.
+
+```sh
+make vm-up          # needs /dev/kvm usable by uid 1001 (see below); boots, provisions, mounts
+make run-b DURATION=3600 FAULTS=mdsrecall LABEL=x WORKLOAD="--workers 4 --hot 4"
+harness/batch.sh BA # the long runs in results.md
+make vm-down
+```
+
+## Access needed on chonk
+
+chonk runs **rootless** docker (container root = host uid 1001). Two root changes were made for this work (both reset at reboot):
+
+```sh
+setfacl -m u:babysit:rw /dev/kvm                                   # Stage B
+sysctl -w kernel.dmesg_restrict=0 kernel.hung_task_warnings=-1      # host kernel log for Stage A
+```
+
+What Stage A can and cannot see:
+
+- **fusectl**: can't be mounted inside a user namespace, but the host's `/sys/fs/fuse/connections/<st_dev>/` files belong to the mounting uid (us), so `run.py` reads `waiting`/`max_background`/`congestion_threshold` from the host every 10 s (`results/<run>/fusectl.tsv`) and at each trigger.
+- **dmesg**: readable (host kernel log, shared with everything else on chonk) with `dmesg_restrict=0`.
+- **`/proc/<pid>/stack`, sysrq-w**: need CAP_SYS_ADMIN in the initial namespace; not available. `wchan` and `/proc/<pid>/syscall` are recorded instead. Stage B has both.
 - The ceph-fuse admin socket has no `dump_ops_in_flight` for clients; `mds_requests` and `objecter_requests` cover in-flight MDS/OSD operations.
-- Stage B (KVM VM with the production 6.1.188 elrepo kernel) is blocked: `/dev/kvm` exists, but opening it from a container fails with `EACCES` (uid 1001 is not in the `kvm` group), qemu is not installed, and `sudo` is unavailable. See results.md.
-
-Inside a VM all of the above would be available as real root.
