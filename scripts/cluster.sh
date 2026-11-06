@@ -16,7 +16,7 @@ SUBVOL=${SUBVOL:-9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11}
 CLIENTS=(head node)
 # Memory caps (chonk is shared). OSDs at 576 MB were OOM-killed by the burst
 # of resent ops after a 150 s pause, so they get 768 MB.
-MEM_MON=320m MEM_MGR=640m MEM_OSD=1280m MEM_MDS=448m MEM_CLIENT=1400m
+MEM_MON=320m MEM_MGR=640m MEM_OSD=2560m MEM_MDS=448m MEM_CLIENT=1400m
 
 log() { echo "[cluster] $*" >&2; }
 

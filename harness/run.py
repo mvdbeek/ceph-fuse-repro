@@ -415,7 +415,9 @@ def main():
             log("fault off: %s" % f)
 
     # H1 check: with the workload gone and faults off, every FUSE request should
-    # have been answered. Anything still "waiting" was never answered.
+    # have been answered. Anything still "waiting" was never answered. Stop the
+    # background cleanup of old trees first (a legitimately busy request).
+    subprocess.run(prefix("head", "pkill", "-f", "rm -rf /mnt/scratch/trash"), capture_output=True)
     time.sleep(30)
     idle_waiting = {c: fusectl(c) for c in CLIENTS}
     leaked = {c: int(v["waiting"]) for c, v in idle_waiting.items() if v.get("waiting", "0").isdigit() and int(v["waiting"]) > 0}
