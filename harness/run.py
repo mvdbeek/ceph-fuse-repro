@@ -13,6 +13,7 @@ import json
 import os
 import shlex
 import shutil
+import signal
 import subprocess
 import sys
 import threading
@@ -148,12 +149,11 @@ def fault_actions(args):
         # widening the discard-then-trim window for in-flight reads.
         "octrim": client_conf({"client_oc_size": str(args.oc_size)}),
         "debugclient": client_conf({
-            "debug_client": "1/20",
-            "debug_objectcacher": "1/20",
-            "debug_ms": "0/1",
-            # In-memory ring that "log dump" (capture.sh) writes out; sized to
-            # stay well inside the client container's memory cap.
-            "log_max_recent": "100000",
+            # Straight to the log file: "log dump" of the in-memory ring crashed
+            # ceph-fuse 17.2.9 (see capture.sh).
+            "debug_client": "10/10",
+            "debug_objectcacher": "10/10",
+            "debug_ms": "0/0",
         }),
     }
 
@@ -187,7 +187,7 @@ def describe_faults(args):
             "msinject": "socket_failures=1/%d delay_p=%s max=%ss" % (args.ms_socket_failures, args.ms_delay_p, args.ms_delay_max),
             "mdsrecall": "cache_limit=%d max_caps_per_client=%d" % (args.mds_cache_limit, args.mds_max_caps),
             "slowosd": "dispatch_delay p=%s %ss" % (args.osd_delay_p, args.osd_delay),
-            "debugclient": "debug_client=1/20 (in-memory ring)",
+            "debugclient": "debug_client=10, debug_objectcacher=10 (to the log file)",
             "octrim": "client_oc_size=%d" % args.oc_size,
             "fullflap": "cluster FULL for %ss every %ss (ratios below current use)" % (args.flap_seconds, args.flap_interval),
         }[f]
@@ -231,7 +231,17 @@ def read_json(path, default=None):
         return default
 
 
+stop_requested = []
+
+
+def request_stop(signum, frame):
+    # Let the main loop end the run, so cleanup and summary.json always happen.
+    stop_requested.append(signum)
+
+
 def main():
+    signal.signal(signal.SIGINT, request_stop)
+    signal.signal(signal.SIGTERM, request_stop)
     ap = argparse.ArgumentParser()
     ap.add_argument("--duration", type=int, default=3600, help="seconds")
     ap.add_argument("--faults", default="", help="comma list of: " + ",".join(FAULTS))
@@ -346,6 +356,10 @@ def main():
                     trig["fusectl_host"] = {c: fusectl(c) for c in CLIENTS}
                     subprocess.run([os.path.join(ROOT, "harness", "capture.sh"), cdir, json.dumps(trig)])
             if args.stop_on_repro and repro:
+                break
+            if stop_requested:
+                log("stop requested (signal %d)" % stop_requested[0])
+                aborted = ["stopped by hand"]
                 break
             if time.time() - last_fusectl >= 10:
                 last_fusectl = time.time()

@@ -62,9 +62,10 @@ for c in node head; do
         ex "$c" "$d/asok-${cmd// /_}.json" ceph --admin-daemon "$asok" $cmd
     done
     ex "$c" "$d/mountinfo.txt" cat /proc/self/mountinfo
-    # Write the in-memory log ring (debug_client gather level) to the log, then copy the tail.
-    ex "$c" "$d/asok-log_dump.txt" ceph --admin-daemon "$asok" log dump
-    sleep 1
+    # No "log dump": in 17.2.9 it segfaulted ceph-fuse (Log::dump_recent ->
+    # pthread_getname_np on an exited libfuse worker thread), and the crash then
+    # hung in vfs_coredump behind the blocked invalidator. Use debugclient (log to
+    # file) instead when the debug history is needed.
     ex "$c" "$d/client.log.tail" sh -c "tail -n 300000 \$(ceph-conf -n client.galaxy-$c --show-config-value log_file)"
     gzip -f "$out/$d/client.log.tail" "$out/$d/asok-dump_cache.json" 2>/dev/null
 done

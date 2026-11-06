@@ -16,7 +16,7 @@ SUBVOL=${SUBVOL:-9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11}
 CLIENTS=(head node)
 # Memory caps (chonk is shared). OSDs at 576 MB were OOM-killed by the burst
 # of resent ops after a 150 s pause, so they get 768 MB.
-MEM_MON=320m MEM_MGR=640m MEM_OSD=1g MEM_MDS=448m MEM_CLIENT=1400m
+MEM_MON=320m MEM_MGR=640m MEM_OSD=1280m MEM_MDS=448m MEM_CLIENT=1400m
 
 log() { echo "[cluster] $*" >&2; }
 
@@ -75,6 +75,9 @@ osd_memory_cache_min = 67108864
 # 768 MB container cap (allocator overhead) and the OSD was OOM-killed.
 bluestore_cache_autotune = false
 bluestore_cache_size = 134217728
+# Bound client data held in OSD memory (default 500 MB): the burst of resent
+# writes after a FULL flap OOM-killed an OSD at 1 GB.
+osd_client_message_size_cap = 134217728
 
 [mds]
 mds_cache_memory_limit = 268435456
