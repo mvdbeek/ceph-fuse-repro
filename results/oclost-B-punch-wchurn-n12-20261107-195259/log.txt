@@ -1,0 +1,324 @@
+== 2026-11-07T18:52:59Z mode=punch churn=wchurn files=12 stage B kernel 6.1.188-1.el9.elrepo.x86_64, ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)
+== 12 target file(s) on osd.1, 12 churn files (512 KiB) elsewhere
+== 19:53:43 replies from osd.1 to node held
+== in flight: 12 ops to osd [1], fusectl waiting=12
+== discards that hit an rx buffer with a waiter: 12
+2026-11-07T18:53:49.832+0000 7feffdffb640 10 objectcacher.object(1000000098d.00000000/head) discard object[1000000098d.00000000/head oset 0x7ff03000f170 wr 0/0] bh bh[ 0x7ff020028fc0 0~131072 0x7ff020028db0 (0) v 0 rx] waiters = { 0->[0x7ff02004b010, ]}
+2026-11-07T18:53:50.341+0000 7fefdffff640 10 objectcacher.object(10000000990.00000000/head) discard object[10000000990.00000000/head oset 0x7ff03000f990 wr 0/0] bh bh[ 0x7ff01c003fa0 0~131072 0x7ff01c003e00 (0) v 0 rx] waiters = { 0->[0x7ff01c010620, ]}
+2026-11-07T18:53:50.838+0000 7feffcff9640 10 objectcacher.object(10000000992.00000000/head) discard object[10000000992.00000000/head oset 0x7ff0300100d0 wr 0/0] bh bh[ 0x7ff014035030 0~131072 0x7ff014034e20 (0) v 0 rx] waiters = { 0->[0x7ff014035d00, ]}
+== write churn: committed 64 KiB, then one write with a 4 KiB cache
+== zero buffers trimmed with waiters still attached: 12
+2026-11-07T18:54:01.301+0000 7fefb9ffb640 10 objectcacher trim trimming bh[ 0x7ff01c003fa0 0~131072 0x7ff01c003e00 (0) v 0 zero] waiters = { 0->[0x7ff01c010620, ]}
+2026-11-07T18:54:01.301+0000 7fefb9ffb640 10 objectcacher trim trimming bh[ 0x7ff020028fc0 0~131072 0x7ff020028db0 (0) v 0 zero] waiters = { 0->[0x7ff02004b010, ]}
+2026-11-07T18:54:01.301+0000 7fefb9ffb640 10 objectcacher trim trimming bh[ 0x7ff014035030 0~131072 0x7ff014034e20 (0) v 0 zero] waiters = { 0->[0x7ff014035d00, ]}
+== 19:54:04 replies released
+== READ HUNG: 12 of 12 read(s) never returned (60 s after release)
+== objecter ops left: 0, fusectl waiting=14 max_background=12
+2026-11-07T18:54:04.894+0000 7ff037fff640  7 objectcacher bh_read_finish 10000000995.00000000/head tid 5 0~131072 (bl is 131072) returned 0 outstanding reads 12
+2026-11-07T18:54:04.896+0000 7ff037fff640  7 objectcacher bh_read_finish 1000000099f.00000000/head tid 9 0~131072 (bl is 131072) returned 0 outstanding reads 11
+2026-11-07T18:54:04.897+0000 7ff037fff640  7 objectcacher bh_read_finish 10000000990.00000000/head tid 2 0~131072 (bl is 131072) returned 0 outstanding reads 10
+  5659 dd D folio_wait_bit_common
+  5662 dd D folio_wait_bit_common
+  5665 dd D folio_wait_bit_common
+  5671 dd D folio_wait_bit_common
+  5673 dd D folio_wait_bit_common
+  5677 dd D folio_wait_bit_common
+  5681 dd D folio_wait_bit_common
+  5686 dd D folio_wait_bit_common
+  5691 dd D folio_wait_bit_common
+  5694 dd D folio_wait_bit_common
+  5698 dd D folio_wait_bit_common
+  5700 dd D folio_wait_bit_common
+  5786 fallocate D folio_wait_bit_common
+  5815 fallocate D folio_wait_bit_common
+  5845 fallocate D folio_wait_bit_common
+  5875 fallocate D folio_wait_bit_common
+  5906 fallocate D folio_wait_bit_common
+  5935 fallocate D folio_wait_bit_common
+  5965 fallocate D folio_wait_bit_common
+  5995 fallocate D folio_wait_bit_common
+  6025 fallocate D folio_wait_bit_common
+  6055 fallocate D folio_wait_bit_common
+  6085 fallocate D folio_wait_bit_common
+  6115 fallocate D folio_wait_bit_common
+  ceph-fuse thread fn_anonymous D folio_wait_bit_common
+== probes on the wedged node:
+stat                     : ok (rc=0)
+O_DIRECT read            : ok (rc=0)
+buffered read, uncached  : HUNG >10 s  wchan=fuse_get_req
+write                    : ok (rc=0)
+other client reading target: HUNG >15 s
+== kernel stacks of D-state tasks in the guest:
+-- fn_anonymous (5327/task/5346)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] invalidate_inode_pages2_range+0x12f/0x380
+[<0>] fuse_reverse_inval_inode+0x93/0xc0 [fuse]
+[<0>] fuse_notify+0x3b6/0x520 [fuse]
+[<0>] fuse_dev_do_write+0x305/0x4e0 [fuse]
+[<0>] fuse_dev_write+0x50/0x80 [fuse]
+[<0>] do_iter_readv_writev+0xe2/0x140
+[<0>] do_iter_write+0x81/0x150
+[<0>] vfs_writev+0xae/0x1a0
+[<0>] do_writev+0x6f/0x120
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5659/task/5659)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5662/task/5662)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5665/task/5665)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5671/task/5671)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5673/task/5673)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5677/task/5677)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5681/task/5681)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5686/task/5686)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5691/task/5691)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5694/task/5694)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5698/task/5698)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5700/task/5700)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5786/task/5786)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5815/task/5815)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5845/task/5845)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5875/task/5875)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5906/task/5906)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5935/task/5935)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5965/task/5965)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5995/task/5995)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (6025/task/6025)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (6055/task/6055)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (6085/task/6085)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (6115/task/6115)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+== waiting for the hung-task detector (120 s)
+[ 2335.887492] INFO: task fn_anonymous:5346 blocked for more than 122 seconds.
+[ 2335.905625] Call Trace:
+[ 2335.908356]  __schedule+0x1b9/0x540
+[ 2335.910440]  schedule+0x5d/0xd0
+[ 2335.912294]  io_schedule+0x42/0x70
+[ 2335.914271]  folio_wait_bit_common+0x120/0x360
+[ 2335.921983]  invalidate_inode_pages2_range+0x12f/0x380
+[ 2335.924861]  fuse_reverse_inval_inode+0x93/0xc0 [fuse]
+[ 2335.927751]  fuse_notify+0x3b6/0x520 [fuse]
+[ 2335.932589]  fuse_dev_do_write+0x305/0x4e0 [fuse]
+[ 2335.935211]  fuse_dev_write+0x50/0x80 [fuse]
+[ 2335.937694]  do_iter_readv_writev+0xe2/0x140
+[ 2335.940105]  do_iter_write+0x81/0x150
+[ 2335.942213]  vfs_writev+0xae/0x1a0
+[ 2335.948607]  do_writev+0x6f/0x120
+[ 2335.950523]  do_syscall_64+0x35/0x90
+[ 2335.952612]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2335.978851] INFO: task fallocate:5786 blocked for more than 122 seconds.
+[ 2335.992926] Call Trace:
+[ 2335.995350]  __schedule+0x1b9/0x540
+[ 2335.997102]  schedule+0x5d/0xd0
+[ 2335.998715]  io_schedule+0x42/0x70
+[ 2336.000389]  folio_wait_bit_common+0x120/0x360
+[ 2336.004712]  __filemap_get_folio+0x29b/0x330
+[ 2336.006797]  truncate_inode_pages_range+0x179/0x440
+[ 2336.024786]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.026049]  vfs_fallocate+0x14b/0x350
+[ 2336.039949] INFO: task fallocate:5815 blocked for more than 123 seconds.
+[ 2336.044943] Call Trace:
+[ 2336.045773]  __schedule+0x1b9/0x540
+[ 2336.046390]  schedule+0x5d/0xd0
+[ 2336.046945]  io_schedule+0x42/0x70
+[ 2336.047555]  folio_wait_bit_common+0x120/0x360
+[ 2336.048897]  __filemap_get_folio+0x29b/0x330
+[ 2336.049540]  truncate_inode_pages_range+0x179/0x440
+[ 2336.054545]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.055263]  vfs_fallocate+0x14b/0x350
+[ 2336.055817]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.056425]  do_syscall_64+0x35/0x90
+[ 2336.056952]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+== recovering: kill readers, abort the connection, evict the node session, remount
+== node remounted
+== elapsed 433 s

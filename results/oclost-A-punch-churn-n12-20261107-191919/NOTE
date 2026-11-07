@@ -1,0 +1,1 @@
+INVALID (harness): the churn cat used readahead and blocked behind the 12 held background requests (fusectl waiting=12), so the script never reached the release; killed by the batch timeout. Churn now uses POSIX_FADV_RANDOM (synchronous reads).

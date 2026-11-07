@@ -1,0 +1,226 @@
+    PID     TID STAT WCHAN                                    ELAPSED     TIME COMMAND         COMMAND
+      1       1 Ss   ep_poll                                     2540 00:00:05 systemd         /usr/lib/systemd/systemd --switched-root --system --deserialize 31
+      2       2 S    kthreadd                                    2540 00:00:00 kthreadd        [kthreadd]
+      3       3 I<   rescuer_thread                              2540 00:00:00 rcu_gp          [rcu_gp]
+      4       4 I<   rescuer_thread                              2540 00:00:00 rcu_par_gp      [rcu_par_gp]
+      5       5 I<   rescuer_thread                              2540 00:00:00 slub_flushwq    [slub_flushwq]
+      6       6 I<   rescuer_thread                              2540 00:00:00 netns           [netns]
+      8       8 I<   worker_thread                               2540 00:00:00 kworker/0:0H-ev [kworker/0:0H-events_highpri]
+     10      10 I<   rescuer_thread                              2540 00:00:00 mm_percpu_wq    [mm_percpu_wq]
+     11      11 I    rcu_tasks_one_gp                            2540 00:00:00 rcu_tasks_kthre [rcu_tasks_kthread]
+     12      12 I    rcu_tasks_one_gp                            2540 00:00:00 rcu_tasks_rude_ [rcu_tasks_rude_kthread]
+     13      13 I    rcu_tasks_one_gp                            2540 00:00:00 rcu_tasks_trace [rcu_tasks_trace_kthread]
+     14      14 S    smpboot_thread_fn                           2540 00:00:00 ksoftirqd/0     [ksoftirqd/0]
+     15      15 I    rcu_gp_fqs_loop                             2540 00:00:00 rcu_preempt     [rcu_preempt]
+     16      16 S    smpboot_thread_fn                           2540 00:00:00 migration/0     [migration/0]
+     18      18 S    smpboot_thread_fn                           2540 00:00:00 cpuhp/0         [cpuhp/0]
+     19      19 S    smpboot_thread_fn                           2540 00:00:00 cpuhp/1         [cpuhp/1]
+     20      20 S    smpboot_thread_fn                           2540 00:00:00 migration/1     [migration/1]
+     21      21 S    smpboot_thread_fn                           2540 00:00:00 ksoftirqd/1     [ksoftirqd/1]
+     23      23 I<   worker_thread                               2540 00:00:00 kworker/1:0H-ev [kworker/1:0H-events_highpri]
+     24      24 S    smpboot_thread_fn                           2540 00:00:00 cpuhp/2         [cpuhp/2]
+     25      25 S    smpboot_thread_fn                           2540 00:00:00 migration/2     [migration/2]
+     26      26 S    smpboot_thread_fn                           2540 00:00:00 ksoftirqd/2     [ksoftirqd/2]
+     28      28 I<   worker_thread                               2540 00:00:00 kworker/2:0H-ev [kworker/2:0H-events_highpri]
+     29      29 S    smpboot_thread_fn                           2540 00:00:00 cpuhp/3         [cpuhp/3]
+     30      30 S    smpboot_thread_fn                           2540 00:00:00 migration/3     [migration/3]
+     31      31 S    smpboot_thread_fn                           2540 00:00:00 ksoftirqd/3     [ksoftirqd/3]
+     33      33 I<   worker_thread                               2540 00:00:00 kworker/3:0H-ev [kworker/3:0H-events_highpri]
+     35      35 I    worker_thread                               2540 00:00:00 kworker/u8:1-ev [kworker/u8:1-events_unbound]
+     38      38 S    devtmpfs_work_loop                          2540 00:00:00 kdevtmpfs       [kdevtmpfs]
+     39      39 I<   rescuer_thread                              2540 00:00:00 inet_frag_wq    [inet_frag_wq]
+     40      40 S    kauditd_thread                              2540 00:00:00 kauditd         [kauditd]
+     41      41 S    watchdog                                    2540 00:00:00 khungtaskd      [khungtaskd]
+     42      42 S    oom_reaper                                  2540 00:00:00 oom_reaper      [oom_reaper]
+     43      43 I<   rescuer_thread                              2540 00:00:00 writeback       [writeback]
+     44      44 S    kcompactd                                   2540 00:00:00 kcompactd0      [kcompactd0]
+     45      45 SN   ksm_scan_thread                             2540 00:00:00 ksmd            [ksmd]
+     47      47 SN   khugepaged_wait_work                        2540 00:00:00 khugepaged      [khugepaged]
+     48      48 I<   rescuer_thread                              2540 00:00:00 cryptd          [cryptd]
+     49      49 I<   rescuer_thread                              2540 00:00:00 kintegrityd     [kintegrityd]
+     50      50 I<   rescuer_thread                              2540 00:00:00 kblockd         [kblockd]
+     51      51 I<   rescuer_thread                              2540 00:00:00 blkcg_punt_bio  [blkcg_punt_bio]
+     52      52 I<   rescuer_thread                              2540 00:00:00 tpm_dev_wq      [tpm_dev_wq]
+     53      53 I<   rescuer_thread                              2540 00:00:00 md              [md]
+     54      54 I<   rescuer_thread                              2540 00:00:00 edac-poller     [edac-poller]
+     55      55 I<   rescuer_thread                              2540 00:00:00 devfreq_wq      [devfreq_wq]
+     56      56 S    kthread_worker_fn                           2540 00:00:00 watchdogd       [watchdogd]
+     57      57 I<   rescuer_thread                              2540 00:00:00 quota_events_un [quota_events_un]
+     58      58 I<   worker_thread                               2540 00:00:00 kworker/1:1H-kb [kworker/1:1H-kblockd]
+     60      60 S    kswapd_try_to_sleep                         2540 00:00:00 kswapd0         [kswapd0]
+     66      66 I<   rescuer_thread                              2539 00:00:00 kthrotld        [kthrotld]
+     72      72 I<   rescuer_thread                              2539 00:00:00 acpi_thermal_pm [acpi_thermal_pm]
+     73      73 I<   rescuer_thread                              2539 00:00:00 kmpath_rdacd    [kmpath_rdacd]
+     74      74 I<   rescuer_thread                              2539 00:00:00 kaluad          [kaluad]
+     75      75 I    worker_thread                               2539 00:00:00 kworker/2:2-xfs [kworker/2:2-xfs-inodegc/vda4]
+     76      76 I<   rescuer_thread                              2539 00:00:00 mld             [mld]
+     77      77 I<   rescuer_thread                              2539 00:00:00 ipv6_addrconf   [ipv6_addrconf]
+     78      78 I<   rescuer_thread                              2539 00:00:00 kstrp           [kstrp]
+     84      84 I<   rescuer_thread                              2539 00:00:00 zswap-shrink    [zswap-shrink]
+    211     211 I<   worker_thread                               2539 00:00:00 kworker/u9:0    [kworker/u9:0]
+    213     213 I<   worker_thread                               2539 00:00:00 kworker/2:1H-kb [kworker/2:1H-kblockd]
+    254     254 I<   worker_thread                               2539 00:00:00 kworker/3:1H-kb [kworker/3:1H-kblockd]
+    256     256 I<   worker_thread                               2539 00:00:00 kworker/0:1H-xf [kworker/0:1H-xfs-log/vda4]
+    265     265 I    worker_thread                               2539 00:00:00 kworker/1:3-eve [kworker/1:3-events]
+    375     375 I<   rescuer_thread                              2538 00:00:00 rpciod          [rpciod]
+    376     376 I<   rescuer_thread                              2538 00:00:00 xprtiod         [xprtiod]
+    488     488 I<   rescuer_thread                              2538 00:00:00 ata_sff         [ata_sff]
+    497     497 S    scsi_error_handler                          2538 00:00:00 scsi_eh_0       [scsi_eh_0]
+    498     498 I<   rescuer_thread                              2538 00:00:00 scsi_tmf_0      [scsi_tmf_0]
+    499     499 S    scsi_error_handler                          2538 00:00:00 scsi_eh_1       [scsi_eh_1]
+    500     500 I<   rescuer_thread                              2538 00:00:00 scsi_tmf_1      [scsi_tmf_1]
+    501     501 S    scsi_error_handler                          2538 00:00:00 scsi_eh_2       [scsi_eh_2]
+    502     502 I<   rescuer_thread                              2538 00:00:00 scsi_tmf_2      [scsi_tmf_2]
+    503     503 S    scsi_error_handler                          2538 00:00:00 scsi_eh_3       [scsi_eh_3]
+    504     504 I<   rescuer_thread                              2538 00:00:00 scsi_tmf_3      [scsi_tmf_3]
+    505     505 S    scsi_error_handler                          2538 00:00:00 scsi_eh_4       [scsi_eh_4]
+    506     506 I<   rescuer_thread                              2538 00:00:00 scsi_tmf_4      [scsi_tmf_4]
+    507     507 S    scsi_error_handler                          2538 00:00:00 scsi_eh_5       [scsi_eh_5]
+    508     508 I<   rescuer_thread                              2538 00:00:00 scsi_tmf_5      [scsi_tmf_5]
+    545     545 I<   rescuer_thread                              2537 00:00:00 xfsalloc        [xfsalloc]
+    546     546 I<   rescuer_thread                              2537 00:00:00 xfs_mru_cache   [xfs_mru_cache]
+    547     547 I<   rescuer_thread                              2537 00:00:00 xfs-buf/vda4    [xfs-buf/vda4]
+    548     548 I<   rescuer_thread                              2537 00:00:00 xfs-conv/vda4   [xfs-conv/vda4]
+    549     549 I<   rescuer_thread                              2537 00:00:00 xfs-reclaim/vda [xfs-reclaim/vda]
+    550     550 I<   rescuer_thread                              2537 00:00:00 xfs-blockgc/vda [xfs-blockgc/vda]
+    551     551 I<   rescuer_thread                              2537 00:00:00 xfs-inodegc/vda [xfs-inodegc/vda]
+    552     552 I<   rescuer_thread                              2537 00:00:00 xfs-log/vda4    [xfs-log/vda4]
+    553     553 I<   rescuer_thread                              2537 00:00:00 xfs-cil/vda4    [xfs-cil/vda4]
+    554     554 S    xfsaild                                     2537 00:00:00 xfsaild/vda4    [xfsaild/vda4]
+    669     669 Ss   ep_poll                                     2535 00:00:01 systemd-journal /usr/lib/systemd/systemd-journald
+    685     685 Ss   ep_poll                                     2535 00:00:00 systemd-udevd   /usr/lib/systemd/systemd-udevd
+    711     711 I<   rescuer_thread                              2535 00:00:00 xfs-buf/vda3    [xfs-buf/vda3]
+    712     712 I<   rescuer_thread                              2535 00:00:00 xfs-conv/vda3   [xfs-conv/vda3]
+    713     713 I<   rescuer_thread                              2535 00:00:00 xfs-reclaim/vda [xfs-reclaim/vda]
+    714     714 I<   rescuer_thread                              2535 00:00:00 xfs-blockgc/vda [xfs-blockgc/vda]
+    715     715 I<   rescuer_thread                              2535 00:00:00 xfs-inodegc/vda [xfs-inodegc/vda]
+    716     716 I<   rescuer_thread                              2535 00:00:00 xfs-log/vda3    [xfs-log/vda3]
+    717     717 I<   rescuer_thread                              2535 00:00:00 xfs-cil/vda3    [xfs-cil/vda3]
+    718     718 S    xfsaild                                     2535 00:00:00 xfsaild/vda3    [xfsaild/vda3]
+    759     759 I    worker_thread                               2534 00:00:00 kworker/0:3-eve [kworker/0:3-events]
+    760     760 Ss   do_poll.constprop.0                         2534 00:00:00 rpcbind         /usr/bin/rpcbind -w -f
+    761     761 S<sl do_select                                   2534 00:00:00 auditd          /sbin/auditd
+    761     762 S<sl futex_wait_queue                            2534 00:00:00 auditd          /sbin/auditd
+    761     764 S<sl futex_wait_queue                            2534 00:00:00 auditd          /sbin/auditd
+    763     763 S<   do_select                                   2534 00:00:00 sedispatch      /usr/sbin/sedispatch
+    789     789 Ss   ep_poll                                     2534 00:00:00 dbus-broker-lau /usr/bin/dbus-broker-launch --scope system --audit
+    790     790 S    ep_poll                                     2534 00:00:01 dbus-broker     dbus-broker --log 4 --controller 9 --machine-id a40e5818187943f0988f70d3cc9743a2 --max-bytes 536870912 --max-fds 4096 --max-matches 131072 --audit
+    794     794 Ssl  do_poll.constprop.0                         2533 00:00:00 irqbalance      /usr/sbin/irqbalance
+    794     798 Ssl  do_poll.constprop.0                         2533 00:00:00 gmain           /usr/sbin/irqbalance
+    795     795 Ss   do_poll.constprop.0                         2533 00:00:00 rngd            /usr/sbin/rngd -f --fill-watermark=0 -x pkcs11 -x nist -x qrypt -x namedpipe -x jitter -D daemon:daemon
+    796     796 Ss   ep_poll                                     2533 00:00:01 systemd-logind  /usr/lib/systemd/systemd-logind
+    800     800 S    do_select                                   2533 00:00:00 chronyd         /usr/sbin/chronyd -F 2
+    816     816 Ssl  do_poll.constprop.0                         2531 00:00:00 NetworkManager  /usr/sbin/NetworkManager --no-daemon
+    816     817 Ssl  do_poll.constprop.0                         2531 00:00:00 gmain           /usr/sbin/NetworkManager --no-daemon
+    816     818 Ssl  do_poll.constprop.0                         2531 00:00:00 gdbus           /usr/sbin/NetworkManager --no-daemon
+    839     839 Ssl  ep_poll                                     2531 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    839     843 Ssl  futex_wait_queue                            2531 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    839     844 Ssl  futex_wait_queue                            2531 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    839     845 Ssl  futex_wait_queue                            2531 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    839     846 Ssl  futex_wait_queue                            2531 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    839     847 Ssl  futex_wait_queue                            2531 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    915     915 Ssl  do_select                                   2530 00:00:00 rsyslogd        /usr/sbin/rsyslogd -n
+    915     924 Ssl  do_poll.constprop.0                         2530 00:00:00 in:imjournal    /usr/sbin/rsyslogd -n
+    915     926 Ssl  futex_wait_queue                            2530 00:00:00 rs:main Q:Reg   /usr/sbin/rsyslogd -n
+    916     916 Ss   do_poll.constprop.0                         2530 00:00:00 sshd            sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+    919     919 Ss   hrtimer_nanosleep                           2530 00:00:00 crond           /usr/sbin/crond -n
+    920     920 Ss+  do_select                                   2530 00:00:00 agetty          /sbin/agetty -o -p -- \u --noclear - linux
+    922     922 Ss+  do_select                                   2530 00:00:00 agetty          /sbin/agetty -o -p -- \u --keep-baud 115200,57600,38400,9600 - vt220
+   5259    5259 Ss   ep_poll                                     2491 00:00:00 systemd         /usr/lib/systemd/systemd --user
+   5261    5261 S    do_sigtimedwait                             2491 00:00:00 (sd-pam)        (sd-pam)
+   5327    5327 Ssl  futex_wait_queue                            2490 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5331 Ssl  futex_wait_queue                            2490 00:00:00 log             ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5333 Ssl  ep_poll                                     2490 00:00:00 msgr-worker-0   ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5334 Ssl  ep_poll                                     2490 00:00:00 msgr-worker-1   ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5335 Ssl  ep_poll                                     2490 00:00:00 msgr-worker-2   ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5339 Ssl  futex_wait_queue                            2490 00:00:00 service         ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5340 Ssl  do_poll.constprop.0                         2490 00:00:00 admin_socket    ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5341 Ssl  do_poll.constprop.0                         2490 00:00:00 signal_handler  ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5342 Ssl  futex_wait_queue                            2490 00:00:00 io_context_pool ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5343 Ssl  futex_wait_queue                            2490 00:00:00 io_context_pool ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5344 Ssl  futex_wait_queue                            2490 00:00:00 ceph_timer      ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5345 Ssl  futex_wait_queue                            2490 00:00:00 fn_anonymous    ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5346 Dsl  folio_wait_bit_common                       2490 00:00:00 fn_anonymous    ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5347 Ssl  futex_wait_queue                            2490 00:00:00 fn_anonymous    ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5348 Ssl  futex_wait_queue                            2490 00:00:00 fn_anonymous    ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5349 Ssl  futex_wait_queue                            2490 00:00:00 fn_anonymous    ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5350 Ssl  futex_wait_queue                            2490 00:00:00 safe_timer      ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5351 Ssl  futex_wait_queue                            2490 00:00:00 fn_anonymous    ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5352 Ssl  futex_wait_queue                            2490 00:00:00 flusher         ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5353 Ssl  futex_wait_queue                            2490 00:00:00 ms_dispatch     ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5354 Ssl  futex_wait_queue                            2490 00:00:00 ms_local        ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5355 Ssl  futex_wait_queue                            2490 00:00:00 safe_timer      ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5356 Ssl  futex_wait_queue                            2490 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5358 Ssl  futex_wait_queue                            2490 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5359 Ssl  futex_wait_queue                            2490 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5667 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5668 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5675 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5676 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5680 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5684 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5688 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5693 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5697 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5699 Ssl  fuse_dev_do_read                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5701 Ssl  futex_wait_queue                             366 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5757 Ssl  fuse_dev_do_read                             361 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5816 Ssl  fuse_dev_do_read                             360 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5846 Ssl  fuse_dev_do_read                             360 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5876 Ssl  fuse_dev_do_read                             359 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5936 Ssl  fuse_dev_do_read                             358 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5966 Ssl  fuse_dev_do_read                             358 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    5996 Ssl  fuse_dev_do_read                             357 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    6116 Ssl  fuse_dev_do_read                             355 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5327    6144 Ssl  fuse_dev_do_read                             351 00:00:00 ceph-fuse       ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch
+   5403    5403 I    worker_thread                               1598 00:00:00 kworker/3:0-cgr [kworker/3:0-cgroup_free]
+   5404    5404 I    worker_thread                               1593 00:00:00 kworker/u8:2-fl [kworker/u8:2-flush-252:0]
+   5433    5433 I    worker_thread                                410 00:00:00 kworker/2:0-cgr [kworker/2:0-cgroup_free]
+   5461    5461 I    worker_thread                                410 00:00:00 kworker/3:2-eve [kworker/3:2-events]
+   5462    5462 I    worker_thread                                405 00:00:00 kworker/u8:0-fl [kworker/u8:0-flush-252:0]
+   5517    5517 I    worker_thread                                369 00:00:00 kworker/0:1-cgr [kworker/0:1-cgroup_free]
+   5572    5572 I    worker_thread                                368 00:00:00 kworker/1:1-cgr [kworker/1:1-cgroup_free]
+   5656    5656 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f2 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f2 >> /tmp/oclost.done
+   5658    5658 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f5 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f5 >> /tmp/oclost.done
+   5659    5659 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f2 of=/dev/null bs=64k count=1
+   5661    5661 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f7 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f7 >> /tmp/oclost.done
+   5662    5662 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f5 of=/dev/null bs=64k count=1
+   5664    5664 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f10 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f10 >> /tmp/oclost.done
+   5665    5665 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f7 of=/dev/null bs=64k count=1
+   5669    5669 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f11 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f11 >> /tmp/oclost.done
+   5671    5671 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f10 of=/dev/null bs=64k count=1
+   5672    5672 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f13 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f13 >> /tmp/oclost.done
+   5673    5673 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f11 of=/dev/null bs=64k count=1
+   5677    5677 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f13 of=/dev/null bs=64k count=1
+   5678    5678 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f17 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f17 >> /tmp/oclost.done
+   5681    5681 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f17 of=/dev/null bs=64k count=1
+   5682    5682 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f20 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f20 >> /tmp/oclost.done
+   5685    5685 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f35 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f35 >> /tmp/oclost.done
+   5686    5686 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f20 of=/dev/null bs=64k count=1
+   5689    5689 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f36 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f36 >> /tmp/oclost.done
+   5691    5691 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f35 of=/dev/null bs=64k count=1
+   5692    5692 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f41 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f41 >> /tmp/oclost.done
+   5694    5694 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f36 of=/dev/null bs=64k count=1
+   5696    5696 Ss   do_wait                                      366 00:00:00 sh              sh -c dd if=/mnt/scratch/oclost/a/f44 of=/dev/null bs=64k count=1 2>/dev/null; echo /mnt/scratch/oclost/a/f44 >> /tmp/oclost.done
+   5698    5698 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f41 of=/dev/null bs=64k count=1
+   5700    5700 D    folio_wait_bit_common                        366 00:00:00 dd              dd if=/mnt/scratch/oclost/a/f44 of=/dev/null bs=64k count=1
+   5786    5786 Ds   folio_wait_bit_common                        361 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f2
+   5815    5815 Ds   folio_wait_bit_common                        360 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f5
+   5845    5845 Ds   folio_wait_bit_common                        360 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f7
+   5875    5875 Ds   folio_wait_bit_common                        359 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f10
+   5906    5906 Ds   folio_wait_bit_common                        359 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f11
+   5935    5935 Ds   folio_wait_bit_common                        358 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f13
+   5965    5965 Ds   folio_wait_bit_common                        358 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f17
+   5995    5995 Ds   folio_wait_bit_common                        357 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f20
+   6025    6025 Ds   folio_wait_bit_common                        357 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f35
+   6055    6055 Ds   folio_wait_bit_common                        356 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f36
+   6085    6085 Ds   folio_wait_bit_common                        356 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f41
+   6115    6115 Ds   folio_wait_bit_common                        355 00:00:00 fallocate       fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f44
+   8506    8506 I    worker_thread                                249 00:00:00 kworker/u8:3-ev [kworker/u8:3-events_unbound]
+  10164   10164 I    worker_thread                                 57 00:00:00 kworker/3:1-mm_ [kworker/3:1-mm_percpu_wq]
+  10273   10273 I    worker_thread                                 35 00:00:00 kworker/0:0     [kworker/0:0]
+  10382   10382 I    worker_thread                                 12 00:00:00 kworker/2:1     [kworker/2:1]
+  10437   10437 I    worker_thread                                  2 00:00:00 kworker/1:0-cgr [kworker/1:0-cgroup_free]
+  10495   10495 Ss   do_poll.constprop.0                            0 00:00:00 sshd-session    sshd-session: root [priv]
+  10498   10498 S    do_poll.constprop.0                            0 00:00:00 sshd-session    sshd-session: root@notty
+  10499   10499 Rs   -                                              0 00:00:00 ps              ps -eLo pid,tid,stat,wchan:40,etimes,time,comm,args

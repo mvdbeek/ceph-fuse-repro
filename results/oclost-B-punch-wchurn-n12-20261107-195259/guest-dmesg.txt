@@ -1,0 +1,1517 @@
+[    0.000000] Linux version 6.1.188-1.el9.elrepo.x86_64 (mockbuild@d83aaf0302d446c284d29a530b8fe27f) (gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14), GNU ld version 2.35.2-72.el9) #1 SMP PREEMPT_DYNAMIC Mon Sep 14 21:54:30 EDT 2026
+[    0.000000] Command line: BOOT_IMAGE=(hd0,gpt3)/vmlinuz-6.1.188-1.el9.elrepo.x86_64 console=ttyS0,115200n8 no_timer_check net.ifnames=0 root=UUID=5c547c15-e655-458f-bc8e-b2877acc2676 crashkernel=1G-2G:192M,2G-64G:256M,64G-:512M
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000007ffd8fff] usable
+[    0.000000] BIOS-e820: [mem 0x000000007ffd9000-0x000000007fffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000b0000000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fed1c000-0x00000000fed1ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000017fffffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 3.0.0 present.
+[    0.000000] DMI: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000001] kvm-clock: using sched offset of 235696858526 cycles
+[    0.000003] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000007] tsc: Detected 2399.998 MHz processor
+[    0.000911] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000914] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000919] last_pfn = 0x180000 max_arch_pfn = 0x400000000
+[    0.000968] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.000979] last_pfn = 0x7ffd9 max_arch_pfn = 0x400000000
+[    0.008950] found SMP MP-table at [mem 0x000f5460-0x000f546f]
+[    0.008973] Using GB pages for direct mapping
+[    0.009093] RAMDISK: [mem 0x2fc45000-0x33e1afff]
+[    0.009102] ACPI: Early table checksum verification disabled
+[    0.009105] ACPI: RSDP 0x00000000000F5280 000014 (v00 BOCHS )
+[    0.009109] ACPI: RSDT 0x000000007FFE2558 00003C (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.009115] ACPI: FACP 0x000000007FFE2250 0000F4 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.009123] ACPI: DSDT 0x000000007FFE0040 002210 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.009127] ACPI: FACS 0x000000007FFE0000 000040
+[    0.009130] ACPI: APIC 0x000000007FFE2344 000090 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.009133] ACPI: HPET 0x000000007FFE23D4 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.009136] ACPI: SRAT 0x000000007FFE240C 0000E8 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.009139] ACPI: MCFG 0x000000007FFE24F4 00003C (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.009142] ACPI: WAET 0x000000007FFE2530 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.009145] ACPI: Reserving FACP table memory at [mem 0x7ffe2250-0x7ffe2343]
+[    0.009146] ACPI: Reserving DSDT table memory at [mem 0x7ffe0040-0x7ffe224f]
+[    0.009147] ACPI: Reserving FACS table memory at [mem 0x7ffe0000-0x7ffe003f]
+[    0.009148] ACPI: Reserving APIC table memory at [mem 0x7ffe2344-0x7ffe23d3]
+[    0.009148] ACPI: Reserving HPET table memory at [mem 0x7ffe23d4-0x7ffe240b]
+[    0.009149] ACPI: Reserving SRAT table memory at [mem 0x7ffe240c-0x7ffe24f3]
+[    0.009150] ACPI: Reserving MCFG table memory at [mem 0x7ffe24f4-0x7ffe252f]
+[    0.009150] ACPI: Reserving WAET table memory at [mem 0x7ffe2530-0x7ffe2557]
+[    0.009207] SRAT: PXM 0 -> APIC 0x00 -> Node 0
+[    0.009209] SRAT: PXM 0 -> APIC 0x01 -> Node 0
+[    0.009210] SRAT: PXM 0 -> APIC 0x02 -> Node 0
+[    0.009210] SRAT: PXM 0 -> APIC 0x03 -> Node 0
+[    0.009212] ACPI: SRAT: Node 0 PXM 0 [mem 0x00000000-0x0009ffff]
+[    0.009214] ACPI: SRAT: Node 0 PXM 0 [mem 0x00100000-0x7fffffff]
+[    0.009215] ACPI: SRAT: Node 0 PXM 0 [mem 0x100000000-0x17fffffff]
+[    0.009218] NUMA: Node 0 [mem 0x00000000-0x0009ffff] + [mem 0x00100000-0x7fffffff] -> [mem 0x00000000-0x7fffffff]
+[    0.009220] NUMA: Node 0 [mem 0x00000000-0x7fffffff] + [mem 0x100000000-0x17fffffff] -> [mem 0x00000000-0x17fffffff]
+[    0.009228] NODE_DATA(0) allocated [mem 0x17ffd5000-0x17fffffff]
+[    0.009481] Reserving 256MB of memory at 1776MB for crashkernel (System RAM: 4095MB)
+[    0.009513] Zone ranges:
+[    0.009514]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.009516]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.009517]   Normal   [mem 0x0000000100000000-0x000000017fffffff]
+[    0.009518]   Device   empty
+[    0.009519] Movable zone start for each node
+[    0.009521] Early memory node ranges
+[    0.009521]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.009522]   node   0: [mem 0x0000000000100000-0x000000007ffd8fff]
+[    0.009523]   node   0: [mem 0x0000000100000000-0x000000017fffffff]
+[    0.009525] Initmem setup node 0 [mem 0x0000000000001000-0x000000017fffffff]
+[    0.009534] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.009660] On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.029977] On node 0, zone Normal: 39 pages in unavailable ranges
+[    0.030681] ACPI: PM-Timer IO Port: 0x608
+[    0.030697] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.030733] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.030738] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.030740] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.030741] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.030742] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.030743] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.030748] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.030749] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.030754] TSC deadline timer available
+[    0.030758] smpboot: Allowing 4 CPUs, 0 hotplug CPUs
+[    0.030779] kvm-guest: KVM setup pv remote TLB flush
+[    0.030783] kvm-guest: setup PV sched yield
+[    0.030792] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.030797] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x000fffff]
+[    0.030799] PM: hibernation: Registered nosave memory: [mem 0x7ffd9000-0xffffffff]
+[    0.030801] [mem 0xc0000000-0xfed1bfff] available for PCI devices
+[    0.030802] Booting paravirtualized kernel on KVM
+[    0.030804] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.036040] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:4 nr_cpu_ids:4 nr_node_ids:1
+[    0.037012] percpu: Embedded 62 pages/cpu s217088 r8192 d28672 u524288
+[    0.037017] pcpu-alloc: s217088 r8192 d28672 u524288 alloc=1*2097152
+[    0.037019] pcpu-alloc: [0] 0 1 2 3 
+[    0.037054] kvm-guest: PV spinlocks enabled
+[    0.037055] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.037061] Fallback order for Node 0: 0 
+[    0.037063] Built 1 zonelists, mobility grouping on.  Total pages: 1031897
+[    0.037064] Policy zone: Normal
+[    0.037065] Kernel command line: BOOT_IMAGE=(hd0,gpt3)/vmlinuz-6.1.188-1.el9.elrepo.x86_64 console=ttyS0,115200n8 no_timer_check net.ifnames=0 root=UUID=5c547c15-e655-458f-bc8e-b2877acc2676 crashkernel=1G-2G:192M,2G-64G:256M,64G-:512M
+[    0.037152] random: crng init done
+[    0.038999] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.039928] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.040005] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.040009] software IO TLB: area num 4.
+[    0.081019] Memory: 1831688K/4193756K available (16391K kernel code, 5677K rwdata, 10232K rodata, 3144K init, 18872K bss, 530920K reserved, 0K cma-reserved)
+[    0.081142] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.081185] ftrace: allocating 48183 entries in 189 pages
+[    0.087858] ftrace: allocated 189 pages with 6 groups
+[    0.088518] Dynamic Preempt: voluntary
+[    0.088547] rcu: Preemptible hierarchical RCU implementation.
+[    0.088547] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=4.
+[    0.088548] 	Trampoline variant of Tasks RCU enabled.
+[    0.088549] 	Rude variant of Tasks RCU enabled.
+[    0.088549] 	Tracing variant of Tasks RCU enabled.
+[    0.088550] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    0.088550] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.091989] NR_IRQS: 524544, nr_irqs: 456, preallocated irqs: 16
+[    0.092168] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.103472] Console: colour VGA+ 80x25
+[    0.232428] printk: console [ttyS0] enabled
+[    0.233291] ACPI: Core revision 20220331
+[    0.234256] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.236083] APIC: Switch to symmetric I/O mode setup
+[    0.237310] x2apic enabled
+[    0.238278] Switched APIC routing to physical x2apic.
+[    0.239369] kvm-guest: setup PV IPIs
+[    0.240978] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.242240] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x229835b7123, max_idle_ns: 440795242976 ns
+[    0.244191] Calibrating delay loop (skipped) preset value.. 4799.99 BogoMIPS (lpj=2399998)
+[    0.245311] x86/cpu: User Mode Instruction Prevention (UMIP) activated
+[    0.247231] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.248189] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    0.249198] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.250190] Spectre V2 : Spectre BHI mitigation: SW BHB clearing on vm exit
+[    0.251189] Spectre V2 : Spectre BHI mitigation: SW BHB clearing on syscall
+[    0.252189] Spectre V2 : Mitigation: Enhanced / Automatic IBRS
+[    0.253189] Spectre V2 : Spectre v2 / PBRSB-eIBRS: Retire a single CALL on VMEXIT
+[    0.254193] Spectre V2 : Enabling IBPB for BPF
+[    0.255189] RETBleed: Mitigation: Enhanced IBRS
+[    0.256191] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    0.257190] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl
+[    0.258199] TAA: Mitigation: TSX disabled
+[    0.259189] MMIO Stale Data: Mitigation: Clear CPU buffers
+[    0.260189] SRBDS: Unknown: Dependent on hypervisor status
+[    0.261189] GDS: Unknown: Dependent on hypervisor status
+[    0.262190] active return thunk: its_return_thunk
+[    0.263189] ITS: Mitigation: Aligned branch/return thunks
+[    0.264205] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.265189] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.266189] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.267189] x86/fpu: Supporting XSAVE feature 0x008: 'MPX bounds registers'
+[    0.268189] x86/fpu: Supporting XSAVE feature 0x010: 'MPX CSR'
+[    0.269189] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.270189] x86/fpu: xstate_offset[3]:  832, xstate_sizes[3]:   64
+[    0.271189] x86/fpu: xstate_offset[4]:  896, xstate_sizes[4]:   64
+[    0.272189] x86/fpu: Enabled xstate features 0x1f, context size is 960 bytes, using 'compacted' format.
+[    0.307678] Freeing SMP alternatives memory: 36K
+[    0.308191] pid_max: default: 32768 minimum: 301
+[    0.309217] LSM: Security Framework initializing
+[    0.310200] landlock: Up and running.
+[    0.311189] Yama: becoming mindful.
+[    0.312194] SELinux:  Initializing.
+[    0.312900] LSM support for eBPF active
+[    0.313275] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.314226] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.315644] smpboot: CPU0: Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz (family: 0x6, model: 0x9e, stepping: 0xd)
+[    0.316366] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.317191] cblist_init_generic: Setting shift to 2 and lim to 1.
+[    0.318221] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.319190] cblist_init_generic: Setting shift to 2 and lim to 1.
+[    0.320217] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.321191] cblist_init_generic: Setting shift to 2 and lim to 1.
+[    0.322229] Performance Events: Skylake events, full-width counters, Intel PMU driver.
+[    0.323196] ... version:                2
+[    0.324124] ... bit width:              48
+[    0.324191] ... generic registers:      4
+[    0.325191] ... value mask:             0000ffffffffffff
+[    0.326217] ... max period:             00007fffffffffff
+[    0.327191] ... fixed-purpose events:   3
+[    0.328022] ... event mask:             000000070000000f
+[    0.328338] signal: max sigframe size: 2032
+[    0.329184] rcu: Hierarchical SRCU implementation.
+[    0.329191] rcu: 	Max phase no-delay instances is 400.
+[    0.330598] smp: Bringing up secondary CPUs ...
+[    0.331338] x86: Booting SMP configuration:
+[    0.332070] .... node  #0, CPUs:      #1 #2 #3
+[    0.333856] smp: Brought up 1 node, 4 CPUs
+[    0.335128] smpboot: Max logical packages: 1
+[    0.335191] smpboot: Total of 4 processors activated (19199.98 BogoMIPS)
+[    0.343483] node 0 deferred pages initialised in 7ms
+[    0.345266] devtmpfs: initialized
+[    0.346234] x86/mm: Memory block size: 128MB
+[    0.347603] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    0.348195] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.349239] pinctrl core: initialized pinctrl subsystem
+[    0.350758] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.351280] DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
+[    0.352194] DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.353194] DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.354200] audit: initializing netlink subsys (disabled)
+[    0.355220] audit: type=2000 audit(1794075450.312:1): state=initialized audit_enabled=0 res=1
+[    0.355307] thermal_sys: Registered thermal governor 'fair_share'
+[    0.356194] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.357191] thermal_sys: Registered thermal governor 'step_wise'
+[    0.358190] thermal_sys: Registered thermal governor 'user_space'
+[    0.359204] cpuidle: using governor menu
+[    0.360985] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.361351] PCI: MMCONFIG for domain 0000 [bus 00-ff] at [mem 0xb0000000-0xbfffffff] (base 0xb0000000)
+[    0.362192] PCI: MMCONFIG at [mem 0xb0000000-0xbfffffff] reserved in E820
+[    0.363203] PCI: Using configuration type 1 for base access
+[    0.365439] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    0.367280] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.368197] HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+[    0.370193] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.371190] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.373313] cryptd: max_cpu_qlen set to 1000
+[    0.375419] ACPI: Added _OSI(Module Device)
+[    0.376193] ACPI: Added _OSI(Processor Device)
+[    0.377098] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.379687] ACPI: 1 ACPI AML tables successfully acquired and loaded
+[    0.381807] ACPI: Interpreter enabled
+[    0.382205] ACPI: PM: (supports S0 S3 S4 S5)
+[    0.383101] ACPI: Using IOAPIC for interrupt routing
+[    0.384217] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.386191] PCI: Using E820 reservations for host bridge windows
+[    0.388329] ACPI: Enabled 2 GPEs in block 00 to 3F
+[    0.391991] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.393198] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI EDR HPX-Type3]
+[    0.395225] acpi PNP0A08:00: _OSC: platform does not support [PCIeHotplug LTR DPC]
+[    0.396238] acpi PNP0A08:00: _OSC: OS now controls [SHPCHotplug PME AER PCIeCapability]
+[    0.398417] PCI host bridge to bus 0000:00
+[    0.399192] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.400191] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.401191] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.403191] pci_bus 0000:00: root bus resource [mem 0x80000000-0xafffffff window]
+[    0.404191] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    0.405191] pci_bus 0000:00: root bus resource [mem 0x7000000000-0x77ffffffff window]
+[    0.407192] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.408268] pci 0000:00:00.0: [8086:29c0] type 00 class 0x060000
+[    0.409852] pci 0000:00:01.0: [1234:1111] type 00 class 0x030000
+[    0.417062] pci 0000:00:01.0: BAR 0 [mem 0xfd000000-0xfdffffff pref]
+[    0.422742] pci 0000:00:01.0: BAR 2 [mem 0xfeb90000-0xfeb90fff]
+[    0.431982] pci 0000:00:01.0: ROM [mem 0xfeb80000-0xfeb8ffff pref]
+[    0.434400] pci 0000:00:01.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.435931] pci 0000:00:02.0: [1af4:105a] type 00 class 0x018000
+[    0.438507] pci 0000:00:02.0: BAR 1 [mem 0xfeb91000-0xfeb91fff]
+[    0.442525] pci 0000:00:02.0: BAR 4 [mem 0x7000000000-0x7000003fff 64bit pref]
+[    0.445768] pci 0000:00:03.0: [1af4:1000] type 00 class 0x020000
+[    0.447107] pci 0000:00:03.0: BAR 0 [io  0xc140-0xc15f]
+[    0.449154] pci 0000:00:03.0: BAR 1 [mem 0xfeb92000-0xfeb92fff]
+[    0.454096] pci 0000:00:03.0: BAR 4 [mem 0x7000004000-0x7000007fff 64bit pref]
+[    0.457094] pci 0000:00:03.0: ROM [mem 0xfeb00000-0xfeb7ffff pref]
+[    0.459323] pci 0000:00:04.0: [1af4:1001] type 00 class 0x010000
+[    0.461192] pci 0000:00:04.0: BAR 0 [io  0xc000-0xc07f]
+[    0.464192] pci 0000:00:04.0: BAR 1 [mem 0xfeb93000-0xfeb93fff]
+[    0.470770] pci 0000:00:04.0: BAR 4 [mem 0x7000008000-0x700000bfff 64bit pref]
+[    0.476336] pci 0000:00:05.0: [1af4:1001] type 00 class 0x010000
+[    0.479191] pci 0000:00:05.0: BAR 0 [io  0xc080-0xc0ff]
+[    0.481192] pci 0000:00:05.0: BAR 1 [mem 0xfeb94000-0xfeb94fff]
+[    0.488701] pci 0000:00:05.0: BAR 4 [mem 0x700000c000-0x700000ffff 64bit pref]
+[    0.492450] pci 0000:00:1f.0: [8086:2918] type 00 class 0x060100
+[    0.494963] pci 0000:00:1f.0: quirk: [io  0x0600-0x067f] claimed by ICH6 ACPI/GPIO/TCO
+[    0.496797] pci 0000:00:1f.2: [8086:2922] type 00 class 0x010601
+[    0.501119] pci 0000:00:1f.2: BAR 4 [io  0xc160-0xc17f]
+[    0.502792] pci 0000:00:1f.2: BAR 5 [mem 0xfeb95000-0xfeb95fff]
+[    0.505407] pci 0000:00:1f.3: [8086:2930] type 00 class 0x0c0500
+[    0.508874] pci 0000:00:1f.3: BAR 4 [io  0x0700-0x073f]
+[    0.511593] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[    0.513312] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    0.514298] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[    0.515310] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    0.517295] ACPI: PCI: Interrupt link LNKE configured for IRQ 10
+[    0.518319] ACPI: PCI: Interrupt link LNKF configured for IRQ 10
+[    0.520302] ACPI: PCI: Interrupt link LNKG configured for IRQ 11
+[    0.521299] ACPI: PCI: Interrupt link LNKH configured for IRQ 11
+[    0.522240] ACPI: PCI: Interrupt link GSIA configured for IRQ 16
+[    0.524204] ACPI: PCI: Interrupt link GSIB configured for IRQ 17
+[    0.525204] ACPI: PCI: Interrupt link GSIC configured for IRQ 18
+[    0.526199] ACPI: PCI: Interrupt link GSID configured for IRQ 19
+[    0.527206] ACPI: PCI: Interrupt link GSIE configured for IRQ 20
+[    0.528204] ACPI: PCI: Interrupt link GSIF configured for IRQ 21
+[    0.530204] ACPI: PCI: Interrupt link GSIG configured for IRQ 22
+[    0.531200] ACPI: PCI: Interrupt link GSIH configured for IRQ 23
+[    0.533413] iommu: Default domain type: Translated 
+[    0.534191] iommu: DMA domain TLB invalidation policy: lazy mode 
+[    0.535492] SCSI subsystem initialized
+[    0.536256] ACPI: bus type USB registered
+[    0.537118] usbcore: registered new interface driver usbfs
+[    0.538205] usbcore: registered new interface driver hub
+[    0.539176] usbcore: registered new device driver usb
+[    0.540241] pps_core: LinuxPPS API ver. 1 registered
+[    0.541139] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.543198] PTP clock support registered
+[    0.544217] EDAC MC: Ver: 3.0.0
+[    0.545486] NetLabel: Initializing
+[    0.546191] NetLabel:  domain hash size = 128
+[    0.546947] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.547228] NetLabel:  unlabeled traffic allowed by default
+[    0.548166] PCI: Using ACPI for IRQ routing
+[    0.637907] PCI: pci_cache_line_size set to 64 bytes
+[    0.638133] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.638139] e820: reserve RAM buffer [mem 0x7ffd9000-0x7fffffff]
+[    0.638298] pci 0000:00:01.0: vgaarb: setting as boot VGA device
+[    0.639187] pci 0000:00:01.0: vgaarb: bridge control possible
+[    0.639187] pci 0000:00:01.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    0.643195] vgaarb: loaded
+[    0.644264] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.645191] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    0.649334] clocksource: Switched to clocksource kvm-clock
+[    0.666916] VFS: Disk quotas dquot_6.6.0
+[    0.667807] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.669481] pnp: PnP ACPI init
+[    0.670361] system 00:05: [mem 0xb0000000-0xbfffffff window] has been reserved
+[    0.672006] pnp: PnP ACPI: found 6 devices
+[    0.680034] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.681563] NET: Registered PF_INET protocol family
+[    0.682696] IP idents hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.685162] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    0.686545] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.687794] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.689095] TCP bind hash table entries: 32768 (order: 8, 1048576 bytes, linear)
+[    0.690621] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.691761] MPTCP token hash table entries: 4096 (order: 5, 98304 bytes, linear)
+[    0.692897] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.693953] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.695109] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.695992] NET: Registered PF_XDP protocol family
+[    0.696759] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.697702] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.698685] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.699762] pci_bus 0000:00: resource 7 [mem 0x80000000-0xafffffff window]
+[    0.700753] pci_bus 0000:00: resource 8 [mem 0xc0000000-0xfebfffff window]
+[    0.702050] pci_bus 0000:00: resource 9 [mem 0x7000000000-0x77ffffffff window]
+[    0.703607] PCI: CLS 0 bytes, default 64
+[    0.704324] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.704434] Trying to unpack rootfs image as initramfs...
+[    0.705419] software IO TLB: mapped [mem 0x000000006b000000-0x000000006f000000] (64MB)
+[    0.705435] ACPI: bus type thunderbolt registered
+[    0.708560] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x229835b7123, max_idle_ns: 440795242976 ns
+[    0.711922] Initialise system trusted keyrings
+[    0.712849] Key type blacklist registered
+[    0.713768] workingset: timestamp_bits=36 max_order=20 bucket_order=0
+[    0.716645] zbud: loaded
+[    0.717710] integrity: Platform Keyring initialized
+[    0.725595] NET: Registered PF_ALG protocol family
+[    0.726426] Key type asymmetric registered
+[    0.727120] Asymmetric key parser 'x509' registered
+[    1.336740] Freeing initrd memory: 67416K
+[    1.342781] alg: self-tests for CTR-KDF (hmac(sha256)) passed
+[    1.344031] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+[    1.345626] io scheduler mq-deadline registered
+[    1.346528] io scheduler kyber registered
+[    1.347367] io scheduler bfq registered
+[    1.349872] atomic64_test: passed for x86-64 platform with CX8 and with SSE
+[    1.351843] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.353314] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    1.354846] ACPI: button: Power Button [PWRF]
+[    1.356366] ACPI: \_SB_.GSIG: Enabled at IRQ 22
+[    1.358949] ACPI: \_SB_.GSIH: Enabled at IRQ 23
+[    1.361546] ACPI: \_SB_.GSIE: Enabled at IRQ 20
+[    1.364415] ACPI: \_SB_.GSIF: Enabled at IRQ 21
+[    1.381422] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.383355] 00:03: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    1.386350] Non-volatile memory driver v1.3
+[    1.388214] rdac: device handler registered
+[    1.389494] hp_sw: device handler registered
+[    1.390603] emc: device handler registered
+[    1.391847] alua: device handler registered
+[    1.393449] usbcore: registered new interface driver usbserial_generic
+[    1.395261] usbserial: USB Serial support registered for generic
+[    1.396888] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    1.400060] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    1.401386] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    1.402888] mousedev: PS/2 mouse device common for all mice
+[    1.404579] rtc_cmos 00:04: RTC can wake from S4
+[    1.406950] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    1.410128] rtc_cmos 00:04: registered as rtc0
+[    1.410647] input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input4
+[    1.412003] rtc_cmos 00:04: setting system clock to 2026-11-07T18:17:31 UTC (1794075451)
+[    1.414713] input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input3
+[    1.416398] rtc_cmos 00:04: alarms up to one day, y3k, 242 bytes nvram, hpet irqs
+[    1.420428] intel_pstate: CPU model not supported
+[    1.422228] hid: raw HID events driver (C) Jiri Kosina
+[    1.423628] usbcore: registered new interface driver usbhid
+[    1.425081] usbhid: USB HID core driver
+[    1.426198] drop_monitor: Initializing network drop monitor service
+[    1.445435] Initializing XFRM netlink socket
+[    1.446797] NET: Registered PF_INET6 protocol family
+[    1.448886] Segment Routing with IPv6
+[    1.449891] In-situ OAM (IOAM) with IPv6
+[    1.450956] NET: Registered PF_PACKET protocol family
+[    1.452479] mpls_gso: MPLS GSO support
+[    1.454104] IPI shorthand broadcast: enabled
+[    1.455268] AVX2 version of gcm_enc/dec engaged.
+[    1.456872] AES CTR mode by8 optimization enabled
+[    1.458190] sched_clock: Marking stable (1311071304, 147013741)->(1488519024, -30433979)
+[    1.460760] registered taskstats version 1
+[    1.462225] Loading compiled-in X.509 certificates
+[    1.475704] Loaded X.509 cert 'Build time autogenerated kernel key: f8cc7d5113aabe11e6948d8f9b7d03b9d2795269'
+[    1.478631] zswap: loaded using pool lzo/zbud
+[    1.479996] page_owner is disabled
+[    1.480930] Key type big_key registered
+[    1.487370] Key type encrypted registered
+[    1.488463] ima: No TPM chip found, activating TPM-bypass!
+[    1.489892] Loading compiled-in module X.509 certificates
+[    1.491941] Loaded X.509 cert 'Build time autogenerated kernel key: f8cc7d5113aabe11e6948d8f9b7d03b9d2795269'
+[    1.494473] ima: Allocated hash algorithm: sha256
+[    1.495717] ima: No architecture policies found
+[    1.496918] evm: Initialising EVM extended attributes:
+[    1.498255] evm: security.selinux
+[    1.499108] evm: security.SMACK64 (disabled)
+[    1.500226] evm: security.SMACK64EXEC (disabled)
+[    1.501420] evm: security.SMACK64TRANSMUTE (disabled)
+[    1.502720] evm: security.SMACK64MMAP (disabled)
+[    1.503998] evm: security.apparmor (disabled)
+[    1.505123] evm: security.ima
+[    1.505897] evm: security.capability
+[    1.506831] evm: HMAC attrs: 0x1
+[    1.708865] RAS: Correctable Errors collector initialized.
+[    1.710065] clk: Disabling unused clocks
+[    1.713086] Freeing unused decrypted memory: 2036K
+[    1.715160] Freeing unused kernel image (initmem) memory: 3144K
+[    1.715928] Write protecting the kernel read-only data: 28672k
+[    1.718088] Freeing unused kernel image (text/rodata gap) memory: 2040K
+[    1.719041] Freeing unused kernel image (rodata/data gap) memory: 8K
+[    1.730897] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    1.731762] Run /init as init process
+[    1.732230]   with arguments:
+[    1.732232]     /init
+[    1.732233]   with environment:
+[    1.732233]     HOME=/
+[    1.732234]     TERM=linux
+[    1.740194] systemd[1]: systemd 252-67.el9.rocky.0.1 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN -IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[    1.744201] systemd[1]: Detected virtualization kvm.
+[    1.744807] systemd[1]: Detected architecture x86-64.
+[    1.745449] systemd[1]: Running in initrd.
+[    1.747479] systemd[1]: No hostname configured, using default hostname.
+[    1.748424] systemd[1]: Hostname set to <localhost>.
+[    1.749085] systemd[1]: Initializing machine ID from random generator.
+[    1.824525] systemd[1]: Queued start job for default target Initrd Default Target.
+[    1.837561] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[    1.840358] systemd[1]: Reached target Local Encrypted Volumes.
+[    1.842475] systemd[1]: Reached target Initrd /usr File System.
+[    1.844560] systemd[1]: Reached target Local File Systems.
+[    1.846503] systemd[1]: Reached target Path Units.
+[    1.848219] systemd[1]: Reached target Slice Units.
+[    1.849971] systemd[1]: Reached target Swaps.
+[    1.851560] systemd[1]: Reached target Timer Units.
+[    1.853382] systemd[1]: Listening on D-Bus System Message Bus Socket.
+[    1.855677] systemd[1]: Listening on Journal Socket (/dev/log).
+[    1.857832] systemd[1]: Listening on Journal Socket.
+[    1.859687] systemd[1]: Listening on udev Control Socket.
+[    1.861640] systemd[1]: Listening on udev Kernel Socket.
+[    1.863535] systemd[1]: Reached target Socket Units.
+[    1.875204] systemd[1]: Starting Create List of Static Device Nodes...
+[    1.878842] systemd[1]: Starting Journal Service...
+[    1.881572] systemd[1]: Starting Load Kernel Modules...
+[    1.884088] systemd[1]: Starting Create System Users...
+[    1.887402] systemd[1]: Starting Setup Virtual Console...
+[    1.890208] systemd[1]: Finished Create List of Static Device Nodes.
+[    1.891692] i2c_dev: module verification failed: signature and/or required key missing - tainting kernel
+[    1.893996] i2c_dev: i2c /dev entries driver
+[    1.895610] systemd[1]: Finished Load Kernel Modules.
+[    1.900132] systemd[1]: Finished Create System Users.
+[    1.902247] systemd[1]: Started Journal Service.
+[    2.182301] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[    2.187442] device-mapper: uevent: version 1.0.3
+[    2.189811] device-mapper: ioctl: 4.47.0-ioctl (2022-07-28) initialised: dm-devel@redhat.com
+[    2.317088] RPC: Registered named UNIX socket transport module.
+[    2.317934] RPC: Registered udp transport module.
+[    2.318577] RPC: Registered tcp transport module.
+[    2.319223] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.741613] virtio_blk virtio2: 4/0/0 default/read/poll queues
+[    2.746354] virtio_blk virtio2: [vda] 41943040 512-byte logical blocks (21.5 GB/20.0 GiB)
+[    2.756919]  vda: vda1 vda2 vda3 vda4
+[    2.758253] virtio_blk virtio3: 4/0/0 default/read/poll queues
+[    2.762302] virtio_blk virtio3: [vdb] 732 512-byte logical blocks (375 kB/366 KiB)
+[    2.796453] fuse: init (API version 7.38)
+[    2.803004] ACPI: bus type drm_connector registered
+[    2.812403] virtiofs virtio0: virtio_fs_setup_dax: No cache capability
+[    2.814058] libata version 3.00 loaded.
+[    2.830942] ahci 0000:00:1f.2: version 3.0
+[    2.831321] ACPI: \_SB_.GSIA: Enabled at IRQ 16
+[    2.834425] ahci 0000:00:1f.2: AHCI 0001.0000 32 slots 6 ports 1.5 Gbps 0x3f impl SATA mode
+[    2.836380] ahci 0000:00:1f.2: flags: 64bit ncq only 
+[    2.840205] scsi host0: ahci
+[    2.842789] scsi host1: ahci
+[    2.851986] scsi host2: ahci
+[    2.852923] scsi host3: ahci
+[    2.854100] scsi host4: ahci
+[    2.854959] scsi host5: ahci
+[    2.855726] ata1: SATA max UDMA/133 abar m4096@0xfeb95000 port 0xfeb95100 irq 40
+[    2.857318] ata2: SATA max UDMA/133 abar m4096@0xfeb95000 port 0xfeb95180 irq 40
+[    2.858874] ata3: SATA max UDMA/133 abar m4096@0xfeb95000 port 0xfeb95200 irq 40
+[    2.860438] ata4: SATA max UDMA/133 abar m4096@0xfeb95000 port 0xfeb95280 irq 40
+[    2.861969] ata5: SATA max UDMA/133 abar m4096@0xfeb95000 port 0xfeb95300 irq 40
+[    2.863531] ata6: SATA max UDMA/133 abar m4096@0xfeb95000 port 0xfeb95380 irq 40
+[    2.871623] bochs-drm 0000:00:01.0: vgaarb: deactivate vga console
+[    2.881718] Console: switching to colour dummy device 80x25
+[    2.883074] [drm] Found bochs VGA, ID 0xb0c5.
+[    2.883945] [drm] Framebuffer size 16384 kB @ 0xfd000000, mmio @ 0xfeb90000.
+[    2.886962] [drm] Found EDID data blob.
+[    2.887905] [drm] Initialized bochs-drm 1.0.0 20130925 for 0000:00:01.0 on minor 0
+[    2.890082] fbcon: bochs-drmdrmfb (fb0) is primary device
+[    2.896270] Console: switching to colour frame buffer device 160x50
+[    2.899667] bochs-drm 0000:00:01.0: [drm] fb0: bochs-drmdrmfb frame buffer device
+[    3.173443] ata6: SATA link down (SStatus 0 SControl 300)
+[    3.174600] ata4: SATA link down (SStatus 0 SControl 300)
+[    3.175626] ata2: SATA link down (SStatus 0 SControl 300)
+[    3.176655] ata5: SATA link down (SStatus 0 SControl 300)
+[    3.177736] ata1: SATA link down (SStatus 0 SControl 300)
+[    3.178805] ata3: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+[    3.179831] ata3.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+[    3.180726] ata3.00: applying bridge limits
+[    3.181564] ata3.00: configured for UDMA/100
+[    3.182638] scsi 2:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+[    3.221609] scsi 2:0:0:0: Attached scsi generic sg0 type 5
+[    3.252311] sr 2:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+[    3.293208] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    3.314516] sr 2:0:0:0: Attached scsi CD-ROM sr0
+[    4.010583] SGI XFS with ACLs, security attributes, scrub, quota, no debug enabled
+[    4.037532] XFS (vda4): Mounting V5 Filesystem
+[    4.057784] XFS (vda4): Ending clean mount
+[    4.315102] systemd-journald[255]: Received SIGTERM from PID 1 (systemd).
+[    4.432417] audit: type=1404 audit(1794075454.520:2): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295 enabled=1 old-enabled=1 lsm=selinux res=1
+[    4.502286] SELinux:  Class user_namespace not defined in policy.
+[    4.504047] SELinux: the above unknown classes and permissions will be allowed
+[    4.513103] SELinux:  policy capability network_peer_controls=1
+[    4.514834] SELinux:  policy capability open_perms=1
+[    4.516320] SELinux:  policy capability extended_socket_class=1
+[    4.518004] SELinux:  policy capability always_check_network=0
+[    4.519676] SELinux:  policy capability cgroup_seclabel=1
+[    4.521156] SELinux:  policy capability nnp_nosuid_transition=1
+[    4.522718] SELinux:  policy capability genfs_seclabel_symlinks=1
+[    4.524341] SELinux:  policy capability ioctl_skip_cloexec=0
+[    4.583809] audit: type=1403 audit(1794075454.671:3): auid=4294967295 ses=4294967295 lsm=selinux res=1
+[    4.590449] systemd[1]: Successfully loaded SELinux policy in 157.459ms.
+[    4.760007] systemd[1]: Relabelled /dev, /dev/shm, /run, /sys/fs/cgroup in 143.008ms.
+[    4.767317] systemd[1]: systemd 252-67.el9.rocky.0.1 running in system mode (+PAM +AUDIT +SELINUX -APPARMOR +IMA +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN -IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[    4.771499] systemd[1]: Detected virtualization kvm.
+[    4.772178] systemd[1]: Detected architecture x86-64.
+[    4.777595] systemd[1]: Hostname set to <node-vm>.
+[    4.832148] systemd-rc-local-generator[623]: /etc/rc.d/rc.local is not marked executable, skipping.
+[    5.506756] systemd[1]: initrd-switch-root.service: Deactivated successfully.
+[    5.507627] systemd[1]: Stopped Switch Root.
+[    5.509153] systemd[1]: systemd-journald.service: Scheduled restart job, restart counter is at 1.
+[    5.510269] systemd[1]: Created slice Slice /system/getty.
+[    5.511855] systemd[1]: Created slice Slice /system/serial-getty.
+[    5.513972] systemd[1]: Created slice Slice /system/sshd-keygen.
+[    5.515768] systemd[1]: Created slice User and Session Slice.
+[    5.517379] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[    5.519373] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[    5.521382] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[    5.523479] systemd[1]: Reached target Local Encrypted Volumes.
+[    5.524900] systemd[1]: Stopped target Switch Root.
+[    5.526098] systemd[1]: Stopped target Initrd File Systems.
+[    5.527420] systemd[1]: Stopped target Initrd Root File System.
+[    5.528805] systemd[1]: Reached target Local Integrity Protected Volumes.
+[    5.530436] systemd[1]: Reached target Path Units.
+[    5.531605] systemd[1]: Reached target rpc_pipefs.target.
+[    5.532889] systemd[1]: Reached target Slice Units.
+[    5.534134] systemd[1]: Reached target Swaps.
+[    5.535305] systemd[1]: Reached target Local Verity Protected Volumes.
+[    5.548484] systemd[1]: Listening on RPCbind Server Activation Socket.
+[    5.550191] systemd[1]: Reached target RPC Port Mapper.
+[    5.552897] systemd[1]: Listening on Process Core Dump Socket.
+[    5.554538] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[    5.557536] systemd[1]: Listening on udev Control Socket.
+[    5.559080] systemd[1]: Listening on udev Kernel Socket.
+[    5.561253] systemd[1]: Mounting Huge Pages File System...
+[    5.563635] systemd[1]: Mounting POSIX Message Queue File System...
+[    5.566573] systemd[1]: Mounting Kernel Debug File System...
+[    5.569363] systemd[1]: Mounting Kernel Trace File System...
+[    5.571178] systemd[1]: Kernel Module supporting RPCSEC_GSS was skipped because of an unmet condition check (ConditionPathExists=/etc/krb5.keytab).
+[    5.574572] systemd[1]: Starting Create List of Static Device Nodes...
+[    5.577518] systemd[1]: Starting Load Kernel Module configfs...
+[    5.580377] systemd[1]: Starting Load Kernel Module drm...
+[    5.583737] systemd[1]: Starting Load Kernel Module efi_pstore...
+[    5.587183] systemd[1]: Starting Load Kernel Module fuse...
+[    5.590547] systemd[1]: Starting Read and set NIS domainname from /etc/sysconfig/network...
+[    5.594107] systemd[1]: Stopped Journal Service.
+[    5.598247] systemd[1]: Starting Journal Service...
+[    5.601534] systemd[1]: Starting Load Kernel Modules...
+[    5.605035] systemd[1]: Starting Generate network units from Kernel command line...
+[    5.608076] systemd[1]: TPM2 PCR Machine ID Measurement was skipped because of an unmet condition check (ConditionPathExists=/sys/firmware/efi/efivars/StubPcrKernelImage-4a67b082-0a4c-41cf-b6c7-440b29bb8c4f).
+[    5.612611] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    5.615465] systemd[1]: Repartition Root Disk was skipped because no trigger condition checks were met.
+[    5.618199] systemd[1]: Starting Coldplug All udev Devices...
+[    5.622038] systemd[1]: Started Journal Service.
+[    5.670081] systemd-journald[669]: Received client request to flush runtime journal.
+[    5.723357] SELinux: (dev virtiofs, type virtiofs) has no security xattr handler
+[    5.724690] SELinux: (dev virtiofs, type virtiofs) falling back to genfs
+[    5.848060] XFS (vda3): Mounting V5 Filesystem
+[    5.869864] XFS (vda3): Ending clean mount
+[    6.012571] lpc_ich 0000:00:1f.0: I/O space for GPIO uninitialized
+[    6.015447] i801_smbus 0000:00:1f.3: SMBus using PCI interrupt
+[    6.018149] parport_pc 00:02: reported by Plug and Play ACPI
+[    6.020327] parport0: PC-style at 0x378, irq 7 [PCSPP,TRISTATE]
+[    6.031270] input: PC Speaker as /devices/platform/pcspkr/input/input5
+[    6.032636] i2c i2c-0: 1/1 memory slots populated (from DMI)
+[    6.033405] i2c i2c-0: Memory type 0x07 not supported yet, not instantiating SPD
+[    6.057300] RAPL PMU: API unit is 2^-32 Joules, 0 fixed counters, 10737418240 ms ovfl timer
+[    6.065436] iTCO_vendor_support: vendor-support=0
+[    6.070587] iTCO_wdt iTCO_wdt.1.auto: Found a ICH9 TCO device (Version=2, TCOBASE=0x0660)
+[    6.072359] iTCO_wdt iTCO_wdt.1.auto: initialized. heartbeat=30 sec (nowayout=0)
+[    6.171426] ppdev: user-space parallel port driver
+[    9.160958] ISO 9660 Extensions: Microsoft Joliet Level 3
+[    9.161836] ISO 9660 Extensions: RRIP_1991A
+[   17.740499] SELinux: (dev virtiofs, type virtiofs) has no security xattr handler
+[   17.742117] SELinux: (dev virtiofs, type virtiofs) falling back to genfs
+[   23.737089] PEFILE: Unsigned PE binary
+[   50.525222] SELinux: (dev virtiofs, type virtiofs) has no security xattr handler
+[   50.529195] SELinux: (dev virtiofs, type virtiofs) falling back to genfs
+[ 2335.887492] INFO: task fn_anonymous:5346 blocked for more than 122 seconds.
+[ 2335.891795]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2335.896201] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2335.901045] task:fn_anonymous    state:D stack:0     pid:5346  ppid:1      flags:0x00000002
+[ 2335.905625] Call Trace:
+[ 2335.907074]  <TASK>
+[ 2335.908356]  __schedule+0x1b9/0x540
+[ 2335.910440]  schedule+0x5d/0xd0
+[ 2335.912294]  io_schedule+0x42/0x70
+[ 2335.914271]  folio_wait_bit_common+0x120/0x360
+[ 2335.916796]  ? gup_pmd_range.constprop.0+0xcb/0x200
+[ 2335.919533]  ? filemap_alloc_folio+0x30/0x30
+[ 2335.921983]  invalidate_inode_pages2_range+0x12f/0x380
+[ 2335.924861]  fuse_reverse_inval_inode+0x93/0xc0 [fuse]
+[ 2335.927751]  fuse_notify+0x3b6/0x520 [fuse]
+[ 2335.930110]  ? iov_iter_get_pages2+0x19/0x30
+[ 2335.932589]  fuse_dev_do_write+0x305/0x4e0 [fuse]
+[ 2335.935211]  fuse_dev_write+0x50/0x80 [fuse]
+[ 2335.937694]  do_iter_readv_writev+0xe2/0x140
+[ 2335.940105]  do_iter_write+0x81/0x150
+[ 2335.942213]  vfs_writev+0xae/0x1a0
+[ 2335.944175]  ? handle_mm_fault+0xb2/0x2a0
+[ 2335.946458]  ? __fget_light+0xa4/0x130
+[ 2335.948607]  do_writev+0x6f/0x120
+[ 2335.950523]  do_syscall_64+0x35/0x90
+[ 2335.952612]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2335.955177] RIP: 0033:0x7ff051d04f4d
+[ 2335.956954] RSP: 002b:00007ff03effb050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[ 2335.960565] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007ff051d04f4d
+[ 2335.963983] RDX: 0000000000000002 RSI: 00007ff03effb0d0 RDI: 0000000000000016
+[ 2335.967538] RBP: 00007ff03effb0d0 R08: 0000000000000000 R09: 0000000000000000
+[ 2335.970920] R10: 0000000000000001 R11: 0000000000000293 R12: 000055ed27887ce0
+[ 2335.974292] R13: 000001000000098d R14: 000055ed27777d70 R15: 000055ecff90d0cb
+[ 2335.977677]  </TASK>
+[ 2335.978851] INFO: task fallocate:5786 blocked for more than 122 seconds.
+[ 2335.981978]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2335.985335] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2335.988995] task:fallocate       state:D stack:0     pid:5786  ppid:1      flags:0x00004002
+[ 2335.992926] Call Trace:
+[ 2335.994181]  <TASK>
+[ 2335.995350]  __schedule+0x1b9/0x540
+[ 2335.997102]  schedule+0x5d/0xd0
+[ 2335.998715]  io_schedule+0x42/0x70
+[ 2336.000389]  folio_wait_bit_common+0x120/0x360
+[ 2336.002620]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.004712]  __filemap_get_folio+0x29b/0x330
+[ 2336.006797]  truncate_inode_pages_range+0x179/0x440
+[ 2336.009189]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.011592]  ? __switch_to+0x112/0x410
+[ 2336.013003]  ? preempt_count_add+0x4d/0xa0
+[ 2336.014400]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.015988]  ? preempt_count_add+0x4d/0xa0
+[ 2336.017376]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.018947]  ? finish_wait+0x41/0x90
+[ 2336.020191]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.021635]  ? preempt_count_add+0x4d/0xa0
+[ 2336.022766]  ? up_read+0x38/0x70
+[ 2336.023643]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.024786]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.026049]  vfs_fallocate+0x14b/0x350
+[ 2336.027043]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.028104]  do_syscall_64+0x35/0x90
+[ 2336.029055]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.030259] RIP: 0033:0x7fdb91b03e9a
+[ 2336.031001] RSP: 002b:00007ffc067e7998 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.032518] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fdb91b03e9a
+[ 2336.033943] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.035365] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.036803] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffc067e7c08
+[ 2336.038230] R13: 000056509e8dc12c R14: 000056509e8ddac0 R15: 0000000000000000
+[ 2336.039556]  </TASK>
+[ 2336.039949] INFO: task fallocate:5815 blocked for more than 123 seconds.
+[ 2336.041069]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.042265] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.043567] task:fallocate       state:D stack:0     pid:5815  ppid:1      flags:0x00004002
+[ 2336.044943] Call Trace:
+[ 2336.045385]  <TASK>
+[ 2336.045773]  __schedule+0x1b9/0x540
+[ 2336.046390]  schedule+0x5d/0xd0
+[ 2336.046945]  io_schedule+0x42/0x70
+[ 2336.047555]  folio_wait_bit_common+0x120/0x360
+[ 2336.048268]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.048897]  __filemap_get_folio+0x29b/0x330
+[ 2336.049540]  truncate_inode_pages_range+0x179/0x440
+[ 2336.050247]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.050957]  ? __switch_to+0x112/0x410
+[ 2336.051527]  ? __slab_free+0x9e/0x290
+[ 2336.052066]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.052797]  ? preempt_count_add+0x4d/0xa0
+[ 2336.053399]  ? up_read+0x38/0x70
+[ 2336.053890]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.054545]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.055263]  vfs_fallocate+0x14b/0x350
+[ 2336.055817]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.056425]  do_syscall_64+0x35/0x90
+[ 2336.056952]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.057601] RIP: 0033:0x7f07bf903e9a
+[ 2336.058057] RSP: 002b:00007fff690fd1f8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.059001] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f07bf903e9a
+[ 2336.059903] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.060803] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.061697] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff690fd468
+[ 2336.062596] R13: 000055563bb3812c R14: 000055563bb39ac0 R15: 0000000000000000
+[ 2336.063494]  </TASK>
+[ 2336.063786] INFO: task fallocate:5845 blocked for more than 123 seconds.
+[ 2336.064627]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.065607] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.066513] task:fallocate       state:D stack:0     pid:5845  ppid:1      flags:0x00004002
+[ 2336.067425] Call Trace:
+[ 2336.067711]  <TASK>
+[ 2336.067959]  __schedule+0x1b9/0x540
+[ 2336.068364]  schedule+0x5d/0xd0
+[ 2336.068736]  io_schedule+0x42/0x70
+[ 2336.069120]  folio_wait_bit_common+0x120/0x360
+[ 2336.069633]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.070114]  __filemap_get_folio+0x29b/0x330
+[ 2336.070612]  truncate_inode_pages_range+0x179/0x440
+[ 2336.071149]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.071706]  ? __switch_to+0x112/0x410
+[ 2336.072126]  ? preempt_count_add+0x4d/0xa0
+[ 2336.072601]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.073114]  ? preempt_count_add+0x4d/0xa0
+[ 2336.073589]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.074102]  ? finish_wait+0x41/0x90
+[ 2336.074523]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.075060]  ? preempt_count_add+0x4d/0xa0
+[ 2336.075486]  ? up_read+0x38/0x70
+[ 2336.075818]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.076267]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.076769]  vfs_fallocate+0x14b/0x350
+[ 2336.077145]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.077570]  do_syscall_64+0x35/0x90
+[ 2336.077935]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.078456] RIP: 0033:0x7f2ca1f03e9a
+[ 2336.078819] RSP: 002b:00007ffd45351068 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.079572] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f2ca1f03e9a
+[ 2336.080279] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.080982] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.081690] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffd453512d8
+[ 2336.082392] R13: 000055a200dc212c R14: 000055a200dc3ac0 R15: 0000000000000000
+[ 2336.083098]  </TASK>
+[ 2336.083338] INFO: task fallocate:5875 blocked for more than 123 seconds.
+[ 2336.084000]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.084647] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.085340] task:fallocate       state:D stack:0     pid:5875  ppid:1      flags:0x00004002
+[ 2336.086082] Call Trace:
+[ 2336.086324]  <TASK>
+[ 2336.086540]  __schedule+0x1b9/0x540
+[ 2336.086866]  schedule+0x5d/0xd0
+[ 2336.087162]  io_schedule+0x42/0x70
+[ 2336.087493]  folio_wait_bit_common+0x120/0x360
+[ 2336.087921]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.088357]  __filemap_get_folio+0x29b/0x330
+[ 2336.088794]  truncate_inode_pages_range+0x179/0x440
+[ 2336.089289]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.089769]  ? __switch_to+0x112/0x410
+[ 2336.090160]  ? __slab_free+0x9e/0x290
+[ 2336.090545]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.091038]  ? preempt_count_add+0x4d/0xa0
+[ 2336.091442]  ? up_read+0x38/0x70
+[ 2336.091759]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.092173]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.092654]  vfs_fallocate+0x14b/0x350
+[ 2336.093021]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.093403]  do_syscall_64+0x35/0x90
+[ 2336.093741]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.094242] RIP: 0033:0x7fdb47b03e9a
+[ 2336.094602] RSP: 002b:00007ffdec916aa8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.095330] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fdb47b03e9a
+[ 2336.095999] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.096677] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.097356] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffdec916d18
+[ 2336.098030] R13: 00005562d2c4812c R14: 00005562d2c49ac0 R15: 0000000000000000
+[ 2336.098720]  </TASK>
+[ 2336.098955] INFO: task fallocate:5906 blocked for more than 123 seconds.
+[ 2336.099574]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.100281] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.101055] task:fallocate       state:D stack:0     pid:5906  ppid:1      flags:0x00004002
+[ 2336.101829] Call Trace:
+[ 2336.102084]  <TASK>
+[ 2336.102316]  __schedule+0x1b9/0x540
+[ 2336.102679]  schedule+0x5d/0xd0
+[ 2336.103023]  io_schedule+0x42/0x70
+[ 2336.103396]  folio_wait_bit_common+0x120/0x360
+[ 2336.103879]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.104307]  __filemap_get_folio+0x29b/0x330
+[ 2336.104735]  truncate_inode_pages_range+0x179/0x440
+[ 2336.105191]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.105649]  ? __switch_to+0x112/0x410
+[ 2336.106016]  ? __slab_free+0x9e/0x290
+[ 2336.106383]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.106880]  ? preempt_count_add+0x4d/0xa0
+[ 2336.107279]  ? up_read+0x38/0x70
+[ 2336.107605]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.108026]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.108497]  vfs_fallocate+0x14b/0x350
+[ 2336.108874]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.109324]  do_syscall_64+0x35/0x90
+[ 2336.109727]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.110258] RIP: 0033:0x7fe756503e9a
+[ 2336.110629] RSP: 002b:00007fffed8f7cf8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.111414] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fe756503e9a
+[ 2336.112141] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.112891] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.113553] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fffed8f7f68
+[ 2336.114236] R13: 0000561f954c212c R14: 0000561f954c3ac0 R15: 0000000000000000
+[ 2336.114932]  </TASK>
+[ 2336.115149] INFO: task fallocate:5935 blocked for more than 123 seconds.
+[ 2336.115770]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.116430] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.117178] task:fallocate       state:D stack:0     pid:5935  ppid:1      flags:0x00004002
+[ 2336.118025] Call Trace:
+[ 2336.118285]  <TASK>
+[ 2336.118510]  __schedule+0x1b9/0x540
+[ 2336.118870]  schedule+0x5d/0xd0
+[ 2336.119192]  io_schedule+0x42/0x70
+[ 2336.119553]  folio_wait_bit_common+0x120/0x360
+[ 2336.119999]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.120445]  __filemap_get_folio+0x29b/0x330
+[ 2336.120885]  truncate_inode_pages_range+0x179/0x440
+[ 2336.121361]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.121843]  ? __switch_to+0x112/0x410
+[ 2336.122208]  ? preempt_count_add+0x4d/0xa0
+[ 2336.122622]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.123070]  ? preempt_count_add+0x4d/0xa0
+[ 2336.123485]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.123952]  ? finish_wait+0x41/0x90
+[ 2336.124329]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.124850]  ? preempt_count_add+0x4d/0xa0
+[ 2336.125256]  ? up_read+0x38/0x70
+[ 2336.125587]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.126020]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.126490]  vfs_fallocate+0x14b/0x350
+[ 2336.126842]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.127227]  do_syscall_64+0x35/0x90
+[ 2336.127572]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.128063] RIP: 0033:0x7febdbd03e9a
+[ 2336.128441] RSP: 002b:00007fff2dce3fb8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.129168] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007febdbd03e9a
+[ 2336.129862] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.130588] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.131329] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff2dce4228
+[ 2336.132075] R13: 000055f4f8f2112c R14: 000055f4f8f22ac0 R15: 0000000000000000
+[ 2336.132820]  </TASK>
+[ 2336.133095] INFO: task fallocate:5965 blocked for more than 123 seconds.
+[ 2336.133839]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.134572] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.135329] task:fallocate       state:D stack:0     pid:5965  ppid:1      flags:0x00004002
+[ 2336.136104] Call Trace:
+[ 2336.136357]  <TASK>
+[ 2336.136580]  __schedule+0x1b9/0x540
+[ 2336.136919]  schedule+0x5d/0xd0
+[ 2336.137240]  io_schedule+0x42/0x70
+[ 2336.137582]  folio_wait_bit_common+0x120/0x360
+[ 2336.138025]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.138478]  __filemap_get_folio+0x29b/0x330
+[ 2336.138899]  truncate_inode_pages_range+0x179/0x440
+[ 2336.139384]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.139882]  ? __switch_to+0x112/0x410
+[ 2336.140270]  ? preempt_count_add+0x4d/0xa0
+[ 2336.140689]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.141148]  ? preempt_count_add+0x4d/0xa0
+[ 2336.141577]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.142049]  ? finish_wait+0x41/0x90
+[ 2336.142417]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.142915]  ? preempt_count_add+0x4d/0xa0
+[ 2336.143331]  ? up_read+0x38/0x70
+[ 2336.143674]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.144117]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.144626]  vfs_fallocate+0x14b/0x350
+[ 2336.145013]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.145417]  do_syscall_64+0x35/0x90
+[ 2336.145767]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.146301] RIP: 0033:0x7f401b703e9a
+[ 2336.146682] RSP: 002b:00007ffed62ec018 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.147451] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f401b703e9a
+[ 2336.148420] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.149514] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.150404] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffed62ec288
+[ 2336.151294] R13: 000055c97ea1412c R14: 000055c97ea15ac0 R15: 0000000000000000
+[ 2336.152242]  </TASK>
+[ 2336.152551] INFO: task fallocate:5995 blocked for more than 123 seconds.
+[ 2336.153404]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.154306] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.155198] task:fallocate       state:D stack:0     pid:5995  ppid:1      flags:0x00004002
+[ 2336.156077] Call Trace:
+[ 2336.156336]  <TASK>
+[ 2336.156565]  __schedule+0x1b9/0x540
+[ 2336.156928]  schedule+0x5d/0xd0
+[ 2336.157267]  io_schedule+0x42/0x70
+[ 2336.157623]  folio_wait_bit_common+0x120/0x360
+[ 2336.158086]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.158546]  __filemap_get_folio+0x29b/0x330
+[ 2336.158996]  truncate_inode_pages_range+0x179/0x440
+[ 2336.159484]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.159979]  ? __switch_to+0x112/0x410
+[ 2336.160366]  ? __slab_free+0x9e/0x290
+[ 2336.160748]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.161253]  ? preempt_count_add+0x4d/0xa0
+[ 2336.161662]  ? up_read+0x38/0x70
+[ 2336.161989]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.162432]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.162912]  vfs_fallocate+0x14b/0x350
+[ 2336.163289]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.163697]  do_syscall_64+0x35/0x90
+[ 2336.164052]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.164556] RIP: 0033:0x7f861df03e9a
+[ 2336.164921] RSP: 002b:00007fff33380118 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.165618] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f861df03e9a
+[ 2336.166318] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.167046] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.167791] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff33380388
+[ 2336.168484] R13: 000055f83e56912c R14: 000055f83e56aac0 R15: 0000000000000000
+[ 2336.169150]  </TASK>
+[ 2336.169381] INFO: task fallocate:6025 blocked for more than 123 seconds.
+[ 2336.170027]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.170727] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.171480] task:fallocate       state:D stack:0     pid:6025  ppid:1      flags:0x00004002
+[ 2336.172257] Call Trace:
+[ 2336.172511]  <TASK>
+[ 2336.172723]  __schedule+0x1b9/0x540
+[ 2336.173106]  schedule+0x5d/0xd0
+[ 2336.173468]  io_schedule+0x42/0x70
+[ 2336.173851]  folio_wait_bit_common+0x120/0x360
+[ 2336.174353]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.174843]  __filemap_get_folio+0x29b/0x330
+[ 2336.175311]  truncate_inode_pages_range+0x179/0x440
+[ 2336.175819]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.176324]  ? __switch_to+0x112/0x410
+[ 2336.176722]  ? preempt_count_add+0x4d/0xa0
+[ 2336.177133]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.177592]  ? preempt_count_add+0x4d/0xa0
+[ 2336.177984]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2336.178441]  ? finish_wait+0x41/0x90
+[ 2336.178786]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.179300]  ? preempt_count_add+0x4d/0xa0
+[ 2336.179722]  ? up_read+0x38/0x70
+[ 2336.180062]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.180506]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.181004]  vfs_fallocate+0x14b/0x350
+[ 2336.181393]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.181829]  do_syscall_64+0x35/0x90
+[ 2336.182202]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.182733] RIP: 0033:0x7fe106f03e9a
+[ 2336.183109] RSP: 002b:00007ffde147cce8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.183841] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fe106f03e9a
+[ 2336.184585] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.185299] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.186004] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffde147cf58
+[ 2336.186717] R13: 000056352bf0012c R14: 000056352bf01ac0 R15: 0000000000000000
+[ 2336.187428]  </TASK>
+[ 2336.187659] INFO: task fallocate:6055 blocked for more than 123 seconds.
+[ 2336.188331]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.189037] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.189809] task:fallocate       state:D stack:0     pid:6055  ppid:1      flags:0x00004002
+[ 2336.190614] Call Trace:
+[ 2336.190858]  <TASK>
+[ 2336.191079]  __schedule+0x1b9/0x540
+[ 2336.191424]  schedule+0x5d/0xd0
+[ 2336.191730]  io_schedule+0x42/0x70
+[ 2336.192076]  folio_wait_bit_common+0x120/0x360
+[ 2336.192527]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.192958]  __filemap_get_folio+0x29b/0x330
+[ 2336.193374]  truncate_inode_pages_range+0x179/0x440
+[ 2336.193863]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.194417]  ? __switch_to+0x112/0x410
+[ 2336.194857]  ? __slab_free+0x9e/0x290
+[ 2336.195248]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.195763]  ? preempt_count_add+0x4d/0xa0
+[ 2336.196182]  ? up_read+0x38/0x70
+[ 2336.196540]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.197034]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.197667]  vfs_fallocate+0x14b/0x350
+[ 2336.198093]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.198502]  do_syscall_64+0x35/0x90
+[ 2336.198850]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.199335] RIP: 0033:0x7fdff8503e9a
+[ 2336.199689] RSP: 002b:00007fff13223618 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.200429] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fdff8503e9a
+[ 2336.201133] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.201856] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.202556] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff13223888
+[ 2336.203282] R13: 000055722562d12c R14: 000055722562eac0 R15: 0000000000000000
+[ 2336.204009]  </TASK>
+[ 2336.204233] INFO: task fallocate:6085 blocked for more than 123 seconds.
+[ 2336.204849]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.205610] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.206389] task:fallocate       state:D stack:0     pid:6085  ppid:1      flags:0x00004002
+[ 2336.207190] Call Trace:
+[ 2336.207457]  <TASK>
+[ 2336.207679]  __schedule+0x1b9/0x540
+[ 2336.208098]  schedule+0x5d/0xd0
+[ 2336.208469]  io_schedule+0x42/0x70
+[ 2336.208829]  folio_wait_bit_common+0x120/0x360
+[ 2336.209297]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.209750]  __filemap_get_folio+0x29b/0x330
+[ 2336.210244]  truncate_inode_pages_range+0x179/0x440
+[ 2336.210791]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.211287]  ? __switch_to+0x112/0x410
+[ 2336.211657]  ? __slab_free+0x9e/0x290
+[ 2336.212011]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2336.212499]  ? preempt_count_add+0x4d/0xa0
+[ 2336.212911]  ? up_read+0x38/0x70
+[ 2336.213228]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.213646]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.214134]  vfs_fallocate+0x14b/0x350
+[ 2336.214531]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.214951]  do_syscall_64+0x35/0x90
+[ 2336.215306]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.215791] RIP: 0033:0x7fd793903e9a
+[ 2336.216176] RSP: 002b:00007fff9228faa8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.216972] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fd793903e9a
+[ 2336.217684] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.218480] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.219231] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff9228fd18
+[ 2336.219932] R13: 000055c27a17412c R14: 000055c27a175ac0 R15: 0000000000000000
+[ 2336.220643]  </TASK>
+[ 2336.220877] INFO: task fallocate:6115 blocked for more than 123 seconds.
+[ 2336.221545]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2336.222247] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2336.223010] task:fallocate       state:D stack:0     pid:6115  ppid:1      flags:0x00004002
+[ 2336.223831] Call Trace:
+[ 2336.224089]  <TASK>
+[ 2336.224322]  __schedule+0x1b9/0x540
+[ 2336.224687]  schedule+0x5d/0xd0
+[ 2336.225012]  io_schedule+0x42/0x70
+[ 2336.225367]  folio_wait_bit_common+0x120/0x360
+[ 2336.225822]  ? filemap_alloc_folio+0x30/0x30
+[ 2336.226264]  __filemap_get_folio+0x29b/0x330
+[ 2336.226700]  truncate_inode_pages_range+0x179/0x440
+[ 2336.227183]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2336.227684]  ? __switch_to+0x112/0x410
+[ 2336.228057]  ? sysvec_apic_timer_interrupt+0xaf/0xd0
+[ 2336.228519]  ? asm_sysvec_apic_timer_interrupt+0x16/0x20
+[ 2336.228997]  ? preempt_count_add+0x4d/0xa0
+[ 2336.229378]  ? up_read+0x38/0x70
+[ 2336.229688]  ? unmap_mapping_range+0x7e/0x140
+[ 2336.230131]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2336.230655]  vfs_fallocate+0x14b/0x350
+[ 2336.231041]  __x64_sys_fallocate+0x3c/0x70
+[ 2336.231434]  do_syscall_64+0x35/0x90
+[ 2336.231776]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2336.232305] RIP: 0033:0x7fa88d503e9a
+[ 2336.232685] RSP: 002b:00007ffc26e1b058 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2336.233410] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fa88d503e9a
+[ 2336.234084] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2336.234776] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2336.235469] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffc26e1b2c8
+[ 2336.236150] R13: 0000560f4e5b212c R14: 0000560f4e5b3ac0 R15: 0000000000000000
+[ 2336.236845]  </TASK>
+[ 2458.766337] INFO: task fn_anonymous:5346 blocked for more than 245 seconds.
+[ 2458.770720]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2458.775004] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2458.779745] task:fn_anonymous    state:D stack:0     pid:5346  ppid:1      flags:0x00000002
+[ 2458.784605] Call Trace:
+[ 2458.786226]  <TASK>
+[ 2458.787666]  __schedule+0x1b9/0x540
+[ 2458.789892]  schedule+0x5d/0xd0
+[ 2458.791890]  io_schedule+0x42/0x70
+[ 2458.794025]  folio_wait_bit_common+0x120/0x360
+[ 2458.796788]  ? gup_pmd_range.constprop.0+0xcb/0x200
+[ 2458.799738]  ? filemap_alloc_folio+0x30/0x30
+[ 2458.802431]  invalidate_inode_pages2_range+0x12f/0x380
+[ 2458.805166]  fuse_reverse_inval_inode+0x93/0xc0 [fuse]
+[ 2458.807823]  fuse_notify+0x3b6/0x520 [fuse]
+[ 2458.810120]  ? iov_iter_get_pages2+0x19/0x30
+[ 2458.812451]  fuse_dev_do_write+0x305/0x4e0 [fuse]
+[ 2458.814895]  fuse_dev_write+0x50/0x80 [fuse]
+[ 2458.817283]  do_iter_readv_writev+0xe2/0x140
+[ 2458.819587]  do_iter_write+0x81/0x150
+[ 2458.821611]  vfs_writev+0xae/0x1a0
+[ 2458.823527]  ? handle_mm_fault+0xb2/0x2a0
+[ 2458.825689]  ? __fget_light+0xa4/0x130
+[ 2458.827748]  do_writev+0x6f/0x120
+[ 2458.829618]  do_syscall_64+0x35/0x90
+[ 2458.831554]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2458.834243] RIP: 0033:0x7ff051d04f4d
+[ 2458.836203] RSP: 002b:00007ff03effb050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[ 2458.840091] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007ff051d04f4d
+[ 2458.843775] RDX: 0000000000000002 RSI: 00007ff03effb0d0 RDI: 0000000000000016
+[ 2458.847436] RBP: 00007ff03effb0d0 R08: 0000000000000000 R09: 0000000000000000
+[ 2458.851033] R10: 0000000000000001 R11: 0000000000000293 R12: 000055ed27887ce0
+[ 2458.854690] R13: 000001000000098d R14: 000055ed27777d70 R15: 000055ecff90d0cb
+[ 2458.858274]  </TASK>
+[ 2458.859636] INFO: task fallocate:5786 blocked for more than 245 seconds.
+[ 2458.863072]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2458.866697] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2458.870658] task:fallocate       state:D stack:0     pid:5786  ppid:1      flags:0x00004002
+[ 2458.874831] Call Trace:
+[ 2458.876245]  <TASK>
+[ 2458.877550]  __schedule+0x1b9/0x540
+[ 2458.879504]  schedule+0x5d/0xd0
+[ 2458.881283]  io_schedule+0x42/0x70
+[ 2458.883117]  folio_wait_bit_common+0x120/0x360
+[ 2458.885526]  ? filemap_alloc_folio+0x30/0x30
+[ 2458.887818]  __filemap_get_folio+0x29b/0x330
+[ 2458.890095]  truncate_inode_pages_range+0x179/0x440
+[ 2458.892693]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2458.895294]  ? __switch_to+0x112/0x410
+[ 2458.897268]  ? preempt_count_add+0x4d/0xa0
+[ 2458.899126]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2458.900799]  ? preempt_count_add+0x4d/0xa0
+[ 2458.902438]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2458.904100]  ? finish_wait+0x41/0x90
+[ 2458.905488]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2458.907186]  ? preempt_count_add+0x4d/0xa0
+[ 2458.908320]  ? up_read+0x38/0x70
+[ 2458.909264]  ? unmap_mapping_range+0x7e/0x140
+[ 2458.910485]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2458.911791]  vfs_fallocate+0x14b/0x350
+[ 2458.912864]  __x64_sys_fallocate+0x3c/0x70
+[ 2458.913999]  do_syscall_64+0x35/0x90
+[ 2458.915005]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2458.916279] RIP: 0033:0x7fdb91b03e9a
+[ 2458.917065] RSP: 002b:00007ffc067e7998 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2458.918642] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fdb91b03e9a
+[ 2458.920133] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2458.921627] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2458.923112] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffc067e7c08
+[ 2458.924606] R13: 000056509e8dc12c R14: 000056509e8ddac0 R15: 0000000000000000
+[ 2458.925884]  </TASK>
+[ 2458.926397] INFO: task fallocate:5815 blocked for more than 245 seconds.
+[ 2458.927521]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2458.928698] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2458.929966] task:fallocate       state:D stack:0     pid:5815  ppid:1      flags:0x00004002
+[ 2458.931335] Call Trace:
+[ 2458.931753]  <TASK>
+[ 2458.932135]  __schedule+0x1b9/0x540
+[ 2458.932733]  schedule+0x5d/0xd0
+[ 2458.933288]  io_schedule+0x42/0x70
+[ 2458.933865]  folio_wait_bit_common+0x120/0x360
+[ 2458.934626]  ? filemap_alloc_folio+0x30/0x30
+[ 2458.935362]  __filemap_get_folio+0x29b/0x330
+[ 2458.936090]  truncate_inode_pages_range+0x179/0x440
+[ 2458.936900]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2458.937731]  ? __switch_to+0x112/0x410
+[ 2458.938396]  ? __slab_free+0x9e/0x290
+[ 2458.939004]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2458.939840]  ? preempt_count_add+0x4d/0xa0
+[ 2458.940540]  ? up_read+0x38/0x70
+[ 2458.941100]  ? unmap_mapping_range+0x7e/0x140
+[ 2458.941831]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2458.942662]  vfs_fallocate+0x14b/0x350
+[ 2458.943315]  __x64_sys_fallocate+0x3c/0x70
+[ 2458.943989]  do_syscall_64+0x35/0x90
+[ 2458.944611]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2458.945464] RIP: 0033:0x7f07bf903e9a
+[ 2458.946075] RSP: 002b:00007fff690fd1f8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2458.947321] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f07bf903e9a
+[ 2458.948485] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2458.949649] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2458.950813] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff690fd468
+[ 2458.951979] R13: 000055563bb3812c R14: 000055563bb39ac0 R15: 0000000000000000
+[ 2458.953153]  </TASK>
+[ 2458.953549] INFO: task fallocate:5845 blocked for more than 245 seconds.
+[ 2458.954636]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2458.955848] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2458.957126] task:fallocate       state:D stack:0     pid:5845  ppid:1      flags:0x00004002
+[ 2458.958600] Call Trace:
+[ 2458.959023]  <TASK>
+[ 2458.959430]  __schedule+0x1b9/0x540
+[ 2458.960023]  schedule+0x5d/0xd0
+[ 2458.960595]  io_schedule+0x42/0x70
+[ 2458.961185]  folio_wait_bit_common+0x120/0x360
+[ 2458.961939]  ? filemap_alloc_folio+0x30/0x30
+[ 2458.962683]  __filemap_get_folio+0x29b/0x330
+[ 2458.963431]  truncate_inode_pages_range+0x179/0x440
+[ 2458.964260]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2458.965093]  ? __switch_to+0x112/0x410
+[ 2458.965739]  ? preempt_count_add+0x4d/0xa0
+[ 2458.966445]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2458.967224]  ? preempt_count_add+0x4d/0xa0
+[ 2458.967910]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2458.968703]  ? finish_wait+0x41/0x90
+[ 2458.969333]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2458.970169]  ? preempt_count_add+0x4d/0xa0
+[ 2458.970858]  ? up_read+0x38/0x70
+[ 2458.971436]  ? unmap_mapping_range+0x7e/0x140
+[ 2458.972174]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2458.972996]  vfs_fallocate+0x14b/0x350
+[ 2458.973653]  __x64_sys_fallocate+0x3c/0x70
+[ 2458.974358]  do_syscall_64+0x35/0x90
+[ 2458.974959]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2458.975814] RIP: 0033:0x7f2ca1f03e9a
+[ 2458.976442] RSP: 002b:00007ffd45351068 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2458.977685] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f2ca1f03e9a
+[ 2458.978865] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2458.980046] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2458.981215] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffd453512d8
+[ 2458.982398] R13: 000055a200dc212c R14: 000055a200dc3ac0 R15: 0000000000000000
+[ 2458.983574]  </TASK>
+[ 2458.983961] INFO: task fallocate:5875 blocked for more than 245 seconds.
+[ 2458.985060]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2458.986241] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2458.987536] task:fallocate       state:D stack:0     pid:5875  ppid:1      flags:0x00004002
+[ 2458.988895] Call Trace:
+[ 2458.989346]  <TASK>
+[ 2458.989717]  __schedule+0x1b9/0x540
+[ 2458.990333]  schedule+0x5d/0xd0
+[ 2458.990867]  io_schedule+0x42/0x70
+[ 2458.991472]  folio_wait_bit_common+0x120/0x360
+[ 2458.992218]  ? filemap_alloc_folio+0x30/0x30
+[ 2458.992936]  __filemap_get_folio+0x29b/0x330
+[ 2458.993669]  truncate_inode_pages_range+0x179/0x440
+[ 2458.994502]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2458.995331]  ? __switch_to+0x112/0x410
+[ 2458.995960]  ? __slab_free+0x9e/0x290
+[ 2458.996601]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2458.997443]  ? preempt_count_add+0x4d/0xa0
+[ 2458.998132]  ? up_read+0x38/0x70
+[ 2458.998705]  ? unmap_mapping_range+0x7e/0x140
+[ 2458.999454]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2459.000287]  vfs_fallocate+0x14b/0x350
+[ 2459.000911]  __x64_sys_fallocate+0x3c/0x70
+[ 2459.001613]  do_syscall_64+0x35/0x90
+[ 2459.002223]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2459.003071] RIP: 0033:0x7fdb47b03e9a
+[ 2459.003684] RSP: 002b:00007ffdec916aa8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2459.004918] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fdb47b03e9a
+[ 2459.006088] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2459.007270] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2459.008451] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffdec916d18
+[ 2459.009615] R13: 00005562d2c4812c R14: 00005562d2c49ac0 R15: 0000000000000000
+[ 2459.010784]  </TASK>
+[ 2459.011183] INFO: task fallocate:5906 blocked for more than 246 seconds.
+[ 2459.012295]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2459.013473] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2459.014741] task:fallocate       state:D stack:0     pid:5906  ppid:1      flags:0x00004002
+[ 2459.016093] Call Trace:
+[ 2459.016526]  <TASK>
+[ 2459.016889]  __schedule+0x1b9/0x540
+[ 2459.017513]  schedule+0x5d/0xd0
+[ 2459.018055]  io_schedule+0x42/0x70
+[ 2459.018639]  folio_wait_bit_common+0x120/0x360
+[ 2459.019401]  ? filemap_alloc_folio+0x30/0x30
+[ 2459.020123]  __filemap_get_folio+0x29b/0x330
+[ 2459.020839]  truncate_inode_pages_range+0x179/0x440
+[ 2459.021660]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2459.022484]  ? __switch_to+0x112/0x410
+[ 2459.023120]  ? __slab_free+0x9e/0x290
+[ 2459.023742]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2459.024575]  ? preempt_count_add+0x4d/0xa0
+[ 2459.025271]  ? up_read+0x38/0x70
+[ 2459.025818]  ? unmap_mapping_range+0x7e/0x140
+[ 2459.026562]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2459.027395]  vfs_fallocate+0x14b/0x350
+[ 2459.028015]  __x64_sys_fallocate+0x3c/0x70
+[ 2459.028714]  do_syscall_64+0x35/0x90
+[ 2459.029341]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2459.030173] RIP: 0033:0x7fe756503e9a
+[ 2459.030777] RSP: 002b:00007fffed8f7cf8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2459.032011] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fe756503e9a
+[ 2459.033174] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2459.034348] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2459.035514] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fffed8f7f68
+[ 2459.036673] R13: 0000561f954c212c R14: 0000561f954c3ac0 R15: 0000000000000000
+[ 2459.037837]  </TASK>
+[ 2459.038234] INFO: task fallocate:5935 blocked for more than 246 seconds.
+[ 2459.039351]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2459.040519] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2459.041783] task:fallocate       state:D stack:0     pid:5935  ppid:1      flags:0x00004002
+[ 2459.043124] Call Trace:
+[ 2459.043560]  <TASK>
+[ 2459.043924]  __schedule+0x1b9/0x540
+[ 2459.044532]  schedule+0x5d/0xd0
+[ 2459.045076]  io_schedule+0x42/0x70
+[ 2459.045661]  folio_wait_bit_common+0x120/0x360
+[ 2459.046415]  ? filemap_alloc_folio+0x30/0x30
+[ 2459.047132]  __filemap_get_folio+0x29b/0x330
+[ 2459.047848]  truncate_inode_pages_range+0x179/0x440
+[ 2459.048679]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2459.049511]  ? __switch_to+0x112/0x410
+[ 2459.050163]  ? preempt_count_add+0x4d/0xa0
+[ 2459.050852]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2459.051523]  ? preempt_count_add+0x4d/0xa0
+[ 2459.052111]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2459.052773]  ? finish_wait+0x41/0x90
+[ 2459.053304]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2459.053998]  ? preempt_count_add+0x4d/0xa0
+[ 2459.054596]  ? up_read+0x38/0x70
+[ 2459.055074]  ? unmap_mapping_range+0x7e/0x140
+[ 2459.055704]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2459.056420]  vfs_fallocate+0x14b/0x350
+[ 2459.056955]  __x64_sys_fallocate+0x3c/0x70
+[ 2459.057568]  do_syscall_64+0x35/0x90
+[ 2459.058094]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2459.058918] RIP: 0033:0x7febdbd03e9a
+[ 2459.059460] RSP: 002b:00007fff2dce3fb8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2459.060437] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007febdbd03e9a
+[ 2459.061314] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2459.062180] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2459.063051] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff2dce4228
+[ 2459.063920] R13: 000055f4f8f2112c R14: 000055f4f8f22ac0 R15: 0000000000000000
+[ 2459.064807]  </TASK>
+[ 2459.065107] INFO: task fallocate:5965 blocked for more than 246 seconds.
+[ 2459.065925]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2459.066798] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2459.067754] task:fallocate       state:D stack:0     pid:5965  ppid:1      flags:0x00004002
+[ 2459.068766] Call Trace:
+[ 2459.069074]  <TASK>
+[ 2459.069331]  __schedule+0x1b9/0x540
+[ 2459.069721]  schedule+0x5d/0xd0
+[ 2459.070086]  io_schedule+0x42/0x70
+[ 2459.070481]  folio_wait_bit_common+0x120/0x360
+[ 2459.070970]  ? filemap_alloc_folio+0x30/0x30
+[ 2459.071462]  __filemap_get_folio+0x29b/0x330
+[ 2459.071934]  truncate_inode_pages_range+0x179/0x440
+[ 2459.072485]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2459.073021]  ? __switch_to+0x112/0x410
+[ 2459.073458]  ? preempt_count_add+0x4d/0xa0
+[ 2459.073912]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2459.074439]  ? preempt_count_add+0x4d/0xa0
+[ 2459.074890]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2459.075415]  ? finish_wait+0x41/0x90
+[ 2459.075817]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2459.076376]  ? preempt_count_add+0x4d/0xa0
+[ 2459.076824]  ? up_read+0x38/0x70
+[ 2459.077199]  ? unmap_mapping_range+0x7e/0x140
+[ 2459.077690]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2459.078206]  vfs_fallocate+0x14b/0x350
+[ 2459.078590]  __x64_sys_fallocate+0x3c/0x70
+[ 2459.078998]  do_syscall_64+0x35/0x90
+[ 2459.079374]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2459.079871] RIP: 0033:0x7f401b703e9a
+[ 2459.080237] RSP: 002b:00007ffed62ec018 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2459.080969] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f401b703e9a
+[ 2459.081674] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2459.082380] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2459.083137] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffed62ec288
+[ 2459.083833] R13: 000055c97ea1412c R14: 000055c97ea15ac0 R15: 0000000000000000
+[ 2459.084541]  </TASK>
+[ 2459.084772] INFO: task fallocate:5995 blocked for more than 246 seconds.
+[ 2459.085438]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2459.086138] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2459.086902] task:fallocate       state:D stack:0     pid:5995  ppid:1      flags:0x00004002
+[ 2459.087644] Call Trace:
+[ 2459.087903]  <TASK>
+[ 2459.088134]  __schedule+0x1b9/0x540
+[ 2459.088497]  schedule+0x5d/0xd0
+[ 2459.088838]  io_schedule+0x42/0x70
+[ 2459.089210]  folio_wait_bit_common+0x120/0x360
+[ 2459.089688]  ? filemap_alloc_folio+0x30/0x30
+[ 2459.090113]  __filemap_get_folio+0x29b/0x330
+[ 2459.090509]  truncate_inode_pages_range+0x179/0x440
+[ 2459.090972]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2459.091458]  ? __switch_to+0x112/0x410
+[ 2459.091828]  ? __slab_free+0x9e/0x290
+[ 2459.092196]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2459.092683]  ? preempt_count_add+0x4d/0xa0
+[ 2459.093081]  ? up_read+0x38/0x70
+[ 2459.093389]  ? unmap_mapping_range+0x7e/0x140
+[ 2459.093803]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2459.094329]  vfs_fallocate+0x14b/0x350
+[ 2459.094724]  __x64_sys_fallocate+0x3c/0x70
+[ 2459.095150]  do_syscall_64+0x35/0x90
+[ 2459.095510]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2459.095999] RIP: 0033:0x7f861df03e9a
+[ 2459.096359] RSP: 002b:00007fff33380118 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2459.097085] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f861df03e9a
+[ 2459.097776] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2459.098477] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2459.099174] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff33380388
+[ 2459.099866] R13: 000055f83e56912c R14: 000055f83e56aac0 R15: 0000000000000000
+[ 2459.100522]  </TASK>
+[ 2459.100737] INFO: task fallocate:6025 blocked for more than 246 seconds.
+[ 2459.101395]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2459.102083] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2459.102815] task:fallocate       state:D stack:0     pid:6025  ppid:1      flags:0x00004002
+[ 2459.103573] Call Trace:
+[ 2459.103822]  <TASK>
+[ 2459.104044]  __schedule+0x1b9/0x540
+[ 2459.104389]  schedule+0x5d/0xd0
+[ 2459.104694]  io_schedule+0x42/0x70
+[ 2459.105020]  folio_wait_bit_common+0x120/0x360
+[ 2459.105455]  ? filemap_alloc_folio+0x30/0x30
+[ 2459.105870]  __filemap_get_folio+0x29b/0x330
+[ 2459.106271]  truncate_inode_pages_range+0x179/0x440
+[ 2459.106707]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2459.107209]  ? __switch_to+0x112/0x410
+[ 2459.107605]  ? preempt_count_add+0x4d/0xa0
+[ 2459.108052]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2459.108540]  ? preempt_count_add+0x4d/0xa0
+[ 2459.109062]  ? __raw_spin_lock_irqsave+0x1f/0x50
+[ 2459.109743]  ? finish_wait+0x41/0x90
+[ 2459.110152]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2459.110673]  ? preempt_count_add+0x4d/0xa0
+[ 2459.111063]  ? up_read+0x38/0x70
+[ 2459.111357]  ? unmap_mapping_range+0x7e/0x140
+[ 2459.111736]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2459.112236]  vfs_fallocate+0x14b/0x350
+[ 2459.112615]  __x64_sys_fallocate+0x3c/0x70
+[ 2459.113015]  do_syscall_64+0x35/0x90
+[ 2459.113370]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2459.113828] RIP: 0033:0x7fe106f03e9a
+[ 2459.114169] RSP: 002b:00007ffde147cce8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2459.114851] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fe106f03e9a
+[ 2459.115504] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2459.116193] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2459.116887] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffde147cf58
+[ 2459.117591] R13: 000056352bf0012c R14: 000056352bf01ac0 R15: 0000000000000000
+[ 2459.118272]  </TASK>
+[ 2459.118490] INFO: task fallocate:6055 blocked for more than 246 seconds.
+[ 2459.119115]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2459.119790] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2459.120550] task:fallocate       state:D stack:0     pid:6055  ppid:1      flags:0x00004002
+[ 2459.121348] Call Trace:
+[ 2459.121589]  <TASK>
+[ 2459.121798]  __schedule+0x1b9/0x540
+[ 2459.122143]  schedule+0x5d/0xd0
+[ 2459.122458]  io_schedule+0x42/0x70
+[ 2459.122803]  folio_wait_bit_common+0x120/0x360
+[ 2459.123258]  ? filemap_alloc_folio+0x30/0x30
+[ 2459.123689]  __filemap_get_folio+0x29b/0x330
+[ 2459.124119]  truncate_inode_pages_range+0x179/0x440
+[ 2459.124584]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2459.125044]  ? __switch_to+0x112/0x410
+[ 2459.125386]  ? __slab_free+0x9e/0x290
+[ 2459.125710]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2459.126227]  ? preempt_count_add+0x4d/0xa0
+[ 2459.126660]  ? up_read+0x38/0x70
+[ 2459.127007]  ? unmap_mapping_range+0x7e/0x140
+[ 2459.127457]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2459.127944]  vfs_fallocate+0x14b/0x350
+[ 2459.128337]  __x64_sys_fallocate+0x3c/0x70
+[ 2459.128746]  do_syscall_64+0x35/0x90
+[ 2459.129125]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2459.129615] RIP: 0033:0x7fdff8503e9a
+[ 2459.129982] RSP: 002b:00007fff13223618 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2459.130724] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fdff8503e9a
+[ 2459.131426] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2459.132143] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2459.132873] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff13223888
+[ 2459.133532] R13: 000055722562d12c R14: 000055722562eac0 R15: 0000000000000000
+[ 2459.134182]  </TASK>
+[ 2459.134405] INFO: task fallocate:6085 blocked for more than 246 seconds.
+[ 2459.135005]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2459.135660] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2459.136374] task:fallocate       state:D stack:0     pid:6085  ppid:1      flags:0x00004002
+[ 2459.137195] Call Trace:
+[ 2459.137478]  <TASK>
+[ 2459.137716]  __schedule+0x1b9/0x540
+[ 2459.138090]  schedule+0x5d/0xd0
+[ 2459.138415]  io_schedule+0x42/0x70
+[ 2459.138750]  folio_wait_bit_common+0x120/0x360
+[ 2459.139185]  ? filemap_alloc_folio+0x30/0x30
+[ 2459.139590]  __filemap_get_folio+0x29b/0x330
+[ 2459.140012]  truncate_inode_pages_range+0x179/0x440
+[ 2459.140500]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2459.140978]  ? __switch_to+0x112/0x410
+[ 2459.141354]  ? __slab_free+0x9e/0x290
+[ 2459.141705]  ? _raw_spin_unlock_irqrestore+0x23/0x40
+[ 2459.142174]  ? preempt_count_add+0x4d/0xa0
+[ 2459.142552]  ? up_read+0x38/0x70
+[ 2459.142870]  ? unmap_mapping_range+0x7e/0x140
+[ 2459.143321]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2459.143819]  vfs_fallocate+0x14b/0x350
+[ 2459.144195]  __x64_sys_fallocate+0x3c/0x70
+[ 2459.144603]  do_syscall_64+0x35/0x90
+[ 2459.144958]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2459.145437] RIP: 0033:0x7fd793903e9a
+[ 2459.145786] RSP: 002b:00007fff9228faa8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2459.146510] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fd793903e9a
+[ 2459.147185] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2459.147847] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2459.148518] R10: 0000000000400000 R11: 0000000000000246 R12: 00007fff9228fd18
+[ 2459.149189] R13: 000055c27a17412c R14: 000055c27a175ac0 R15: 0000000000000000
+[ 2459.149862]  </TASK>
+[ 2459.150105] INFO: task fallocate:6115 blocked for more than 246 seconds.
+[ 2459.150757]       Tainted: G            E      6.1.188-1.el9.elrepo.x86_64 #1
+[ 2459.151464] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 2459.152225] task:fallocate       state:D stack:0     pid:6115  ppid:1      flags:0x00004002
+[ 2459.153029] Call Trace:
+[ 2459.153300]  <TASK>
+[ 2459.153523]  __schedule+0x1b9/0x540
+[ 2459.153879]  schedule+0x5d/0xd0
+[ 2459.154179]  io_schedule+0x42/0x70
+[ 2459.154502]  folio_wait_bit_common+0x120/0x360
+[ 2459.154923]  ? filemap_alloc_folio+0x30/0x30
+[ 2459.155357]  __filemap_get_folio+0x29b/0x330
+[ 2459.155755]  truncate_inode_pages_range+0x179/0x440
+[ 2459.156211]  ? finish_task_switch.isra.0+0x9b/0x2d0
+[ 2459.156669]  ? __switch_to+0x112/0x410
+[ 2459.157050]  ? sysvec_apic_timer_interrupt+0xaf/0xd0
+[ 2459.157525]  ? asm_sysvec_apic_timer_interrupt+0x16/0x20
+[ 2459.158060]  ? preempt_count_add+0x4d/0xa0
+[ 2459.158487]  ? up_read+0x38/0x70
+[ 2459.158854]  ? unmap_mapping_range+0x7e/0x140
+[ 2459.159368]  fuse_file_fallocate+0x2c7/0x320 [fuse]
+[ 2459.159883]  vfs_fallocate+0x14b/0x350
+[ 2459.160298]  __x64_sys_fallocate+0x3c/0x70
+[ 2459.160724]  do_syscall_64+0x35/0x90
+[ 2459.161110]  entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+[ 2459.161616] RIP: 0033:0x7fa88d503e9a
+[ 2459.161976] RSP: 002b:00007ffc26e1b058 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[ 2459.162690] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007fa88d503e9a
+[ 2459.163365] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[ 2459.164044] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[ 2459.164726] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffc26e1b2c8
+[ 2459.165544] R13: 0000560f4e5b212c R14: 0000560f4e5b3ac0 R15: 0000000000000000
+[ 2459.166280]  </TASK>

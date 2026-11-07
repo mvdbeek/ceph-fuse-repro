@@ -1,0 +1,46 @@
+== 2026-11-07T18:47:07Z mode=punch churn=wchurn files=12 stage A kernel 7.3.0-4-t2-resolute, ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)
+== 12 target file(s) on osd.1, 12 churn files (512 KiB) elsewhere
+== 19:47:44 replies from osd.1 to node held
+== in flight: 8 ops to osd [1], fusectl waiting=12
+== discards that hit an rx buffer with a waiter: 8
+2026-11-07T18:47:48.713+0000 7c241e7fc640 10 objectcacher.object(1000000093b.00000000/head) discard object[1000000093b.00000000/head oset 0x7c24500146f0 wr 0/0] bh bh[ 0x7c2418004b50 0~131072 0x7c2418004780 (0) v 0 rx] waiters = { 0->[0x7c24180033e0, ]}
+2026-11-07T18:47:48.806+0000 7c23d67fc640 10 objectcacher.object(1000000093d.00000000/head) discard object[1000000093d.00000000/head oset 0x7c2450013fb0 wr 0/0] bh bh[ 0x7c23e40a83f0 0~131072 0x7c23e40a8230 (0) v 0 rx] waiters = { 0->[0x7c23e4066470, ]}
+2026-11-07T18:47:48.901+0000 7c243effd640 10 objectcacher.object(10000000941.00000000/head) discard object[10000000941.00000000/head oset 0x7c2450009440 wr 0/0] bh bh[ 0x7c24080023b0 0~131072 0x7c24080031f0 (0) v 0 rx] waiters = { 0->[0x7c24080028a0, ]}
+== write churn: committed 64 KiB, then one write with a 4 KiB cache
+== zero buffers trimmed with waiters still attached: 8
+2026-11-07T18:47:54.562+0000 7c23d6ffd640 10 objectcacher trim trimming bh[ 0x7c2418004b50 0~131072 0x7c2418004780 (0) v 0 zero] waiters = { 0->[0x7c24180033e0, ]}
+2026-11-07T18:47:54.562+0000 7c23d6ffd640 10 objectcacher trim trimming bh[ 0x7c23e40a83f0 0~131072 0x7c23e40a8230 (0) v 0 zero] waiters = { 0->[0x7c23e4066470, ]}
+2026-11-07T18:47:54.562+0000 7c23d6ffd640 10 objectcacher trim trimming bh[ 0x7c24080023b0 0~131072 0x7c24080031f0 (0) v 0 zero] waiters = { 0->[0x7c24080028a0, ]}
+== 19:47:56 replies released
+== READ HUNG: 8 of 12 read(s) never returned (60 s after release)
+== objecter ops left: 0, fusectl waiting=8 max_background=12
+2026-11-07T18:47:57.636+0000 7c2464ffa640  7 objectcacher bh_read_finish 1000000093b.00000000/head tid 84 0~131072 (bl is 131072) returned 0 outstanding reads 8
+2026-11-07T18:47:57.636+0000 7c2464ffa640  7 objectcacher bh_read_finish 1000000093d.00000000/head tid 85 0~131072 (bl is 131072) returned 0 outstanding reads 11
+2026-11-07T18:47:57.636+0000 7c2464ffa640  7 objectcacher bh_read_finish 10000000941.00000000/head tid 86 0~131072 (bl is 131072) returned 0 outstanding reads 10
+  6807 dd D folio_wait_bit_common
+  6810 dd D folio_wait_bit_common
+  6814 dd D folio_wait_bit_common
+  6816 dd D folio_wait_bit_common
+  6818 dd D folio_wait_bit_common
+  6822 dd D folio_wait_bit_common
+  6825 dd D folio_wait_bit_common
+  6828 dd D folio_wait_bit_common
+  6862 fallocate D folio_wait_bit_common
+  6870 fallocate D folio_wait_bit_common
+  6879 fallocate D folio_wait_bit_common
+  6888 fallocate D folio_wait_bit_common
+  6897 fallocate D folio_wait_bit_common
+  6906 fallocate D folio_wait_bit_common
+  6915 fallocate D folio_wait_bit_common
+  6924 fallocate D folio_wait_bit_common
+  ceph-fuse thread fn_anonymous D folio_wait_bit_common
+== probes on the wedged node:
+stat                     : ok (rc=0)
+O_DIRECT read            : ok (rc=0)
+buffered read, uncached  : ok (rc=0)
+write                    : ok (rc=0)
+other client reading target: HUNG >15 s
+== recovering: kill readers, abort the connection, evict the node session, remount
+[cluster] node: mounted /volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 at /mnt/scratch
+== node remounted
+== elapsed 146 s

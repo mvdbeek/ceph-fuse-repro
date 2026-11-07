@@ -1,0 +1,59 @@
+2026-11-07T18:16:13.472+0000 7a68be7fc640  0 client.14811 ms_handle_reset on v2:10.177.77.12:6800/3039446926
+2026-11-07T18:16:13.495+0000 7a68be7fc640  0 client.14813 ms_handle_reset on v2:10.177.77.12:6800/3039446926
+{
+    "ops": [
+        {
+            "description": "client_request(client.14179:668 lookup #0x10000000881/f1 2026-11-07T18:15:52.942462+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-07T18:15:52.942528+0000",
+            "age": 20.553304357000002,
+            "duration": 20.553325028,
+            "type_data": {
+                "flag_point": "failed to rdlock, waiting",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 14179
+                    },
+                    "tid": 668
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-07T18:15:52.942528+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-07T18:15:52.942528+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-07T18:15:52.942528+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-07T18:15:52.942531+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-07T18:15:52.942542+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-07T18:15:52.942556+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-07T18:15:52.942557+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-07T18:15:52.942567+0000",
+                        "event": "failed to rdlock, waiting"
+                    }
+                ],
+                "locks": null
+            }
+        }
+    ],
+    "num_ops": 1
+}

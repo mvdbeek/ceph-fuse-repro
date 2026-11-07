@@ -1,0 +1,38 @@
+{
+    "metadata": {
+        "ceph_sha1": "69bf48f20731a4b0d742613f6c6335ccb54dd217",
+        "ceph_version": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+        "entity_id": "galaxy-node",
+        "hostname": "node-vm",
+        "mount_point": "/mnt/scratch",
+        "pid": "5327",
+        "root": "/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5"
+    },
+    "dentry_count": 20,
+    "dentry_pinned_count": 2,
+    "id": 14987,
+    "inst": {
+        "name": {
+            "type": "client",
+            "num": 14987
+        },
+        "addr": {
+            "type": "v1",
+            "addr": "10.177.77.40:0",
+            "nonce": 2787266706
+        }
+    },
+    "addr": {
+        "type": "v1",
+        "addr": "10.177.77.40:0",
+        "nonce": 2787266706
+    },
+    "inst_str": "client.14987 10.177.77.40:0/2787266706",
+    "addr_str": "10.177.77.40:0/2787266706",
+    "inode_count": 21,
+    "mds_epoch": 14,
+    "osd_epoch": 60,
+    "osd_epoch_barrier": 60,
+    "blocklisted": false,
+    "fs_name": "cephfs"
+}

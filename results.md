@@ -16,7 +16,13 @@ Raw data lives in `results/<run>/` (`run.json`, `summary.json`, `events.jsonl`, 
 - **No spontaneous reproduction.** The valid negative runs and their durations are in [Run totals](#run-totals). Production saw about 1 event per 34 days of node uptime.
 - **H1's mechanism gives exactly the production signature on the production kernel** (Finding 1). This ceph-fuse build uses libfuse 2, so O_DIRECT reads are synchronous FUSE requests and bypass the `max_background` gate, while readahead waits on it. H1 still needs requests that ceph-fuse never answers.
 - **The production `fn_anonymous` hung-task stack was reproduced on 6.1.188, with identical offsets** (Finding 2). It lasted about 15 min and then recovered, as in production. The trigger was a 6 s cluster-FULL episode caused by the harness, not a spontaneous one.
-- **A source review found a permanent lost-read path in ceph-fuse's ObjectCacher** (Finding 3), read from the code and not yet observed. In theory it would leak exactly the FUSE background requests that H1 needs. The kernel side is clean.
+- **A ceph-fuse ObjectCacher bug loses reads permanently, and it reproduces the full production signature on demand** (Findings 3 and 7). A discard that hits a buffer with a read in flight, followed by a cache trim before the OSD reply, deletes the reader's waiter. With 12 lost reads, the 6.1.188 guest shows:
+  - buffered reads hang in `fuse_get_req`;
+  - `stat`, O_DIRECT and writes work;
+  - no OSD/MDS ops are outstanding and the cluster is HEALTH_OK;
+  - the production `fn_anonymous` hung-task stack, permanently.
+
+  The reproducer triggers the discard with a same-client `fallocate` punch hole; truncate is protected by caps. Whether anything on js2-2xl9 punches holes, or reaches the discard another way, is not known. The bug is unchanged on ceph `main` and worth reporting upstream.
 - **ceph-fuse 17.2.9 segfaults on the admin-socket command `log dump`** (Finding 4). After that crash, a blocked invalidation hung the mount until `fusectl abort` released it.
 - **Brief cluster-FULL episodes don't reliably trigger the stall**: 0 stalls in about 11 flaps on 6.1.188 and 2 on 7.3 (Finding 5).
 - **The campaign was stopped by decision**: low odds of a spontaneous hit at this rate, and the environmental hypothesis is now testable on the real node.
@@ -103,7 +109,7 @@ Two read-only reviews of the source. Their key code claims were re-checked.
 
 - The invalidate callback runs on its own Finisher. Nothing in ceph-fuse waits for it, so a blocked invalidation is a symptom, not the cause.
 - A READ can block with no OSD or MDS op outstanding in `get_caps`, while waiting for Fr or for an Fc revoke to finish. That wait ends only when a cap message arrives.
-- **Permanent lost read (from code, checked line by line, not yet observed):**
+- **Permanent lost read (from code, checked line by line; since reproduced, see Finding 7):**
   1. `Object::discard` (`ObjectCacher.cc:644-651`) turns an `rx` buffer, one with a read in flight, into `zero`. It keeps its `waitfor_read`, and the state change unpins it from the LRU (`set_state` → `put()` → `lru_unpin()`).
   2. `trim()` (`:1322-1331`) deletes clean or zero buffers without completing `waitfor_read`.
   3. When the OSD reply arrives, `bh_read_finish` only completes waiters on buffers still in `ob->data`.
@@ -175,6 +181,73 @@ The fault could be anything that silently loses large packets or replies on that
 - a stuck conntrack or security-group state;
 - a problem on one OSD host.
 
+## Finding 7: the ObjectCacher lost read is real, and reproduces the whole production signature on demand
+
+`harness/oc_lostread.sh` drives the Finding 3 path step by step on the node client:
+
+1. Hold all replies from osd.1 to the node (tc drop on osd.1's egress, filtered on the node's IP).
+2. Start buffered reads of N files whose only object is on osd.1, so their buffers sit in `rx`.
+3. From the **same client**, punch a hole over each file (`fallocate -p`). `Client::_fallocate` calls `_invalidate_inode_cache(in, off, len)` → `discard_writeback` directly, with no MDS round trip.
+4. Make `trim()` run, using either:
+   - `churn`: buffered reads of other files through a 2 MiB `client_oc_size`;
+   - `wchurn`: one committed write, then a write with a 4 KiB cache. This variant is needed once the background slots are full.
+5. Release the replies.
+
+The client log shows the predicted chain every time. From the first run:
+
+```
+17:56:00.429 bh_read on bh[0x786df4028460 0~131072 missing]; readx missed, waiting on bh[... rx]
+17:56:04.720 discard ... bh bh[0x786df4028460 0~131072 ... rx] waiters = { 0->[0x786df40240f0, ]}
+17:56:08.850 trim trimming bh[0x786df4028460 0~131072 ... zero] waiters = { 0->[0x786df40240f0, ]}
+17:56:13.378 bh_read_finish 1000000080c.00000000/head tid 115 0~131072 returned 0      <- no buffer left; nobody is woken
+```
+
+| variant | runs | discard hit rx with waiter | zero buffer trimmed with waiter | outcome |
+|---|---|---|---|---|
+| punch + churn, 1 file (A, 7.3) | 5 | 5/5 | 5/5 | **5/5 read never returns** |
+| punch, no churn (A) | 1 | 1 | 0 | read completes when replies are released (waiters kept on the zero buffer) |
+| no discard + churn (A) | 2 | 0 | 0 | read completes |
+| truncate + churn (A) | 2 | 0 | 0 | read completes; see below |
+| punch + wchurn, 12 files, 1 MiB cache (A) | 1 | 8 | 8 | 8/12 lost: the 1 MiB cache held back 4 reads (`waiting on cache to complete`), an artifact of the tiny cache |
+| punch + wchurn, 12 files (A, 7.3) | 1 | 12 | 12 | **12/12 lost, production signature** |
+| punch + wchurn, 12 files (**B, 6.1.188**) | 1 | 12 | 12 | **12/12 lost, production signature and hung-task stack** |
+
+Two further runs are invalid, both harness stalls in the churn step (each has a `NOTE` in its directory). Every punch + churn run lost the read. The race is deterministic once its preconditions are set up. Each run takes about 2 minutes, most of it the 60 s wait after release.
+
+**With 12 lost reads, the node looks like js2-2xl9** (Stage B, `results/oclost-B-punch-wchurn-n12-*`):
+- fusectl `waiting` = 14 with `max_background` = 12, no objecter ops outstanding, HEALTH_OK;
+- `stat`: ok; O_DIRECT read: ok; write: ok;
+- **buffered read of an uncached file: hangs, wchan `fuse_get_req`**;
+- another client reading the same file hangs, because node leaked the `FILE_CACHE` cap ref held by the lost read and can never release its caps;
+- the kernel hung-task report is the production one, frame for frame:
+
+```
+INFO: task fn_anonymous:5346 blocked for more than 122 seconds.
+ folio_wait_bit_common+0x120/0x360
+ invalidate_inode_pages2_range+0x12f/0x380
+ fuse_reverse_inval_inode+0x93/0xc0 [fuse]
+ fuse_notify+0x3b6/0x520 [fuse]
+ fuse_dev_do_write+0x305/0x4e0 [fuse]
+```
+
+This is permanent, unlike the self-healing stall of Finding 2. The invalidate scheduled by the discard waits on the page that the lost read keeps locked.
+
+**Killing ceph-fuse does not free the mount.** The `fn_anonymous` thread is in an uninterruptible kernel wait, so the process stays a zombie with `/dev/fuse` open. Only `echo 1 > /sys/fs/fuse/connections/<id>/abort` releases it.
+
+**Which discards can hit an in-flight read.** `Object::discard` is reached from two places in `Client.cc`:
+- **truncate** (`update_inode_file_size` → `_invalidate_inode_cache`, about line 911). The cap protocol protects this path. The MDS revokes `Fr` before applying a truncate, and the client delays that revoke while the read holds its `FILE_RD` reference. In both truncate runs, the reply (14.947) arrived before the discard (14.950). This applies to truncates from the same client or another one.
+- **fallocate punch hole** (`_fallocate`, about line 15107). This path needs only `Fw`/`Fb`, which the reading client can hold at the same time as `Fr`/`Fc`. Nothing orders it against an in-flight read on the same client.
+
+Same-client writes over an rx buffer keep the waiters (`map_write` marks the buffer dirty, and `merge_left` moves waiters). The write also goes to the same object, so the OSD orders it after the read. That path did not look exploitable and was not tested.
+
+**What this means for production:**
+- The mechanism fully explains the production signature: `fuse_get_req`, working O_DIRECT, `stat` and writes, the `fn_anonymous` stack, and a quiet cluster.
+- The **trigger used here (punch-hole on a file the same node is reading) is not known to happen on js2-2xl9**. Candidate sources are anything on the node that calls `fallocate(PUNCH_HOLE)`, e.g. `cp --sparse=always`, `fallocate --dig-holes`, or tools and libraries that punch holes.
+- There may be another discard source this review missed. The production cache is 200 MB, so trim also needs cache pressure before the reply arrives. A slow OSD reply widens that window.
+- It is now worth tracing on the node. See [What to check on a stuck node](#what-to-check-on-a-stuck-node).
+
+**Reportable upstream.** The code is unchanged on ceph `main`: the same rx branch in `Object::discard` and an identical `trim()`. The reproducer is deterministic and needs no special build. One possible fix: `discard` should not unpin an rx buffer that still has waiters. Alternatively, `trim()` and `release()` could complete (retry) `waitfor_read` before deleting a buffer, as `discard` does for non-rx buffers.
+
 ## What to check on a stuck node
 
 All of these are read-only and work without a reboot:
@@ -195,8 +268,14 @@ How to read the result:
 | ≥ 12 | **old ops, mostly to one OSD** | network or OSD-path fault (Finding 6). Check that OSD host and the path to it (MTU, NIC, conntrack). |
 | ≥ 12 | **empty**, and `mds_requests` empty | requests that ceph-fuse never answered: a client bug (H1, e.g. the Finding 3 lost read). Grab `gdb`/`eu-stack` thread stacks of ceph-fuse and a `dump_cache` before restarting it. |
 
+If it is the client-bug row, also check whether something on the node punches holes (Finding 7). Either of these, run before the next stall, records the caller:
+- `bpftrace -e 'tracepoint:syscalls:sys_enter_fallocate /args->mode & 2/ { printf("%s %d\n", comm, pid); }'`
+- `auditctl -a always,exit -F arch=b64 -S fallocate`
+
+The ceph-fuse log at `debug_client=3` also records `ll_fallocate`.
+
 Escape hatches:
-- `echo 1 > /sys/fs/fuse/connections/<id>/abort` kills the mount without a reboot.
+- `echo 1 > /sys/fs/fuse/connections/<id>/abort` kills the mount without a reboot. Killing ceph-fuse alone is not enough: with a blocked invalidation it stays a zombie holding `/dev/fuse`.
 - `fuse_disable_pagecache=true` avoids the background-request path entirely, at a performance cost.
 
 Add `kernel.hung_task_warnings=-1` and alerting on `waiting` to node monitoring.

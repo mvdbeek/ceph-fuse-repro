@@ -1,0 +1,43 @@
+{
+    "id": 14555,
+    "inst": {
+        "name": {
+            "type": "client",
+            "num": 14555
+        },
+        "addr": {
+            "type": "v1",
+            "addr": "10.177.77.31:0",
+            "nonce": 221947045
+        }
+    },
+    "inst_str": "client.14555 v1:10.177.77.31:0/221947045",
+    "addr_str": "v1:10.177.77.31:0/221947045",
+    "sessions": [
+        {
+            "mds": 0,
+            "addrs": {
+                "addrvec": [
+                    {
+                        "type": "v2",
+                        "addr": "10.177.77.12:6800",
+                        "nonce": 3039446926
+                    },
+                    {
+                        "type": "v1",
+                        "addr": "10.177.77.12:6801",
+                        "nonce": 3039446926
+                    }
+                ]
+            },
+            "seq": 6,
+            "cap_gen": 0,
+            "cap_ttl": "2026-11-07T18:14:20.999257+0000",
+            "last_cap_renew_request": "2026-11-07T18:13:20.999257+0000",
+            "cap_renew_seq": 8,
+            "num_caps": 20,
+            "state": "open"
+        }
+    ],
+    "mdsmap_epoch": 12
+}

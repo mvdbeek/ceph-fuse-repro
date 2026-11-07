@@ -1,0 +1,8 @@
+== 2026-11-07T18:19:19Z mode=punch churn=churn files=12 stage A kernel 7.3.0-4-t2-resolute, ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)
+== 12 target file(s) on osd.1, 12 churn files (512 KiB) elsewhere
+== 19:20:06 replies from osd.1 to node held
+== in flight: 8 ops to osd [1], fusectl waiting=12
+== discards that hit an rx buffer with a waiter: 8
+2026-11-07T18:20:10.426+0000 7e2231ff3640 10 objectcacher.object(100000008e2.00000000/head) discard object[100000008e2.00000000/head oset 0x7e222c00aad0 wr 0/0] bh bh[ 0x7e22200254d0 0~131072 0x7e22200250b0 (0) v 0 rx] waiters = { 0->[0x7e2220026040, ]}
+2026-11-07T18:20:10.517+0000 7e21eaffd640 10 objectcacher.object(100000008e3.00000000/head) discard object[100000008e3.00000000/head oset 0x7e222c00b2f0 wr 0/0] bh bh[ 0x7e220c002940 0~131072 0x7e220c002730 (0) v 0 rx] waiters = { 0->[0x7e220c003660, ]}
+2026-11-07T18:20:10.609+0000 7e21ea7fc640 10 objectcacher.object(100000008e7.00000000/head) discard object[100000008e7.00000000/head oset 0x7e222c00ba30 wr 0/0] bh bh[ 0x7e2210002940 0~131072 0x7e2210002730 (0) v 0 rx] waiters = { 0->[0x7e2210003660, ]}

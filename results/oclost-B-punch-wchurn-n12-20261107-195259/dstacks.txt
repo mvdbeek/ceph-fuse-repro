@@ -1,0 +1,229 @@
+-- fn_anonymous (5327/task/5346)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] invalidate_inode_pages2_range+0x12f/0x380
+[<0>] fuse_reverse_inval_inode+0x93/0xc0 [fuse]
+[<0>] fuse_notify+0x3b6/0x520 [fuse]
+[<0>] fuse_dev_do_write+0x305/0x4e0 [fuse]
+[<0>] fuse_dev_write+0x50/0x80 [fuse]
+[<0>] do_iter_readv_writev+0xe2/0x140
+[<0>] do_iter_write+0x81/0x150
+[<0>] vfs_writev+0xae/0x1a0
+[<0>] do_writev+0x6f/0x120
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5659/task/5659)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5662/task/5662)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5665/task/5665)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5671/task/5671)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5673/task/5673)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5677/task/5677)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5681/task/5681)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5686/task/5686)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5691/task/5691)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5694/task/5694)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5698/task/5698)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- dd (5700/task/5700)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5786/task/5786)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5815/task/5815)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5845/task/5845)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5875/task/5875)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5906/task/5906)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5935/task/5935)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5965/task/5965)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (5995/task/5995)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (6025/task/6025)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (6055/task/6055)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (6085/task/6085)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+-- fallocate (6115/task/6115)
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __filemap_get_folio+0x29b/0x330
+[<0>] truncate_inode_pages_range+0x179/0x440
+[<0>] fuse_file_fallocate+0x2c7/0x320 [fuse]
+[<0>] vfs_fallocate+0x14b/0x350
+[<0>] __x64_sys_fallocate+0x3c/0x70
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8

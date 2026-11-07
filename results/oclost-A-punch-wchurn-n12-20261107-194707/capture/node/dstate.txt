@@ -1,0 +1,153 @@
+=== /proc/6442/task/6463 comm=fn_anonymous wchan=folio_wait_bit_common
+cmdline: ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch 
+syscall: 20 0x16 0x7c246c88a0d0 0x2 0x0 0x0 0x0 0x7c246c88a050 0x7c2472dfef4d
+--- stack
+cat: /proc/6442/task/6463/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	16
+nonvoluntary_ctxt_switches:	0
+=== /proc/6807/task/6807 comm=dd wchan=folio_wait_bit_common
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=dd /usr/bin/dd if=/mnt/scratch/oclost/a/f5 of=/dev/null bs=64k count=1 
+syscall: 0 0x0 0x5db66091c000 0x10000 0xeb 0x5db66091c000 0x79 0x7ffd85d40b18 0x79f6840a7282
+--- stack
+cat: /proc/6807/task/6807/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	6
+nonvoluntary_ctxt_switches:	0
+=== /proc/6810/task/6810 comm=dd wchan=folio_wait_bit_common
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=dd /usr/bin/dd if=/mnt/scratch/oclost/a/f7 of=/dev/null bs=64k count=1 
+syscall: 0 0x0 0x573ff8394000 0x10000 0xeb 0x573ff8394000 0x79 0x7ffc5cce9b78 0x76a36d12b282
+--- stack
+cat: /proc/6810/task/6810/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	6
+nonvoluntary_ctxt_switches:	0
+=== /proc/6814/task/6814 comm=dd wchan=folio_wait_bit_common
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=dd /usr/bin/dd if=/mnt/scratch/oclost/a/f11 of=/dev/null bs=64k count=1 
+syscall: 0 0x0 0x62bb2ce70000 0x10000 0xeb 0x62bb2ce70000 0x79 0x7ffdf64e5e88 0x780aedc95282
+--- stack
+cat: /proc/6814/task/6814/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	6
+nonvoluntary_ctxt_switches:	0
+=== /proc/6816/task/6816 comm=dd wchan=folio_wait_bit_common
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=dd /usr/bin/dd if=/mnt/scratch/oclost/a/f13 of=/dev/null bs=64k count=1 
+syscall: 0 0x0 0x5c7042d66000 0x10000 0xeb 0x5c7042d66000 0x79 0x7ffc4491e5c8 0x7ed86cd42282
+--- stack
+cat: /proc/6816/task/6816/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	6
+nonvoluntary_ctxt_switches:	1
+=== /proc/6818/task/6818 comm=dd wchan=folio_wait_bit_common
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=dd /usr/bin/dd if=/mnt/scratch/oclost/a/f14 of=/dev/null bs=64k count=1 
+syscall: 0 0x0 0x60d6eaea3000 0x10000 0xeb 0x60d6eaea3000 0x79 0x7ffd8299c818 0x7e688a909282
+--- stack
+cat: /proc/6818/task/6818/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	6
+nonvoluntary_ctxt_switches:	1
+=== /proc/6822/task/6822 comm=dd wchan=folio_wait_bit_common
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=dd /usr/bin/dd if=/mnt/scratch/oclost/a/f19 of=/dev/null bs=64k count=1 
+syscall: 0 0x0 0x60b99d04e000 0x10000 0xeb 0x60b99d04e000 0x79 0x7fff0fc4ad78 0x75f9a745b282
+--- stack
+cat: /proc/6822/task/6822/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	6
+nonvoluntary_ctxt_switches:	0
+=== /proc/6825/task/6825 comm=dd wchan=folio_wait_bit_common
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=dd /usr/bin/dd if=/mnt/scratch/oclost/a/f21 of=/dev/null bs=64k count=1 
+syscall: 0 0x0 0x61643fbe0000 0x10000 0xeb 0x61643fbe0000 0x79 0x7ffd3d11e078 0x75065b8bf282
+--- stack
+cat: /proc/6825/task/6825/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	6
+nonvoluntary_ctxt_switches:	0
+=== /proc/6828/task/6828 comm=dd wchan=folio_wait_bit_common
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=dd /usr/bin/dd if=/mnt/scratch/oclost/a/f22 of=/dev/null bs=64k count=1 
+syscall: 0 0x0 0x618f44d97000 0x10000 0xeb 0x618f44d97000 0x79 0x7ffc64818378 0x75f5c5025282
+--- stack
+cat: /proc/6828/task/6828/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	6
+nonvoluntary_ctxt_switches:	0
+=== /proc/6862/task/6862 comm=fallocate wchan=folio_wait_bit_common
+cmdline: fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f5 
+syscall: 285 0x3 0x3 0x0 0x400000 0x1 0x0 0x7ffef0e03678 0x769cee5b8e9a
+--- stack
+cat: /proc/6862/task/6862/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	0
+=== /proc/6870/task/6870 comm=fallocate wchan=folio_wait_bit_common
+cmdline: fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f7 
+syscall: 285 0x3 0x3 0x0 0x400000 0x1 0x0 0x7ffe21d53a68 0x7bbab1bf3e9a
+--- stack
+cat: /proc/6870/task/6870/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	0
+=== /proc/6879/task/6879 comm=fallocate wchan=folio_wait_bit_common
+cmdline: fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f11 
+syscall: 285 0x3 0x3 0x0 0x400000 0x1 0x0 0x7ffda37ea278 0x7760c9c96e9a
+--- stack
+cat: /proc/6879/task/6879/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	0
+=== /proc/6888/task/6888 comm=fallocate wchan=folio_wait_bit_common
+cmdline: fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f13 
+syscall: 285 0x3 0x3 0x0 0x400000 0x1 0x0 0x7fff48ba4c08 0x727c8cc28e9a
+--- stack
+cat: /proc/6888/task/6888/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	0
+=== /proc/6897/task/6897 comm=fallocate wchan=folio_wait_bit_common
+cmdline: fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f14 
+syscall: 285 0x3 0x3 0x0 0x400000 0x1 0x0 0x7ffe68a393b8 0x7982e5988e9a
+--- stack
+cat: /proc/6897/task/6897/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	0
+=== /proc/6906/task/6906 comm=fallocate wchan=folio_wait_bit_common
+cmdline: fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f19 
+syscall: 285 0x3 0x3 0x0 0x400000 0x1 0x0 0x7ffc6e6578d8 0x76df011ede9a
+--- stack
+cat: /proc/6906/task/6906/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	0
+=== /proc/6915/task/6915 comm=fallocate wchan=folio_wait_bit_common
+cmdline: fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f21 
+syscall: 285 0x3 0x3 0x0 0x400000 0x1 0x0 0x7ffda20a2438 0x799a8d095e9a
+--- stack
+cat: /proc/6915/task/6915/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	0
+=== /proc/6924/task/6924 comm=fallocate wchan=folio_wait_bit_common
+cmdline: fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f22 
+syscall: 285 0x3 0x3 0x0 0x400000 0x1 0x0 0x7fff5705aca8 0x79e09ab64e9a
+--- stack
+cat: /proc/6924/task/6924/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	0

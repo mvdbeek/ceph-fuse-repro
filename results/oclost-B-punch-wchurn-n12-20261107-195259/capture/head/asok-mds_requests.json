@@ -1,0 +1,29 @@
+{
+    "request": {
+        "tid": 1671,
+        "op": "lookup",
+        "path": "#0x10000000988/f2",
+        "path2": "",
+        "ino": "0x10000000988",
+        "hint_ino": "0x0",
+        "sent_stamp": "2026-11-07T18:55:51.796522+0000",
+        "age": 249.68662590599999,
+        "mds": 0,
+        "resend_mds": -1,
+        "send_to_auth": 0,
+        "sent_on_mseq": 0,
+        "retry_attempt": 1,
+        "got_unsafe": 0,
+        "uid": 0,
+        "gid": 0,
+        "oldest_client_tid": 1671,
+        "mdsmap_epoch": 0,
+        "flags": 0,
+        "num_retry": 0,
+        "num_fwd": 0,
+        "num_releases": 0,
+        "abort_rc": 0,
+        "owner_uid": 4294967295,
+        "owner_gid": 4294967295
+    }
+}

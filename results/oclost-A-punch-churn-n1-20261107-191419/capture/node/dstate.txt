@@ -1,0 +1,27 @@
+=== /proc/3307/task/3328 comm=fn_anonymous wchan=folio_wait_bit_common
+cmdline: ceph-fuse -f --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 /mnt/scratch 
+syscall: 20 0x16 0x7ee6ad7f80d0 0x2 0x0 0x0 0x0 0x7ee6ad7f8050 0x7ee6c064bf4d
+--- stack
+cat: /proc/3307/task/3328/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	4
+nonvoluntary_ctxt_switches:	0
+=== /proc/3668/task/3668 comm=dd wchan=folio_wait_bit_common
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=dd /usr/bin/dd if=/mnt/scratch/oclost/a/f1 of=/dev/null bs=64k count=1 
+syscall: 0 0x0 0x64c17e8b3000 0x10000 0xeb 0x64c17e8b3000 0x79 0x7ffe7a310fc8 0x7ece8393d282
+--- stack
+cat: /proc/3668/task/3668/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	6
+nonvoluntary_ctxt_switches:	0
+=== /proc/3688/task/3688 comm=fallocate wchan=folio_wait_bit_common
+cmdline: fallocate -p -o 0 -l 4194304 /mnt/scratch/oclost/a/f1 
+syscall: 285 0x3 0x3 0x0 0x400000 0x1 0x0 0x7ffc9b8752e8 0x7b400511de9a
+--- stack
+cat: /proc/3688/task/3688/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	0

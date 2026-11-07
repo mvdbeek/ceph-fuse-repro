@@ -1,0 +1,1 @@
+First run, before the grep patterns were fixed: the discard and trim lines are in client.log (bh 0x786df4028460: discard at 17:56:04.720 as rx with waiter 0x786df40240f0, trim at 17:56:08.850 as zero with that waiter, bh_read_finish tid 115 at 17:56:13.378).

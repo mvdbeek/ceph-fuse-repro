@@ -1,0 +1,26 @@
+== 2026-11-07T18:14:19Z mode=punch churn=churn files=1 stage A kernel 7.3.0-4-t2-resolute, ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)
+== 1 target file(s) on osd.1, 12 churn files (512 KiB) elsewhere
+== 19:14:35 replies from osd.1 to node held
+== in flight: 1 ops to osd [1], fusectl waiting=1
+== discards that hit an rx buffer with a waiter: 1
+2026-11-07T18:14:39.964+0000 7ee6a0ff1640 10 objectcacher.object(10000000885.00000000/head) discard object[10000000885.00000000/head oset 0x7ee69c0092b0 wr 0/0] bh bh[ 0x7ee6840082f0 0~131072 0x7ee684008150 (0) v 0 rx] waiters = { 0->[0x7ee6840087e0, ]}
+== churned 6144 KiB through the 1 MiB cache
+== zero buffers trimmed with waiters still attached: 1
+2026-11-07T18:14:44.090+0000 7ee6a67fc640 10 objectcacher trim trimming bh[ 0x7ee6840082f0 0~131072 0x7ee684008150 (0) v 0 zero] waiters = { 0->[0x7ee6840087e0, ]}
+== 19:14:46 replies released
+== READ HUNG: 1 of 1 read(s) never returned (60 s after release)
+== objecter ops left: 0, fusectl waiting=1 max_background=12
+2026-11-07T18:14:48.515+0000 7ee6a67fc640  7 objectcacher bh_read_finish 10000000885.00000000/head tid 53 0~131072 (bl is 131072) returned 0 outstanding reads 1
+  3668 dd D folio_wait_bit_common
+  3688 fallocate D folio_wait_bit_common
+  ceph-fuse thread fn_anonymous D folio_wait_bit_common
+== probes on the wedged node:
+stat                     : ok (rc=0)
+O_DIRECT read            : ok (rc=0)
+buffered read, uncached  : ok (rc=0)
+write                    : ok (rc=0)
+other client reading target: HUNG >15 s
+== recovering: kill readers, abort the connection, evict the node session, remount
+[cluster] node: mounted /volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/f82160c3-829e-4ab3-92ec-9dd336f48df5 at /mnt/scratch
+== node remounted
+== elapsed 120 s

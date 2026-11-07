@@ -1,0 +1,18 @@
+== 2026-11-07T18:01:12Z mode=punch churn=nochurn files=1 host kernel 7.3.0-4-t2-resolute, ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)
+== 1 target file(s) on osd.1, 12 churn files (512 KiB) elsewhere
+== 19:01:32 replies from osd.1 to node held
+== in flight: 1 ops to osd [1], fusectl waiting=1
+== discards that hit an rx buffer with a waiter: 1
+2026-11-07T18:01:36.954+0000 7b2bb7fff640 10 objectcacher.object(1000000082d.00000000/head) discard object[1000000082d.00000000/head oset 0x7b2bc00159e0 wr 0/0] bh bh[ 0x7b2bac003420 0~131072 0x7b2bac003280 (0) v 0 rx] waiters = { 0->[0x7b2bac004100, ]}
+== zero buffers trimmed with waiters still attached: 0
+== 19:01:43 replies released
+sh: line 1: /tmp/oclost.done: No such file or directory
+sh: line 1: /tmp/oclost.done: No such file or directory
+sh: line 1: /tmp/oclost.done: No such file or directory
+== all 1 read(s) completed after release
+== objecter ops left: 0, fusectl waiting=0 max_background=12
+2026-11-07T18:01:45.667+0000 7b2bc7fff640  7 objectcacher bh_read_finish 1000000082d.00000000/head tid 2 0~131072 (bl is 131072) returned 0 outstanding reads 1
+2026-11-07T18:01:45.749+0000 7b2bc7fff640  7 objectcacher bh_read_finish 1000000082d.00000000/head tid 4 131072~131072 (bl is 0) returned 0 outstanding reads 1
+  432 fallocate D folio_wait_bit_common
+cut: '1337/task/*/stat': No such file or directory
+== elapsed 35 s
