@@ -1,0 +1,97 @@
+{
+  "run_id": "20261107-034033-B-baseline",
+  "stage": "B",
+  "kernel": "6.1.188-1.el9.elrepo.x86_64",
+  "ceph_fuse": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "cluster": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "faults": {},
+  "workload_args": [
+    "--workers",
+    "4",
+    "--hot",
+    "4"
+  ],
+  "start": "2026-11-07T03:40:34+0100",
+  "planned_duration": 3600,
+  "elapsed": 3603,
+  "aborted": null,
+  "oom_kills": {},
+  "mem_peak_mb": {
+    "mon": 320,
+    "mgr": 458,
+    "mds": 448,
+    "osd0": 2567,
+    "osd1": 2566,
+    "osd2": 2563,
+    "head": 1400,
+    "node": 1400,
+    "vm": 4369
+  },
+  "idle_fusectl": {
+    "head": {
+      "waiting": "0",
+      "max_background": "12",
+      "congestion_threshold": "9"
+    },
+    "node": {
+      "waiting": "0",
+      "max_background": "12",
+      "congestion_threshold": "9"
+    }
+  },
+  "outcome": "no repro",
+  "triggers": [],
+  "stats": {
+    "head": {
+      "t0": 1794019236.6922376,
+      "head_probes_written": 674,
+      "last_head_probes_written": 1794022837.296645,
+      "head_bytes_written": 6980791731,
+      "last_head_bytes_written": 1794022836.837479,
+      "head_hot_writes": 3592,
+      "last_head_hot_writes": 1794022837.3522701,
+      "head_jobs_created": 3121,
+      "last_head_jobs_created": 1794022836.84319,
+      "head_jobs_rewritten": 943,
+      "last_head_jobs_rewritten": 1794022834.872096,
+      "head_outputs_verified": 5373,
+      "last_head_outputs_verified": 1794022837.4689376,
+      "head_jobs_checked": 1074,
+      "last_head_jobs_checked": 1794022833.798729,
+      "head_jobs_deleted": 1034,
+      "last_head_jobs_deleted": 1794022837.2952757,
+      "t": 1794022837.4701996
+    },
+    "node": {
+      "t0": 1794019237.6007519,
+      "node_hot_reads": 22549,
+      "last_node_hot_reads": 1794022836.9788568,
+      "node_hot_mmap_reads": 6723,
+      "last_node_hot_mmap_reads": 1794022836.6885362,
+      "node_cp": 9296,
+      "last_node_cp": 1794022836.8927035,
+      "node_buffered_reads": 21434,
+      "last_node_buffered_reads": 1794022836.9929483,
+      "node_mmap_reads": 6446,
+      "last_node_mmap_reads": 1794022836.928509,
+      "node_mmap_writes": 3097,
+      "last_node_mmap_writes": 1794022834.255015,
+      "node_bytes_written": 4771513855,
+      "last_node_bytes_written": 1794022835.2698412,
+      "node_jobs_done": 3097,
+      "last_node_jobs_done": 1794022835.5935805,
+      "t": 1794022837.0048745
+    },
+    "failcheck": {
+      "t0": 1794019237.8345616,
+      "probe_ok": 842,
+      "last_probe_ok": 1794022837.9034455,
+      "probe_rechecks": 168,
+      "last_probe_rechecks": 1794022810.7635744,
+      "t": 1794022839.9628422
+    }
+  },
+  "blocklist": "10.177.77.12:6800/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:0/1378688511 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/1889620215 2026-11-07T14:44:55.302856+0000\n10.177.77.11:0/3407353904 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6801/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:6801/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/2118970209 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/4033411307 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3332997076 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6801/3473925138 2026-11-07T14:39:58.903782+0000\n10.177.77.11:6800/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3218408777 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3721478901 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/754901607 2026-11-07T14:44:55.302856+0000\n10.177.77.11:6800/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3824515705 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3973458054 2026-11-07T14:44:55.302856+0000\n10.177.77.12:6800/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:6801/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6801/2054025917 2026-11-07T14:44:56.444679+0000",
+  "workload_left_running": false,
+  "first_repro_after": null
+}

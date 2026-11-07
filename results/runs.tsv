@@ -23,3 +23,5 @@ run_id	stage	kernel	ceph	faults	workload_args	duration_s	outcome
 20261107-023852-B-fullflap-2	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	fullflap	--workers 4 --hot 4	3602	no repro
 20261107-034033-B-baseline	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	none	--workers 4 --hot 4	3603	no repro
 20261107-044146-B-all-faults	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	netem,msinject,mdsrecall,slowosd	--workers 4 --hot 4	0	INVALID: aborted at start, netem could not be applied to the VM node (no tc/NET_ADMIN in cfr-vm; fixed)
+20261107-044151-B-recall-msinject	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	mdsrecall,msinject	--workers 4 --hot 4	0	INVALID: MDS OOM-killed at its 448 MB cap seconds after the start (head rename stuck 1 h waiting on it); workload never ran; caps raised (MDS 2 GB, mon 1 GB)
+20261107-054634-B-recall-hot8	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	mdsrecall	--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05	5401	no repro (cluster reached FULL in the last ~30 s, 06:16:13 UTC, from undeleted old trees; valid for ~5370 s)
