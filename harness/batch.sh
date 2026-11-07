@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 # The long runs behind results.md, back to back: Stage B (production kernel in
-# the KVM guest) first, then Stage A (host kernel). Needs `make up vm-up`.
+# the KVM guest) first, then Stage A (host kernel), unless the argument says otherwise. Needs `make up vm-up`.
 #   harness/batch.sh [B|A|AB]   > state/batch.log 2>&1
 cd "$(dirname "$0")/.."
 stages=${1:-BA}
+# Wait for any run or batch already in progress.
+while pgrep -f '[h]arness/run.py|[b]atch-targeted.sh' >/dev/null; do sleep 30; done
 healthy() {
     for _ in $(seq 120); do
         docker exec cfr-mon ceph health 2>/dev/null | grep -q HEALTH_OK && return 0
