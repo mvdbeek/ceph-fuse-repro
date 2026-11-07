@@ -335,8 +335,11 @@ def main():
         # Delete the previous run's trees now, before the clock starts. (Moving them
         # aside and deleting in the background let them pile up until the OSDs filled.)
         t_clean = time.time()
-        dexec("head", "timeout", "1800", "rm", "-rf", "/mnt/scratch/trash", "/mnt/scratch/jobs",
-              "/mnt/scratch/probe", "/mnt/scratch/hot", check=False)
+        # 8 parallel rm (one rm through ceph-fuse took >30 min for a run's jobs);
+        # whatever is left after 15 min is picked up by the next run's cleanup.
+        dexec("head", "timeout", "900", "sh", "-c",
+              "for d in /mnt/scratch/trash /mnt/scratch/jobs /mnt/scratch/probe /mnt/scratch/hot; do "
+              "[ -d $d ] && (cd $d && ls | xargs -r -P 8 -n 20 rm -rf); rmdir $d 2>/dev/null; done; true", check=False)
         log("cleanup took %ds" % (time.time() - t_clean))
         common = ["--run-id", run_id] + wargs
         for role, container in (("head", "head"), ("node", "node"), ("failcheck", "node")):
