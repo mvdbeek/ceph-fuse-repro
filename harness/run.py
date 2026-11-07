@@ -277,6 +277,9 @@ def main():
     for c in CLIENTS:
         if subprocess.run(prefix(c, "mountpoint", "-q", "/mnt/scratch")).returncode:
             sys.exit("%s: /mnt/scratch not mounted; run `make up` (and `make vm-up vm-mount` for stage B)" % c)
+    down = [c for c in ("mon", "mgr", "mds", "osd0", "osd1", "osd2") if not container_state(c)[0]]
+    if down:
+        sys.exit("cluster container(s) not running: %s" % ",".join(down))
     if NODE_VM and running_in_container_node():
         sys.exit("stage B: stop the workload in cfr-node first")
 
@@ -324,7 +327,7 @@ def main():
             applied.append(f)
             log("fault on: %s" % f)
         # Move the previous run's trees aside (instant) and delete them in the background.
-        dexec("head", "sh", "-c", "mkdir -p /mnt/scratch/trash && for d in jobs probe hot; do "
+        dexec("head", "timeout", "300", "sh", "-c", "mkdir -p /mnt/scratch/trash && for d in jobs probe hot; do "
               "[ -e /mnt/scratch/$d ] && mv /mnt/scratch/$d /mnt/scratch/trash/$d.$$; done; "
               "(nohup rm -rf /mnt/scratch/trash >/dev/null 2>&1 &); true")
         common = ["--run-id", run_id] + wargs
