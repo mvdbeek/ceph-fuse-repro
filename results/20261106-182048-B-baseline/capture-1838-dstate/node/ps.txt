@@ -1,0 +1,195 @@
+    PID     TID STAT WCHAN                                    ELAPSED     TIME COMMAND         COMMAND
+      1       1 Ss   ep_poll                                     5460 00:00:45 systemd         /usr/lib/systemd/systemd --switched-root --system --deserialize 31
+      2       2 S    kthreadd                                    5460 00:00:00 kthreadd        [kthreadd]
+      3       3 I<   rescuer_thread                              5460 00:00:00 rcu_gp          [rcu_gp]
+      4       4 I<   rescuer_thread                              5460 00:00:00 rcu_par_gp      [rcu_par_gp]
+      5       5 I<   rescuer_thread                              5460 00:00:00 slub_flushwq    [slub_flushwq]
+      6       6 I<   rescuer_thread                              5460 00:00:00 netns           [netns]
+      8       8 I<   worker_thread                               5460 00:00:00 kworker/0:0H-ev [kworker/0:0H-events_highpri]
+     10      10 I<   rescuer_thread                              5460 00:00:00 mm_percpu_wq    [mm_percpu_wq]
+     11      11 I    rcu_tasks_one_gp                            5460 00:00:00 rcu_tasks_kthre [rcu_tasks_kthread]
+     12      12 I    rcu_tasks_one_gp                            5460 00:00:00 rcu_tasks_rude_ [rcu_tasks_rude_kthread]
+     13      13 I    rcu_tasks_one_gp                            5460 00:00:00 rcu_tasks_trace [rcu_tasks_trace_kthread]
+     14      14 S    smpboot_thread_fn                           5460 00:00:00 ksoftirqd/0     [ksoftirqd/0]
+     15      15 I    rcu_gp_fqs_loop                             5460 00:00:12 rcu_preempt     [rcu_preempt]
+     16      16 S    smpboot_thread_fn                           5460 00:00:00 migration/0     [migration/0]
+     18      18 S    smpboot_thread_fn                           5460 00:00:00 cpuhp/0         [cpuhp/0]
+     19      19 S    smpboot_thread_fn                           5460 00:00:00 cpuhp/1         [cpuhp/1]
+     20      20 S    smpboot_thread_fn                           5460 00:00:00 migration/1     [migration/1]
+     21      21 S    smpboot_thread_fn                           5460 00:00:00 ksoftirqd/1     [ksoftirqd/1]
+     23      23 I<   worker_thread                               5460 00:00:00 kworker/1:0H-ev [kworker/1:0H-events_highpri]
+     24      24 S    smpboot_thread_fn                           5460 00:00:00 cpuhp/2         [cpuhp/2]
+     25      25 S    smpboot_thread_fn                           5460 00:00:00 migration/2     [migration/2]
+     26      26 S    smpboot_thread_fn                           5460 00:00:00 ksoftirqd/2     [ksoftirqd/2]
+     29      29 S    smpboot_thread_fn                           5460 00:00:00 cpuhp/3         [cpuhp/3]
+     30      30 S    smpboot_thread_fn                           5460 00:00:00 migration/3     [migration/3]
+     31      31 S    smpboot_thread_fn                           5460 00:00:13 ksoftirqd/3     [ksoftirqd/3]
+     33      33 I<   worker_thread                               5460 00:00:00 kworker/3:0H-ev [kworker/3:0H-events_highpri]
+     38      38 S    devtmpfs_work_loop                          5460 00:00:00 kdevtmpfs       [kdevtmpfs]
+     39      39 I<   rescuer_thread                              5460 00:00:00 inet_frag_wq    [inet_frag_wq]
+     40      40 S    kauditd_thread                              5460 00:00:01 kauditd         [kauditd]
+     41      41 S    watchdog                                    5460 00:00:01 khungtaskd      [khungtaskd]
+     42      42 S    oom_reaper                                  5460 00:00:00 oom_reaper      [oom_reaper]
+     43      43 I<   rescuer_thread                              5460 00:00:00 writeback       [writeback]
+     44      44 S    kcompactd                                   5460 00:00:00 kcompactd0      [kcompactd0]
+     45      45 SN   ksm_scan_thread                             5460 00:00:00 ksmd            [ksmd]
+     47      47 SN   khugepaged_wait_work                        5460 00:00:00 khugepaged      [khugepaged]
+     48      48 I<   rescuer_thread                              5460 00:00:00 cryptd          [cryptd]
+     49      49 I<   rescuer_thread                              5460 00:00:00 kintegrityd     [kintegrityd]
+     50      50 I<   rescuer_thread                              5460 00:00:00 kblockd         [kblockd]
+     51      51 I<   rescuer_thread                              5460 00:00:00 blkcg_punt_bio  [blkcg_punt_bio]
+     52      52 I<   rescuer_thread                              5460 00:00:00 tpm_dev_wq      [tpm_dev_wq]
+     53      53 I<   rescuer_thread                              5460 00:00:00 md              [md]
+     54      54 I<   rescuer_thread                              5460 00:00:00 edac-poller     [edac-poller]
+     55      55 I<   rescuer_thread                              5460 00:00:00 devfreq_wq      [devfreq_wq]
+     56      56 S    kthread_worker_fn                           5460 00:00:00 watchdogd       [watchdogd]
+     58      58 I<   rescuer_thread                              5460 00:00:00 quota_events_un [quota_events_un]
+     59      59 I<   worker_thread                               5460 00:00:00 kworker/2:1H-xf [kworker/2:1H-xfs-log/vda4]
+     60      60 S    kswapd_try_to_sleep                         5460 00:00:07 kswapd0         [kswapd0]
+     67      67 I<   rescuer_thread                              5459 00:00:00 kthrotld        [kthrotld]
+     72      72 I<   rescuer_thread                              5459 00:00:00 acpi_thermal_pm [acpi_thermal_pm]
+     73      73 I<   rescuer_thread                              5459 00:00:00 kmpath_rdacd    [kmpath_rdacd]
+     74      74 I<   rescuer_thread                              5459 00:00:00 kaluad          [kaluad]
+     76      76 I<   rescuer_thread                              5459 00:00:00 mld             [mld]
+     77      77 I<   rescuer_thread                              5459 00:00:00 ipv6_addrconf   [ipv6_addrconf]
+     78      78 I<   rescuer_thread                              5459 00:00:00 kstrp           [kstrp]
+     84      84 I<   rescuer_thread                              5459 00:00:00 zswap-shrink    [zswap-shrink]
+    211     211 I<   worker_thread                               5459 00:00:00 kworker/u9:0    [kworker/u9:0]
+    212     212 I<   worker_thread                               5459 00:00:00 kworker/3:1H-kb [kworker/3:1H-kblockd]
+    253     253 I<   worker_thread                               5459 00:00:00 kworker/1:1H-xf [kworker/1:1H-xfs-log/vda4]
+    255     255 I<   worker_thread                               5459 00:00:00 kworker/0:1H-xf [kworker/0:1H-xfs-log/vda4]
+    375     375 I<   rescuer_thread                              5458 00:00:00 rpciod          [rpciod]
+    376     376 I<   rescuer_thread                              5458 00:00:00 xprtiod         [xprtiod]
+    489     489 I<   rescuer_thread                              5458 00:00:00 ata_sff         [ata_sff]
+    494     494 S    scsi_error_handler                          5458 00:00:00 scsi_eh_0       [scsi_eh_0]
+    495     495 I<   rescuer_thread                              5458 00:00:00 scsi_tmf_0      [scsi_tmf_0]
+    496     496 S    scsi_error_handler                          5458 00:00:00 scsi_eh_1       [scsi_eh_1]
+    497     497 I<   rescuer_thread                              5458 00:00:00 scsi_tmf_1      [scsi_tmf_1]
+    498     498 S    scsi_error_handler                          5458 00:00:00 scsi_eh_2       [scsi_eh_2]
+    499     499 I<   rescuer_thread                              5458 00:00:00 scsi_tmf_2      [scsi_tmf_2]
+    500     500 S    scsi_error_handler                          5458 00:00:00 scsi_eh_3       [scsi_eh_3]
+    501     501 I<   rescuer_thread                              5458 00:00:00 scsi_tmf_3      [scsi_tmf_3]
+    502     502 S    scsi_error_handler                          5458 00:00:00 scsi_eh_4       [scsi_eh_4]
+    503     503 I<   rescuer_thread                              5458 00:00:00 scsi_tmf_4      [scsi_tmf_4]
+    504     504 S    scsi_error_handler                          5458 00:00:00 scsi_eh_5       [scsi_eh_5]
+    505     505 I<   rescuer_thread                              5458 00:00:00 scsi_tmf_5      [scsi_tmf_5]
+    544     544 I<   rescuer_thread                              5456 00:00:00 xfsalloc        [xfsalloc]
+    545     545 I<   rescuer_thread                              5456 00:00:00 xfs_mru_cache   [xfs_mru_cache]
+    546     546 I<   rescuer_thread                              5456 00:00:00 xfs-buf/vda4    [xfs-buf/vda4]
+    547     547 I<   rescuer_thread                              5456 00:00:00 xfs-conv/vda4   [xfs-conv/vda4]
+    548     548 I<   rescuer_thread                              5456 00:00:00 xfs-reclaim/vda [xfs-reclaim/vda]
+    549     549 I<   rescuer_thread                              5456 00:00:00 xfs-blockgc/vda [xfs-blockgc/vda]
+    550     550 I<   rescuer_thread                              5456 00:00:00 xfs-inodegc/vda [xfs-inodegc/vda]
+    551     551 I<   rescuer_thread                              5456 00:00:00 xfs-log/vda4    [xfs-log/vda4]
+    552     552 I<   rescuer_thread                              5456 00:00:00 xfs-cil/vda4    [xfs-cil/vda4]
+    553     553 S    xfsaild                                     5456 00:00:01 xfsaild/vda4    [xfsaild/vda4]
+    668     668 Ss   ep_poll                                     5455 00:00:11 systemd-journal /usr/lib/systemd/systemd-journald
+    684     684 Ss   ep_poll                                     5455 00:00:00 systemd-udevd   /usr/lib/systemd/systemd-udevd
+    717     717 I<   worker_thread                               5455 00:00:00 kworker/2:2H    [kworker/2:2H]
+    738     738 I<   rescuer_thread                              5454 00:00:00 xfs-buf/vda3    [xfs-buf/vda3]
+    739     739 I<   rescuer_thread                              5454 00:00:00 xfs-conv/vda3   [xfs-conv/vda3]
+    740     740 I<   rescuer_thread                              5454 00:00:00 xfs-reclaim/vda [xfs-reclaim/vda]
+    741     741 I<   rescuer_thread                              5454 00:00:00 xfs-blockgc/vda [xfs-blockgc/vda]
+    742     742 I<   rescuer_thread                              5454 00:00:00 xfs-inodegc/vda [xfs-inodegc/vda]
+    743     743 I<   rescuer_thread                              5454 00:00:00 xfs-log/vda3    [xfs-log/vda3]
+    744     744 I<   rescuer_thread                              5454 00:00:00 xfs-cil/vda3    [xfs-cil/vda3]
+    745     745 S    xfsaild                                     5454 00:00:00 xfsaild/vda3    [xfsaild/vda3]
+    755     755 Ss   do_poll.constprop.0                         5454 00:00:00 rpcbind         /usr/bin/rpcbind -w -f
+    756     756 S<sl do_select                                   5454 00:00:07 auditd          /sbin/auditd
+    756     757 S<sl futex_wait_queue                            5454 00:00:00 auditd          /sbin/auditd
+    756     759 S<sl futex_wait_queue                            5454 00:00:03 auditd          /sbin/auditd
+    758     758 S<   do_select                                   5454 00:00:02 sedispatch      /usr/sbin/sedispatch
+    784     784 Ss   ep_poll                                     5454 00:00:00 dbus-broker-lau /usr/bin/dbus-broker-launch --scope system --audit
+    785     785 S    ep_poll                                     5454 00:00:21 dbus-broker     dbus-broker --log 4 --controller 9 --machine-id 5e24e9bfe4634cacac8e494cc02275ac --max-bytes 536870912 --max-fds 4096 --max-matches 131072 --audit
+    789     789 Ssl  do_poll.constprop.0                         5454 00:00:00 irqbalance      /usr/sbin/irqbalance
+    789     793 Ssl  do_poll.constprop.0                         5454 00:00:00 gmain           /usr/sbin/irqbalance
+    790     790 Ss   do_poll.constprop.0                         5454 00:00:00 rngd            /usr/sbin/rngd -f --fill-watermark=0 -x pkcs11 -x nist -x qrypt -x namedpipe -x jitter -D daemon:daemon
+    791     791 Ss   ep_poll                                     5454 00:00:24 systemd-logind  /usr/lib/systemd/systemd-logind
+    795     795 S    do_select                                   5454 00:00:00 chronyd         /usr/sbin/chronyd -F 2
+    810     810 Ssl  do_poll.constprop.0                         5453 00:00:03 NetworkManager  /usr/sbin/NetworkManager --no-daemon
+    810     811 Ssl  do_poll.constprop.0                         5453 00:00:00 gmain           /usr/sbin/NetworkManager --no-daemon
+    810     812 Ssl  do_poll.constprop.0                         5453 00:00:01 gdbus           /usr/sbin/NetworkManager --no-daemon
+    834     834 Ssl  ep_poll                                     5452 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    834     837 Ssl  futex_wait_queue                            5452 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    834     838 Ssl  futex_wait_queue                            5452 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    834     839 Ssl  futex_wait_queue                            5452 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    834     840 Ssl  futex_wait_queue                            5452 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    834     841 Ssl  futex_wait_queue                            5452 00:00:00 gssproxy        /usr/sbin/gssproxy -D
+    908     908 Ssl  do_select                                   5452 00:00:00 rsyslogd        /usr/sbin/rsyslogd -n
+    908     924 Ssl  do_poll.constprop.0                         5452 00:00:04 in:imjournal    /usr/sbin/rsyslogd -n
+    908     925 Ssl  futex_wait_queue                            5452 00:00:01 rs:main Q:Reg   /usr/sbin/rsyslogd -n
+    909     909 Ss   do_poll.constprop.0                         5452 00:00:11 sshd            sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+    912     912 Ss   hrtimer_nanosleep                           5452 00:00:00 crond           /usr/sbin/crond -n
+    913     913 Ss+  do_select                                   5452 00:00:00 agetty          /sbin/agetty -o -p -- \u --noclear - linux
+    914     914 Ss+  do_select                                   5452 00:00:00 agetty          /sbin/agetty -o -p -- \u --keep-baud 115200,57600,38400,9600 - vt220
+   4146    4146 Ss   ep_poll                                     5444 00:00:00 systemd         /usr/lib/systemd/systemd --user
+   4155    4155 S    do_sigtimedwait                             5444 00:00:00 (sd-pam)        (sd-pam)
+   5209    5209 Sl   futex_wait_queue                            5435 00:00:00 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5211 Sl   futex_wait_queue                            5435 00:01:05 log             ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5212 Sl   futex_wait_queue                            5435 00:00:00 service         ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5213 Sl   do_poll.constprop.0                         5435 00:00:02 admin_socket    ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5214 Sl   do_poll.constprop.0                         5435 00:00:00 signal_handler  ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5215 Sl   futex_wait_queue                            5435 00:00:00 io_context_pool ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5216 Sl   futex_wait_queue                            5435 00:00:00 io_context_pool ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5217 Sl   ep_poll                                     5435 00:00:50 msgr-worker-0   ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5218 Sl   ep_poll                                     5435 00:00:23 msgr-worker-1   ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5219 Sl   ep_poll                                     5435 00:02:34 msgr-worker-2   ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5220 Sl   futex_wait_queue                            5435 00:00:00 ceph_timer      ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5221 Sl   futex_wait_queue                            5435 00:00:00 fn_anonymous    ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5222 Dl   folio_wait_bit_common                       5435 00:00:02 fn_anonymous    ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5223 Sl   futex_wait_queue                            5435 00:00:03 fn_anonymous    ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5224 Sl   futex_wait_queue                            5435 00:00:00 fn_anonymous    ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5225 Sl   futex_wait_queue                            5435 00:00:00 fn_anonymous    ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5226 Sl   futex_wait_queue                            5435 00:00:00 safe_timer      ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5227 Sl   futex_wait_queue                            5435 00:00:15 fn_anonymous    ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5228 Sl   futex_wait_queue                            5435 00:00:00 flusher         ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5229 Sl   futex_wait_queue                            5435 00:01:02 ms_dispatch     ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5230 Sl   futex_wait_queue                            5435 00:00:00 ms_local        ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5231 Sl   futex_wait_queue                            5435 00:00:00 safe_timer      ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209    5232 Sl   futex_wait_queue                            5435 00:00:01 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   88632 Sl   fuse_dev_do_read                             107 00:00:01 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   89042 Sl   futex_wait_queue                              91 00:00:01 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   89122 Sl   fuse_dev_do_read                              89 00:00:01 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   89334 Sl   futex_wait_queue                              80 00:00:00 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   89344 Sl   futex_wait_queue                              80 00:00:00 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   89346 Sl   futex_wait_queue                              79 00:00:00 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   89350 Sl   fuse_dev_do_read                              79 00:00:00 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   89418 Sl   futex_wait_queue                              78 00:00:00 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   89567 Sl   fuse_dev_do_read                              74 00:00:00 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+   5209   89604 Sl   fuse_dev_do_read                              72 00:00:00 ceph-fuse       ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch
+  41820   41820 Ss   sigsuspend                                  3030 00:00:00 anacron         /usr/sbin/anacron -s
+  41968   41968 I    worker_thread                               1841 00:00:00 kworker/u8:0-fl [kworker/u8:0-flush-252:0]
+  41997   41997 Ssl  do_select                                   1840 00:00:01 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  41997   42000 Ssl  do_select                                   1840 00:00:45 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  41997   42001 Ssl  do_select                                   1840 00:00:46 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  41997   42002 Ssl  do_select                                   1840 00:00:43 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  41997   42003 Ssl  do_select                                   1840 00:00:44 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  41997   42004 Dsl  folio_wait_bit_common                       1840 00:00:31 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  41997   42005 Ssl  do_poll.constprop.0                         1840 00:00:30 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  41997   42006 Dsl  folio_wait_bit_common                       1840 00:00:29 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  41997   42007 Dsl  folio_wait_bit_common                       1840 00:00:29 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  41997   42008 Ssl  futex_wait_queue                            1840 00:00:01 python3         python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  42041   42041 Ssl  do_select                                   1840 00:00:00 python3         python3 -u /harness/workload.py failcheck --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  42041   42042 Ssl  do_select                                   1840 00:00:06 python3         python3 -u /harness/workload.py failcheck --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  42041   42043 Ssl  do_select                                   1840 00:00:09 python3         python3 -u /harness/workload.py failcheck --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  42041   42044 Ssl  do_select                                   1840 00:00:00 python3         python3 -u /harness/workload.py failcheck --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  42041   42045 Ssl  futex_wait_queue                            1840 00:00:00 python3         python3 -u /harness/workload.py failcheck --run-id 20261106-182048-B-baseline --workers 4 --hot 4
+  54324   54324 I    worker_thread                               1392 00:00:00 kworker/2:1-cgr [kworker/2:1-cgroup_free]
+  57072   57072 I    worker_thread                               1287 00:00:00 kworker/3:2-cgr [kworker/3:2-cgroup_release]
+  68083   68083 I    worker_thread                                865 00:00:02 kworker/0:0-eve [kworker/0:0-events]
+  69009   69009 I    worker_thread                                830 00:00:00 kworker/1:1-cgr [kworker/1:1-cgroup_free]
+  69189   69189 I    worker_thread                                822 00:00:00 kworker/u8:2-xf [kworker/u8:2-xfs-cil/vda4]
+  70660   70660 I    worker_thread                                768 00:00:00 kworker/u8:3-fl [kworker/u8:3-flush-252:0]
+  74320   74320 I    worker_thread                                634 00:00:00 kworker/3:0-mm_ [kworker/3:0-mm_percpu_wq]
+  77160   77160 I    worker_thread                                527 00:00:01 kworker/0:2-cgr [kworker/0:2-cgroup_free]
+  77783   77783 I    worker_thread                                506 00:00:00 kworker/1:0-eve [kworker/1:0-events]
+  80537   80537 I    worker_thread                                405 00:00:00 kworker/2:0-cgr [kworker/2:0-cgroup_release]
+  83275   83275 I    worker_thread                                303 00:00:00 kworker/3:1-cgr [kworker/3:1-cgroup_release]
+  85831   85831 I    worker_thread                                211 00:00:00 kworker/0:1-eve [kworker/0:1-events]
+  86216   86216 I    worker_thread                                196 00:00:00 kworker/u8:1-fl [kworker/u8:1-flush-252:0]
+  86790   86790 I    worker_thread                                175 00:00:00 kworker/1:2-eve [kworker/1:2-events]
+  90001   90001 D    folio_wait_bit_common                         58 00:00:00 python3         /usr/bin/python3 -c  import mmap, os, sys fd = os.open(sys.argv[1], os.O_RDONLY) os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED) if os.fstat(fd).st_size:     with mmap.mmap(fd, 0, prot=mmap.PROT_READ) as m:         m[:]  /mnt/scratch/hot/20261106-182048-B-baseline/hot01.dat
+  90440   90440 I    worker_thread                                 39 00:00:00 kworker/2:2-eve [kworker/2:2-events]
+  91272   91272 Ss   do_poll.constprop.0                            0 00:00:00 sshd-session    sshd-session: root [priv]
+  91275   91275 S    do_poll.constprop.0                            0 00:00:00 sshd-session    sshd-session: root@notty
+  91276   91276 Rs   -                                              0 00:00:00 ps              ps -eLo pid,tid,stat,wchan:40,etimes,time,comm,args

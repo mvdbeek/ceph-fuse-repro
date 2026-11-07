@@ -1,0 +1,11 @@
+HEALTH_WARN 3 OSD(s) experiencing slow operations in BlueStore; 1 clients failing to respond to capability release; 1 MDSs report slow metadata IOs; 1 MDSs report slow requests
+[WRN] BLUESTORE_SLOW_OP_ALERT: 3 OSD(s) experiencing slow operations in BlueStore
+     osd.0 observed slow operation indications in BlueStore
+     osd.1 observed slow operation indications in BlueStore
+     osd.2 observed slow operation indications in BlueStore
+[WRN] MDS_CLIENT_LATE_RELEASE: 1 clients failing to respond to capability release
+    mds.a(mds.0): Client head:galaxy-head failing to respond to capability release client_id: 34362
+[WRN] MDS_SLOW_METADATA_IO: 1 MDSs report slow metadata IOs
+    mds.a(mds.0): 100+ slow metadata IOs are blocked > 30 secs, oldest blocked for 93 secs
+[WRN] MDS_SLOW_REQUEST: 1 MDSs report slow requests
+    mds.a(mds.0): 25 slow requests are blocked > 30 secs

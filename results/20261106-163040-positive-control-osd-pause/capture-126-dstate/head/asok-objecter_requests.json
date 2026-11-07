@@ -1,0 +1,51 @@
+{
+    "ops": [
+        {
+            "tid": 11293,
+            "pg": "2.66d4d37b",
+            "osd": 1,
+            "object_id": "10000004f37.00000000",
+            "object_locator": "@2",
+            "target_object_id": "10000004f37.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1047718.560995s",
+            "age": 76.590946684000002,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T15:31:42.707309+0000",
+            "osd_ops": [
+                "write 131072~131072 [1@-1] in=131072b"
+            ]
+        },
+        {
+            "tid": 11294,
+            "pg": "2.d39a05ef",
+            "osd": 2,
+            "object_id": "10000005624.00000000",
+            "object_locator": "@2",
+            "target_object_id": "10000005624.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1047722.046038s",
+            "age": 73.105903573000006,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T15:31:46.192767+0000",
+            "osd_ops": [
+                "write 0~1048576 in=1048576b"
+            ]
+        }
+    ],
+    "linger_ops": [],
+    "pool_ops": [],
+    "pool_stat_ops": [],
+    "statfs_ops": [],
+    "command_ops": []
+}

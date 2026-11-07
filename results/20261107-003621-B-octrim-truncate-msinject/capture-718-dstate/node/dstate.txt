@@ -1,0 +1,36 @@
+=== /proc/101402/task/101402 comm=cp wchan=folio_wait_bit_common
+cmdline: cp -R /mnt/scratch/jobs/20261107-003621-B-octrim-truncate-msinject-w0-000013/configs /mnt/scratch/jobs/20261107-003621-B-octrim-truncate-msinject-w0-000013/configs.orig 
+syscall: 326 0x3 0x0 0x4 0x0 0x7fffffffc0000000 0x0 0x7ffcb0ba3d38 0x7fba1ab038ba
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] generic_file_splice_read+0x94/0x160
+[<0>] splice_direct_to_actor+0xb0/0x250
+[<0>] do_splice_direct+0x94/0xe0
+[<0>] generic_copy_file_range+0x2e/0x40
+[<0>] vfs_copy_file_range+0x297/0x520
+[<0>] __do_sys_copy_file_range+0xd4/0x210
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	102
+nonvoluntary_ctxt_switches:	1
+=== /proc/96625/task/96664 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0x8 0x7fd344401860 0x400000 0x2 0x0 0x2 0x7fd3608c4400 0x7fd363aff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	12740
+nonvoluntary_ctxt_switches:	783

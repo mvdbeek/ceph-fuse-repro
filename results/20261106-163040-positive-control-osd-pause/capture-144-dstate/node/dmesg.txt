@@ -1,0 +1,2 @@
+dmesg: read kernel buffer failed: Operation not permitted
+[exit 1]

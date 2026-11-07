@@ -1,0 +1,25 @@
+{
+  "run_id": "20261106-221156-A-octrim-truncate-msinject",
+  "stage": "A",
+  "kernel": "7.3.0-4-t2-resolute",
+  "ceph_fuse": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "cluster": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "faults": {
+    "octrim": "client_oc_size=1048576",
+    "slowosd": "dispatch_delay p=0.05 0.3s",
+    "msinject": "socket_failures=1/500 delay_p=0.02 max=2.0s"
+  },
+  "workload_args": [
+    "--workers",
+    "4",
+    "--hot",
+    "8",
+    "--hot-readers",
+    "8",
+    "--hot-interval",
+    "0.05",
+    "--hot-truncate"
+  ],
+  "start": "2026-11-06T22:11:57+0100",
+  "planned_duration": 3600
+}

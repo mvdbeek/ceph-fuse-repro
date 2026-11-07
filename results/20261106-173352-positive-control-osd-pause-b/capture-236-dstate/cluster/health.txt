@@ -1,0 +1,5 @@
+HEALTH_WARN 3 OSD(s) experiencing slow operations in BlueStore
+[WRN] BLUESTORE_SLOW_OP_ALERT: 3 OSD(s) experiencing slow operations in BlueStore
+     osd.0 observed slow operation indications in BlueStore
+     osd.1 observed slow operation indications in BlueStore
+     osd.2 observed slow operation indications in BlueStore

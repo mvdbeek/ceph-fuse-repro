@@ -1,0 +1,116 @@
+{
+    "diff": {
+        "admin_socket": {
+            "default": "$run_dir/$cluster-$name.$pid.$cctid.asok",
+            "file": "/var/run/ceph/$cluster-$name.asok",
+            "final": "/var/run/ceph/ceph-client.galaxy-head.asok"
+        },
+        "auth_client_required": {
+            "default": "cephx, none",
+            "file": "cephx",
+            "final": "cephx"
+        },
+        "auth_cluster_required": {
+            "default": "cephx",
+            "file": "cephx",
+            "final": "cephx"
+        },
+        "auth_service_required": {
+            "default": "cephx",
+            "file": "cephx",
+            "final": "cephx"
+        },
+        "chdir": {
+            "default": "/",
+            "final": "/"
+        },
+        "client_mountpoint": {
+            "default": "/",
+            "override": "/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6",
+            "final": "/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6"
+        },
+        "client_oc_size": {
+            "default": "209715200",
+            "override": "1048576",
+            "final": "1048576"
+        },
+        "daemonize": {
+            "default": true,
+            "override": false,
+            "final": false
+        },
+        "fsid": {
+            "default": "00000000-0000-0000-0000-000000000000",
+            "file": "a7f38d58-5b7d-4fb1-b61c-fd7632c1d80c",
+            "override": "a7f38d58-5b7d-4fb1-b61c-fd7632c1d80c",
+            "final": "a7f38d58-5b7d-4fb1-b61c-fd7632c1d80c"
+        },
+        "host": {
+            "default": "",
+            "override": "head",
+            "final": "head"
+        },
+        "log_file": {
+            "default": "/var/log/ceph/$cluster-$name.log",
+            "file": "/var/log/ceph/$cluster-$name.log",
+            "final": "/var/log/ceph/ceph-client.galaxy-head.log"
+        },
+        "mon_allow_pool_delete": {
+            "default": false,
+            "file": true,
+            "final": true
+        },
+        "mon_host": {
+            "default": "",
+            "file": "10.177.77.10",
+            "final": "10.177.77.10"
+        },
+        "mon_initial_members": {
+            "default": "",
+            "file": "a",
+            "final": "a"
+        },
+        "mon_warn_on_pool_no_redundancy": {
+            "default": true,
+            "file": false,
+            "final": false
+        },
+        "no_config_file": {
+            "default": false,
+            "override": false,
+            "final": false
+        },
+        "osd_pool_default_min_size": {
+            "default": 0,
+            "file": 2,
+            "final": 2
+        },
+        "osd_pool_default_pg_num": {
+            "default": 32,
+            "file": 32,
+            "final": 32
+        },
+        "osd_pool_default_size": {
+            "default": 3,
+            "file": 3,
+            "final": 3
+        },
+        "pid_file": {
+            "default": "",
+            "final": ""
+        },
+        "public_network": {
+            "default": "",
+            "file": "10.177.77.0/24",
+            "final": "10.177.77.0/24"
+        },
+        "rbd_default_features": {
+            "default": "61",
+            "final": "61"
+        },
+        "rbd_qos_exclude_ops": {
+            "default": "0",
+            "final": "0"
+        }
+    }
+}

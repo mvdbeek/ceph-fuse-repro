@@ -1,0 +1,914 @@
+{
+    "ops": [
+        {
+            "description": "osd_op(mds.0.138:454918 1.7 1:e2a3b1cf:::100000296a9.00000000:head [delete] snapc 0=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.930220+0000",
+            "age": 0.14558634100000001,
+            "duration": 0.14561301600000001,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.930220+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.930220+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.930221+0000",
+                        "duration": 8.4300000000000002e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.930225+0000",
+                        "duration": 3.428e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.930225+0000",
+                        "duration": 7.1999999999999999e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.930227+0000",
+                        "duration": 1.793e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.931144+0000",
+                        "duration": 0.00091701800000000002
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.931209+0000",
+                        "duration": 6.4794000000000003e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.931233+0000",
+                        "duration": 2.3811999999999998e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064901+0000",
+                        "duration": 0.13366799300000001
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.065290+0000",
+                        "duration": 0.00038936599999999999
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454920 1.0 1:0fa828ec:::100000296b2.00000000:head [delete] snapc 0=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.930230+0000",
+            "age": 0.14557717000000001,
+            "duration": 0.145667623,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.930230+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.930230+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.930230+0000",
+                        "duration": 6.0999999999999998e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.930232+0000",
+                        "duration": 1.9e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.930232+0000",
+                        "duration": 2.4600000000000001e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.930233+0000",
+                        "duration": 8.3500000000000005e-07
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.930370+0000",
+                        "duration": 0.00013668999999999999
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.930426+0000",
+                        "duration": 5.6626000000000003e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.930445+0000",
+                        "duration": 1.9052e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064896+0000",
+                        "duration": 0.13445025199999999
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.065254+0000",
+                        "duration": 0.000358539
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454925 2.20 2:04636c1e:::1000002a681.00000000:head [delete] snapc 1=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.930246+0000",
+            "age": 0.14556022099999999,
+            "duration": 0.14569903400000001,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.930246+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.930246+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.930247+0000",
+                        "duration": 4.3099999999999998e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.930249+0000",
+                        "duration": 2.26e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.930250+0000",
+                        "duration": 3.6300000000000001e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.930250+0000",
+                        "duration": 9.6099999999999999e-07
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.930484+0000",
+                        "duration": 0.00023343800000000001
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.930541+0000",
+                        "duration": 5.6684000000000001e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.930560+0000",
+                        "duration": 1.9273999999999999e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064894+0000",
+                        "duration": 0.13433384100000001
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.065247+0000",
+                        "duration": 0.00035328099999999999
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454928 2.8 2:10c066c2:::1000002a68d.00000000:head [delete] snapc 1=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.930252+0000",
+            "age": 0.14555454700000001,
+            "duration": 0.14573947200000001,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.930252+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.930252+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.930253+0000",
+                        "duration": 4.8999999999999997e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.930254+0000",
+                        "duration": 1.812e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.930255+0000",
+                        "duration": 3.0699999999999998e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.930256+0000",
+                        "duration": 7.6400000000000001e-07
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.930774+0000",
+                        "duration": 0.00051829100000000004
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.930827+0000",
+                        "duration": 5.3133000000000001e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.930874+0000",
+                        "duration": 4.6761000000000002e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064897+0000",
+                        "duration": 0.13402328399999999
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.065261+0000",
+                        "duration": 0.00036402299999999999
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_repop(mds.0.138:454934 1.4 e202/199 1:287c6767:::200.000001b3:head v 202'26458, mlcod=202'26456)",
+            "initiated_at": "2026-11-06T21:11:19.072549+0000",
+            "age": 0.0032576670000000001,
+            "duration": 0.003487066,
+            "type_data": {
+                "flag_point": "started",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:19.072549+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:19.072549+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:19.072550+0000",
+                        "duration": 9.4300000000000001e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:19.072570+0000",
+                        "duration": 2.0528999999999999e-05
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:19.072571+0000",
+                        "duration": 1.0130000000000001e-06
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:19.072574+0000",
+                        "duration": 2.249e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:19.072597+0000",
+                        "duration": 2.2768e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:19.072607+0000",
+                        "duration": 1.0171e-05
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454890 1.d 1:bc07069f:::100000233a2.00000000:head [delete] snapc 0=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.929273+0000",
+            "age": 0.14653392000000001,
+            "duration": 0.146799023,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.929273+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.929273+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.929274+0000",
+                        "duration": 9.8200000000000008e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.929277+0000",
+                        "duration": 3.3189999999999999e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.929278+0000",
+                        "duration": 8.4799999999999997e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.929280+0000",
+                        "duration": 1.8309999999999999e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.929327+0000",
+                        "duration": 4.7722000000000002e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.929363+0000",
+                        "duration": 3.5527000000000001e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.929387+0000",
+                        "duration": 2.4224e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064522+0000",
+                        "duration": 0.13513465699999999
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.064600+0000",
+                        "duration": 7.8477000000000001e-05
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454892 2.58 2:1b41dc77:::100000234d5.00000000:head [delete] snapc 1=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.929585+0000",
+            "age": 0.14622210399999999,
+            "duration": 0.14653318700000001,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.929585+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.929585+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.929586+0000",
+                        "duration": 9.6899999999999996e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.929590+0000",
+                        "duration": 4.4769999999999997e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.929591+0000",
+                        "duration": 8.5899999999999995e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.929593+0000",
+                        "duration": 1.9920000000000002e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.929649+0000",
+                        "duration": 5.6116000000000003e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.929739+0000",
+                        "duration": 9.0075999999999996e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.929765+0000",
+                        "duration": 2.633e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064497+0000",
+                        "duration": 0.13473141899999999
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.064911+0000",
+                        "duration": 0.00041442699999999998
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454893 2.3c 2:3d74de7d:::100000234d4.00000000:head [delete] snapc 1=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.929628+0000",
+            "age": 0.14617823099999999,
+            "duration": 0.14653485699999999,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.929628+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.929628+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.929629+0000",
+                        "duration": 6.1200000000000003e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.929631+0000",
+                        "duration": 2.3329999999999999e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.929632+0000",
+                        "duration": 4.8999999999999997e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.929633+0000",
+                        "duration": 1.3239999999999999e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.930128+0000",
+                        "duration": 0.00049445200000000004
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.930203+0000",
+                        "duration": 7.5343e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.930225+0000",
+                        "duration": 2.2325000000000001e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064665+0000",
+                        "duration": 0.134440111
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.064820+0000",
+                        "duration": 0.00015450899999999999
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454897 1.7 1:e1b4c2af:::100000233a4.00000000:head [delete] snapc 0=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.929666+0000",
+            "age": 0.14614077,
+            "duration": 0.14654156300000001,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.929666+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.929666+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.929667+0000",
+                        "duration": 6.13e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.929669+0000",
+                        "duration": 2.0150000000000002e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.929669+0000",
+                        "duration": 3.8000000000000001e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.929670+0000",
+                        "duration": 1.0499999999999999e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.930275+0000",
+                        "duration": 0.000605381
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.930340+0000",
+                        "duration": 6.5001999999999999e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.930360+0000",
+                        "duration": 1.9494999999999999e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064762+0000",
+                        "duration": 0.134402417
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.065279+0000",
+                        "duration": 0.00051720599999999998
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454900 2.7 2:e13f4896:::100000233be.00000000:head [delete] snapc 1=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.929683+0000",
+            "age": 0.14612370599999999,
+            "duration": 0.14656878000000001,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.929683+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.929683+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.929683+0000",
+                        "duration": 5.2699999999999999e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.929686+0000",
+                        "duration": 2.221e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.929686+0000",
+                        "duration": 3.3700000000000001e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.929687+0000",
+                        "duration": 1.31e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.930337+0000",
+                        "duration": 0.00064914699999999998
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.930425+0000",
+                        "duration": 8.8517000000000006e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.930449+0000",
+                        "duration": 2.3813999999999999e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064761+0000",
+                        "duration": 0.13431174300000001
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.065274+0000",
+                        "duration": 0.00051328699999999997
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454903 2.16 2:686b7bbe:::100000234ec.00000000:head [delete] snapc 1=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.929689+0000",
+            "age": 0.14611730000000001,
+            "duration": 0.14660696600000001,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.929689+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.929689+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.929690+0000",
+                        "duration": 3.3799999999999998e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.929708+0000",
+                        "duration": 1.8698999999999998e-05
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.929709+0000",
+                        "duration": 3.5699999999999998e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.929710+0000",
+                        "duration": 1.4279999999999999e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.929749+0000",
+                        "duration": 3.8393000000000003e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.929844+0000",
+                        "duration": 9.5037999999999994e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.929879+0000",
+                        "duration": 3.5398999999999998e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064543+0000",
+                        "duration": 0.13466357400000001
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.064920+0000",
+                        "duration": 0.00037753800000000002
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454908 1.7 1:e5a7c1e4:::100000232b2.00000000:head [delete] snapc 0=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.929982+0000",
+            "age": 0.145824706,
+            "duration": 0.146358814,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.929982+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.929982+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.929983+0000",
+                        "duration": 7.0100000000000004e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.929986+0000",
+                        "duration": 3.3280000000000002e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.929987+0000",
+                        "duration": 6.8999999999999996e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.929989+0000",
+                        "duration": 1.8959999999999999e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.930833+0000",
+                        "duration": 0.000844618
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.930939+0000",
+                        "duration": 0.00010618100000000001
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.930960+0000",
+                        "duration": 2.1022e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064780+0000",
+                        "duration": 0.13381922500000001
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.065282+0000",
+                        "duration": 0.000502444
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454910 2.22 2:458996fe:::1000002a8a1.00000000:head [delete] snapc 1=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.929991+0000",
+            "age": 0.14581565899999999,
+            "duration": 0.14639817399999999,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.929991+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.929991+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.929991+0000",
+                        "duration": 3.8200000000000001e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.929993+0000",
+                        "duration": 1.779e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.929993+0000",
+                        "duration": 3.2000000000000001e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.929995+0000",
+                        "duration": 1.006e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.930026+0000",
+                        "duration": 3.1195999999999997e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.930094+0000",
+                        "duration": 6.8001000000000002e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.930117+0000",
+                        "duration": 2.3204e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064679+0000",
+                        "duration": 0.134561983
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.065060+0000",
+                        "duration": 0.00038140100000000002
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(mds.0.138:454915 2.43 2:c2425ec1:::100000233dc.00000000:head [delete] snapc 1=[] ondisk+write+known_if_redirected+full_force+supports_pool_eio e202)",
+            "initiated_at": "2026-11-06T21:11:18.930011+0000",
+            "age": 0.14579555199999999,
+            "duration": 0.14642218300000001,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T21:11:18.930011+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T21:11:18.930011+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T21:11:18.930012+0000",
+                        "duration": 4.5200000000000002e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T21:11:18.930014+0000",
+                        "duration": 2.278e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T21:11:18.930014+0000",
+                        "duration": 4.7e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T21:11:18.930015+0000",
+                        "duration": 1.105e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T21:11:18.930181+0000",
+                        "duration": 0.000166064
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T21:11:18.930261+0000",
+                        "duration": 7.9129999999999996e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T21:11:18.930284+0000",
+                        "duration": 2.3161999999999999e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T21:11:19.064697+0000",
+                        "duration": 0.13441276899999999
+                    },
+                    {
+                        "event": "sub_op_commit_rec",
+                        "time": "2026-11-06T21:11:19.064832+0000",
+                        "duration": 0.00013569799999999999
+                    }
+                ]
+            }
+        }
+    ],
+    "num_ops": 14
+}

@@ -1,0 +1,9 @@
+=== /proc/3650/task/3656 comm=python3 wchan=filename_create
+cmdline: python3 -u /harness/workload.py head --run-id 20261106-163040-positive-control-osd-pause --workers 4 --hot 4 
+syscall: 83 0x73992adbe0c0 0x1ff 0x0 0x73992be1fbce 0xffffffff 0x2 0x73992ad99108 0x73992ba8eefb
+--- stack
+cat: /proc/3650/task/3656/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	3580
+nonvoluntary_ctxt_switches:	51

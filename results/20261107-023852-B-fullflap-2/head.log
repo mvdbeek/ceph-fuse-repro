@@ -1,0 +1,482 @@
+{"t": 1794015535.8578846, "ts": "2026-11-07T01:38:55", "host": "head", "kind": "start", "role": "head", "args": {"role": "head", "run_id": "20261107-023852-B-fullflap-2", "workers": 4, "rewrite_p": 0.3, "rewrite_delay": 1.0, "max_backlog": 16, "keep_jobs": 40, "mmap_p": 0.25, "probe_interval": 5, "hot": 4, "hot_readers": 4, "hot_interval": 0.2, "hot_truncate": false, "read_timeout": 20, "dstate_limit": 60, "stall_limit": 180}}
+{"t": 1794016142.6877317, "ts": "2026-11-07T01:49:02", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016142.700236, "ts": "2026-11-07T01:49:02", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000139", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016142.823834, "ts": "2026-11-07T01:49:02", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016143.3639123, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016143.4480286, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016143.547831, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016143.6365597, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016143.9002986, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016143.9048297, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000145", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016143.908259, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000147", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016143.913272, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000032", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016143.916283, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000146", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016143.9459012, "ts": "2026-11-07T01:49:03", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016144.0699778, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016144.0960796, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016144.2175195, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016144.484082, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016144.6309094, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000140", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016144.6348999, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016144.6679797, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016144.6989381, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016144.7829976, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016144.8664086, "ts": "2026-11-07T01:49:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016145.0235538, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016145.0634582, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016145.2121935, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016145.2955582, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000146", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016145.2999601, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000148", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016145.3070085, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000147", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016145.4464662, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016145.4503741, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000033", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016145.4508467, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000141", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016145.4974, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016145.6407905, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016145.729202, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000147", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016145.7687905, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016145.8764863, "ts": "2026-11-07T01:49:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016146.029787, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016146.1226368, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016146.1232898, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000149", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016146.1307073, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000148", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016146.1360052, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000034", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016146.3484683, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000142", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016146.3521621, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000148", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016146.6327953, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016146.7884622, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016146.851757, "ts": "2026-11-07T01:49:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016147.0768507, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016147.1934955, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000150", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016147.1987112, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000149", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016147.216484, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016147.3473356, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000143", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016147.351448, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000035", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016147.3556385, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000149", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016147.5713694, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016147.7046125, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000151", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016147.7449584, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016147.7724626, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016147.8266983, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016147.928091, "ts": "2026-11-07T01:49:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000150", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016148.0012734, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016148.1026824, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000144", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016148.105328, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016148.158757, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016148.2651548, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000150", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016148.313888, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016148.4009442, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000152", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016148.4019651, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000036", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016148.404954, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000151", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016148.4087274, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000145", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016148.4674845, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016148.634715, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016148.8007276, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016148.8478556, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016148.9011183, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016148.953078, "ts": "2026-11-07T01:49:08", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016149.1273232, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016149.170671, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016149.2651165, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016149.3174129, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016149.3292434, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000037", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016149.3340087, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000151", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016149.338614, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000152", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016149.341237, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000153", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016149.370086, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016149.5153754, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016149.5440104, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016149.6333737, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000146", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016149.7172968, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016149.9446886, "ts": "2026-11-07T01:49:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016150.1009111, "ts": "2026-11-07T01:49:10", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016150.2693768, "ts": "2026-11-07T01:49:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000152", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016150.2750256, "ts": "2026-11-07T01:49:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000153", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016150.2777584, "ts": "2026-11-07T01:49:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000038", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016150.278141, "ts": "2026-11-07T01:49:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000154", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016150.3035753, "ts": "2026-11-07T01:49:10", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016150.4575357, "ts": "2026-11-07T01:49:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000147", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016150.6611192, "ts": "2026-11-07T01:49:10", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016150.892541, "ts": "2026-11-07T01:49:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000153", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016151.1033132, "ts": "2026-11-07T01:49:11", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016151.1107292, "ts": "2026-11-07T01:49:11", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000154", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016151.1150367, "ts": "2026-11-07T01:49:11", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000155", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016151.1243844, "ts": "2026-11-07T01:49:11", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000039", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016756.4613156, "ts": "2026-11-07T01:59:16", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016756.483524, "ts": "2026-11-07T01:59:16", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000301", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016756.6092005, "ts": "2026-11-07T01:59:16", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016756.9138103, "ts": "2026-11-07T01:59:16", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016757.0949998, "ts": "2026-11-07T01:59:17", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016757.17289, "ts": "2026-11-07T01:59:17", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016757.3031502, "ts": "2026-11-07T01:59:17", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016757.3877912, "ts": "2026-11-07T01:59:17", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016757.42144, "ts": "2026-11-07T01:59:17", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000307", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016757.747133, "ts": "2026-11-07T01:59:17", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000313", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016757.7518084, "ts": "2026-11-07T01:59:17", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000305", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016757.948285, "ts": "2026-11-07T01:59:17", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016758.0240817, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016758.207482, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016758.2751825, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000302", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016758.4903703, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016758.5994759, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016758.6742547, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016758.8937154, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000308", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016758.8971639, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000084", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016758.898659, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000314", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016758.902321, "ts": "2026-11-07T01:59:18", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000306", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016759.0480661, "ts": "2026-11-07T01:59:19", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016759.1383636, "ts": "2026-11-07T01:59:19", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016759.235383, "ts": "2026-11-07T01:59:19", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000303", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016759.2470517, "ts": "2026-11-07T01:59:19", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016759.415832, "ts": "2026-11-07T01:59:19", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016759.5548174, "ts": "2026-11-07T01:59:19", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016759.8132806, "ts": "2026-11-07T01:59:19", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016759.9575698, "ts": "2026-11-07T01:59:19", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016759.9808285, "ts": "2026-11-07T01:59:19", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016760.0129375, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000309", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016760.014486, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000315", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016760.0174475, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000085", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016760.2048042, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016760.334696, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000307", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016760.3517463, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016760.4061456, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016760.5632546, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000304", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016760.5830827, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016760.7365394, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016760.8176377, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000310", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016760.9075618, "ts": "2026-11-07T01:59:20", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016761.004136, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016761.0728471, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000316", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016761.11923, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016761.1869714, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000308", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016761.3216155, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016761.456417, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000086", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016761.4579666, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000305", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016761.515211, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016761.6654172, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016761.7053194, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000311", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016761.7792878, "ts": "2026-11-07T01:59:21", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.0182679, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000317", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016762.0191565, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.0209377, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000309", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016762.0540812, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.1121025, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.135076, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000306", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016762.1896775, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.2361434, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.3338854, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.3594596, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.4373145, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000087", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016762.4616344, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.5985355, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000312", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016762.6072438, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000318", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016762.6130908, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000310", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016762.6167185, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.7000117, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.765839, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000307", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016762.8226266, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016762.9858391, "ts": "2026-11-07T01:59:22", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016763.184641, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016763.362573, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000313", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016763.6811814, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016763.6816785, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016763.6848087, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000319", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016763.68994, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000088", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016763.6906564, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000311", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016763.6975076, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000308", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016763.7470613, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016763.79553, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016763.8832226, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000314", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016763.9030552, "ts": "2026-11-07T01:59:23", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016764.0619152, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016764.1469212, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016764.6710281, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016764.8298528, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000320", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016764.8306305, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016764.8325832, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000089", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016764.8412936, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000312", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016764.9618368, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000309", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016764.9649177, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000315", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016764.971932, "ts": "2026-11-07T01:59:24", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016765.0620072, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016765.1223447, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016765.5290272, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016765.7349966, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016765.7352583, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000321", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016765.739785, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000313", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016765.742308, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000090", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016765.8373718, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016765.911382, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000310", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016765.9157243, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000316", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016765.993905, "ts": "2026-11-07T01:59:25", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016766.0396345, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016766.1804757, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016766.2810364, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016766.3325279, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016766.6156025, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016766.6159678, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000322", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016766.6237185, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000314", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016766.7233317, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016766.7835662, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016766.990365, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000311", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016766.9937708, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016766.9969254, "ts": "2026-11-07T01:59:26", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000317", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016767.0039763, "ts": "2026-11-07T01:59:27", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000091", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016767.4392734, "ts": "2026-11-07T01:59:27", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016767.4415069, "ts": "2026-11-07T01:59:27", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000323", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794016767.5391555, "ts": "2026-11-07T01:59:27", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016767.6362033, "ts": "2026-11-07T01:59:27", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794016767.7573292, "ts": "2026-11-07T01:59:27", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000315", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017369.4959452, "ts": "2026-11-07T02:09:29", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000480", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017369.700976, "ts": "2026-11-07T02:09:29", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017369.715087, "ts": "2026-11-07T02:09:29", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000463", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017369.944432, "ts": "2026-11-07T02:09:29", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000474", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017369.945167, "ts": "2026-11-07T02:09:29", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000246", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017370.0139642, "ts": "2026-11-07T02:09:30", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017370.109822, "ts": "2026-11-07T02:09:30", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017370.1300592, "ts": "2026-11-07T02:09:30", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000472", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017370.578127, "ts": "2026-11-07T02:09:30", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000481", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017370.7164476, "ts": "2026-11-07T02:09:30", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017370.780389, "ts": "2026-11-07T02:09:30", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000464", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017370.79414, "ts": "2026-11-07T02:09:30", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017370.8264785, "ts": "2026-11-07T02:09:30", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017370.9903417, "ts": "2026-11-07T02:09:30", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017371.0876985, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017371.1474273, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017371.2316926, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000475", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017371.2342114, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000473", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017371.2437139, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000482", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017371.245736, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000247", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017371.4101913, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017371.7414222, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017371.7791295, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000465", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017371.808171, "ts": "2026-11-07T02:09:31", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017372.0600793, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000476", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017372.2467585, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017372.2493975, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000474", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017372.3986235, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000483", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017372.4023738, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000248", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017372.446974, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017372.5134213, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017372.6083317, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000466", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017372.8286695, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017372.833055, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000477", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017372.997411, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017373.0003636, "ts": "2026-11-07T02:09:32", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000475", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017373.1430378, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000484", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017373.1714964, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017373.294982, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000467", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017373.341888, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017373.3704534, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017373.3986096, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017373.4290342, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000478", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017373.4298503, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000249", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017373.4622688, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017373.6284223, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017373.6702008, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000476", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017373.7894201, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017373.8294246, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017373.8623104, "ts": "2026-11-07T02:09:33", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017374.083749, "ts": "2026-11-07T02:09:34", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000485", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017374.2136009, "ts": "2026-11-07T02:09:34", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017374.4244158, "ts": "2026-11-07T02:09:34", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017374.7292075, "ts": "2026-11-07T02:09:34", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017374.7308958, "ts": "2026-11-07T02:09:34", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000468", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017374.918405, "ts": "2026-11-07T02:09:34", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017374.9849381, "ts": "2026-11-07T02:09:34", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000479", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017375.053722, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017375.1542983, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000477", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017375.1546931, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017375.2137954, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017375.3419318, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017375.3433273, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000486", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017375.3442678, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000250", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017375.5610862, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017375.5630527, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000469", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017375.6617482, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000480", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017375.6658275, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000478", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017375.7055905, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017375.8060288, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017375.9868982, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017375.9927957, "ts": "2026-11-07T02:09:35", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000487", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017376.071099, "ts": "2026-11-07T02:09:36", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017376.5161567, "ts": "2026-11-07T02:09:36", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017376.517254, "ts": "2026-11-07T02:09:36", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000251", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017376.5174506, "ts": "2026-11-07T02:09:36", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000470", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017376.7333753, "ts": "2026-11-07T02:09:36", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017376.735737, "ts": "2026-11-07T02:09:36", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000481", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017376.8000963, "ts": "2026-11-07T02:09:36", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017376.8507776, "ts": "2026-11-07T02:09:36", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017376.890843, "ts": "2026-11-07T02:09:36", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000479", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017377.1040988, "ts": "2026-11-07T02:09:37", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000488", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017377.310809, "ts": "2026-11-07T02:09:37", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017377.4836245, "ts": "2026-11-07T02:09:37", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000471", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017377.6684885, "ts": "2026-11-07T02:09:37", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017377.734352, "ts": "2026-11-07T02:09:37", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017377.78224, "ts": "2026-11-07T02:09:37", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017377.8819368, "ts": "2026-11-07T02:09:37", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000482", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017377.887159, "ts": "2026-11-07T02:09:37", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017378.0077965, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017378.073083, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000252", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017378.0737245, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000480", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017378.186283, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017378.3253024, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000489", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017378.3445566, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017378.430601, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017378.4317045, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000472", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017378.4356132, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000483", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017378.5984714, "ts": "2026-11-07T02:09:38", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017986.1587987, "ts": "2026-11-07T02:19:46", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017986.2622976, "ts": "2026-11-07T02:19:46", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000628", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017986.338441, "ts": "2026-11-07T02:19:46", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017986.6392615, "ts": "2026-11-07T02:19:46", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017986.8115566, "ts": "2026-11-07T02:19:46", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017987.0725203, "ts": "2026-11-07T02:19:47", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017987.2584133, "ts": "2026-11-07T02:19:47", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017987.461858, "ts": "2026-11-07T02:19:47", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017987.512203, "ts": "2026-11-07T02:19:47", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000629", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017987.5144038, "ts": "2026-11-07T02:19:47", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000614", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017987.5181355, "ts": "2026-11-07T02:19:47", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000621", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017987.9202263, "ts": "2026-11-07T02:19:47", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017988.0037584, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017988.0980453, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017988.2375734, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017988.386191, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017988.5130446, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017988.5506597, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017988.6973667, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017988.845431, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017988.9441698, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000632", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017988.9541864, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000630", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017988.956322, "ts": "2026-11-07T02:19:48", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000227", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017989.0258913, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017989.066738, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017989.146441, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000615", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017989.1510587, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000622", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017989.247199, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017989.2791138, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017989.3319004, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017989.3811104, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017989.8059988, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017989.9279954, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017989.9813201, "ts": "2026-11-07T02:19:49", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017990.056222, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000633", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017990.0564713, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017990.0580165, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000631", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017990.0821784, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017990.4223087, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000616", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017990.4253993, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000228", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017990.4272385, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000623", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017990.4934964, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017990.6308548, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017990.999785, "ts": "2026-11-07T02:19:50", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000634", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017991.0039227, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017991.196034, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017991.3225427, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017991.4305964, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017991.5416794, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000632", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017991.543507, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000617", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017991.546804, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000229", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017991.5653, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017991.6097653, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017991.6822956, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017991.7313108, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017991.8749979, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000624", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017991.8992307, "ts": "2026-11-07T02:19:51", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000635", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017992.250087, "ts": "2026-11-07T02:19:52", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017992.4945047, "ts": "2026-11-07T02:19:52", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017992.6215405, "ts": "2026-11-07T02:19:52", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017992.7079642, "ts": "2026-11-07T02:19:52", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000633", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017992.7121832, "ts": "2026-11-07T02:19:52", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000618", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017992.8063517, "ts": "2026-11-07T02:19:52", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017992.8432877, "ts": "2026-11-07T02:19:52", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000625", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017992.8446102, "ts": "2026-11-07T02:19:52", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000230", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017992.9187393, "ts": "2026-11-07T02:19:52", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017993.032217, "ts": "2026-11-07T02:19:53", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000636", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017993.0768454, "ts": "2026-11-07T02:19:53", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017993.2623556, "ts": "2026-11-07T02:19:53", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017993.2632003, "ts": "2026-11-07T02:19:53", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000634", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017993.3994281, "ts": "2026-11-07T02:19:53", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017993.5132885, "ts": "2026-11-07T02:19:53", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000619", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017993.5306191, "ts": "2026-11-07T02:19:53", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017993.605299, "ts": "2026-11-07T02:19:53", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017993.8430822, "ts": "2026-11-07T02:19:53", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000626", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017994.0228553, "ts": "2026-11-07T02:19:54", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017994.217094, "ts": "2026-11-07T02:19:54", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017994.332958, "ts": "2026-11-07T02:19:54", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017994.4398198, "ts": "2026-11-07T02:19:54", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017994.5346901, "ts": "2026-11-07T02:19:54", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017994.8417418, "ts": "2026-11-07T02:19:54", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017994.843634, "ts": "2026-11-07T02:19:54", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000637", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017994.9160302, "ts": "2026-11-07T02:19:54", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017995.1107469, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017995.2016015, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000635", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017995.2047496, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000231", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017995.2849195, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017995.34172, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017995.3623095, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000620", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017995.387402, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017995.5067787, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000627", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017995.5089324, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017995.5958362, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017995.6600711, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000638", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017995.7984092, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000636", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794017995.8852372, "ts": "2026-11-07T02:19:55", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794017996.1099143, "ts": "2026-11-07T02:19:56", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000232", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018603.6540267, "ts": "2026-11-07T02:30:03", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018604.3471873, "ts": "2026-11-07T02:30:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018604.398687, "ts": "2026-11-07T02:30:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018604.4547522, "ts": "2026-11-07T02:30:04", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018605.2162259, "ts": "2026-11-07T02:30:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018605.265942, "ts": "2026-11-07T02:30:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018605.5358515, "ts": "2026-11-07T02:30:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018605.7292094, "ts": "2026-11-07T02:30:05", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018605.754931, "ts": "2026-11-07T02:30:05", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000765", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018606.2991042, "ts": "2026-11-07T02:30:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018606.4665265, "ts": "2026-11-07T02:30:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018606.5405877, "ts": "2026-11-07T02:30:06", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000761", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018606.5519392, "ts": "2026-11-07T02:30:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018606.7413254, "ts": "2026-11-07T02:30:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018606.784432, "ts": "2026-11-07T02:30:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018606.8500793, "ts": "2026-11-07T02:30:06", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000774", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018606.8551528, "ts": "2026-11-07T02:30:06", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000753", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018606.8618112, "ts": "2026-11-07T02:30:06", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018607.4012027, "ts": "2026-11-07T02:30:07", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018607.4038484, "ts": "2026-11-07T02:30:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000766", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018607.5242634, "ts": "2026-11-07T02:30:07", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018607.6956344, "ts": "2026-11-07T02:30:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000762", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018607.698099, "ts": "2026-11-07T02:30:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000386", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018607.7077339, "ts": "2026-11-07T02:30:07", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000775", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018607.7125561, "ts": "2026-11-07T02:30:07", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018608.0161014, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000754", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018608.4578764, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018608.6599064, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "where": "probe", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018608.702567, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018608.707321, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000767", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018608.7094395, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000776", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018608.711011, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000387", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018608.7117648, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000763", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018608.7166564, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000755", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018608.7378168, "ts": "2026-11-07T02:30:08", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018609.4166877, "ts": "2026-11-07T02:30:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018609.4907074, "ts": "2026-11-07T02:30:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018609.5375094, "ts": "2026-11-07T02:30:09", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018609.6507385, "ts": "2026-11-07T02:30:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000768", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018609.6551905, "ts": "2026-11-07T02:30:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000777", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018609.6570477, "ts": "2026-11-07T02:30:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000388", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018609.658349, "ts": "2026-11-07T02:30:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000764", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018609.870602, "ts": "2026-11-07T02:30:09", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000756", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018610.302318, "ts": "2026-11-07T02:30:10", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018610.3088176, "ts": "2026-11-07T02:30:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000769", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018610.47857, "ts": "2026-11-07T02:30:10", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018610.9736063, "ts": "2026-11-07T02:30:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000778", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018610.9882593, "ts": "2026-11-07T02:30:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000389", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018610.9877362, "ts": "2026-11-07T02:30:10", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w0-000765", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018611.0022438, "ts": "2026-11-07T02:30:11", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w3-000757", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018611.3626812, "ts": "2026-11-07T02:30:11", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018611.3649466, "ts": "2026-11-07T02:30:11", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w1-000770", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018611.4253054, "ts": "2026-11-07T02:30:11", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018611.903055, "ts": "2026-11-07T02:30:11", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794018611.94582, "ts": "2026-11-07T02:30:11", "host": "head", "kind": "head_error", "job": "20261107-023852-B-fullflap-2-w2-000779", "error": "PermissionError(13, 'Permission denied')"}
+{"t": 1794018612.0131924, "ts": "2026-11-07T02:30:12", "host": "head", "kind": "head_error", "where": "hot", "error": "OSError(28, 'No space left on device')"}
+{"t": 1794019168.609289, "ts": "2026-11-07T02:39:28", "host": "head", "kind": "exit", "role": "head", "alive_threads": 1, "counters": {"t0": 1794015535.8575602, "head_bytes_written": 7446958176, "last_head_bytes_written": 1794019136.5098836, "head_jobs_created": 3367, "last_head_jobs_created": 1794019136.5144894, "head_probes_written": 668, "last_head_probes_written": 1794019137.5348566, "head_hot_writes": 3852, "last_head_hot_writes": 1794019138.3942633, "head_jobs_rewritten": 967, "last_head_jobs_rewritten": 1794019133.9873455, "head_outputs_verified": 5925, "last_head_outputs_verified": 1794019168.2473602, "head_jobs_checked": 1152, "last_head_jobs_checked": 1794019168.2555032, "head_jobs_deleted": 1111, "last_head_jobs_deleted": 1794019168.0018406, "head_errors": 480, "last_head_errors": 1794018612.013171}}

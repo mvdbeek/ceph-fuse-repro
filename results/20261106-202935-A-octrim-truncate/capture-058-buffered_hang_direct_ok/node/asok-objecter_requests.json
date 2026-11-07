@@ -1,0 +1,135 @@
+{
+    "ops": [
+        {
+            "tid": 82963,
+            "pg": "2.2e9f24fe",
+            "osd": 0,
+            "object_id": "1000002b846.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000002b846.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1062053.758854s",
+            "age": 0.75900913400000003,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "0=[]",
+            "mtime": "1970-01-01T00:00:00.000000+0000",
+            "osd_ops": [
+                "read 389120~4096 [2@0]"
+            ]
+        },
+        {
+            "tid": 82964,
+            "pg": "2.2e9f24fe",
+            "osd": 0,
+            "object_id": "1000002b846.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000002b846.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1062053.758854s",
+            "age": 0.75900913400000003,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "0=[]",
+            "mtime": "1970-01-01T00:00:00.000000+0000",
+            "osd_ops": [
+                "read 266240~122880 [2@0]"
+            ]
+        },
+        {
+            "tid": 82965,
+            "pg": "2.2e9f24fe",
+            "osd": 0,
+            "object_id": "1000002b846.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000002b846.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1062053.758854s",
+            "age": 0.75900913400000003,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "0=[]",
+            "mtime": "1970-01-01T00:00:00.000000+0000",
+            "osd_ops": [
+                "read 258048~4096 [2@0]"
+            ]
+        },
+        {
+            "tid": 82967,
+            "pg": "2.2e9f24fe",
+            "osd": 0,
+            "object_id": "1000002b846.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000002b846.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1062053.759854s",
+            "age": 0.75800912200000004,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "0=[]",
+            "mtime": "1970-01-01T00:00:00.000000+0000",
+            "osd_ops": [
+                "read 196608~61440 [2@0]"
+            ]
+        },
+        {
+            "tid": 82968,
+            "pg": "2.2e9f24fe",
+            "osd": 0,
+            "object_id": "1000002b846.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000002b846.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1062053.759854s",
+            "age": 0.75800912200000004,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "0=[]",
+            "mtime": "1970-01-01T00:00:00.000000+0000",
+            "osd_ops": [
+                "read 262144~4096 [2@0]"
+            ]
+        },
+        {
+            "tid": 82969,
+            "pg": "2.95eeddb0",
+            "osd": 2,
+            "object_id": "1000002b6ee.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000002b6ee.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1062054.064858s",
+            "age": 0.45300545199999998,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T19:30:38.211437+0000",
+            "osd_ops": [
+                "write 0~27273 in=27273b"
+            ]
+        }
+    ],
+    "linger_ops": [],
+    "pool_ops": [],
+    "pool_stat_ops": [],
+    "statfs_ops": [],
+    "command_ops": []
+}

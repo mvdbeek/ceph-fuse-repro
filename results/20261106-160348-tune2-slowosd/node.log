@@ -1,0 +1,74 @@
+{"t": 1793977430.3397949, "ts": "2026-11-06T15:03:50", "host": "node", "kind": "start", "role": "node", "args": {"role": "node", "run_id": "20261106-160348-tune2-slowosd", "workers": 4, "rewrite_p": 0.3, "rewrite_delay": 1.0, "max_backlog": 16, "keep_jobs": 40, "mmap_p": 0.25, "probe_interval": 5, "hot": 4, "hot_readers": 4, "hot_interval": 0.2, "read_timeout": 20, "dstate_limit": 60, "stall_limit": 180}}
+Fatal Python error: Bus error
+
+Thread 0x00007f8a07fff640 (most recent call first):
+  File "/usr/lib64/python3.9/threading.py", line 316 in wait
+  File "/usr/lib64/python3.9/threading.py", line 581 in wait
+  File "/harness/workload.py", line 86 in stats_writer
+  File "/usr/lib64/python3.9/threading.py", line 917 in run
+  File "/usr/lib64/python3.9/threading.py", line 980 in _bootstrap_inner
+  File "/usr/lib64/python3.9/threading.py", line 937 in _bootstrap
+
+Thread 0x00007f8a24ff9640 (most recent call first):
+  File "/harness/workload.py", line 409 in node_hot_reader
+  File "/usr/lib64/python3.9/threading.py", line 917 in run
+  File "/usr/lib64/python3.9/threading.py", line 980 in _bootstrap_inner
+  File "/usr/lib64/python3.9/threading.py", line 937 in _bootstrap
+
+Current thread 0x00007f8a257fa640 (most recent call first):
+  File "/harness/workload.py", line 407 in node_hot_reader
+  File "/usr/lib64/python3.9/threading.py", line 917 in run
+  File "/usr/lib64/python3.9/threading.py", line 980 in _bootstrap_inner
+  File "/usr/lib64/python3.9/threading.py", line 937 in _bootstrap
+
+Thread 0x00007f8a25ffb640 (most recent call first):
+  File "/harness/workload.py", line 390 in node_hot_reader
+  File "/usr/lib64/python3.9/threading.py", line 917 in run
+  File "/usr/lib64/python3.9/threading.py", line 980 in _bootstrap_inner
+  File "/usr/lib64/python3.9/threading.py", line 937 in _bootstrap
+
+Thread 0x00007f8a267fc640 (most recent call first):
+  File "/harness/workload.py", line 404 in node_hot_reader
+  File "/usr/lib64/python3.9/threading.py", line 917 in run
+  File "/usr/lib64/python3.9/threading.py", line 980 in _bootstrap_inner
+  File "/usr/lib64/python3.9/threading.py", line 937 in _bootstrap
+
+Thread 0x00007f8a26ffd640 (most recent call first):
+  File "/harness/workload.py", line 339 in node_job
+  File "/harness/workload.py", line 375 in node_worker
+  File "/usr/lib64/python3.9/threading.py", line 917 in run
+  File "/usr/lib64/python3.9/threading.py", line 980 in _bootstrap_inner
+  File "/usr/lib64/python3.9/threading.py", line 937 in _bootstrap
+
+Thread 0x00007f8a277fe640 (most recent call first):
+  File "/harness/workload.py", line 336 in node_job
+  File "/harness/workload.py", line 375 in node_worker
+  File "/usr/lib64/python3.9/threading.py", line 917 in run
+  File "/usr/lib64/python3.9/threading.py", line 980 in _bootstrap_inner
+  File "/usr/lib64/python3.9/threading.py", line 937 in _bootstrap
+
+Thread 0x00007f8a27fff640 (most recent call first):
+  File "/usr/lib64/python3.9/selectors.py", line 416 in select
+  File "/usr/lib64/python3.9/subprocess.py", line 1995 in _communicate
+  File "/usr/lib64/python3.9/subprocess.py", line 1134 in communicate
+  File "/usr/lib64/python3.9/subprocess.py", line 507 in run
+  File "/harness/workload.py", line 291 in node_job
+  File "/harness/workload.py", line 375 in node_worker
+  File "/usr/lib64/python3.9/threading.py", line 917 in run
+  File "/usr/lib64/python3.9/threading.py", line 980 in _bootstrap_inner
+  File "/usr/lib64/python3.9/threading.py", line 937 in _bootstrap
+
+Thread 0x00007f8a2cb15640 (most recent call first):
+  File "/usr/lib64/python3.9/selectors.py", line 416 in select
+  File "/usr/lib64/python3.9/subprocess.py", line 1995 in _communicate
+  File "/usr/lib64/python3.9/subprocess.py", line 1134 in communicate
+  File "/usr/lib64/python3.9/subprocess.py", line 507 in run
+  File "/harness/workload.py", line 291 in node_job
+  File "/harness/workload.py", line 375 in node_worker
+  File "/usr/lib64/python3.9/threading.py", line 917 in run
+  File "/usr/lib64/python3.9/threading.py", line 980 in _bootstrap_inner
+  File "/usr/lib64/python3.9/threading.py", line 937 in _bootstrap
+
+Thread 0x00007f8a2d62ce00 (most recent call first):
+  File "/harness/workload.py", line 609 in main
+  File "/harness/workload.py", line 621 in <module>

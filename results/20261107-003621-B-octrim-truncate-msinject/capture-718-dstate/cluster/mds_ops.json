@@ -1,0 +1,2743 @@
+2026-11-06T23:56:36.214+0000 7b4ad27fc640  0 client.45731 ms_handle_reset on v2:10.177.77.12:6800/140078637
+2026-11-06T23:56:36.238+0000 7b4ad27fc640  0 client.45733 ms_handle_reset on v2:10.177.77.12:6800/140078637
+{
+    "ops": [
+        {
+            "description": "client_request(client.45146:718074 mkdir owner_uid=0, owner_gid=0 #0x10000053db7/metadata 2026-11-06T23:56:28.358355+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.358476+0000",
+            "age": 7.87842223,
+            "duration": 7.8784425389999999,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718074
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.358476+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.358476+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.358476+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.358483+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.358537+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.358571+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.358619+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.358620+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718075 create owner_uid=0, owner_gid=0 #0x10000053dbb/registry.xml 2026-11-06T23:56:28.359669+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.359767+0000",
+            "age": 7.877131372,
+            "duration": 7.8771912740000003,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718075
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.359767+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.359767+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.359767+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.359774+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.359824+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.359886+0000",
+                        "event": "failed to rdlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.360189+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.360265+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.360265+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718076 create owner_uid=0, owner_gid=0 #0x10000053dbb/conf0.xml 2026-11-06T23:56:28.362358+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.362475+0000",
+            "age": 7.8744228549999997,
+            "duration": 7.8745195560000001,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718076
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.362475+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362475+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362476+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362483+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362501+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362541+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362594+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362594+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718121 unlink #0x1000004cf07/input1.dat 2026-11-06T23:56:32.864077+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:32.864117+0000",
+            "age": 3.3727809519999998,
+            "duration": 3.372910165,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718121
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:32.864117+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864117+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864117+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864121+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864135+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864163+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864177+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864218+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864219+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316475 mkdir owner_uid=0, owner_gid=0 #0x1000005398e/outputs.orig 2026-11-06T23:56:34.640845+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:34.670857+0000",
+            "age": 1.566041378,
+            "duration": 1.566206158,
+            "type_data": {
+                "flag_point": "failed to wrlock, waiting",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316475
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:34.670857+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.670857+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.670857+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.670876+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.670895+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.670971+0000",
+                        "event": "failed to wrlock, waiting"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316434 create owner_uid=0, owner_gid=0 #0x10000053fb5/conf1.xml 2026-11-06T23:56:28.331963+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.362721+0000",
+            "age": 7.8741768429999999,
+            "duration": 7.8743692149999998,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316434
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.362721+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362721+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362722+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362726+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362764+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362799+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362852+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.362852+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316435 create owner_uid=0, owner_gid=0 #0x10000053fb2/input1.dat 2026-11-06T23:56:28.333126+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.363588+0000",
+            "age": 7.8733096639999998,
+            "duration": 7.8735344060000001,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316435
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.363588+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.363588+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.363589+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.363596+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.363615+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.363651+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.363710+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.363711+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718123 unlink #0x1000004cf07/input4.dat 2026-11-06T23:56:32.864673+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:32.864718+0000",
+            "age": 3.372180271,
+            "duration": 3.3724364850000002,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718123
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:32.864718+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864718+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864718+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864722+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864735+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864760+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864772+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864797+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.864798+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718077 create owner_uid=0, owner_gid=0 #0x10000053dbb/conf1.xml 2026-11-06T23:56:28.364085+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.364183+0000",
+            "age": 7.8727154180000003,
+            "duration": 7.8730076809999998,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718077
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.364183+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.364183+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.364183+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.364191+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.364242+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.364275+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.364325+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.364326+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718078 create owner_uid=0, owner_gid=0 #0x10000053dbb/conf2.xml 2026-11-06T23:56:28.365766+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.365870+0000",
+            "age": 7.8710281919999998,
+            "duration": 7.8713524440000002,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718078
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.365870+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.365870+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.365871+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.365877+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.365937+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.365972+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.366023+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.366024+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718094 rmdir #0x10000052e8e/outputs.orig 2026-11-06T23:56:31.203333+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:31.203468+0000",
+            "age": 5.033430074,
+            "duration": 5.0337862009999998,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718094
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:31.203468+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.203468+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.203469+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.203477+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.203523+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.203563+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.203589+0000",
+                        "event": "failed to xlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.204251+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.204290+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.204291+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718125 unlink #0x1000004cf07/input3.dat 2026-11-06T23:56:32.865429+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:32.865470+0000",
+            "age": 3.3714278910000002,
+            "duration": 3.3718203529999999,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718125
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:32.865470+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.865470+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.865470+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.865474+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.865487+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.865509+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.865521+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.865546+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.865546+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718079 create owner_uid=0, owner_gid=0 #0x10000053dbc/input0.dat 2026-11-06T23:56:28.367613+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.367705+0000",
+            "age": 7.8691926030000001,
+            "duration": 7.8696195400000004,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718079
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.367705+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.367705+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.367706+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.367714+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.367762+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.367812+0000",
+                        "event": "failed to rdlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.368128+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.368188+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.368188+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718127 unlink #0x1000004cf07/input0.dat 2026-11-06T23:56:32.866159+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:32.866270+0000",
+            "age": 3.3706276310000001,
+            "duration": 3.3710886480000002,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718127
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:32.866270+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.866270+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.866271+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.866274+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.866288+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.866309+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.866324+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.866347+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.866348+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718080 create owner_uid=0, owner_gid=0 #0x10000053dbc/input1.dat 2026-11-06T23:56:28.369741+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.369821+0000",
+            "age": 7.8670768730000002,
+            "duration": 7.8675724929999999,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718080
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.369821+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.369821+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.369822+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.369826+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.369838+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.369873+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.369919+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.369919+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718081 create owner_uid=0, owner_gid=0 #0x10000053dbc/input2.dat 2026-11-06T23:56:28.371478+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.371570+0000",
+            "age": 7.8653281650000002,
+            "duration": 7.865855754,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718081
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.371570+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.371570+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.371571+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.371578+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.371597+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.371631+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.371681+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.371681+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718129 unlink #0x1000004cf07/input2.dat 2026-11-06T23:56:32.867017+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:32.867158+0000",
+            "age": 3.3697397119999999,
+            "duration": 3.3703015949999999,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718129
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:32.867158+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867158+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867159+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867164+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867177+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867194+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867209+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867241+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867241+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718082 create owner_uid=0, owner_gid=0 #0x10000053dbc/input3.dat 2026-11-06T23:56:28.373698+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.373786+0000",
+            "age": 7.8631114709999999,
+            "duration": 7.8637075029999997,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718082
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.373786+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.373786+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.373787+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.373795+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.373813+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.373846+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.373907+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.373908+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718099 unlink #0x10000052e9e/galaxy.json 2026-11-06T23:56:31.206609+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:31.206709+0000",
+            "age": 5.0301884970000001,
+            "duration": 5.0308179590000002,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718099
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:31.206709+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.206709+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.206710+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.206715+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.206731+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.206760+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.206772+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.206808+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.206809+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718130 rmdir #0x1000004cf00/working 2026-11-06T23:56:32.867755+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:32.867845+0000",
+            "age": 3.3690526699999999,
+            "duration": 3.3697157600000001,
+            "type_data": {
+                "flag_point": "failed to xlock, waiting",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718130
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:32.867845+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867845+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867846+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867851+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867870+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.867895+0000",
+                        "event": "failed to wrlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.868545+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.868604+0000",
+                        "event": "failed to xlock, waiting"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718083 create owner_uid=0, owner_gid=0 #0x10000053dbc/input4.dat 2026-11-06T23:56:28.377340+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.377451+0000",
+            "age": 7.8594472550000001,
+            "duration": 7.8601425459999996,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718083
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.377451+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.377451+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.377453+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.377464+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.377517+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.377567+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.377630+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.377631+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316453 create owner_uid=0, owner_gid=0 #0x10000053fb1/input4.dat 2026-11-06T23:56:33.438755+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:33.468952+0000",
+            "age": 2.7679461970000001,
+            "duration": 2.7686733640000001,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316453
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:33.468952+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.468952+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.468953+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.468967+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.468997+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.469068+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.469165+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.469166+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718084 create owner_uid=0, owner_gid=0 #0x10000053db7/command.sh 2026-11-06T23:56:28.379502+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.379595+0000",
+            "age": 7.8573024870000001,
+            "duration": 7.8580618119999999,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718084
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.379595+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.379595+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.379596+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.379604+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.379622+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.379665+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.379742+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.379743+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718101 unlink #0x10000052e9e/__instrument_core_epoch_start 2026-11-06T23:56:31.207376+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:31.207459+0000",
+            "age": 5.0294391960000002,
+            "duration": 5.0302301749999998,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718101
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:31.207459+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.207459+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.207459+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.207464+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.207477+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.207498+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.207516+0000",
+                        "event": "failed to xlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208072+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208119+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208120+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316454 create owner_uid=0, owner_gid=0 #0x10000053fb2/input2.dat 2026-11-06T23:56:33.441942+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:33.472494+0000",
+            "age": 2.7644042870000001,
+            "duration": 2.7652320559999999,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316454
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:33.472494+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.472494+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.472494+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.472502+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.472523+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.472557+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.472614+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.472614+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316486 lookup #0x1000005285b/hot00.dat 2026-11-06T23:56:34.857275+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:34.887242+0000",
+            "age": 1.3496557600000001,
+            "duration": 1.3505153299999999,
+            "type_data": {
+                "flag_point": "joining batch lookup",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316486
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:34.887242+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.887242+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.887243+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.887249+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.887288+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.887308+0000",
+                        "event": "joining batch lookup"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316424 lookup #0x1000005285b/hot00.dat 2026-11-06T23:56:27.687126+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:27.717134+0000",
+            "age": 8.5197639360000004,
+            "duration": 8.5206501180000007,
+            "type_data": {
+                "flag_point": "failed to rdlock, waiting",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316424
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:27.717134+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:27.717134+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:27.717136+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:27.717147+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:27.717203+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:27.717255+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:27.717256+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:27.717273+0000",
+                        "event": "failed to rdlock, waiting"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316437 create owner_uid=0, owner_gid=0 #0x10000053fb1/input3.dat 2026-11-06T23:56:28.355702+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.385714+0000",
+            "age": 7.8511837159999995,
+            "duration": 7.8521017449999997,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316437
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.385714+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.385714+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.385716+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.385726+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.385781+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.385840+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.385926+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.385927+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718102 lookup #0x10000052e8e/metadata 2026-11-06T23:56:31.208359+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:31.208485+0000",
+            "age": 5.028412898,
+            "duration": 5.0293626409999996,
+            "type_data": {
+                "flag_point": "failed to rdlock, waiting",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718102
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:31.208485+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208485+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208486+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208490+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208507+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208531+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208532+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:31.208557+0000",
+                        "event": "failed to rdlock, waiting"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316487 create owner_uid=0, owner_gid=0 #0x10000053fb3/input3.dat 2026-11-06T23:56:34.931373+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:34.961645+0000",
+            "age": 1.275253328,
+            "duration": 1.276243539,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316487
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:34.961645+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.961645+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.961645+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.961654+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.961706+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.961751+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.961817+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.961818+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316452 getattr Fs #0x10000052861 2026-11-06T23:56:32.577625+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:32.607602+0000",
+            "age": 3.6292957050000001,
+            "duration": 3.6303184800000001,
+            "type_data": {
+                "flag_point": "failed to rdlock, waiting",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316452
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:32.607602+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.607602+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.607603+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.607609+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.607630+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.607730+0000",
+                        "event": "failed to rdlock, waiting"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316439 create owner_uid=0, owner_gid=0 #0x10000053fb5/conf2.xml 2026-11-06T23:56:28.639681+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.669635+0000",
+            "age": 7.5672631050000003,
+            "duration": 7.568313657,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316439
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.669635+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.669635+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.669636+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.669649+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.669677+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.669738+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.669807+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.669808+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316457 create owner_uid=0, owner_gid=0 #0x10000053fb2/input3.dat 2026-11-06T23:56:33.454170+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:33.484152+0000",
+            "age": 2.7527458650000001,
+            "duration": 2.753834216,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316457
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:33.484152+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.484152+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.484153+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.484163+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.484189+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.484238+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.484315+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:33.484316+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718066 rmdir #0x1000003847a/20261106-233457-B-fullflap-w2-000288 2026-11-06T23:56:28.046438+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.046507+0000",
+            "age": 8.1903907759999992,
+            "duration": 8.1915115079999996,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718066
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.046507+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.046507+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.046508+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.046514+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.046562+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.046603+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.046652+0000",
+                        "event": "failed to xlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.857294+0000",
+                        "event": "failed to rdlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.857701+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.857741+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:32.857742+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718085 open #0x10000053d92 2026-11-06T23:56:28.799425+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.799581+0000",
+            "age": 7.4373172890000001,
+            "duration": 7.438476884,
+            "type_data": {
+                "flag_point": "failed to xlock, waiting",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718085
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.799581+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.799581+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.799582+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.799590+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.799645+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.799688+0000",
+                        "event": "failed to xlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.800116+0000",
+                        "event": "failed to xlock, waiting"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718067 create owner_uid=0, owner_gid=0 #0x10000053d80/command.sh 2026-11-06T23:56:28.353310+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.353388+0000",
+            "age": 7.883509836,
+            "duration": 7.8846992240000002,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718067
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.353388+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353388+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353389+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353395+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353443+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353486+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353565+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353565+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316429 create owner_uid=0, owner_gid=0 #0x10000053fb5/conf0.xml 2026-11-06T23:56:28.323556+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.353471+0000",
+            "age": 7.8834265600000002,
+            "duration": 7.8846476509999999,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316429
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.353471+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353471+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353472+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353477+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353572+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353593+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353630+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353631+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316462 create owner_uid=0, owner_gid=0 #0x10000053fb2/input4.dat 2026-11-06T23:56:34.079330+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:34.110171+0000",
+            "age": 2.1267268229999998,
+            "duration": 2.127980043,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316462
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:34.110171+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.110171+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.110173+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.110184+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.110213+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.110274+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.110365+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.110366+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718068 create owner_uid=0, owner_gid=0 #0x10000053d84/command.sh 2026-11-06T23:56:28.353409+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.353511+0000",
+            "age": 7.8833874289999999,
+            "duration": 7.8846727520000002,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718068
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.353511+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353511+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353511+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353514+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353636+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353655+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353691+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353691+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718069 mkdir owner_uid=0, owner_gid=0 #0x10000053db7/configs 2026-11-06T23:56:28.353465+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.353517+0000",
+            "age": 7.8833811149999997,
+            "duration": 7.8846981270000001,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718069
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.353517+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353517+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353517+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353520+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353696+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353721+0000",
+                        "event": "failed to rdlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.354012+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.354075+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.354076+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718070 create owner_uid=0, owner_gid=0 #0x10000053d8e/input4.dat 2026-11-06T23:56:28.353545+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.353609+0000",
+            "age": 7.8832890669999998,
+            "duration": 7.8846411779999999,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718070
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.353609+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353609+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353609+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353614+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353722+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353735+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353767+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.353768+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718071 mkdir owner_uid=0, owner_gid=0 #0x10000053db7/working 2026-11-06T23:56:28.355553+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.355645+0000",
+            "age": 7.8812527469999996,
+            "duration": 7.8826388439999997,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718071
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.355645+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355645+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355646+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355654+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355673+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355724+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355796+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355797+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316447 lookup #0x1000005285b/hot00.dat 2026-11-06T23:56:28.807769+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.837836+0000",
+            "age": 7.3990619610000001,
+            "duration": 7.4004792830000001,
+            "type_data": {
+                "flag_point": "joining batch lookup",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316447
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.837836+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.837836+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.837838+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.837847+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.837874+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.837915+0000",
+                        "event": "joining batch lookup"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718072 create owner_uid=0, owner_gid=0 #0x10000053d86/command.sh 2026-11-06T23:56:28.355727+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.355838+0000",
+            "age": 7.8810596840000002,
+            "duration": 7.8825042160000001,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718072
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.355838+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355838+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355839+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355846+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355875+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355910+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355966+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355966+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316467 mkdir owner_uid=0, owner_gid=0 #0x10000053d03/outputs.orig 2026-11-06T23:56:34.376413+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:34.406300+0000",
+            "age": 1.830598001,
+            "duration": 1.8320749429999998,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316467
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:34.406300+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.406300+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.406301+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.406305+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.406322+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.406353+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.406419+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.406420+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316430 create owner_uid=0, owner_gid=0 #0x10000053fb1/input2.dat 2026-11-06T23:56:28.325875+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.355883+0000",
+            "age": 7.8810150310000004,
+            "duration": 7.8825242270000002,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316430
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.355883+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355883+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355883+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355887+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355974+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.355993+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.356037+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.356037+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316468 lookup #0x10000052855/20261107-003621-B-octrim-truncate-msinject-w2-000046 2026-11-06T23:56:34.377130+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:34.407105+0000",
+            "age": 1.8297925020000001,
+            "duration": 1.8313343529999999,
+            "type_data": {
+                "flag_point": "failed to rdlock, waiting",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316468
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:34.407105+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.407105+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.407106+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.407113+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.407133+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.407160+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.407161+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:34.407255+0000",
+                        "event": "failed to rdlock, waiting"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316432 create owner_uid=0, owner_gid=0 #0x10000053fb3/input2.dat 2026-11-06T23:56:28.326723+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.356595+0000",
+            "age": 7.8803032829999999,
+            "duration": 7.8818767259999998,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316432
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.356595+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.356595+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.356595+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.356597+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.356703+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.356729+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.356787+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.356788+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718089 create owner_uid=0, owner_gid=0 #0x10000052853/20261107-003621-B-octrim-truncate-msinject-p000147.bin 2026-11-06T23:56:29.992896+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:29.993026+0000",
+            "age": 6.2438720649999997,
+            "duration": 6.2454783420000002,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718089
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:29.993026+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:29.993026+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:29.993026+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:29.993031+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:29.993045+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:29.993075+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:29.993126+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:29.993126+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718073 mkdir owner_uid=0, owner_gid=0 #0x10000053db7/outputs 2026-11-06T23:56:28.356981+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.357053+0000",
+            "age": 7.8798446069999999,
+            "duration": 7.8814829609999997,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718073
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.357053+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357053+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357054+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357060+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357078+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357113+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357163+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357164+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45146:718090 rmdir #0x10000052e8e/working 2026-11-06T23:56:30.965997+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:30.966078+0000",
+            "age": 5.2708197730000004,
+            "duration": 5.2724896560000003,
+            "type_data": {
+                "flag_point": "submit entry: journal_and_reply",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45146
+                    },
+                    "tid": 718090
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:30.966078+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.966078+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.966079+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.966086+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.966103+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.966144+0000",
+                        "event": "failed to wrlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.966575+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.966595+0000",
+                        "event": "failed to xlock, waiting"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.967078+0000",
+                        "event": "acquired locks"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.967121+0000",
+                        "event": "early_replied"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:30.967122+0000",
+                        "event": "submit entry: journal_and_reply"
+                    }
+                ],
+                "locks": null
+            }
+        },
+        {
+            "description": "client_request(client.45492:316433 lookup #0x1000005285b/hot00.dat 2026-11-06T23:56:28.327694+0000 caller_uid=0, caller_gid=0{0,})",
+            "initiated_at": "2026-11-06T23:56:28.357553+0000",
+            "age": 7.8793445980000003,
+            "duration": 7.8810534820000004,
+            "type_data": {
+                "flag_point": "joining batch lookup",
+                "reqid": {
+                    "entity": {
+                        "type": "client",
+                        "num": 45492
+                    },
+                    "tid": 316433
+                },
+                "op_type": "client_request",
+                "events": [
+                    {
+                        "time": "2026-11-06T23:56:28.357553+0000",
+                        "event": "initiated"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357553+0000",
+                        "event": "header_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357554+0000",
+                        "event": "throttled"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357560+0000",
+                        "event": "all_read"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357583+0000",
+                        "event": "dispatched"
+                    },
+                    {
+                        "time": "2026-11-06T23:56:28.357606+0000",
+                        "event": "joining batch lookup"
+                    }
+                ],
+                "locks": null
+            }
+        }
+    ],
+    "num_ops": 52
+}

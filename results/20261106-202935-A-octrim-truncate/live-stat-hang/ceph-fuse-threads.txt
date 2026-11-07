@@ -1,0 +1,16 @@
+     14 ceph-fuse I do_exit
+      5 fn_anonymous I do_exit
+      2 safe_timer I do_exit
+      2 io_context_pool I do_exit
+      1 signal_handler I do_exit
+      1 service I do_exit
+      1 msgr-worker-2 I do_exit
+      1 msgr-worker-1 I do_exit
+      1 msgr-worker-0 I do_exit
+      1 ms_local I do_exit
+      1 ms_dispatch I do_exit
+      1 log I do_exit
+      1 fn_anonymous D folio_wait_bit_common
+      1 flusher I do_exit
+      1 ceph_timer I do_exit
+      1 admin_socket D vfs_coredump

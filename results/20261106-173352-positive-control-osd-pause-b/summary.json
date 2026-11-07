@@ -1,0 +1,173 @@
+{
+  "run_id": "20261106-173352-positive-control-osd-pause-b",
+  "stage": "B",
+  "kernel": "6.1.188-1.el9.elrepo.x86_64",
+  "ceph_fuse": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "cluster": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "faults": {},
+  "workload_args": [
+    "--workers",
+    "4",
+    "--hot",
+    "4"
+  ],
+  "start": "2026-11-06T17:33:54+0100",
+  "planned_duration": 420,
+  "elapsed": 422,
+  "aborted": null,
+  "oom_kills": {},
+  "outcome": "stall: buffered_and_direct_fail,dstate",
+  "triggers": [
+    {
+      "kind": "dstate",
+      "t": 1793982982.2333603,
+      "pid": "14752",
+      "tid": "14752",
+      "comm": "python3",
+      "seconds": 60,
+      "wchan": "request_wait_answer",
+      "cmdline": "/usr/bin/python3 -c \nimport hashlib, os, sys\nfd = os.open(sys.argv[1], os.O_RDONLY)\nos.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)\nh = hashlib.md5()\nfor b in iter(lambda: os.read(fd, 1 << 17), b\"\"):\n    h.update(b)\nprint(h.hexdigest(), sys.argv[1])\n /mnt/scratch/probe/20261106-173352-positive-control-osd-pause-b-p000012.bin ",
+      "fusectl": {
+        "48": {
+          "waiting": "10",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      },
+      "elapsed": 148,
+      "fusectl_host": {
+        "head": {
+          "waiting": "5",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        },
+        "node": {
+          "waiting": "10",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      }
+    },
+    {
+      "kind": "buffered_and_direct_fail",
+      "t": 1793983000.0171833,
+      "seq": 12,
+      "path": "/mnt/scratch/probe/20261106-173352-positive-control-osd-pause-b-p000012.bin",
+      "probe_age": 5.7,
+      "buffered_rc": "unkillable",
+      "buffered_seconds": 50.1,
+      "buffered_out": "",
+      "direct_rc": "unkillable",
+      "direct_seconds": 50.1,
+      "fusectl": {
+        "48": {
+          "waiting": "10",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      },
+      "elapsed": 190,
+      "fusectl_host": {
+        "head": {
+          "waiting": "5",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        },
+        "node": {
+          "waiting": "11",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      }
+    },
+    {
+      "kind": "dstate",
+      "t": 1793983032.3946831,
+      "pid": "15809",
+      "tid": "15809",
+      "comm": "dd",
+      "seconds": 60,
+      "wchan": "request_wait_answer",
+      "cmdline": "dd if=/mnt/scratch/probe/20261106-173352-positive-control-osd-pause-b-p000012.bin iflag=direct bs=1M of=/dev/null ",
+      "fusectl": {
+        "48": {
+          "waiting": "11",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      },
+      "elapsed": 236,
+      "fusectl_host": {
+        "head": {
+          "waiting": "7",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        },
+        "node": {
+          "waiting": "6",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      }
+    }
+  ],
+  "stats": {
+    "head": {
+      "t0": 1793982835.5321584,
+      "head_bytes_written": 588298205,
+      "last_head_bytes_written": 1793983233.1640847,
+      "head_hot_writes": 401,
+      "last_head_hot_writes": 1793983232.6740081,
+      "head_jobs_created": 286,
+      "last_head_jobs_created": 1793983233.1546273,
+      "head_probes_written": 47,
+      "last_head_probes_written": 1793983227.9757292,
+      "head_jobs_rewritten": 88,
+      "last_head_jobs_rewritten": 1793983231.9151027,
+      "head_outputs_verified": 610,
+      "last_head_outputs_verified": 1793983232.24955,
+      "head_jobs_checked": 122,
+      "last_head_jobs_checked": 1793983232.251751,
+      "head_jobs_deleted": 81,
+      "last_head_jobs_deleted": 1793983231.9223871,
+      "t": 1793983255.5922332
+    },
+    "node": {
+      "t0": 1793982835.986828,
+      "node_hot_reads": 2041,
+      "last_node_hot_reads": 1793983234.7538228,
+      "node_hot_mmap_reads": 605,
+      "last_node_hot_mmap_reads": 1793983234.7538102,
+      "node_cp": 798,
+      "last_node_cp": 1793983232.2567437,
+      "node_buffered_reads": 1806,
+      "last_node_buffered_reads": 1793983233.087405,
+      "node_mmap_reads": 587,
+      "last_node_mmap_reads": 1793983233.1415212,
+      "node_mmap_writes": 265,
+      "last_node_mmap_writes": 1793983231.293472,
+      "node_bytes_written": 422507572,
+      "last_node_bytes_written": 1793983232.0339959,
+      "node_jobs_done": 265,
+      "last_node_jobs_done": 1793983232.2467551,
+      "t": 1793983257.5192063
+    },
+    "failcheck": {
+      "t0": 1793982836.3908658,
+      "probe_ok": 12,
+      "last_probe_ok": 1793982894.869292,
+      "probe_rechecks": 2,
+      "last_probe_rechecks": 1793983000.0186436,
+      "probe_buffered_fail": 2,
+      "last_probe_buffered_fail": 1793983048.687026,
+      "probe_buffered_and_direct_fail": 1,
+      "last_probe_buffered_and_direct_fail": 1793983000.0160859,
+      "probe_buffered_hang_direct_ok": 1,
+      "last_probe_buffered_hang_direct_ok": 1793983048.7038887,
+      "t": 1793983256.8366487
+    }
+  },
+  "blocklist": "10.177.77.31:0/1274690938 2026-11-06T16:56:07.924288+0000\n10.177.77.12:6800/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:0/1378688511 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/1889620215 2026-11-07T14:44:55.302856+0000\n10.177.77.30:0/4135971663 2026-11-06T16:56:07.924235+0000\n10.177.77.11:0/3407353904 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6801/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:6801/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/2118970209 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/4033411307 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3332997076 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6801/3473925138 2026-11-07T14:39:58.903782+0000\n10.177.77.11:6800/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3218408777 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3721478901 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/754901607 2026-11-07T14:44:55.302856+0000\n10.177.77.11:6800/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3824515705 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3973458054 2026-11-07T14:44:55.302856+0000\n10.177.77.12:6800/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:6801/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6801/2054025917 2026-11-07T14:44:56.444679+0000",
+  "workload_left_running": false,
+  "first_repro_after": 148
+}

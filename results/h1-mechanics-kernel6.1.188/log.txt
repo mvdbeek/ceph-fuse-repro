@@ -1,0 +1,23 @@
+(syscall numbers: 0=read 17=pread64 257=openat 5=fstat 4=stat 262=newfstatat)
+2c611f35bfd4a8c04088901ee08cd1f0  /mnt/scratch/h1mech.own/own
+32
+== kernel 6.1.188-1.el9.elrepo.x86_64, ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)
+== OSDs paused, background slots still free (control)
+O_DIRECT f2  (uncached, free slots): HUNG >5 s  state=S wchan=request_wait_answer syscall=0
+buffered f3  (uncached, free slots): HUNG >5 s  state=D wchan=folio_wait_bit_common syscall=0
+== starting 32 buffered readers of uncached files
+== reader tasks: count, state, wchan (after 8 s)
+      5 D folio_wait_bit_common
+      3 D fuse_get_req
+     20 D fuse_lock_inode
+      1 S request_wait_answer
+== fusectl: waiting=17 max_background=12
+stat own              : finished rc=0
+O_DIRECT own          : HUNG >5 s  state=S wchan=request_wait_answer syscall=0
+buffered own (no cache): HUNG >5 s  state=D wchan=fuse_get_req syscall=0
+O_DIRECT f1 (uncached): HUNG >5 s  state=D wchan=fuse_lock_inode syscall=257
+== ceph-fuse in-flight OSD ops: 14
+== OSDs unpaused
+== fusectl: waiting=0 max_background=12
+readers left: 0
+buffered own after unpause: finished rc=0

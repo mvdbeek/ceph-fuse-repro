@@ -1,0 +1,7 @@
+2026-11-06T15:34:03.455+0000 77b71f7fe640  0 client.34672 ms_handle_reset on v2:10.177.77.12:6800/3833120554
+2026-11-06T15:34:03.479+0000 77b71f7fe640  0 client.34674 ms_handle_reset on v2:10.177.77.12:6800/3833120554
+{
+    "ops": [],
+    "complaint_time": 30,
+    "num_blocked_ops": 0
+}

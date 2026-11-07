@@ -1,0 +1,1 @@
+INVALID after 213 s: at the OSD unpause all three OSD containers were OOM-killed (576 MB cap). The 'stuck' state captured in capture-post-run-stuck is the client waiting on dead OSDs, not a client bug. The first 213 s (pause, triggers) are valid as a positive control.

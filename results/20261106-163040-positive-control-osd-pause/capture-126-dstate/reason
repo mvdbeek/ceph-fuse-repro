@@ -1,0 +1,1 @@
+{"kind": "dstate", "t": 1793979167.4290226, "pid": "34", "tid": "47", "comm": "fn_anonymous", "seconds": 60, "wchan": "folio_wait_bit_common", "cmdline": "ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch ", "fusectl": {}, "elapsed": 126}

@@ -1,0 +1,93 @@
+{
+    "ops": [
+        {
+            "tid": 871,
+            "pg": "2.de77e701",
+            "osd": 0,
+            "object_id": "10000008bf4.00000000",
+            "object_locator": "@2",
+            "target_object_id": "10000008bf4.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "529.307029s",
+            "age": 0.102001192,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:29:20.429991+0000",
+            "osd_ops": [
+                "write 0~99551 in=99551b"
+            ]
+        },
+        {
+            "tid": 872,
+            "pg": "2.a8105ef9",
+            "osd": 0,
+            "object_id": "10000008bf5.00000000",
+            "object_locator": "@2",
+            "target_object_id": "10000008bf5.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "529.327029s",
+            "age": 0.082000957999999999,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:29:20.449442+0000",
+            "osd_ops": [
+                "write 0~60582 in=60582b"
+            ]
+        },
+        {
+            "tid": 873,
+            "pg": "2.f26b3c8e",
+            "osd": 0,
+            "object_id": "10000008bf6.00000000",
+            "object_locator": "@2",
+            "target_object_id": "10000008bf6.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "529.336029s",
+            "age": 0.073000853000000004,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:29:20.458573+0000",
+            "osd_ops": [
+                "write 0~11 in=11b"
+            ]
+        },
+        {
+            "tid": 870,
+            "pg": "2.887f438b",
+            "osd": 2,
+            "object_id": "10000008bf3.00000000",
+            "object_locator": "@2",
+            "target_object_id": "10000008bf3.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "529.240028s",
+            "age": 0.169001974,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:29:20.362148+0000",
+            "osd_ops": [
+                "write 0~65420 in=65420b"
+            ]
+        }
+    ],
+    "linger_ops": [],
+    "pool_ops": [],
+    "pool_stat_ops": [],
+    "statfs_ops": [],
+    "command_ops": []
+}

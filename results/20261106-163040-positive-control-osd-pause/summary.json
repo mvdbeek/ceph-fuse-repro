@@ -1,0 +1,120 @@
+{
+  "run_id": "20261106-163040-positive-control-osd-pause",
+  "stage": "A",
+  "kernel": "7.3.0-4-t2-resolute",
+  "ceph_fuse": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "cluster": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "faults": {},
+  "workload_args": [
+    "--workers",
+    "4",
+    "--hot",
+    "4"
+  ],
+  "start": "2026-11-06T16:30:41+0100",
+  "planned_duration": 300,
+  "elapsed": 301,
+  "aborted": null,
+  "outcome": "stall: dstate",
+  "triggers": [
+    {
+      "kind": "dstate",
+      "t": 1793979167.4290226,
+      "pid": "34",
+      "tid": "47",
+      "comm": "fn_anonymous",
+      "seconds": 60,
+      "wchan": "folio_wait_bit_common",
+      "cmdline": "ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch ",
+      "fusectl": {},
+      "elapsed": 126
+    },
+    {
+      "kind": "dstate",
+      "t": 1793979167.430033,
+      "pid": "8478",
+      "tid": "8511",
+      "comm": "python3",
+      "seconds": 60,
+      "wchan": "folio_wait_bit_common",
+      "cmdline": "python3 -u /harness/workload.py node --run-id 20261106-163040-positive-control-osd-pause --workers 4 --hot 4 ",
+      "fusectl": {},
+      "elapsed": 144
+    },
+    {
+      "kind": "dstate",
+      "t": 1793979167.430832,
+      "pid": "8478",
+      "tid": "8514",
+      "comm": "python3",
+      "seconds": 60,
+      "wchan": "folio_wait_bit_common",
+      "cmdline": "python3 -u /harness/workload.py node --run-id 20261106-163040-positive-control-osd-pause --workers 4 --hot 4 ",
+      "fusectl": {},
+      "elapsed": 161
+    },
+    {
+      "kind": "dstate",
+      "t": 1793979167.431662,
+      "pid": "9227",
+      "tid": "9227",
+      "comm": "python3",
+      "seconds": 60,
+      "wchan": "folio_wait_bit_common",
+      "cmdline": "/usr/bin/python3 -c \nimport mmap, os, sys\nfd = os.open(sys.argv[1], os.O_RDONLY)\nos.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)\nif os.fstat(fd).st_size:\n    with mmap.mmap(fd, 0, prot=mmap.PROT_READ) as m:\n        m[:]\n /mnt/scratch/hot/20261106-163040-positive-control-osd-pause/hot02.dat ",
+      "fusectl": {},
+      "elapsed": 180
+    }
+  ],
+  "stats": {
+    "head": {
+      "t0": 1793979041.7776797,
+      "head_bytes_written": 524480250,
+      "last_head_bytes_written": 1793979337.2257526,
+      "head_hot_writes": 325,
+      "last_head_hot_writes": 1793979341.429745,
+      "head_jobs_created": 234,
+      "last_head_jobs_created": 1793979337.2284088,
+      "head_probes_written": 39,
+      "last_head_probes_written": 1793979340.9351044,
+      "head_jobs_rewritten": 77,
+      "last_head_jobs_rewritten": 1793979338.5807278,
+      "head_outputs_verified": 504,
+      "last_head_outputs_verified": 1793979341.5638309,
+      "head_jobs_checked": 100,
+      "last_head_jobs_checked": 1793979338.762629,
+      "head_jobs_deleted": 60,
+      "last_head_jobs_deleted": 1793979340.772563,
+      "t": 1793979341.8207936
+    },
+    "node": {
+      "t0": 1793979042.1731215,
+      "node_hot_reads": 1757,
+      "last_node_hot_reads": 1793979342.4391875,
+      "node_hot_mmap_reads": 530,
+      "last_node_hot_mmap_reads": 1793979342.3578017,
+      "node_cp": 652,
+      "last_node_cp": 1793979340.941835,
+      "node_mmap_reads": 457,
+      "last_node_mmap_reads": 1793979339.752505,
+      "node_buffered_reads": 1487,
+      "last_node_buffered_reads": 1793979339.7787178,
+      "node_mmap_writes": 216,
+      "last_node_mmap_writes": 1793979339.7909856,
+      "node_bytes_written": 344747164,
+      "last_node_bytes_written": 1793979340.6387343,
+      "node_jobs_done": 216,
+      "last_node_jobs_done": 1793979340.948506,
+      "t": 1793979342.4637387
+    },
+    "failcheck": {
+      "t0": 1793979042.1732972,
+      "probe_ok": 39,
+      "last_probe_ok": 1793979341.7051992,
+      "t": 1793979342.226937
+    }
+  },
+  "blocklist": "10.177.77.12:6801/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:0/1889620215 2026-11-07T14:44:55.302856+0000\n10.177.77.12:6800/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:0/3973458054 2026-11-07T14:44:55.302856+0000\n10.177.77.31:0/575557984 2026-11-06T15:45:51.446366+0000\n10.177.77.11:0/754901607 2026-11-07T14:44:55.302856+0000\n10.177.77.11:0/1378688511 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3824515705 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3332997076 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6801/3473925138 2026-11-07T14:39:58.903782+0000\n10.177.77.11:0/2118970209 2026-11-07T14:39:58.269026+0000\n10.177.77.11:6801/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:6800/7 2026-11-07T14:39:58.269026+0000",
+  "workload_left_running": false,
+  "first_repro_after": 126
+}

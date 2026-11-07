@@ -1,0 +1,2 @@
+Error response from daemon: Container cfr-osd0 is paused, unpause the container before exec
+[exit 1]

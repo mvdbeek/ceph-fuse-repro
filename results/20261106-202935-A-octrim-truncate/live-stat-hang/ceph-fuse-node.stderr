@@ -1,0 +1,219 @@
+2026-11-06T18:54:54.772+0000 7b44687dd300 -1 init, newargv = 0x55f60ca20e90 newargc=15
+
+ceph-fuse[1811]: starting ceph client
+ceph-fuse[1811]: starting fuse
+2026-11-06T19:05:29.492+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53260 safe is:1
+
+2026-11-06T19:05:29.547+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53271 safe is:1
+
+2026-11-06T19:05:30.023+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53296 safe is:1
+
+2026-11-06T19:05:30.563+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53335 safe is:1
+
+2026-11-06T19:05:30.827+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53348 safe is:1
+
+2026-11-06T19:05:30.829+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53350 safe is:1
+
+2026-11-06T19:05:30.834+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53358 safe is:1
+
+2026-11-06T19:05:31.324+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53393 safe is:1
+
+2026-11-06T19:05:31.328+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53397 safe is:1
+
+2026-11-06T19:05:31.333+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53402 safe is:1
+
+2026-11-06T19:05:31.337+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53405 safe is:1
+
+2026-11-06T19:05:31.342+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53408 safe is:1
+
+2026-11-06T19:05:31.346+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53411 safe is:1
+
+2026-11-06T19:05:31.352+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53414 safe is:1
+
+2026-11-06T19:05:31.876+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53474 safe is:1
+
+2026-11-06T19:05:31.877+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53476 safe is:1
+
+2026-11-06T19:05:32.547+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53522 safe is:1
+
+2026-11-06T19:05:33.100+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53564 safe is:1
+
+2026-11-06T19:05:33.101+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53566 safe is:1
+
+2026-11-06T19:05:33.101+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53570 safe is:1
+
+2026-11-06T19:05:33.104+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53576 safe is:1
+
+2026-11-06T19:05:33.104+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53579 safe is:1
+
+2026-11-06T19:05:33.104+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53580 safe is:1
+
+2026-11-06T19:05:33.393+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53606 safe is:1
+
+2026-11-06T19:05:33.393+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53607 safe is:1
+
+2026-11-06T19:05:34.318+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53678 safe is:1
+
+2026-11-06T19:05:34.319+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53681 safe is:1
+
+2026-11-06T19:05:34.612+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53714 safe is:1
+
+2026-11-06T19:05:34.621+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53720 safe is:1
+
+2026-11-06T19:05:35.027+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53761 safe is:1
+
+2026-11-06T19:05:36.423+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53871 safe is:1
+
+2026-11-06T19:05:36.424+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53872 safe is:1
+
+2026-11-06T19:05:36.424+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53873 safe is:1
+
+2026-11-06T19:05:36.814+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53902 safe is:1
+
+2026-11-06T19:05:36.814+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53903 safe is:1
+
+2026-11-06T19:05:36.814+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53904 safe is:1
+
+2026-11-06T19:05:36.822+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53911 safe is:1
+
+2026-11-06T19:05:36.822+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53912 safe is:1
+
+2026-11-06T19:05:36.822+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53913 safe is:1
+
+2026-11-06T19:05:37.092+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53941 safe is:1
+
+2026-11-06T19:05:37.092+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53942 safe is:1
+
+2026-11-06T19:05:37.092+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53944 safe is:1
+
+2026-11-06T19:05:37.528+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 53970 safe is:1
+
+2026-11-06T19:05:37.757+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 54006 safe is:1
+
+2026-11-06T19:05:37.768+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 54021 safe is:1
+
+2026-11-06T19:15:43.975+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108246 safe is:1
+
+2026-11-06T19:15:43.976+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108247 safe is:1
+
+2026-11-06T19:15:43.984+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108252 safe is:1
+
+2026-11-06T19:15:43.984+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108253 safe is:1
+
+2026-11-06T19:15:43.991+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108260 safe is:1
+
+2026-11-06T19:15:43.992+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108261 safe is:1
+
+2026-11-06T19:15:44.000+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108267 safe is:1
+
+2026-11-06T19:15:44.000+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108268 safe is:1
+
+2026-11-06T19:15:44.008+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108271 safe is:1
+
+2026-11-06T19:15:44.100+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108296 safe is:1
+
+2026-11-06T19:15:44.100+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108297 safe is:1
+
+2026-11-06T19:15:44.781+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108348 safe is:1
+
+2026-11-06T19:15:44.781+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108349 safe is:1
+
+2026-11-06T19:15:44.782+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108351 safe is:1
+
+2026-11-06T19:15:45.654+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108408 safe is:1
+
+2026-11-06T19:15:45.654+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108410 safe is:1
+
+2026-11-06T19:15:45.655+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108412 safe is:1
+
+2026-11-06T19:15:45.870+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108435 safe is:1
+
+2026-11-06T19:15:45.871+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108436 safe is:1
+
+2026-11-06T19:15:45.871+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108437 safe is:1
+
+2026-11-06T19:15:46.306+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108469 safe is:1
+
+2026-11-06T19:15:46.306+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108470 safe is:1
+
+2026-11-06T19:15:46.307+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108473 safe is:1
+
+2026-11-06T19:15:46.308+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108475 safe is:1
+
+2026-11-06T19:15:46.536+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108493 safe is:1
+
+2026-11-06T19:15:46.536+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108494 safe is:1
+
+2026-11-06T19:15:46.537+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108495 safe is:1
+
+2026-11-06T19:15:46.537+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108496 safe is:1
+
+2026-11-06T19:15:46.656+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108517 safe is:1
+
+2026-11-06T19:15:47.135+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108573 safe is:1
+
+2026-11-06T19:15:48.950+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108743 safe is:1
+
+2026-11-06T19:15:48.950+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108744 safe is:1
+
+2026-11-06T19:15:48.950+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108745 safe is:1
+
+2026-11-06T19:15:48.950+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108746 safe is:1
+
+2026-11-06T19:15:49.278+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108776 safe is:1
+
+2026-11-06T19:15:49.278+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108777 safe is:1
+
+2026-11-06T19:15:49.279+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108778 safe is:1
+
+2026-11-06T19:15:49.279+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108779 safe is:1
+
+2026-11-06T19:15:49.286+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108785 safe is:1
+
+2026-11-06T19:15:49.287+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108789 safe is:1
+
+2026-11-06T19:15:49.287+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108790 safe is:1
+
+2026-11-06T19:15:49.288+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108791 safe is:1
+
+2026-11-06T19:15:50.009+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108831 safe is:1
+
+2026-11-06T19:15:50.009+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108832 safe is:1
+
+2026-11-06T19:15:50.009+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108833 safe is:1
+
+2026-11-06T19:15:50.009+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108834 safe is:1
+
+2026-11-06T19:15:50.188+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108841 safe is:1
+
+2026-11-06T19:15:51.703+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108991 safe is:1
+
+2026-11-06T19:15:51.704+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108992 safe is:1
+
+2026-11-06T19:15:51.704+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 108993 safe is:1
+
+2026-11-06T19:15:52.517+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 109055 safe is:1
+
+2026-11-06T19:15:52.518+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 109056 safe is:1
+
+2026-11-06T19:15:52.518+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 109057 safe is:1
+
+2026-11-06T19:15:52.939+0000 7b444dffb640 -1 client.45149 handle_client_reply no pending request on tid 109080 safe is:1
+
+*** Caught signal (Segmentation fault) **
+ in thread 7b44652d5640 thread_name:admin_socket
+ ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)
+ 1: /lib64/libc.so.6(+0x3fc30) [0x7b4468f7dc30]
+ 2: pthread_getname_np()
+ 3: (ceph::logging::Log::dump_recent()+0x5a5) [0x7b4469896a05]
+ 4: (ceph::common::CephContext::_do_command(std::basic_string_view<char, std::char_traits<char> >, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, boost::variant<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, double, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::vector<long, std::allocator<long> >, std::vector<double, std::allocator<double> > >, std::less<void>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, boost::variant<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, double, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::vector<long, std::allocator<long> >, std::vector<double, std::allocator<double> > > > > > const&, ceph::Formatter*, std::ostream&, ceph::buffer::v15_2_0::list*)+0x106e) [0x7b44696b45be]
+ 5: (ceph::common::CephContext::do_command(std::basic_string_view<char, std::char_traits<char> >, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, boost::variant<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, double, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::vector<long, std::allocator<long> >, std::vector<double, std::allocator<double> > >, std::less<void>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, boost::variant<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, double, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::vector<long, std::allocator<long> >, std::vector<double, std::allocator<double> > > > > > const&, ceph::Formatter*, std::ostream&, ceph::buffer::v15_2_0::list*)+0x18) [0x7b44696b5228]
+ 6: /usr/lib64/ceph/libceph-common.so.2(+0x24825f) [0x7b44696b525f]
+ 7: /usr/lib64/ceph/libceph-common.so.2(+0x234aeb) [0x7b44696a1aeb]
+ 8: (AdminSocket::execute_command(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, ceph::buffer::v15_2_0::list const&, std::function<void (int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ceph::buffer::v15_2_0::list&)>)+0x57a) [0x7b44696a307a]
+ 9: (AdminSocket::execute_command(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, ceph::buffer::v15_2_0::list const&, std::ostream&, ceph::buffer::v15_2_0::list*)+0x11a) [0x7b44696a3b1a]
+ 10: (AdminSocket::do_accept()+0x2b6) [0x7b44696a3eb6]
+ 11: (AdminSocket::entry()+0x488) [0x7b44696a4ce8]
+ 12: /lib64/libstdc++.so.6(+0xdbae4) [0x7b446931fae4]
+ 13: /lib64/libc.so.6(+0x8b3c9) [0x7b4468fc93c9]
+ 14: /lib64/libc.so.6(+0x1105d0) [0x7b446904e5d0]

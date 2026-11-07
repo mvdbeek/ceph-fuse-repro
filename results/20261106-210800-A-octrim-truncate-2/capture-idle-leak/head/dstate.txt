@@ -1,0 +1,9 @@
+=== /proc/16869/task/16869 comm=rm wchan=filename_rmdir
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=rm /usr/bin/rm -rf /mnt/scratch/trash 
+syscall: 263 0x6 0x5be8cc521740 0x200 0x400000 0x3 0x0 0x7ffe9dcbe188 0x7a9597a58b7b
+--- stack
+cat: /proc/16869/task/16869/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	56446
+nonvoluntary_ctxt_switches:	20

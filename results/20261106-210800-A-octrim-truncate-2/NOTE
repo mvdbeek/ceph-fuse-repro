@@ -1,0 +1,1 @@
+Outcome corrected by hand: the idle-leak flag on head was head's background 'rm -rf /mnt/scratch/trash' (cleanup of earlier runs), still in progress; not a leak. Valid negative: 3602 s.

@@ -1,0 +1,1 @@
+{"kind": "dstate", "t": 1793979167.430832, "pid": "8478", "tid": "8514", "comm": "python3", "seconds": 60, "wchan": "folio_wait_bit_common", "cmdline": "python3 -u /harness/workload.py node --run-id 20261106-163040-positive-control-osd-pause --workers 4 --hot 4 ", "fusectl": {}, "elapsed": 161}

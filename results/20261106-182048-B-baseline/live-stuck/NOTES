@@ -1,0 +1,1 @@
+2026-11-06T17:59:01Z raised full/backfillfull/nearfull ratios to 0.98/0.97/0.96 at 94.9% raw used (data pool 6.7 GiB stored); stopped the batch (SIGINT run.py) to stop head writes; node invalidation stall left in place for inspection

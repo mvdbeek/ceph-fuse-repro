@@ -1,0 +1,26 @@
+  cluster:
+    id:     a7f38d58-5b7d-4fb1-b61c-fd7632c1d80c
+    health: HEALTH_WARN
+            3 OSD(s) experiencing slow operations in BlueStore
+            1 MDSs report slow metadata IOs
+            1 MDSs report slow requests
+            2 osds down
+            2 hosts (2 osds) down
+            Reduced data availability: 68 pgs stale
+            Degraded data redundancy: 5010/15030 objects degraded (33.333%), 145 pgs degraded, 145 pgs undersized
+ 
+  services:
+    mon: 1 daemons, quorum a (age 49m)
+    mgr: x(active, since 49m)
+    mds: 1/1 daemons up
+    osd: 3 osds: 1 up (since 4m), 3 in (since 49m)
+ 
+  data:
+    volumes: 1/1 healthy
+    pools:   3 pools, 145 pgs
+    objects: 5.01k objects, 1.3 GiB
+    usage:   4.9 GiB used, 19 GiB / 24 GiB avail
+    pgs:     5010/15030 objects degraded (33.333%)
+             77 active+undersized+degraded
+             68 stale+active+undersized+degraded
+ 

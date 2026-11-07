@@ -1,0 +1,15 @@
+INVALID: harness-induced crash. Stage A (kernel 7.3), faults octrim (client_oc_size=1 MB) + slowosd (p=0.05, 0.3 s),
+--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate.
+
+- 58 s: buffered_hang_direct_ok (buffered md5sum killed after 31.7 s, O_DIRECT 0.9 s), node fusectl waiting=13 >
+  max_background=12, i.e. background slots exhausted by slow readahead. Recovered 0.9 s later; slots drained (13 -> 8).
+  Transient congestion, not a leak.
+- ~20:43 UTC (~820 s): capture.sh ran `ceph --admin-daemon ... log dump` on node; ceph-fuse SEGFAULTED in
+  ceph::logging::Log::dump_recent() -> pthread_getname_np() (live-stat-hang/ceph-fuse-node.stderr).
+- The crash did not unmount: admin_socket thread in D in vfs_coredump, one fn_anonymous in D in
+  folio_wait_bit_common (blocked invalidation), all other ceph-fuse threads exiting. Core dump waits for the
+  blocked thread, the blocked thread waits for a READ the dying ceph-fuse will never answer -> mount hung (not
+  ENOTCONN): stat of the mount root in request_wait_answer for >19 min, cp/mmap readers in D, waiting=11.
+- 21:07 UTC: `echo 1 > /sys/fs/fuse/connections/69/abort` (host) released it at once: ceph-fuse exited, ENOTCONN.
+- Stopped by hand afterwards; run.py died in cleanup on SIGINT (fixed), so there is no summary.json.
+`log dump` was removed from capture.sh.

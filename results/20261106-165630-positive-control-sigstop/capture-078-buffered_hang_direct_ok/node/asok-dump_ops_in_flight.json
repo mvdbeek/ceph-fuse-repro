@@ -1,0 +1,13 @@
+no valid command found; 10 closest matches:
+0
+1
+2
+abort
+assert
+config diff
+config diff get <var>
+config get <var>
+config help [<var>]
+config set <var> <val>...
+admin_socket: invalid command
+[exit 22]

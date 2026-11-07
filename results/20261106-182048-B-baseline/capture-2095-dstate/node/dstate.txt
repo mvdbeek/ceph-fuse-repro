@@ -1,0 +1,110 @@
+=== /proc/41997/task/42004 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4 
+syscall: 0 0x5 0x7f2d30014810 0x400000 0x2 0x0 0x2 0x7f2d3f7fd400 0x7f2d4e6ff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	116095
+nonvoluntary_ctxt_switches:	9751
+=== /proc/41997/task/42006 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4 
+syscall: 0 0x4 0x7f2d28401890 0x400000 0x2 0x0 0x2 0x7f2d3e7fb400 0x7f2d4e6ff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	111588
+nonvoluntary_ctxt_switches:	10026
+=== /proc/41997/task/42007 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-182048-B-baseline --workers 4 --hot 4 
+syscall: 0 0x3 0x7f2d2c00c680 0x400000 0x2 0x0 0x2 0x7f2d3dffa400 0x7f2d4e6ff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	113987
+nonvoluntary_ctxt_switches:	9740
+=== /proc/44/task/44 comm=kcompactd0 wchan=folio_wait_bit_common
+cmdline: 
+syscall: 0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] __migrate_folio_unmap.constprop.0+0x18d/0x240
+[<0>] migrate_pages_batch+0x23f/0xa80
+[<0>] migrate_pages+0x492/0x540
+[<0>] compact_zone+0x303/0x5e0
+[<0>] proactive_compact_node+0x88/0xc0
+[<0>] kcompactd+0x35f/0x3e0
+[<0>] kthread+0xe5/0x110
+[<0>] ret_from_fork+0x22/0x30
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	10799
+nonvoluntary_ctxt_switches:	13
+=== /proc/5209/task/5222 comm=fn_anonymous wchan=folio_wait_bit_common
+cmdline: ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch 
+syscall: 20 0x17 0x7fdac37fc0d0 0x2 0x0 0x0 0x0 0x7fdac37fc050 0x7fdace504f4d
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] invalidate_inode_pages2_range+0x12f/0x380
+[<0>] fuse_reverse_inval_inode+0x93/0xc0 [fuse]
+[<0>] fuse_notify+0x3b6/0x520 [fuse]
+[<0>] fuse_dev_do_write+0x305/0x4e0 [fuse]
+[<0>] fuse_dev_write+0x50/0x80 [fuse]
+[<0>] do_iter_readv_writev+0xe2/0x140
+[<0>] do_iter_write+0x81/0x150
+[<0>] vfs_writev+0xae/0x1a0
+[<0>] do_writev+0x6f/0x120
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	8796
+nonvoluntary_ctxt_switches:	639
+=== /proc/90001/task/90001 comm=python3 wchan=folio_wait_bit_common
+cmdline: /usr/bin/python3 -c 
+import mmap, os, sys
+fd = os.open(sys.argv[1], os.O_RDONLY)
+os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
+if os.fstat(fd).st_size:
+    with mmap.mmap(fd, 0, prot=mmap.PROT_READ) as m:
+        m[:]
+ /mnt/scratch/hot/20261106-182048-B-baseline/hot01.dat 
+syscall: -1 0x7ffcc47e0b48 0x7f5ddef5a98d
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_fault+0xd5/0x780
+[<0>] __do_fault+0x31/0x110
+[<0>] do_read_fault+0xea/0x150
+[<0>] do_fault+0x9a/0x2e0
+[<0>] __handle_mm_fault+0x3a8/0x690
+[<0>] handle_mm_fault+0xb2/0x2a0
+[<0>] do_user_addr_fault+0x1b8/0x580
+[<0>] exc_page_fault+0x67/0x150
+[<0>] asm_exc_page_fault+0x22/0x30
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	14
+nonvoluntary_ctxt_switches:	0

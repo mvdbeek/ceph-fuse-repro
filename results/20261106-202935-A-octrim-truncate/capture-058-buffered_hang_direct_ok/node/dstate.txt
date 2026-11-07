@@ -1,0 +1,61 @@
+=== /proc/18928/task/18949 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-202935-A-octrim-truncate --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0x9 0x725b1c001820 0x400000 0x2 0x0 0x2 0x725b23ffe400 0x725b3b8122bc
+--- stack
+cat: /proc/18928/task/18949/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	54
+nonvoluntary_ctxt_switches:	0
+=== /proc/18928/task/18950 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-202935-A-octrim-truncate --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0xe 0x725b14001820 0x400000 0x0 0x0 0x81 0x725b237fd400 0x725b3b8122bc
+--- stack
+cat: /proc/18928/task/18950/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	227
+nonvoluntary_ctxt_switches:	0
+=== /proc/18928/task/18953 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-202935-A-octrim-truncate --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0xb 0x725b0c003ff0 0x400000 0xbb 0x0 0x0 0x725b227fb400 0x725b3b8122bc
+--- stack
+cat: /proc/18928/task/18953/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	153
+nonvoluntary_ctxt_switches:	0
+=== /proc/18928/task/18954 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-202935-A-octrim-truncate --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0xc 0x725b10004240 0x400000 0x0 0x0 0x81 0x725b21ffa400 0x725b3b8122bc
+--- stack
+cat: /proc/18928/task/18954/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	61
+nonvoluntary_ctxt_switches:	0
+=== /proc/18928/task/18956 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-202935-A-octrim-truncate --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0x8 0x725b08401890 0x400000 0x2 0x0 0x2 0x725b20ff8400 0x725b3b8122bc
+--- stack
+cat: /proc/18928/task/18956/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	168
+nonvoluntary_ctxt_switches:	2
+=== /proc/19268/task/19268 comm=python3 wchan=folio_wait_bit_common
+cmdline: /usr/bin/python3 -c 
+import mmap, os, sys
+fd = os.open(sys.argv[1], os.O_RDONLY)
+os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
+if os.fstat(fd).st_size:
+    with mmap.mmap(fd, 0, prot=mmap.PROT_READ) as m:
+        m[:]
+ /mnt/scratch/hot/20261106-202935-A-octrim-truncate/hot05.dat 
+syscall: -1 0x7ffeaa40db58 0x7e1bb8afcc24
+--- stack
+cat: /proc/19268/task/19268/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	13
+nonvoluntary_ctxt_switches:	0

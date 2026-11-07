@@ -1,0 +1,241 @@
+{
+  "run_id": "20261107-003621-B-octrim-truncate-msinject",
+  "stage": "B",
+  "kernel": "6.1.188-1.el9.elrepo.x86_64",
+  "ceph_fuse": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "cluster": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "faults": {
+    "octrim": "client_oc_size=1048576",
+    "slowosd": "dispatch_delay p=0.05 0.3s",
+    "msinject": "socket_failures=1/500 delay_p=0.02 max=2.0s"
+  },
+  "workload_args": [
+    "--workers",
+    "4",
+    "--hot",
+    "8",
+    "--hot-readers",
+    "8",
+    "--hot-interval",
+    "0.05",
+    "--hot-truncate"
+  ],
+  "start": "2026-11-07T00:36:23+0100",
+  "planned_duration": 3600,
+  "elapsed": 3601,
+  "aborted": null,
+  "oom_kills": {},
+  "mem_peak_mb": {
+    "mon": 292,
+    "mgr": 458,
+    "mds": 448,
+    "osd0": 2567,
+    "osd1": 2566,
+    "osd2": 2563,
+    "head": 1400,
+    "node": 1400,
+    "vm": 4255
+  },
+  "idle_fusectl": {
+    "head": {
+      "waiting": "0",
+      "max_background": "12",
+      "congestion_threshold": "9"
+    },
+    "node": {
+      "waiting": "0",
+      "max_background": "12",
+      "congestion_threshold": "9"
+    }
+  },
+  "outcome": "stall: buffered_and_direct_fail,dstate",
+  "triggers": [
+    {
+      "kind": "buffered_and_direct_fail",
+      "t": 1794008242.652006,
+      "seq": 1,
+      "path": "/mnt/scratch/probe/20261107-003621-B-octrim-truncate-msinject-p000001.bin",
+      "probe_age": 5.5,
+      "buffered_rc": 124,
+      "buffered_seconds": 20.0,
+      "buffered_out": "",
+      "direct_rc": -9,
+      "direct_seconds": 26.6,
+      "fusectl": {
+        "48": {
+          "waiting": "7",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      },
+      "elapsed": 55,
+      "fusectl_host": {
+        "head": {
+          "waiting": "7",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        },
+        "node": {
+          "waiting": "9",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      }
+    },
+    {
+      "kind": "dstate",
+      "t": 1794008265.066314,
+      "pid": "96625",
+      "tid": "96669",
+      "comm": "python3",
+      "seconds": 60,
+      "wchan": "folio_wait_bit_common",
+      "cmdline": "python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate ",
+      "fusectl": {
+        "48": {
+          "waiting": "9",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      },
+      "elapsed": 193,
+      "fusectl_host": {
+        "head": {
+          "waiting": "3",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        },
+        "node": {
+          "waiting": "13",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      }
+    },
+    {
+      "kind": "dstate",
+      "t": 1794008265.0681043,
+      "pid": "96625",
+      "tid": "96671",
+      "comm": "python3",
+      "seconds": 60,
+      "wchan": "folio_wait_bit_common",
+      "cmdline": "python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate ",
+      "fusectl": {
+        "48": {
+          "waiting": "9",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      },
+      "elapsed": 718,
+      "fusectl_host": {
+        "head": {
+          "waiting": "3",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        },
+        "node": {
+          "waiting": "12",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      }
+    },
+    {
+      "kind": "dstate",
+      "t": 1794008305.1609817,
+      "pid": "96625",
+      "tid": "96665",
+      "comm": "python3",
+      "seconds": 60,
+      "wchan": "folio_wait_bit_common",
+      "cmdline": "python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate ",
+      "fusectl": {
+        "48": {
+          "waiting": "8",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      },
+      "elapsed": 1208,
+      "fusectl_host": {
+        "head": {
+          "waiting": "5",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        },
+        "node": {
+          "waiting": "12",
+          "max_background": "12",
+          "congestion_threshold": "9"
+        }
+      }
+    }
+  ],
+  "stats": {
+    "head": {
+      "t0": 1794008189.6340132,
+      "head_bytes_written": 1135359548,
+      "last_head_bytes_written": 1794011763.5287488,
+      "head_probes_written": 450,
+      "last_head_probes_written": 1794011780.5391579,
+      "head_jobs_created": 521,
+      "last_head_jobs_created": 1794011763.5334995,
+      "head_hot_truncates": 299,
+      "last_head_hot_truncates": 1794011785.6898043,
+      "head_hot_writes": 625,
+      "last_head_hot_writes": 1794011785.689812,
+      "head_jobs_rewritten": 144,
+      "last_head_jobs_rewritten": 1794011781.778726,
+      "head_outputs_verified": 815,
+      "last_head_outputs_verified": 1794011757.1956081,
+      "head_jobs_checked": 163,
+      "last_head_jobs_checked": 1794011757.2037785,
+      "head_jobs_deleted": 122,
+      "last_head_jobs_deleted": 1794011755.8140101,
+      "t": 1794011786.0481057
+    },
+    "node": {
+      "t0": 1794008189.6103058,
+      "node_hot_reads": 11328,
+      "last_node_hot_reads": 1794011789.3444967,
+      "node_hot_mmap_reads": 3399,
+      "last_node_hot_mmap_reads": 1794011769.613937,
+      "node_cp": 1506,
+      "last_node_cp": 1794011788.9022791,
+      "node_buffered_reads": 3464,
+      "last_node_buffered_reads": 1794011789.1219888,
+      "node_mmap_reads": 1051,
+      "last_node_mmap_reads": 1794011788.9332569,
+      "node_mmap_writes": 500,
+      "last_node_mmap_writes": 1794011783.845318,
+      "node_bytes_written": 798728413,
+      "last_node_bytes_written": 1794011787.4119794,
+      "node_jobs_done": 500,
+      "last_node_jobs_done": 1794011788.225517,
+      "node_hot_mmap_sigbus": 40,
+      "last_node_hot_mmap_sigbus": 1794011755.2841473,
+      "node_hot_errors": 1,
+      "last_node_hot_errors": 1794010049.5101185,
+      "t": 1794011789.3703847
+    },
+    "failcheck": {
+      "t0": 1794008189.610632,
+      "probe_ok": 1,
+      "last_probe_ok": 1794008194.4782355,
+      "probe_rechecks": 1,
+      "last_probe_rechecks": 1794008195.9908679,
+      "probe_buffered_fail": 2,
+      "last_probe_buffered_fail": 1794008292.7123811,
+      "probe_buffered_and_direct_fail": 1,
+      "last_probe_buffered_and_direct_fail": 1794008242.6485534,
+      "probe_buffered_hang_direct_ok": 1,
+      "last_probe_buffered_hang_direct_ok": 1794008303.5354877,
+      "t": 1794011787.444924
+    }
+  },
+  "blocklist": "10.177.77.12:6800/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:0/1378688511 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/1889620215 2026-11-07T14:44:55.302856+0000\n10.177.77.11:0/3407353904 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6801/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:6801/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/2118970209 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/4033411307 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3332997076 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6801/3473925138 2026-11-07T14:39:58.903782+0000\n10.177.77.11:6800/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3218408777 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3721478901 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/754901607 2026-11-07T14:44:55.302856+0000\n10.177.77.11:6800/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3824515705 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3973458054 2026-11-07T14:44:55.302856+0000\n10.177.77.12:6800/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:6801/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6801/2054025917 2026-11-07T14:44:56.444679+0000",
+  "workload_left_running": false,
+  "first_repro_after": 55
+}

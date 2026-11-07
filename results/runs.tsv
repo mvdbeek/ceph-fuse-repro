@@ -1,0 +1,23 @@
+run_id	stage	kernel	ceph	faults	workload_args	duration_s	outcome
+20261106-154916-faultcheck	A	7.3.0-4-t2-resolute	17.2.9	netem,msinject,mdsrecall,slowosd	--workers 4 --hot 4	180	no repro
+20261106-155310-tune-netem	A	7.3.0-4-t2-resolute	17.2.9	netem	--workers 4 --hot 4	91	no repro
+20261106-155515-tune-msinject	A	7.3.0-4-t2-resolute	17.2.9	msinject	--workers 4 --hot 4	91	no repro
+20261106-155720-tune-mdsrecall	A	7.3.0-4-t2-resolute	17.2.9	mdsrecall	--workers 4 --hot 4	91	no repro
+20261106-155927-tune-slowosd	A	7.3.0-4-t2-resolute	17.2.9	slowosd	--workers 4 --hot 4	91	no repro
+20261106-160144-tune2-netem	A	7.3.0-4-t2-resolute	17.2.9	netem	--workers 4 --hot 4	91	no repro
+20261106-160348-tune2-slowosd	A	7.3.0-4-t2-resolute	17.2.9	slowosd	--workers 4 --hot 4	44	INVALID: role(s) node exited early
+20261106-163040-positive-control-osd-pause	A	7.3.0-4-t2-resolute	17.2.9	none	--workers 4 --hot 4	301	POSITIVE CONTROL (fault induced by hand, not a reproduction): stall: dstate
+20261106-165630-positive-control-sigstop	A	7.3.0-4-t2-resolute	17.2.9	none	--workers 2	151	POSITIVE CONTROL (fault induced by hand, not a reproduction): REPRODUCED: buffered read hung, O_DIRECT ok
+20261106-172905-smoke-b	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	none	--workers 4 --hot 4	184	smoke run (hung_task trigger was a false positive: dmesg lines left from an earlier manual experiment; fixed): stall: hung_task_dmesg
+20261106-173352-positive-control-osd-pause-b	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	none	--workers 4 --hot 4	422	POSITIVE CONTROL (OSDs paused 150 s by hand); INVALID after unpause: all 3 OSDs OOM-killed at their 576 MB cap (runner missed it, fixed): stall: buffered_and_direct_fail,dstate
+20261106-174751-B-baseline	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	none	--workers 4 --hot 4	522	INVALID: OOM kill in osd0
+20261106-182048-B-baseline	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	none (cluster went FULL by accident at 1766 s)	--workers 4 --hot 4	~2230	INVALID as no-fault run (8 GB OSDs filled: OSD_FULL 6 s at 1766 s); fn_anonymous invalidation stall, production stack, from ~1782 s for ~15 min, then recovered; see NOTE
+20261106-195521-A-fullflap	A	7.3.0-4-t2-resolute	17.2.9	fullflap	--workers 4 --hot 4	1483	INVALID: osd1 OOM-killed at 1 GB 4 min after the 2nd flap (osd0/osd2 flagged only because I restarted them during the final check); 2 flaps (603 s, 1217 s), no stall triggers in 1483 s: INVALID: OOM kill in osd0,osd1,osd2
+20261106-202935-A-octrim-truncate	A	7.3.0-4-t2-resolute	17.2.9	octrim,slowosd	--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate	~820 valid	INVALID: ceph-fuse segfaulted in the capture's `log dump` at ~820 s and then hung in vfs_coredump behind a blocked invalidation (mount hung, not ENOTCONN) until fusectl abort; before that: transient slot exhaustion (waiting=13) at 58 s, recovered; see NOTE
+20261106-210800-A-octrim-truncate-2	A	7.3.0-4-t2-resolute	17.2.9	octrim,slowosd	--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate	3602	no repro (idle-leak flag on head was a false positive: the background rm -rf of old trees; fixed). 616 jobs, 997 probes, 468 hot writes (~230 truncating), 13.6k hot reads; 60 s debug_objectcacher sample: 5 discards, 0 on in-flight (rx) buffers
+20261106-221156-A-octrim-truncate-msinject	A	7.3.0-4-t2-resolute	17.2.9	octrim,slowosd,msinject	--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate	1150	INVALID: OOM kill in osd0,osd2
+20261106-223321-A-octrim-truncate-msinject-2	A	7.3.0-4-t2-resolute	17.2.9	octrim,slowosd,msinject	--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate	3600	no repro
+20261106-233457-B-fullflap	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	fullflap	--workers 4 --hot 4	3603	no repro
+20261107-003621-B-octrim-truncate-msinject	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	octrim,slowosd,msinject	--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate	3601	inconclusive (no leak: idle waiting 0; transient slot saturation, D-state episodes 70-115 s all cleared; probe check blind after 114 s on an unkillable probe read, harness bug fixed): stall: buffered_and_direct_fail,dstate
+20261107-013741-B-baseline-2	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	none	--workers 4 --hot 4	3601	no repro
+20261107-023852-B-fullflap-2	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	fullflap	--workers 4 --hot 4	3602	no repro

@@ -1,0 +1,41 @@
+=== /proc/12901/task/12911 comm=python3 wchan=request_wait_answer
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-173352-positive-control-osd-pause-b --workers 4 --hot 4 
+syscall: 0 0x5 0x7fbf90003940 0x400000 0x2 0x0 0x2 0x7fbfaa7fb400 0x7fbfbacff2bc
+--- stack
+[<0>] request_wait_answer+0xa5/0x220 [fuse]
+[<0>] fuse_simple_request+0x18a/0x2a0 [fuse]
+[<0>] fuse_do_getattr+0xe1/0x2b0 [fuse]
+[<0>] fuse_file_read_iter+0x121/0x190 [fuse]
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	S (sleeping)
+voluntary_ctxt_switches:	4252
+nonvoluntary_ctxt_switches:	171
+=== /proc/19452/task/19452 comm=python3 wchan=folio_wait_bit_common
+cmdline: /usr/bin/python3 -c 
+import mmap, os, sys
+fd = os.open(sys.argv[1], os.O_RDONLY)
+os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
+if os.fstat(fd).st_size:
+    with mmap.mmap(fd, 0, prot=mmap.PROT_READ) as m:
+        m[:]
+ /mnt/scratch/hot/20261106-173352-positive-control-osd-pause-b/hot02.dat 
+syscall: -1 0x7ffe9409d428 0x7f951075ac24
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_fault+0xd5/0x780
+[<0>] __do_fault+0x31/0x110
+[<0>] do_read_fault+0xea/0x150
+[<0>] do_fault+0x9a/0x2e0
+[<0>] __handle_mm_fault+0x3a8/0x690
+[<0>] handle_mm_fault+0xb2/0x2a0
+[<0>] do_user_addr_fault+0x1b8/0x580
+[<0>] exc_page_fault+0x67/0x150
+[<0>] asm_exc_page_fault+0x22/0x30
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	12
+nonvoluntary_ctxt_switches:	0

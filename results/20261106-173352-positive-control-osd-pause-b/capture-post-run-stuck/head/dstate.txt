@@ -1,0 +1,63 @@
+=== /proc/1910/task/1916 comm=python3 wchan=request_wait_answer
+cmdline: 
+syscall: 257 0xffffff9c 0x7d7359aaa450 0x80241 0x1b6 0x0 0x2 0x7d7359a89fe0 0x7d735a780054
+--- stack
+cat: /proc/1910/task/1916/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	14945
+nonvoluntary_ctxt_switches:	105
+=== /proc/1910/task/1917 comm=python3 wchan=request_wait_answer
+cmdline: 
+syscall: 257 0xffffff9c 0x7d7359ab45d0 0x80241 0x1b6 0x0 0x2 0x7d7359288fe0 0x7d735a780054
+--- stack
+cat: /proc/1910/task/1917/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	12406
+nonvoluntary_ctxt_switches:	84
+=== /proc/1910/task/1918 comm=python3 wchan=request_wait_answer
+cmdline: 
+syscall: 83 0x7d7359aaa2d0 0x1ff 0x0 0x7d735ab10bce 0xffffffff 0x2 0x7d7358a88388 0x7d735a77fefb
+--- stack
+cat: /proc/1910/task/1918/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	13469
+nonvoluntary_ctxt_switches:	101
+=== /proc/1910/task/1919 comm=python3 wchan=request_wait_answer
+cmdline: 
+syscall: 257 0xffffff9c 0x7d7359aaa550 0x80241 0x1b6 0x0 0x2 0x7d734bffdfe0 0x7d735a780054
+--- stack
+cat: /proc/1910/task/1919/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	14719
+nonvoluntary_ctxt_switches:	98
+=== /proc/1910/task/1920 comm=python3 wchan=request_wait_answer
+cmdline: 
+syscall: 263 0x3 0x7d7359a9a830 0x200 0x7d735ab131da 0x4 0x2 0x7d734b7fd1e8 0x7d735a781b7b
+--- stack
+cat: /proc/1910/task/1920/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	20933
+nonvoluntary_ctxt_switches:	95
+=== /proc/1910/task/1921 comm=python3 wchan=request_wait_answer
+cmdline: 
+syscall: 74 0x5 0x2 0x2 0x7d733c002048 0x0 0x2 0x7d734affc3d0 0x7d735a786d5b
+--- stack
+cat: /proc/1910/task/1921/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	835
+nonvoluntary_ctxt_switches:	6
+=== /proc/1910/task/1922 comm=python3 wchan=request_wait_answer
+cmdline: 
+syscall: 18 0x6 0x7d733408f800 0x8ccd0 0x0 0x0 0x2 0x7d734a7fb520 0x7d735a77e34f
+--- stack
+cat: /proc/1910/task/1922/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	4401
+nonvoluntary_ctxt_switches:	10

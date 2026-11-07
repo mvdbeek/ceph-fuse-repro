@@ -1,0 +1,72 @@
+{
+    "ops": [
+        {
+            "tid": 1193,
+            "pg": "2.6730c9ab",
+            "osd": 0,
+            "object_id": "10000007dbb.00000000",
+            "object_locator": "@2",
+            "target_object_id": "10000007dbb.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1049286.449819s",
+            "age": 0.074001396999999997,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T15:57:50.596500+0000",
+            "osd_ops": [
+                "write 0~87156 in=87156b"
+            ]
+        },
+        {
+            "tid": 1192,
+            "pg": "2.c9c81f96",
+            "osd": 1,
+            "object_id": "10000007dbc.00000000",
+            "object_locator": "@2",
+            "target_object_id": "10000007dbc.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1049286.429819s",
+            "age": 0.094001774999999996,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T15:57:50.576062+0000",
+            "osd_ops": [
+                "write 0~16236 in=16236b"
+            ]
+        },
+        {
+            "tid": 1194,
+            "pg": "2.8b9bf8bc",
+            "osd": 1,
+            "object_id": "10000007dbd.00000000",
+            "object_locator": "@2",
+            "target_object_id": "10000007dbd.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1049286.455819s",
+            "age": 0.068001283999999995,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T15:57:50.601693+0000",
+            "osd_ops": [
+                "write 0~11 in=11b"
+            ]
+        }
+    ],
+    "linger_ops": [],
+    "pool_ops": [],
+    "pool_stat_ops": [],
+    "statfs_ops": [],
+    "command_ops": []
+}

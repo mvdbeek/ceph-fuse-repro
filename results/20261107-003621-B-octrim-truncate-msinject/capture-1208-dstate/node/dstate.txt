@@ -1,0 +1,64 @@
+=== /proc/96625/task/96664 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0x8 0x7fd344401860 0x400000 0x2 0x0 0x2 0x7fd3608c4400 0x7fd363aff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	21268
+nonvoluntary_ctxt_switches:	1329
+=== /proc/96625/task/96665 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0x9 0x7fd340401890 0x400000 0x2 0x0 0x2 0x7fd34bffe400 0x7fd363aff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	19576
+nonvoluntary_ctxt_switches:	1284
+=== /proc/96625/task/96669 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0x4 0x7fd330401ae0 0x400000 0x2 0x0 0x2 0x7fd34a7fb400 0x7fd363aff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	21032
+nonvoluntary_ctxt_switches:	1216
+=== /proc/96625/task/96670 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0xb 0x7fd334401890 0x400000 0x2 0x0 0x2 0x7fd349ffa400 0x7fd363aff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	21728
+nonvoluntary_ctxt_switches:	1237

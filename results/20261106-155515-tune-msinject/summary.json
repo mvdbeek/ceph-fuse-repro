@@ -1,0 +1,69 @@
+{
+  "run_id": "20261106-155515-tune-msinject",
+  "stage": "A",
+  "kernel": "7.3.0-4-t2-resolute",
+  "ceph_fuse": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "cluster": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "faults": {
+    "msinject": "socket_failures=1/2000 delay_p=0.02 max=2.0s"
+  },
+  "workload_args": [
+    "--workers",
+    "4",
+    "--hot",
+    "4"
+  ],
+  "start": "2026-11-06T15:55:15+0100",
+  "planned_duration": 90,
+  "elapsed": 91,
+  "aborted": null,
+  "outcome": "no repro",
+  "triggers": [],
+  "stats": {
+    "head": {
+      "t0": 1793976916.831462,
+      "head_probes_written": 16,
+      "last_head_probes_written": 1793977002.3231347,
+      "head_bytes_written": 139794940,
+      "last_head_bytes_written": 1793977000.325349,
+      "head_jobs_created": 65,
+      "last_head_jobs_created": 1793977000.3302803,
+      "head_hot_writes": 114,
+      "last_head_hot_writes": 1793977005.981377,
+      "head_jobs_rewritten": 20,
+      "last_head_jobs_rewritten": 1793976996.2128875,
+      "head_outputs_verified": 205,
+      "last_head_outputs_verified": 1793977004.4739285,
+      "head_jobs_checked": 41,
+      "last_head_jobs_checked": 1793977004.4817684,
+      "t": 1793977006.8494911
+    },
+    "node": {
+      "t0": 1793976916.8679216,
+      "node_hot_reads": 455,
+      "last_node_hot_reads": 1793977006.8305156,
+      "node_cp": 138,
+      "last_node_cp": 1793977006.2142386,
+      "node_buffered_reads": 293,
+      "last_node_buffered_reads": 1793977003.564302,
+      "node_mmap_reads": 112,
+      "last_node_mmap_reads": 1793977003.548088,
+      "node_mmap_writes": 45,
+      "last_node_mmap_writes": 1793977004.0946758,
+      "node_bytes_written": 69033932,
+      "last_node_bytes_written": 1793977005.773474,
+      "node_jobs_done": 45,
+      "last_node_jobs_done": 1793977006.5006905,
+      "t": 1793977006.9289432
+    },
+    "failcheck": {
+      "t0": 1793976916.9063454,
+      "probe_ok": 16,
+      "last_probe_ok": 1793977002.8909328,
+      "t": 1793977006.9266703
+    }
+  },
+  "blocklist": "10.177.77.12:6801/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:0/1889620215 2026-11-07T14:44:55.302856+0000\n10.177.77.12:6800/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:0/3973458054 2026-11-07T14:44:55.302856+0000\n10.177.77.31:0/575557984 2026-11-06T15:45:51.446366+0000\n10.177.77.11:0/754901607 2026-11-07T14:44:55.302856+0000\n10.177.77.11:0/1378688511 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3824515705 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3332997076 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6801/3473925138 2026-11-07T14:39:58.903782+0000\n10.177.77.11:0/2118970209 2026-11-07T14:39:58.269026+0000\n10.177.77.11:6801/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:6800/7 2026-11-07T14:39:58.269026+0000",
+  "workload_left_running": false,
+  "first_repro_after": null
+}

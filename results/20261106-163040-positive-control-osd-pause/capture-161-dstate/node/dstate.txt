@@ -1,0 +1,43 @@
+=== /proc/34/task/47 comm=fn_anonymous wchan=folio_wait_bit_common
+cmdline: ceph-fuse --id=galaxy-node --conf=/etc/ceph/ceph.conf --client_mountpoint=/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6 /mnt/scratch 
+syscall: 20 0x17 0x75cdc7ffd0d0 0x2 0x0 0x0 0x0 0x75cdc7ffd050 0x75cddfce0f4d
+--- stack
+cat: /proc/34/task/47/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	1048
+nonvoluntary_ctxt_switches:	6
+=== /proc/8478/task/8511 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-163040-positive-control-osd-pause --workers 4 --hot 4 
+syscall: 0 0xb 0x72b468401890 0x400000 0x2 0x0 0x2 0x72b4827fb400 0x72b489fb32bc
+--- stack
+cat: /proc/8478/task/8511/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	3129
+nonvoluntary_ctxt_switches:	10
+=== /proc/8478/task/8514 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261106-163040-positive-control-osd-pause --workers 4 --hot 4 
+syscall: 0 0x8 0x72b46c401890 0x400000 0x2 0x0 0x2 0x72b481ffa400 0x72b489fb32bc
+--- stack
+cat: /proc/8478/task/8514/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	3134
+nonvoluntary_ctxt_switches:	6
+=== /proc/9227/task/9227 comm=python3 wchan=folio_wait_bit_common
+cmdline: /usr/bin/python3 -c 
+import mmap, os, sys
+fd = os.open(sys.argv[1], os.O_RDONLY)
+os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
+if os.fstat(fd).st_size:
+    with mmap.mmap(fd, 0, prot=mmap.PROT_READ) as m:
+        m[:]
+ /mnt/scratch/hot/20261106-163040-positive-control-osd-pause/hot02.dat 
+syscall: -1 0x7ffc01e8d748 0x72251e6c5c24
+--- stack
+cat: /proc/9227/task/9227/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	10
+nonvoluntary_ctxt_switches:	1

@@ -1,0 +1,18 @@
+Run stopped by hand (SIGINT) at ~17:58 UTC; run.py died in its cleanup, so there is no summary.json. Record:
+
+- 17:20:48 UTC start, Stage B (node = KVM guest, kernel 6.1.188-1.el9.elrepo), no faults, --workers 4 --hot 4.
+- 17:50:14-17:50:20 and 17:51:49-17:51:58: cluster OSD_FULL/POOL_FULL (the 8 GB OSDs filled up; harness
+  artifact). ceph-fuse logged "_handle_full_flag: FULL: cancelling outstanding operations".
+- From ~17:50:30: ceph-fuse thread fn_anonymous in D with the production stack
+  (folio_wait_bit_common <- invalidate_inode_pages2_range <- fuse_reverse_inval_inode <- fuse_notify <-
+  fuse_dev_do_write <- fuse_dev_write <- writev, same offsets); node readers in filemap_update_page /
+  filemap_fault on folio waits; kcompactd0 too. fusectl waiting=5. ceph-fuse objecter_requests and
+  mds_requests empty. Guest kernel hung-task reports every ~123 s up to "blocked for more than 860 s"
+  (live-stuck/guest-console.log). Captures: capture-1838-dstate, capture-2095-dstate.
+- Recovered between 18:04:58 and 18:07:01 UTC (no further hung-task reports): ~14.5-16.5 min.
+- 17:57 raised full ratios to stop further FULL episodes; from ~17:58 a gdb attach (thread apply all bt
+  with debuginfo) wedged the guest (ssh dead), so the post-recovery state (fusectl waiting, fuse_get_req)
+  could not be read. Guest memory dump: state/vm/vmcore-20261106-stall.elf (not committed, 3.2 GB). Guest reset 18:31.
+
+Verdict: NOT a no-fault reproduction (triggered right after a transient cluster FULL). It is the production
+fn_anonymous stall on the production kernel, of production-like duration, following a 6 s OSD-side error.

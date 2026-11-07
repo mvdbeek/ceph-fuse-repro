@@ -1,0 +1,114 @@
+=== /proc/96625/task/96665 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0x15 0x7fd340001820 0x400000 0x2 0x0 0x2 0x7fd34bffe400 0x7fd363aff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	108
+nonvoluntary_ctxt_switches:	18
+=== /proc/96625/task/96669 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0x9 0x7fd330001a70 0x400000 0x2 0x0 0x2 0x7fd34a7fb400 0x7fd363aff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	36
+nonvoluntary_ctxt_switches:	8
+=== /proc/96625/task/96670 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0xe 0x7fd334001850 0x400000 0x2 0x0 0x2 0x7fd349ffa400 0x7fd363aff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	157
+nonvoluntary_ctxt_switches:	11
+=== /proc/96625/task/96671 comm=python3 wchan=folio_wait_bit_common
+cmdline: python3 -u /harness/workload.py node --run-id 20261107-003621-B-octrim-truncate-msinject --workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate 
+syscall: 0 0x4 0x7fd328001820 0x400000 0x2 0x0 0x2 0x7fd3497f9400 0x7fd363aff2bc
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_update_page+0x2bb/0x2f0
+[<0>] filemap_get_pages+0x210/0x360
+[<0>] filemap_read+0xbf/0x320
+[<0>] vfs_read+0x207/0x2e0
+[<0>] ksys_read+0x5f/0xe0
+[<0>] do_syscall_64+0x35/0x90
+[<0>] entry_SYSCALL_64_after_hwframe+0x6e/0xd8
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	34
+nonvoluntary_ctxt_switches:	5
+=== /proc/97777/task/97777 comm=python3 wchan=folio_wait_bit_common
+cmdline: /usr/bin/python3 -c 
+import mmap, os, sys
+fd = os.open(sys.argv[1], os.O_RDONLY)
+os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
+if os.fstat(fd).st_size:
+    with mmap.mmap(fd, 0, prot=mmap.PROT_READ) as m:
+        m[:]
+ /mnt/scratch/hot/20261107-003621-B-octrim-truncate-msinject/hot06.dat 
+syscall: -1 0x7ffff6d577b8 0x7f8e0695ac24
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_fault+0xd5/0x780
+[<0>] __do_fault+0x31/0x110
+[<0>] do_read_fault+0xea/0x150
+[<0>] do_fault+0x9a/0x2e0
+[<0>] __handle_mm_fault+0x3a8/0x690
+[<0>] handle_mm_fault+0xb2/0x2a0
+[<0>] do_user_addr_fault+0x1b8/0x580
+[<0>] exc_page_fault+0x67/0x150
+[<0>] asm_exc_page_fault+0x22/0x30
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	15
+nonvoluntary_ctxt_switches:	2
+=== /proc/97778/task/97778 comm=python3 wchan=folio_wait_bit_common
+cmdline: /usr/bin/python3 -c 
+import mmap, os, sys
+fd = os.open(sys.argv[1], os.O_RDONLY)
+os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
+if os.fstat(fd).st_size:
+    with mmap.mmap(fd, 0, prot=mmap.PROT_READ) as m:
+        m[:]
+ /mnt/scratch/hot/20261107-003621-B-octrim-truncate-msinject/hot06.dat 
+syscall: -1 0x7ffff07392c8 0x7f55b1f5ac24
+--- stack
+[<0>] folio_wait_bit_common+0x120/0x360
+[<0>] filemap_fault+0xd5/0x780
+[<0>] __do_fault+0x31/0x110
+[<0>] do_read_fault+0xea/0x150
+[<0>] do_fault+0x9a/0x2e0
+[<0>] __handle_mm_fault+0x3a8/0x690
+[<0>] handle_mm_fault+0xb2/0x2a0
+[<0>] do_user_addr_fault+0x1b8/0x580
+[<0>] exc_page_fault+0x67/0x150
+[<0>] asm_exc_page_fault+0x22/0x30
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	15
+nonvoluntary_ctxt_switches:	1

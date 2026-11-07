@@ -1,0 +1,178 @@
+{
+    "ops": [
+        {
+            "description": "osd_op(client.45492.0:223680 2.4f 2:f3fd13fa:::10000052b23.00000000:head [write 0~1402232 in=1402232b] snapc 1=[] ondisk+write+known_if_redirected+supports_pool_eio e274)",
+            "initiated_at": "2026-11-06T23:39:37.981527+0000",
+            "age": 0.74818125700000004,
+            "duration": 0.74822375200000002,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "client_info": {
+                    "client": "client.45492",
+                    "client_addr": "10.177.77.40:0/757031787",
+                    "tid": 223680
+                },
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T23:39:37.981527+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T23:39:37.981527+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T23:39:37.981529+0000",
+                        "duration": 1.79e-06
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T23:39:38.291312+0000",
+                        "duration": 0.309782893
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T23:39:38.291313+0000",
+                        "duration": 1.494e-06
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T23:39:38.291317+0000",
+                        "duration": 3.9879999999999998e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T23:39:38.291344+0000",
+                        "duration": 2.7478e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T23:39:38.291452+0000",
+                        "duration": 0.000107509
+                    },
+                    {
+                        "event": "waiting for subops from 1,2",
+                        "time": "2026-11-06T23:39:38.291514+0000",
+                        "duration": 6.1824999999999998e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T23:39:38.453114+0000",
+                        "duration": 0.16160063199999999
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(client.45492.0:223685 2.5a 2:5a27be9d:::10000052b26.00000000:head [write 0~1906001 in=1906001b] snapc 1=[] ondisk+write+known_if_redirected+supports_pool_eio e274)",
+            "initiated_at": "2026-11-06T23:39:38.291337+0000",
+            "age": 0.43837124799999999,
+            "duration": 0.43848625099999999,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "client_info": {
+                    "client": "client.45492",
+                    "client_addr": "10.177.77.40:0/757031787",
+                    "tid": 223685
+                },
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T23:39:38.291337+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T23:39:38.291337+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T23:39:38.291337+0000",
+                        "duration": 3.8299999999999998e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T23:39:38.292066+0000",
+                        "duration": 0.00072891899999999996
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T23:39:38.292068+0000",
+                        "duration": 1.5999999999999999e-06
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T23:39:38.292071+0000",
+                        "duration": 2.9900000000000002e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T23:39:38.292106+0000",
+                        "duration": 3.4824999999999999e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T23:39:38.292198+0000",
+                        "duration": 9.2188000000000006e-05
+                    },
+                    {
+                        "event": "waiting for subops from 1,2",
+                        "time": "2026-11-06T23:39:38.292252+0000",
+                        "duration": 5.4233000000000001e-05
+                    },
+                    {
+                        "event": "op_commit",
+                        "time": "2026-11-06T23:39:38.453138+0000",
+                        "duration": 0.16088637
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(client.45492.0:223690 2.31 2.a52a0cb1 (undecoded) ondisk+read+known_if_redirected+supports_pool_eio e274)",
+            "initiated_at": "2026-11-06T23:39:38.592201+0000",
+            "age": 0.13750757599999999,
+            "duration": 0.13768946100000001,
+            "type_data": {
+                "flag_point": "no flag points reached",
+                "client_info": {
+                    "client": "client.45492",
+                    "client_addr": "10.177.77.40:0/757031787",
+                    "tid": 223690
+                },
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T23:39:38.592201+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T23:39:38.592201+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T23:39:38.592201+0000",
+                        "duration": 7.5000000000000002e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T23:39:38.592204+0000",
+                        "duration": 2.3999999999999999e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T23:39:38.592204+0000",
+                        "duration": 3.4400000000000001e-07
+                    }
+                ]
+            }
+        }
+    ],
+    "num_ops": 3
+}

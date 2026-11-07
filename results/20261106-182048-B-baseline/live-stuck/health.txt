@@ -1,0 +1,9 @@
+HEALTH_WARN 3 backfillfull osd(s); 3 pool(s) backfillfull
+[WRN] OSD_BACKFILLFULL: 3 backfillfull osd(s)
+    osd.0 is backfill full
+    osd.1 is backfill full
+    osd.2 is backfill full
+[WRN] POOL_BACKFILLFULL: 3 pool(s) backfillfull
+    pool 'cephfs.cephfs.meta' is backfillfull
+    pool 'cephfs.cephfs.data' is backfillfull
+    pool '.mgr' is backfillfull

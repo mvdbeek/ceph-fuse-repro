@@ -1,0 +1,297 @@
+2026-11-06T17:55:45.698+0000 7d23267fc640  0 client.45022 ms_handle_reset on v2:10.177.77.12:6800/140078637
+2026-11-06T17:55:45.728+0000 7d23267fc640  0 client.45024 ms_handle_reset on v2:10.177.77.12:6800/140078637
+[
+    {
+        "id": 44357,
+        "entity": {
+            "name": {
+                "type": "client",
+                "num": 44357
+            },
+            "addr": {
+                "type": "any",
+                "addr": "10.177.77.40:0",
+                "nonce": 3230283490
+            }
+        },
+        "state": "open",
+        "num_leases": 0,
+        "num_caps": 21063,
+        "request_load_avg": 252,
+        "uptime": 5688.6214609669996,
+        "requests_in_flight": 0,
+        "num_completed_requests": 0,
+        "num_completed_flushes": 8,
+        "reconnecting": false,
+        "recall_caps": {
+            "value": 0,
+            "halflife": 60
+        },
+        "release_caps": {
+            "value": 681.51049189269042,
+            "halflife": 60
+        },
+        "recall_caps_throttle": {
+            "value": 0,
+            "halflife": 1.5
+        },
+        "recall_caps_throttle2o": {
+            "value": 0,
+            "halflife": 0.5
+        },
+        "session_cache_liveness": {
+            "value": 22755.53659129166,
+            "halflife": 300
+        },
+        "cap_acquisition": {
+            "value": 0.2969786260427974,
+            "halflife": 30
+        },
+        "last_trim_completed_requests_tid": 269957,
+        "last_trim_completed_flushes_tid": 42395,
+        "delegated_inos": [
+            {
+                "start": "0x1000000895b",
+                "length": 500
+            }
+        ],
+        "inst": "client.44357 10.177.77.40:0/3230283490",
+        "completed_requests": [],
+        "prealloc_inos": [
+            {
+                "start": "0x1000000895b",
+                "length": 500
+            },
+            {
+                "start": "0x10000020078",
+                "length": 161
+            },
+            {
+                "start": "0x1000002030e",
+                "length": 501
+            }
+        ],
+        "client_metadata": {
+            "client_features": {
+                "feature_bits": "0x00000000001fffff"
+            },
+            "metric_spec": {
+                "metric_flags": {
+                    "feature_bits": "0x000000000000ffff"
+                }
+            },
+            "ceph_sha1": "69bf48f20731a4b0d742613f6c6335ccb54dd217",
+            "ceph_version": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+            "entity_id": "galaxy-node",
+            "hostname": "node-vm",
+            "mount_point": "/mnt/scratch",
+            "pid": "5209",
+            "root": "/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6"
+        }
+    },
+    {
+        "id": 44268,
+        "entity": {
+            "name": {
+                "type": "client",
+                "num": 44268
+            },
+            "addr": {
+                "type": "any",
+                "addr": "10.177.77.31:0",
+                "nonce": 1870585257
+            }
+        },
+        "state": "open",
+        "num_leases": 0,
+        "num_caps": 1,
+        "request_load_avg": 0,
+        "uptime": 7169.967365345,
+        "requests_in_flight": 0,
+        "num_completed_requests": 0,
+        "num_completed_flushes": 2,
+        "reconnecting": false,
+        "recall_caps": {
+            "value": 0,
+            "halflife": 60
+        },
+        "release_caps": {
+            "value": 0,
+            "halflife": 60
+        },
+        "recall_caps_throttle": {
+            "value": 0,
+            "halflife": 1.5
+        },
+        "recall_caps_throttle2o": {
+            "value": 0,
+            "halflife": 0.5
+        },
+        "session_cache_liveness": {
+            "value": 0.030970896063580014,
+            "halflife": 300
+        },
+        "cap_acquisition": {
+            "value": 0,
+            "halflife": 30
+        },
+        "last_trim_completed_requests_tid": 5588,
+        "last_trim_completed_flushes_tid": 1230,
+        "delegated_inos": [
+            {
+                "start": "0x100000079b2",
+                "length": 500
+            }
+        ],
+        "inst": "client.44268 10.177.77.31:0/1870585257",
+        "completed_requests": [],
+        "prealloc_inos": [
+            {
+                "start": "0x100000079b2",
+                "length": 500
+            },
+            {
+                "start": "0x1000000835d",
+                "length": 29
+            },
+            {
+                "start": "0x1000000856f",
+                "length": 501
+            }
+        ],
+        "client_metadata": {
+            "client_features": {
+                "feature_bits": "0x00000000001fffff"
+            },
+            "metric_spec": {
+                "metric_flags": {
+                    "feature_bits": "0x000000000000ffff"
+                }
+            },
+            "ceph_sha1": "69bf48f20731a4b0d742613f6c6335ccb54dd217",
+            "ceph_version": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+            "entity_id": "galaxy-node",
+            "hostname": "node",
+            "mount_point": "/mnt/scratch",
+            "pid": "34",
+            "root": "/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6"
+        }
+    },
+    {
+        "id": 44265,
+        "entity": {
+            "name": {
+                "type": "client",
+                "num": 44265
+            },
+            "addr": {
+                "type": "any",
+                "addr": "10.177.77.30:0",
+                "nonce": 1008900594
+            }
+        },
+        "state": "open",
+        "num_leases": 0,
+        "num_caps": 17739,
+        "request_load_avg": 133,
+        "uptime": 7170.4493748920004,
+        "requests_in_flight": 0,
+        "num_completed_requests": 1,
+        "num_completed_flushes": 2,
+        "reconnecting": false,
+        "recall_caps": {
+            "value": 0,
+            "halflife": 60
+        },
+        "release_caps": {
+            "value": 26.857463149848467,
+            "halflife": 60
+        },
+        "recall_caps_throttle": {
+            "value": 0,
+            "halflife": 1.5
+        },
+        "recall_caps_throttle2o": {
+            "value": 0,
+            "halflife": 0.5
+        },
+        "session_cache_liveness": {
+            "value": 19842.211105081009,
+            "halflife": 300
+        },
+        "cap_acquisition": {
+            "value": 0.28261341774863802,
+            "halflife": 30
+        },
+        "last_trim_completed_requests_tid": 287100,
+        "last_trim_completed_flushes_tid": 40021,
+        "delegated_inos": [
+            {
+                "start": "0x1000000001c",
+                "length": 477
+            },
+            {
+                "start": "0x100000001fc",
+                "length": 4
+            },
+            {
+                "start": "0x100000005eb",
+                "length": 15
+            },
+            {
+                "start": "0x100000019e5",
+                "length": 4
+            }
+        ],
+        "inst": "client.44265 10.177.77.30:0/1008900594",
+        "completed_requests": [
+            {
+                "tid": 287101,
+                "created_ino": "0x1000001fea4"
+            }
+        ],
+        "prealloc_inos": [
+            {
+                "start": "0x1000000001c",
+                "length": 477
+            },
+            {
+                "start": "0x100000001fc",
+                "length": 4
+            },
+            {
+                "start": "0x100000005eb",
+                "length": 15
+            },
+            {
+                "start": "0x100000019e5",
+                "length": 4
+            },
+            {
+                "start": "0x1000001fea5",
+                "length": 127
+            },
+            {
+                "start": "0x10000020119",
+                "length": 501
+            }
+        ],
+        "client_metadata": {
+            "client_features": {
+                "feature_bits": "0x00000000001fffff"
+            },
+            "metric_spec": {
+                "metric_flags": {
+                    "feature_bits": "0x000000000000ffff"
+                }
+            },
+            "ceph_sha1": "69bf48f20731a4b0d742613f6c6335ccb54dd217",
+            "ceph_version": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+            "entity_id": "galaxy-head",
+            "hostname": "head",
+            "mount_point": "/mnt/scratch",
+            "pid": "34",
+            "root": "/volumes/_nogroup/9b3c1f0e-5a7d-4c2e-8f61-2d4b6a0c9e11/728347b5-e431-4a3c-8f4d-e1f257f0c4f6"
+        }
+    }
+]

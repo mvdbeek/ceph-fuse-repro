@@ -1,0 +1,85 @@
+{
+  "run_id": "20261106-165630-positive-control-sigstop",
+  "stage": "A",
+  "kernel": "7.3.0-4-t2-resolute",
+  "ceph_fuse": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "cluster": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "faults": {},
+  "workload_args": [
+    "--workers",
+    "2"
+  ],
+  "start": "2026-11-06T16:56:30+0100",
+  "planned_duration": 150,
+  "elapsed": 151,
+  "aborted": null,
+  "oom_kills": {},
+  "outcome": "REPRODUCED: buffered read hung, O_DIRECT ok",
+  "triggers": [
+    {
+      "kind": "buffered_hang_direct_ok",
+      "t": 1793980668.0472836,
+      "seq": 8,
+      "path": "/mnt/scratch/probe/20261106-165630-positive-control-sigstop-p000008.bin",
+      "probe_age": 5.7,
+      "buffered_rc": 124,
+      "buffered_seconds": 20.0,
+      "buffered_out": "",
+      "direct_rc": 0,
+      "direct_seconds": 13.1,
+      "fusectl": {},
+      "elapsed": 78
+    }
+  ],
+  "stats": {
+    "head": {
+      "t0": 1793980591.8179088,
+      "head_bytes_written": 223056270,
+      "last_head_bytes_written": 1793980741.4255722,
+      "head_jobs_created": 98,
+      "last_head_jobs_created": 1793980741.4455261,
+      "head_probes_written": 22,
+      "last_head_probes_written": 1793980736.7312925,
+      "head_jobs_rewritten": 37,
+      "last_head_jobs_rewritten": 1793980740.6273434,
+      "head_outputs_verified": 320,
+      "last_head_outputs_verified": 1793980741.3654077,
+      "head_jobs_checked": 64,
+      "last_head_jobs_checked": 1793980741.3726025,
+      "head_jobs_deleted": 23,
+      "last_head_jobs_deleted": 1793980740.8177278,
+      "t": 1793980741.8462548
+    },
+    "node": {
+      "t0": 1793980591.945112,
+      "node_cp": 240,
+      "last_node_cp": 1793980741.7402065,
+      "node_buffered_reads": 547,
+      "last_node_buffered_reads": 1793980741.8297615,
+      "node_mmap_reads": 173,
+      "last_node_mmap_reads": 1793980741.7800431,
+      "node_mmap_writes": 80,
+      "last_node_mmap_writes": 1793980741.8441384,
+      "node_bytes_written": 130469338,
+      "last_node_bytes_written": 1793980741.8443727,
+      "node_jobs_done": 78,
+      "last_node_jobs_done": 1793980740.6736171,
+      "t": 1793980742.0097501
+    },
+    "failcheck": {
+      "t0": 1793980591.9450881,
+      "probe_ok": 28,
+      "last_probe_ok": 1793980737.4234998,
+      "probe_rechecks": 7,
+      "last_probe_rechecks": 1793980705.1917334,
+      "probe_buffered_fail": 1,
+      "last_probe_buffered_fail": 1793980654.9070516,
+      "probe_buffered_hang_direct_ok": 1,
+      "last_probe_buffered_hang_direct_ok": 1793980668.0470884,
+      "t": 1793980741.9767158
+    }
+  },
+  "blocklist": "10.177.77.31:0/1274690938 2026-11-06T16:56:07.924288+0000\n10.177.77.12:6800/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:0/1378688511 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/1889620215 2026-11-07T14:44:55.302856+0000\n10.177.77.30:0/4135971663 2026-11-06T16:56:07.924235+0000\n10.177.77.11:0/3407353904 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6801/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:6801/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/2118970209 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/4033411307 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3332997076 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6801/3473925138 2026-11-07T14:39:58.903782+0000\n10.177.77.11:6800/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3218408777 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3721478901 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/754901607 2026-11-07T14:44:55.302856+0000\n10.177.77.11:6800/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3824515705 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3973458054 2026-11-07T14:44:55.302856+0000\n10.177.77.12:6800/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:6801/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6801/2054025917 2026-11-07T14:44:56.444679+0000",
+  "workload_left_running": false,
+  "first_repro_after": 78
+}

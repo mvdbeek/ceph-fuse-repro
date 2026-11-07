@@ -66,7 +66,7 @@ for c in node head; do
     # pthread_getname_np on an exited libfuse worker thread), and the crash then
     # hung in vfs_coredump behind the blocked invalidator. Use debugclient (log to
     # file) instead when the debug history is needed.
-    ex "$c" "$d/client.log.tail" sh -c "tail -n 300000 \$(ceph-conf -n client.galaxy-$c --show-config-value log_file)"
+    ex "$c" "$d/client.log.tail" sh -c "tail -n 20000 \$(ceph-conf -n client.galaxy-$c --show-config-value log_file)"
     gzip -f "$out/$d/client.log.tail" "$out/$d/asok-dump_cache.json" 2>/dev/null
 done
 # Stage A: the host kernel log (readable with kernel.dmesg_restrict=0).

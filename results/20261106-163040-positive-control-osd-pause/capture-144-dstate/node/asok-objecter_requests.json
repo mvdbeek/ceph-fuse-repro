@@ -1,0 +1,30 @@
+{
+    "ops": [
+        {
+            "tid": 25525,
+            "pg": "2.258325f6",
+            "osd": 2,
+            "object_id": "1000000583e.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000583e.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1047718.575995s",
+            "age": 84.480044109000005,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T15:31:42.721693+0000",
+            "osd_ops": [
+                "write 0~448619 in=448619b"
+            ]
+        }
+    ],
+    "linger_ops": [],
+    "pool_ops": [],
+    "pool_stat_ops": [],
+    "statfs_ops": [],
+    "command_ops": []
+}

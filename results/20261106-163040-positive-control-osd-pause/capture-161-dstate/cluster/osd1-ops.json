@@ -1,0 +1,372 @@
+{
+    "ops": [
+        {
+            "description": "osd_repop(mds.0.58:41106 1.6 e69/67 1:6ee6348a:::200.00000030:head v 69'1247, mlcod=69'1243)",
+            "initiated_at": "2026-11-06T15:33:40.774437+0000",
+            "age": 0.084140983000000003,
+            "duration": 0.084164593999999995,
+            "type_data": {
+                "flag_point": "started",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T15:33:40.774437+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T15:33:40.774437+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T15:33:40.774438+0000",
+                        "duration": 7.5799999999999998e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T15:33:40.774474+0000",
+                        "duration": 3.5369e-05
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T15:33:40.774475+0000",
+                        "duration": 1.342e-06
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T15:33:40.774477+0000",
+                        "duration": 2.5730000000000002e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T15:33:40.774500+0000",
+                        "duration": 2.2425999999999998e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T15:33:40.774511+0000",
+                        "duration": 1.0677e-05
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_op(client.34365.0:26439 2.74 2:2fc62fb9:::10000005b9a.00000000:head [write 0~33533 in=33533b] snapc 1=[] ondisk+write+known_if_redirected+supports_pool_eio e69)",
+            "initiated_at": "2026-11-06T15:33:40.775947+0000",
+            "age": 0.082631752000000003,
+            "duration": 0.082689311000000001,
+            "type_data": {
+                "flag_point": "waiting for sub ops",
+                "client_info": {
+                    "client": "client.34365",
+                    "client_addr": "10.177.77.31:0/1274690938",
+                    "tid": 26439
+                },
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T15:33:40.775947+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T15:33:40.775947+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T15:33:40.775948+0000",
+                        "duration": 1.466e-06
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T15:33:40.775964+0000",
+                        "duration": 1.6280999999999999e-05
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T15:33:40.775966+0000",
+                        "duration": 1.325e-06
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T15:33:40.775968+0000",
+                        "duration": 2.7e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T15:33:40.775992+0000",
+                        "duration": 2.4026999999999999e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T15:33:40.776059+0000",
+                        "duration": 6.6840000000000004e-05
+                    },
+                    {
+                        "event": "waiting for subops from 0,2",
+                        "time": "2026-11-06T15:33:40.776099+0000",
+                        "duration": 3.9603e-05
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_repop(mds.0.58:41107 1.6 e69/67 1:6ee6348a:::200.00000030:head v 69'1248, mlcod=69'1243)",
+            "initiated_at": "2026-11-06T15:33:40.778102+0000",
+            "age": 0.080476889999999995,
+            "duration": 0.080567960999999993,
+            "type_data": {
+                "flag_point": "started",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T15:33:40.778102+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T15:33:40.778102+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T15:33:40.778102+0000",
+                        "duration": 9.3600000000000002e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T15:33:40.778109+0000",
+                        "duration": 6.55e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T15:33:40.778110+0000",
+                        "duration": 9.2900000000000002e-07
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T15:33:40.778112+0000",
+                        "duration": 1.928e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T15:33:40.778137+0000",
+                        "duration": 2.4844000000000001e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T15:33:40.778146+0000",
+                        "duration": 9.1120000000000002e-06
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_repop(mds.0.58:41102 1.1 e69/67 1:86ee9bce:::500.00000001:head v 69'2121, mlcod=69'2119)",
+            "initiated_at": "2026-11-06T15:33:40.605405+0000",
+            "age": 0.25317332799999998,
+            "duration": 0.25328879999999998,
+            "type_data": {
+                "flag_point": "started",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T15:33:40.605405+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T15:33:40.605405+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T15:33:40.605406+0000",
+                        "duration": 1.096e-06
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T15:33:40.605419+0000",
+                        "duration": 1.3318e-05
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T15:33:40.605421+0000",
+                        "duration": 1.221e-06
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T15:33:40.605424+0000",
+                        "duration": 3.2179999999999999e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T15:33:40.605445+0000",
+                        "duration": 2.1446000000000001e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T15:33:40.605461+0000",
+                        "duration": 1.6049000000000002e-05
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_repop(mds.0.58:41104 1.6 e69/67 1:6ee6348a:::200.00000030:head v 69'1245, mlcod=69'1241)",
+            "initiated_at": "2026-11-06T15:33:40.606769+0000",
+            "age": 0.25180973099999998,
+            "duration": 0.25195395900000001,
+            "type_data": {
+                "flag_point": "started",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T15:33:40.606769+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T15:33:40.606769+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T15:33:40.606770+0000",
+                        "duration": 1.201e-06
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T15:33:40.606781+0000",
+                        "duration": 1.1477999999999999e-05
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T15:33:40.606783+0000",
+                        "duration": 1.3030000000000001e-06
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T15:33:40.606785+0000",
+                        "duration": 2.2180000000000002e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T15:33:40.606807+0000",
+                        "duration": 2.1713999999999999e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T15:33:40.606817+0000",
+                        "duration": 1.0207000000000001e-05
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_repop(client.34365.0:26436 2.19 e69/67 2:99b97f01:::10000005b99.00000000:head v 69'287, mlcod=69'285)",
+            "initiated_at": "2026-11-06T15:33:40.608366+0000",
+            "age": 0.25021191599999998,
+            "duration": 0.25038037899999999,
+            "type_data": {
+                "flag_point": "started",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T15:33:40.608366+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T15:33:40.608366+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T15:33:40.608367+0000",
+                        "duration": 8.7599999999999996e-07
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T15:33:40.608533+0000",
+                        "duration": 0.000165787
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T15:33:40.608535+0000",
+                        "duration": 1.4339999999999999e-06
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T15:33:40.608537+0000",
+                        "duration": 2.542e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T15:33:40.608562+0000",
+                        "duration": 2.5232000000000002e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T15:33:40.608574+0000",
+                        "duration": 1.1606e-05
+                    }
+                ]
+            }
+        },
+        {
+            "description": "osd_repop(mds.0.58:41105 1.6 e69/67 1:6ee6348a:::200.00000030:head v 69'1246, mlcod=69'1241)",
+            "initiated_at": "2026-11-06T15:33:40.610993+0000",
+            "age": 0.247584942,
+            "duration": 0.247778679,
+            "type_data": {
+                "flag_point": "started",
+                "events": [
+                    {
+                        "event": "initiated",
+                        "time": "2026-11-06T15:33:40.610993+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "header_read",
+                        "time": "2026-11-06T15:33:40.610993+0000",
+                        "duration": 0
+                    },
+                    {
+                        "event": "throttled",
+                        "time": "2026-11-06T15:33:40.610995+0000",
+                        "duration": 1.234e-06
+                    },
+                    {
+                        "event": "all_read",
+                        "time": "2026-11-06T15:33:40.611005+0000",
+                        "duration": 9.9450000000000005e-06
+                    },
+                    {
+                        "event": "dispatched",
+                        "time": "2026-11-06T15:33:40.611006+0000",
+                        "duration": 1.7e-06
+                    },
+                    {
+                        "event": "queued_for_pg",
+                        "time": "2026-11-06T15:33:40.611010+0000",
+                        "duration": 3.472e-06
+                    },
+                    {
+                        "event": "reached_pg",
+                        "time": "2026-11-06T15:33:40.611042+0000",
+                        "duration": 3.2249999999999998e-05
+                    },
+                    {
+                        "event": "started",
+                        "time": "2026-11-06T15:33:40.611053+0000",
+                        "duration": 1.0839000000000001e-05
+                    }
+                ]
+            }
+        }
+    ],
+    "num_ops": 7
+}

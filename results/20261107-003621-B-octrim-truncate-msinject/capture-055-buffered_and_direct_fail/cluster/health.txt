@@ -1,0 +1,5 @@
+HEALTH_WARN Slow OSD heartbeats on back (longest 1064.999ms); Slow OSD heartbeats on front (longest 1501.821ms)
+[WRN] OSD_SLOW_PING_TIME_BACK: Slow OSD heartbeats on back (longest 1064.999ms)
+    Slow OSD heartbeats on back from osd.2 [] to osd.1 [] 1064.999 msec
+[WRN] OSD_SLOW_PING_TIME_FRONT: Slow OSD heartbeats on front (longest 1501.821ms)
+    Slow OSD heartbeats on front from osd.1 [] to osd.0 [] 1501.821 msec

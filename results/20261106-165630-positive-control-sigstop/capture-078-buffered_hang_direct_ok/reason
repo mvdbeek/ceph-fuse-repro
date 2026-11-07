@@ -1,0 +1,1 @@
+{"kind": "buffered_hang_direct_ok", "t": 1793980668.0472836, "seq": 8, "path": "/mnt/scratch/probe/20261106-165630-positive-control-sigstop-p000008.bin", "probe_age": 5.7, "buffered_rc": 124, "buffered_seconds": 20.0, "buffered_out": "", "direct_rc": 0, "direct_seconds": 13.1, "fusectl": {}, "elapsed": 78}

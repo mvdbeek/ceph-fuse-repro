@@ -1,0 +1,135 @@
+{
+    "ops": [
+        {
+            "tid": 12434,
+            "pg": "2.fb03c3dd",
+            "osd": 0,
+            "object_id": "1000000ad42.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ad42.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "866.928337s",
+            "age": 135.458020726,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.050132+0000",
+            "osd_ops": [
+                "write 0~60154 in=60154b"
+            ]
+        },
+        {
+            "tid": 12447,
+            "pg": "2.9dd2f22b",
+            "osd": 0,
+            "object_id": "1000000ad43.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ad43.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "866.971338s",
+            "age": 135.41502004399999,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.092840+0000",
+            "osd_ops": [
+                "write 0~1391929 in=1391929b"
+            ]
+        },
+        {
+            "tid": 12449,
+            "pg": "2.da4f685b",
+            "osd": 0,
+            "object_id": "1000000ad46.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ad46.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "866.998338s",
+            "age": 135.38801961600001,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.120143+0000",
+            "osd_ops": [
+                "write 0~163570 in=163570b"
+            ]
+        },
+        {
+            "tid": 12450,
+            "pg": "2.d4c2336c",
+            "osd": 0,
+            "object_id": "1000000ad47.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ad47.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "867.017338s",
+            "age": 135.36901931400001,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.139234+0000",
+            "osd_ops": [
+                "write 0~23166 in=23166b"
+            ]
+        },
+        {
+            "tid": 12453,
+            "pg": "2.d8fa6dfd",
+            "osd": 0,
+            "object_id": "1000000ad48.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ad48.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "867.036339s",
+            "age": 135.35101902599999,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.157969+0000",
+            "osd_ops": [
+                "write 0~184890 in=184890b"
+            ]
+        },
+        {
+            "tid": 12441,
+            "pg": "2.f9339d5",
+            "osd": 1,
+            "object_id": "1000000ad44.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ad44.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "866.952337s",
+            "age": 135.435020358,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.074280+0000",
+            "osd_ops": [
+                "write 0~16739 in=16739b"
+            ]
+        }
+    ],
+    "linger_ops": [],
+    "pool_ops": [],
+    "pool_stat_ops": [],
+    "statfs_ops": [],
+    "command_ops": []
+}

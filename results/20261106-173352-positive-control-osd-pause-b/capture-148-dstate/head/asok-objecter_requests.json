@@ -1,0 +1,303 @@
+{
+    "ops": [
+        {
+            "tid": 7901,
+            "pg": "2.f9c09546",
+            "osd": 0,
+            "object_id": "1000000ac04.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac04.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.909949s",
+            "age": 115.44946143600001,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.056522+0000",
+            "osd_ops": [
+                "write 0~10439 in=10439b"
+            ]
+        },
+        {
+            "tid": 7904,
+            "pg": "2.620be723",
+            "osd": 0,
+            "object_id": "1000000ac06.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac06.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.925949s",
+            "age": 115.433461235,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.069905+0000",
+            "osd_ops": [
+                "write 0~1402252 in=1402252b"
+            ]
+        },
+        {
+            "tid": 7906,
+            "pg": "2.1741cffc",
+            "osd": 0,
+            "object_id": "1000000ac08.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac08.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.940949s",
+            "age": 115.41846104699999,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.086470+0000",
+            "osd_ops": [
+                "write 0~1648560 in=1648560b"
+            ]
+        },
+        {
+            "tid": 7914,
+            "pg": "2.9333e6d6",
+            "osd": 0,
+            "object_id": "1000000ac10.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac10.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051515.055963s",
+            "age": 114.30344707899999,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:59.201970+0000",
+            "osd_ops": [
+                "write 0~1048576 in=1048576b"
+            ]
+        },
+        {
+            "tid": 7902,
+            "pg": "2.7af1a3d8",
+            "osd": 1,
+            "object_id": "1000000ac05.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac05.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.913949s",
+            "age": 115.445461385,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.059945+0000",
+            "osd_ops": [
+                "write 0~195296 in=195296b"
+            ]
+        },
+        {
+            "tid": 7905,
+            "pg": "2.5eec44f3",
+            "osd": 1,
+            "object_id": "1000000ac09.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac09.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.939949s",
+            "age": 115.41946106,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.085917+0000",
+            "osd_ops": [
+                "write 0~84787 in=84787b"
+            ]
+        },
+        {
+            "tid": 7908,
+            "pg": "2.b575689a",
+            "osd": 1,
+            "object_id": "1000000ac0b.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac0b.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.955949s",
+            "age": 115.40346085900001,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.102350+0000",
+            "osd_ops": [
+                "write 0~42199 in=42199b"
+            ]
+        },
+        {
+            "tid": 7909,
+            "pg": "2.d921167b",
+            "osd": 1,
+            "object_id": "1000000ac0c.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac0c.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.960949s",
+            "age": 115.398460797,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.106829+0000",
+            "osd_ops": [
+                "write 0~36 in=36b"
+            ]
+        },
+        {
+            "tid": 7903,
+            "pg": "2.25ef3f9d",
+            "osd": 2,
+            "object_id": "1000000ac07.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac07.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.925949s",
+            "age": 115.433461235,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.067731+0000",
+            "osd_ops": [
+                "write 0~192840 in=192840b"
+            ]
+        },
+        {
+            "tid": 7907,
+            "pg": "2.25550492",
+            "osd": 2,
+            "object_id": "1000000ac0a.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac0a.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.954949s",
+            "age": 115.404460872,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.100933+0000",
+            "osd_ops": [
+                "write 0~1862109 in=1862109b"
+            ]
+        },
+        {
+            "tid": 7910,
+            "pg": "2.88a12139",
+            "osd": 2,
+            "object_id": "1000000ac0d.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac0d.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.969949s",
+            "age": 115.389460684,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.116032+0000",
+            "osd_ops": [
+                "write 0~76384 in=76384b"
+            ]
+        },
+        {
+            "tid": 7911,
+            "pg": "2.28d07425",
+            "osd": 2,
+            "object_id": "1000000ac0e.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac0e.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.974949s",
+            "age": 115.384460621,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.121275+0000",
+            "osd_ops": [
+                "write 0~15696 in=15696b"
+            ]
+        },
+        {
+            "tid": 7912,
+            "pg": "2.22649e8a",
+            "osd": 2,
+            "object_id": "1000000a0d4.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000a0d4.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.977949s",
+            "age": 115.381460584,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.124320+0000",
+            "osd_ops": [
+                "write 0~534976 in=534976b"
+            ]
+        },
+        {
+            "tid": 7913,
+            "pg": "2.770a6eff",
+            "osd": 2,
+            "object_id": "1000000ac0f.00000000",
+            "object_locator": "@2",
+            "target_object_id": "1000000ac0f.00000000",
+            "target_object_locator": "@2",
+            "paused": 0,
+            "used_replica": 0,
+            "precalc_pgid": 0,
+            "last_sent": "1051513.980949s",
+            "age": 115.378460546,
+            "attempts": 1,
+            "snapid": "head",
+            "snap_context": "1=[]",
+            "mtime": "2026-11-06T16:34:58.127484+0000",
+            "osd_ops": [
+                "write 0~36 in=36b"
+            ]
+        }
+    ],
+    "linger_ops": [],
+    "pool_ops": [],
+    "pool_stat_ops": [],
+    "statfs_ops": [],
+    "command_ops": []
+}
