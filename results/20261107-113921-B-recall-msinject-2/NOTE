@@ -1,0 +1,1 @@
+Stopped at 6486 s by the capacity guard (85% raw use: 5660 job dirs incl. leftovers of earlier runs whose cleanup timed out). No FULL occurred. The capture-idle-leak (head waiting=11) is a false positive: a manual 12-way rm of the old trees on head started during the idle check.

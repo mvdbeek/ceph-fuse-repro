@@ -1,0 +1,106 @@
+{
+  "run_id": "20261107-113921-B-recall-msinject-2",
+  "stage": "B",
+  "kernel": "6.1.188-1.el9.elrepo.x86_64",
+  "ceph_fuse": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "cluster": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "faults": {
+    "mdsrecall": "cache_limit=33554432 max_caps_per_client=2000",
+    "msinject": "socket_failures=1/2000 delay_p=0.02 max=2.0s"
+  },
+  "workload_args": [
+    "--workers",
+    "4",
+    "--hot",
+    "4"
+  ],
+  "start": "2026-11-07T11:39:22+0100",
+  "planned_duration": 7200,
+  "elapsed": 6486,
+  "aborted": [
+    "cluster-filling"
+  ],
+  "oom_kills": {},
+  "mem_peak_mb": {
+    "mon": 281,
+    "mgr": 458,
+    "mds": 428,
+    "osd0": 2567,
+    "osd1": 2566,
+    "osd2": 2564,
+    "head": 1400,
+    "node": 1400,
+    "vm": 2651
+  },
+  "idle_fusectl": {
+    "head": {
+      "waiting": "11",
+      "max_background": "12",
+      "congestion_threshold": "9"
+    },
+    "node": {
+      "waiting": "0",
+      "max_background": "12",
+      "congestion_threshold": "9"
+    }
+  },
+  "outcome": "INVALID: aborted (cluster-filling)",
+  "triggers": [],
+  "stats": {
+    "head": {
+      "t0": 1794049769.6948035,
+      "head_probes_written": 1163,
+      "last_head_probes_written": 1794056251.9864192,
+      "head_bytes_written": 9949041182,
+      "last_head_bytes_written": 1794056252.2640476,
+      "head_jobs_created": 4505,
+      "last_head_jobs_created": 1794056252.3766093,
+      "head_jobs_rewritten": 1334,
+      "last_head_jobs_rewritten": 1794056247.6685863,
+      "head_hot_writes": 8182,
+      "last_head_hot_writes": 1794056254.0891402,
+      "head_outputs_verified": 800,
+      "last_head_outputs_verified": 1794052408.673734,
+      "head_jobs_checked": 160,
+      "last_head_jobs_checked": 1794052408.858037,
+      "head_jobs_deleted": 1112,
+      "last_head_jobs_deleted": 1794056254.2844923,
+      "head_checks_skipped": 992,
+      "last_head_checks_skipped": 1794056254.2844806,
+      "t": 1794056256.1079385
+    },
+    "node": {
+      "t0": 1794049769.9521441,
+      "node_hot_reads": 27333,
+      "last_node_hot_reads": 1794056254.4755452,
+      "node_hot_mmap_reads": 8247,
+      "last_node_hot_mmap_reads": 1794056254.4755313,
+      "node_cp": 13456,
+      "last_node_cp": 1794056254.0994256,
+      "node_mmap_reads": 9523,
+      "last_node_mmap_reads": 1794056252.0640078,
+      "node_buffered_reads": 30833,
+      "last_node_buffered_reads": 1794056252.0554647,
+      "node_mmap_writes": 4484,
+      "last_node_mmap_writes": 1794056252.597368,
+      "node_bytes_written": 6940186180,
+      "last_node_bytes_written": 1794056253.680449,
+      "node_jobs_done": 4484,
+      "last_node_jobs_done": 1794056253.9281788,
+      "node_hot_mmap_sigbus": 4,
+      "last_node_hot_mmap_sigbus": 1794050214.360488,
+      "t": 1794056254.5395353
+    },
+    "failcheck": {
+      "t0": 1794049770.2930627,
+      "probe_ok": 1769,
+      "last_probe_ok": 1794056253.8859487,
+      "probe_rechecks": 606,
+      "last_probe_rechecks": 1794056240.4459105,
+      "t": 1794056256.860992
+    }
+  },
+  "blocklist": "10.177.77.12:6801/140078637 2026-11-08T04:45:34.269167+0000\n10.177.77.11:0/1378688511 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/1889620215 2026-11-07T14:44:55.302856+0000\n10.177.77.12:6800/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:0/3407353904 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/2118970209 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6800/140078637 2026-11-08T04:45:34.269167+0000\n10.177.77.11:0/4033411307 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3332997076 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6801/3473925138 2026-11-07T14:39:58.903782+0000\n10.177.77.12:6800/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:6801/7 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6801/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:0/3721478901 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/754901607 2026-11-07T14:44:55.302856+0000\n10.177.77.11:6800/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.11:6800/7 2026-11-07T14:39:58.269026+0000\n10.177.77.11:0/3218408777 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3824515705 2026-11-07T14:39:58.269026+0000\n10.177.77.12:6801/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:6801/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3973458054 2026-11-07T14:44:55.302856+0000",
+  "workload_left_running": false,
+  "first_repro_after": null
+}

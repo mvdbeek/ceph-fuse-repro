@@ -1,0 +1,18 @@
+=== /proc/126722/task/126722 comm=rm wchan=lookup_slow
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=rm /usr/bin/rm -rf 20261107-054634-B-recall-hot8-w3-001104 20261107-054634-B-recall-hot8-w3-001105 20261107-054634-B-recall-hot8-w3-001107 20261107-054634-B-recall-hot8-w3-001108 20261107-054634-B-recall-hot8-w3-001109 20261107-054634-B-recall-hot8-w3-001110 20261107-054634-B-recall-hot8-w3-001111 20261107-054634-B-recall-hot8-w3-001112 20261107-054634-B-recall-hot8-w3-001113 20261107-054634-B-recall-hot8-w3-001114 20261107-054634-B-recall-hot8-w3-001115 20261107-054634-B-recall-hot8-w3-001116 20261107-054634-B-recall-hot8-w3-001123 20261107-054634-B-recall-hot8-w3-001124 20261107-054634-B-recall-hot8-w3-001125 20261107-054634-B-recall-hot8-w3-001133 20261107-054634-B-recall-hot8-w3-001134 20261107-054634-B-recall-hot8-w3-001135 20261107-054634-B-recall-hot8-w3-001136 20261107-054634-B-recall-hot8-w3-001138 
+syscall: 262 0xffffff9c 0x5c6c346bf9f0 0x5c6c346c1f80 0x100 0x5c6c346c2010 0x0 0x7ffdc2635408 0x780d1427d7ee
+--- stack
+cat: /proc/126722/task/126722/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	2245
+nonvoluntary_ctxt_switches:	3
+=== /proc/126725/task/126725 comm=rm wchan=filename_rmdir
+cmdline: /usr/bin/coreutils --coreutils-prog-shebang=rm /usr/bin/rm -rf 20261107-054634-B-recall-hot8-w3-001207 20261107-054634-B-recall-hot8-w3-001210 20261107-054634-B-recall-hot8-w3-001211 20261107-054634-B-recall-hot8-w3-001213 20261107-054634-B-recall-hot8-w3-001217 20261107-054634-B-recall-hot8-w3-001218 20261107-054634-B-recall-hot8-w3-001221 20261107-054634-B-recall-hot8-w3-001222 20261107-054634-B-recall-hot8-w3-001223 20261107-054634-B-recall-hot8-w3-001224 20261107-054634-B-recall-hot8-w3-001227 20261107-054634-B-recall-hot8-w3-001228 20261107-054634-B-recall-hot8-w3-001229 20261107-054634-B-recall-hot8-w3-001230 20261107-054634-B-recall-hot8-w3-001231 20261107-054634-B-recall-hot8-w3-001232 20261107-054634-B-recall-hot8-w3-001233 20261107-054634-B-recall-hot8-w3-001235 20261107-054634-B-recall-hot8-w3-001236 20261107-054634-B-recall-hot8-w3-001237 
+syscall: 263 0xffffff9c 0x5d0f5a4419f0 0x200 0x5d0f5a44c540 0x3 0x0 0x7ffe5b0cae68 0x79f93a258b7b
+--- stack
+cat: /proc/126725/task/126725/stack: Permission denied
+--- status
+State:	D (disk sleep)
+voluntary_ctxt_switches:	2262
+nonvoluntary_ctxt_switches:	2

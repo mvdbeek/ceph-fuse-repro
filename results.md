@@ -136,7 +136,7 @@ Valid runs, from the table below. Production rate: about 1 event per 34 days of 
 | stage | kernel | faults | valid runs | total duration | runs with a persistent stall/leak |
 |---|---|---|---|---|---|
 | A | 7.3.0-4-t2-resolute | faults | 2 | 2.0 h | 0 |
-| B | 6.1.188-1.el9.elrepo | faults | 4 | 4.5 h | 0 |
+| B | 6.1.188-1.el9.elrepo | faults | 6 | 8.3 h | 0 |
 | B | 6.1.188-1.el9.elrepo | none | 2 | 2.0 h | 0 |
 <!-- totals:end -->
 
@@ -173,6 +173,8 @@ From `results/runs.tsv`, including tuning, smoke, control and invalid runs. Hand
 | `20261107-044146-B-all-faults` | B | 6.1.188-1.el9.elrepo | netem,msinject,mdsrecall,slowosd | `--workers 4 --hot 4` | 0 s | invalid | INVALID: aborted at start, netem could not be applied to the VM node (no tc/NET_ADMIN in cfr-vm; fixed) |
 | `20261107-044151-B-recall-msinject` | B | 6.1.188-1.el9.elrepo | mdsrecall,msinject | `--workers 4 --hot 4` | 0 s | invalid | INVALID: MDS OOM-killed at its 448 MB cap seconds after the start (head rename stuck 1 h waiting on it); workload never ran; caps raised (MDS 2 GB, mon 1 GB) |
 | `20261107-054634-B-recall-hot8` | B | 6.1.188-1.el9.elrepo | mdsrecall | `--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05` | 5401 s | valid | no repro (cluster reached FULL in the last ~30 s, 06:16:13 UTC, from undeleted old trees; valid for ~5370 s) |
+| `20261107-090757-B-all-faults-2` | B | 6.1.188-1.el9.elrepo | netem,msinject,mdsrecall,slowosd | `--workers 4 --hot 4` | 7200 s | valid | no repro |
+| `20261107-113921-B-recall-msinject-2` | B | 6.1.188-1.el9.elrepo | mdsrecall,msinject | `--workers 4 --hot 4` | 6486 s | valid | no repro for 6486 s; stopped by the capacity guard at 85% raw use (old trees not yet deleted), before any FULL; the idle-leak flag (head 11) was my cleanup rm starting during the idle check |
 <!-- runs:end -->
 
 ## Harness artifacts found on the way (not ceph bugs)

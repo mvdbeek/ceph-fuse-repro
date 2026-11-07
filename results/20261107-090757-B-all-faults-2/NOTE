@@ -1,0 +1,1 @@
+Pre-run cleanup hit its 1800 s timeout because a manual parallel rm (mine, cleaning the full cluster) was running on the same trees. That manual rm ran ~2 more minutes into the run and may have deleted a few of this run's files (1 cp_error, 2 error events in the first minutes) before it was killed at ~09:40. Otherwise unaffected.
