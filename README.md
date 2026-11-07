@@ -13,7 +13,9 @@ Results so far: [results.md](results.md).
 | `harness/workload.py` | Runs inside the client containers: `head`, `node` and `failcheck` roles (see below) |
 | `harness/run.py` | Host-side runner: switches faults on, starts the roles, captures state on each trigger, switches faults off, writes `results/<run>/summary.json` and a line in `results/runs.tsv` |
 | `harness/h1_mechanics.sh` | Fills the FUSE background slots on purpose (OSDs paused, many readers) and probes stat / O_DIRECT / buffered reads |
-| `harness/batch.sh` | The long runs behind results.md |
+| `harness/batch.sh`, `harness/batch-targeted.sh` | The long runs and the targeted runs behind results.md |
+| `harness/blackhole.sh` | Environmental alternative: drops large packets from one OSD to the node (path-MTU black hole) and probes |
+| `harness/report.py` | Regenerates the run tables in results.md from `results/runs.tsv` |
 | `scripts/vm.sh`, `docker/qemu/` | Stage B KVM guest |
 | `harness/capture.sh` | Capture bundle: client admin sockets, D-state tasks, ps/wchan, fusectl, dmesg, MDS sessions/ops, OSD ops |
 | `results/` | One directory per run, plus `runs.tsv` |

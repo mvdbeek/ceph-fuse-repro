@@ -1,0 +1,24 @@
+== 2026-11-07T14:44:39Z kernel 6.1.188-1.el9.elrepo.x86_64
+== files with primary osd.0: 8 (1 8 11 12 13 14 27 31); others: 32
+filter parent 1: protocol ip pref 1 basic chain 0 
+filter parent 1: protocol ip pref 1 basic chain 0 handle 0x1 
+  cmp(u32 at 16 layer 1 eq 179391784)
+== 15:45:10 black hole on (osd.0 -> 10.177.77.40, packets > 1400 bytes)
+== after 60 s: waiting=47 max_background=12
+      5 D folio_wait_bit_common
+     35 D fuse_get_req
+   objecter ops by osd: {0: 12} oldest age: 62 s
+stat (MDS)                     : ok (rc=0)
+O_DIRECT, file on healthy OSD  : ok (rc=0)
+O_DIRECT, file on osd.0        : HUNG >10 s  state=S wchan=request_wait_answer
+buffered, fresh file (any OSD) : HUNG >10 s  state=D wchan=fuse_get_req
+write + read own file          : ok (rc=0)
+== after 5 min: waiting=52 max_background=12
+      5 D folio_wait_bit_common
+     35 D fuse_get_req
+   objecter ops by osd: {0: 13} oldest age: 357 s
+buffered, fresh file (any OSD) : HUNG >10 s  state=D wchan=fuse_get_req
+HEALTH_OK
+== 15:51:19 black hole off
+== recovered after 97 s: waiting=0 max_background=12, readers left: 0
+buffered, fresh file after     : ok (rc=0)

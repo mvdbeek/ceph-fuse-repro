@@ -6,12 +6,20 @@ Raw data lives in `results/<run>/` (`run.json`, `summary.json`, `events.jsonl`, 
 
 ## Summary
 
-- **No spontaneous reproduction yet.** The valid negative runs and their durations are in [Run totals](#run-totals). Production saw about 1 event per 34 days of node uptime.
+- **An environmental cause reproduces the full production signature with no client bug** (Finding 6). A path-MTU black hole between the node and *one* OSD:
+  - buffered reads of fresh files hang in `fuse_get_req`;
+  - `stat`, own writes and O_DIRECT reads of files on other OSDs work;
+  - `ceph health` stays HEALTH_OK;
+  - the state persists until the path is fixed.
+
+  A client bug and a node-local network/OSD-path fault look identical from the probes that were run in production. `objecter_requests` on the ceph-fuse admin socket tells them apart; see [What to check on a stuck node](#what-to-check-on-a-stuck-node).
+- **No spontaneous reproduction.** The valid negative runs and their durations are in [Run totals](#run-totals). Production saw about 1 event per 34 days of node uptime.
 - **H1's mechanism gives exactly the production signature on the production kernel** (Finding 1). This ceph-fuse build uses libfuse 2, so O_DIRECT reads are synchronous FUSE requests and bypass the `max_background` gate, while readahead waits on it. H1 still needs requests that ceph-fuse never answers.
 - **The production `fn_anonymous` hung-task stack was reproduced on 6.1.188, with identical offsets** (Finding 2). It lasted about 15 min and then recovered, as in production. The trigger was a 6 s cluster-FULL episode caused by the harness, not a spontaneous one.
 - **A source review found a permanent lost-read path in ceph-fuse's ObjectCacher** (Finding 3), read from the code and not yet observed. In theory it would leak exactly the FUSE background requests that H1 needs. The kernel side is clean.
 - **ceph-fuse 17.2.9 segfaults on the admin-socket command `log dump`** (Finding 4). After that crash, a blocked invalidation hung the mount until `fusectl abort` released it.
 - **Brief cluster-FULL episodes don't reliably trigger the stall**: 0 stalls in about 11 flaps on 6.1.188 and 2 on 7.3 (Finding 5).
+- **The campaign was stopped by decision**: low odds of a spontaneous hit at this rate, and the environmental hypothesis is now testable on the real node.
 
 ## Setup
 
@@ -128,6 +136,71 @@ These are summed in [Run totals](#run-totals).
   - Under this load the 12 background slots are saturated most of the time. Buffered probes then wait more than 20 s in `fuse_get_req` while O_DIRECT is fine, so the production signature appears transiently and then recovers.
   - Worker D-state episodes of 70–115 s all cleared.
 
+## Finding 6: a black hole to one OSD gives the production signature, with the cluster healthy
+
+`harness/blackhole.sh`; log in `results/blackhole-osd0-kernel6.1.188/`.
+
+Setup:
+- Head writes 40 fresh 4 MB files; 8 of them have osd.0 as primary.
+- On osd.0's interface, a tc filter drops packets larger than 1400 bytes addressed to the node (Stage B guest, kernel 6.1.188). Requests and acks still get through, so TCP keeps retransmitting instead of failing.
+- The node buffered-reads all 40 files.
+
+Results:
+
+| On node | After 60 s | After 5 min |
+|---|---|---|
+| fusectl `waiting` (`max_background=12`) | 47 | 52 |
+| readers | 35 in D `fuse_get_req`, 5 in D `folio_wait_bit_common` | same |
+| ceph-fuse `objecter_requests` | 12 ops, **all to osd.0**, oldest 62 s | 13 ops, all to osd.0, oldest 357 s |
+| buffered read of a fresh file (any OSD) | **hangs, D `fuse_get_req`** | hangs |
+| `stat`; write + read own file | ok | |
+| O_DIRECT read, file on a healthy OSD | ok | |
+| O_DIRECT read, file on osd.0 | hangs (`request_wait_answer`) | |
+| `ceph health` | | **HEALTH_OK** |
+
+After the filter was removed, everything recovered within 97 s (`waiting=0`, all readers done).
+
+This matches every production probe:
+- the hanging `cp` and `md5sum`;
+- working `ls`, write-then-read and O_DIRECT of a fresh 1 MB file, which most likely lived on a healthy OSD;
+- a cluster that looked fine.
+
+With a persistent path fault, each reconnect resends the same ops into the same black hole, so a stall lasting days is plausible. Not tested here beyond 5 minutes.
+
+Production also had one observation that neither hypothesis explains: buffered reads of `registry.xml` worked after the `cp` was killed.
+
+The fault could be anything that silently loses large packets or replies on that path:
+- an MTU mismatch on one hypervisor or one switch port;
+- a flaky NIC or virtio queue;
+- a stuck conntrack or security-group state;
+- a problem on one OSD host.
+
+## What to check on a stuck node
+
+All of these are read-only and work without a reboot:
+
+```sh
+cat /sys/fs/fuse/connections/*/waiting          # >= 12 while idle: background slots exhausted (needs root)
+ceph daemon /var/run/ceph/ceph-client.<id>.asok objecter_requests   # see below
+ceph daemon /var/run/ceph/ceph-client.<id>.asok mds_requests
+ss -tnoi | grep -A1 ':68[0-9][0-9]'              # OSD connections: Send-Q stuck, retrans rising?
+ping -M do -s $((MTU-28)) <each OSD host>        # path MTU
+dmesg -T | grep -iE 'blocked for more|virtio|eth|link|tx timeout'
+```
+
+How to read the result:
+
+| `waiting` | `objecter_requests` | Interpretation |
+|---|---|---|
+| ≥ 12 | **old ops, mostly to one OSD** | network or OSD-path fault (Finding 6). Check that OSD host and the path to it (MTU, NIC, conntrack). |
+| ≥ 12 | **empty**, and `mds_requests` empty | requests that ceph-fuse never answered: a client bug (H1, e.g. the Finding 3 lost read). Grab `gdb`/`eu-stack` thread stacks of ceph-fuse and a `dump_cache` before restarting it. |
+
+Escape hatches:
+- `echo 1 > /sys/fs/fuse/connections/<id>/abort` kills the mount without a reboot.
+- `fuse_disable_pagecache=true` avoids the background-request path entirely, at a performance cost.
+
+Add `kernel.hung_task_warnings=-1` and alerting on `waiting` to node monitoring.
+
 ## Long runs
 
 Valid runs, from the table below. Production rate: about 1 event per 34 days of node uptime, so every negative run here states its duration.
@@ -135,7 +208,8 @@ Valid runs, from the table below. Production rate: about 1 event per 34 days of 
 <!-- totals:begin -->
 | stage | kernel | faults | valid runs | total duration | runs with a persistent stall/leak |
 |---|---|---|---|---|---|
-| A | 7.3.0-4-t2-resolute | faults | 2 | 2.0 h | 0 |
+| A | 7.3.0-4-t2-resolute | faults | 3 | 2.2 h | 0 |
+| A | 7.3.0-4-t2-resolute | none | 1 | 1.0 h | 0 |
 | B | 6.1.188-1.el9.elrepo | faults | 6 | 8.3 h | 0 |
 | B | 6.1.188-1.el9.elrepo | none | 2 | 2.0 h | 0 |
 <!-- totals:end -->
@@ -175,6 +249,8 @@ From `results/runs.tsv`, including tuning, smoke, control and invalid runs. Hand
 | `20261107-054634-B-recall-hot8` | B | 6.1.188-1.el9.elrepo | mdsrecall | `--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05` | 5401 s | valid | no repro (cluster reached FULL in the last ~30 s, 06:16:13 UTC, from undeleted old trees; valid for ~5370 s) |
 | `20261107-090757-B-all-faults-2` | B | 6.1.188-1.el9.elrepo | netem,msinject,mdsrecall,slowosd | `--workers 4 --hot 4` | 7200 s | valid | no repro |
 | `20261107-113921-B-recall-msinject-2` | B | 6.1.188-1.el9.elrepo | mdsrecall,msinject | `--workers 4 --hot 4` | 6486 s | valid | no repro for 6486 s; stopped by the capacity guard at 85% raw use (old trees not yet deleted), before any FULL; the idle-leak flag (head 11) was my cleanup rm starting during the idle check |
+| `20261107-141350-A-baseline` | A | 7.3.0-4-t2-resolute | none | `--workers 4 --hot 4` | 3600 s | valid | no repro |
+| `20261107-151457-A-all-faults` | A | 7.3.0-4-t2-resolute | netem,msinject,mdsrecall,slowosd | `--workers 4 --hot 4` | 759 s | valid | no triggers in 759 s; stopped early (campaign ended by decision) |
 <!-- runs:end -->
 
 ## Harness artifacts found on the way (not ceph bugs)

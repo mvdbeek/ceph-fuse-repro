@@ -1,0 +1,105 @@
+{
+  "run_id": "20261107-151457-A-all-faults",
+  "stage": "A",
+  "kernel": "7.3.0-4-t2-resolute",
+  "ceph_fuse": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "cluster": "ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)",
+  "faults": {
+    "netem": "delay 10ms loss 0.2%",
+    "msinject": "socket_failures=1/2000 delay_p=0.02 max=2.0s",
+    "mdsrecall": "cache_limit=33554432 max_caps_per_client=2000",
+    "slowosd": "dispatch_delay p=0.01 0.2s"
+  },
+  "workload_args": [
+    "--workers",
+    "4",
+    "--hot",
+    "4"
+  ],
+  "start": "2026-11-07T15:14:58+0100",
+  "planned_duration": 7200,
+  "elapsed": 759,
+  "aborted": [
+    "stopped by hand"
+  ],
+  "oom_kills": {},
+  "mem_peak_mb": {
+    "mon": 303,
+    "mgr": 458,
+    "mds": 510,
+    "osd0": 2567,
+    "osd1": 2566,
+    "osd2": 2564,
+    "head": 1400,
+    "node": 1401
+  },
+  "idle_fusectl": {
+    "head": {
+      "waiting": "0",
+      "max_background": "12",
+      "congestion_threshold": "9"
+    },
+    "node": {
+      "waiting": "0",
+      "max_background": "12",
+      "congestion_threshold": "9"
+    }
+  },
+  "outcome": "INVALID: aborted (stopped by hand)",
+  "triggers": [],
+  "stats": {
+    "head": {
+      "t0": 1794061805.2068148,
+      "head_probes_written": 130,
+      "last_head_probes_written": 1794062554.8978376,
+      "head_bytes_written": 874812380,
+      "last_head_bytes_written": 1794062554.069709,
+      "head_jobs_created": 389,
+      "last_head_jobs_created": 1794062554.081819,
+      "head_jobs_rewritten": 115,
+      "last_head_jobs_rewritten": 1794062556.9059072,
+      "head_hot_writes": 777,
+      "last_head_hot_writes": 1794062558.2931912,
+      "head_outputs_verified": 395,
+      "last_head_outputs_verified": 1794062556.6733797,
+      "head_jobs_checked": 79,
+      "last_head_jobs_checked": 1794062556.7211847,
+      "head_jobs_deleted": 72,
+      "last_head_jobs_deleted": 1794062555.5232556,
+      "head_checks_skipped": 34,
+      "last_head_checks_skipped": 1794062381.7925847,
+      "t": 1794062560.9082994
+    },
+    "node": {
+      "t0": 1794061805.2402077,
+      "node_hot_reads": 2646,
+      "last_node_hot_reads": 1794062560.2877853,
+      "node_hot_mmap_reads": 801,
+      "last_node_hot_mmap_reads": 1794062560.169903,
+      "node_cp": 1110,
+      "last_node_cp": 1794062559.7686656,
+      "node_buffered_reads": 2570,
+      "last_node_buffered_reads": 1794062560.4779248,
+      "node_mmap_reads": 760,
+      "last_node_mmap_reads": 1794062559.7826688,
+      "node_mmap_writes": 369,
+      "last_node_mmap_writes": 1794062557.4389527,
+      "node_bytes_written": 603205777,
+      "last_node_bytes_written": 1794062558.8162677,
+      "node_jobs_done": 369,
+      "last_node_jobs_done": 1794062559.6952412,
+      "t": 1794062560.4802003
+    },
+    "failcheck": {
+      "t0": 1794061805.2803347,
+      "probe_ok": 237,
+      "last_probe_ok": 1794062557.0914843,
+      "probe_rechecks": 107,
+      "last_probe_rechecks": 1794062554.5780082,
+      "t": 1794062560.4329069
+    }
+  },
+  "blocklist": "10.177.77.12:6801/140078637 2026-11-08T04:45:34.269167+0000\n10.177.77.11:0/1889620215 2026-11-07T14:44:55.302856+0000\n10.177.77.12:6800/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:0/3407353904 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6800/140078637 2026-11-08T04:45:34.269167+0000\n10.177.77.11:0/4033411307 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6800/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.12:6801/3833120554 2026-11-07T15:55:07.925234+0000\n10.177.77.11:0/3721478901 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/754901607 2026-11-07T14:44:55.302856+0000\n10.177.77.11:6800/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3218408777 2026-11-07T15:42:07.377233+0000\n10.177.77.12:6801/2054025917 2026-11-07T14:44:56.444679+0000\n10.177.77.11:6801/3701731202 2026-11-07T15:42:07.377233+0000\n10.177.77.11:0/3973458054 2026-11-07T14:44:55.302856+0000",
+  "workload_left_running": false,
+  "first_repro_after": null
+}
