@@ -333,6 +333,7 @@ def main():
                            % (role, " ".join(common), run_id, role))
         t0 = time.time()
         last_fusectl = 0
+        capture_procs = []
         captures = 0
         repro = []
         triggers = []
@@ -348,13 +349,17 @@ def main():
                 trig["elapsed"] = round(time.time() - t0)
                 triggers.append(trig)
                 log("TRIGGER %s after %ds: %s" % (trig.get("kind"), trig["elapsed"], json.dumps(trig)[:400]))
-                if trig.get("kind") in ("buffered_hang_direct_ok", "buffered_and_direct_fail", "dstate", "hung_task_dmesg"):
+                if trig.get("kind") in ("buffered_hang_direct_ok", "buffered_and_direct_fail", "dstate", "hung_task_dmesg", "unkillable_probe"):
                     repro.append(trig)
                 if captures < args.max_captures:
                     captures += 1
                     cdir = os.path.join(rdir, "capture-%03d-%s" % (trig["elapsed"], trig.get("kind")))
                     trig["fusectl_host"] = {c: fusectl(c) for c in CLIENTS}
-                    subprocess.run([os.path.join(ROOT, "harness", "capture.sh"), cdir, json.dumps(trig)])
+                    # In the background: a Stage B capture takes minutes over ssh,
+                    # and the loop must keep sampling and checking meanwhile.
+                    capture_procs.append(subprocess.Popen(
+                        [os.path.join(ROOT, "harness", "capture.sh"), cdir, json.dumps(trig)],
+                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL))
             if args.stop_on_repro and repro:
                 break
             if stop_requested:
@@ -396,6 +401,8 @@ def main():
             time.sleep(2)
         elapsed = round(time.time() - t0)
     finally:
+        for p in locals().get("capture_procs", []):
+            p.wait()
         open(os.path.join(CTL, "stop"), "w").close()
         log("stopping workload")
         deadline = time.time() + 60

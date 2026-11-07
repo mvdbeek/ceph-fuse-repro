@@ -453,13 +453,48 @@ def run_node(args):
 # ---------------------------------------------------------------- failcheck
 
 
+abandoned = []  # probe processes that survived SIGKILL: (Popen, t_abandoned, reported)
+
+
+def task_report(pid):
+    t = "/proc/%d" % pid
+    return {"pid": pid, "state": read_proc(t + "/stat").split(") ")[-1][:1], "wchan": read_proc(t + "/wchan"),
+            "syscall": read_proc(t + "/syscall")[:60], "stack": read_proc(t + "/stack")[:2000],
+            "cmdline": read_proc(t + "/cmdline").replace("\0", " ")[:200]}
+
+
 def timed_run(cmd, timeout):
+    """Run cmd with a timeout; never block on a child that survives SIGKILL
+    (a FUSE request already sent waits uninterruptibly for its reply)."""
     t0 = time.time()
-    try:
-        r = subprocess.run(["timeout", "-k", "5", str(timeout)] + cmd, capture_output=True, timeout=timeout + 30)
-        return r.returncode, r.stdout.decode(errors="replace"), time.time() - t0
-    except subprocess.TimeoutExpired:
-        return "unkillable", "", time.time() - t0
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    out = b""
+    while p.poll() is None and time.time() - t0 < timeout:
+        time.sleep(0.2)
+    if p.poll() is None:
+        p.kill()
+        deadline = time.time() + 5
+        while p.poll() is None and time.time() < deadline:
+            time.sleep(0.2)
+        if p.poll() is None:
+            info = task_report(p.pid)
+            abandoned.append([p, time.time(), False])
+            event("unkillable_probe", seconds=round(time.time() - t0, 1), **info)
+            return "unkillable", "", time.time() - t0
+        return -9, "", time.time() - t0
+    out = p.stdout.read()
+    return p.returncode, out.decode(errors="replace"), time.time() - t0
+
+
+def check_abandoned():
+    for a in list(abandoned):
+        p, t, reported = a
+        if p.poll() is not None:
+            event("unkillable_probe_exited", pid=p.pid, after=round(time.time() - t, 1))
+            abandoned.remove(a)
+        elif not reported and time.time() - t > 60:
+            a[2] = True
+            trigger("unkillable_probe", seconds_since_kill=round(time.time() - t), **task_report(p.pid))
 
 
 def read_proc(path):
@@ -522,6 +557,7 @@ def failcheck_probes(args):
     failing_since = None
     last_probe, last_check = None, 0
     while not stopping():
+        check_abandoned()
         names = sorted(n for n in os.listdir(pdir) if not n.startswith(".") and n not in seen)
         if names:
             # Only the newest probe matters; mark older ones seen.
