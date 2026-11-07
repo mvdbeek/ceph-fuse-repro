@@ -189,6 +189,14 @@ def head_checker(args):
         if not names:
             time.sleep(0.5)
             continue
+        # The checker is slower than the node; skip (and delete) the oldest
+        # jobs beyond a backlog of 50 so the data on the cluster stays bounded.
+        while len(names) > 50:
+            name = names.pop(0)
+            os.rename(os.path.join(done_dir, name), os.path.join(CTL, "checked", name))
+            shutil.rmtree(os.path.join(MNT, "jobs", name), ignore_errors=True)
+            bump("head_checks_skipped")
+            bump("head_jobs_deleted")
         for name in names:
             path = os.path.join(done_dir, name)
             with open(path) as f:

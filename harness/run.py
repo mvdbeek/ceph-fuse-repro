@@ -223,6 +223,10 @@ def oom_kills(name):
     return int(dict(l.split() for l in ev.splitlines()).get("oom_kill", 0)) if ev else 0
 
 
+def raw_used():
+    return json.loads(ceph("df", "-f", "json"))["stats"]["total_used_raw_ratio"]
+
+
 def read_json(path, default=None):
     try:
         with open(path) as f:
@@ -280,6 +284,8 @@ def main():
     down = [c for c in ("mon", "mgr", "mds", "osd0", "osd1", "osd2") if not container_state(c)[0]]
     if down:
         sys.exit("cluster container(s) not running: %s" % ",".join(down))
+    if raw_used() > 0.75:
+        sys.exit("cluster raw use %.0f%% > 75%%; clean up first" % (raw_used() * 100))
     if NODE_VM and running_in_container_node():
         sys.exit("stage B: stop the workload in cfr-node first")
 
@@ -326,10 +332,12 @@ def main():
             actions[f][0]()
             applied.append(f)
             log("fault on: %s" % f)
-        # Move the previous run's trees aside (instant) and delete them in the background.
-        dexec("head", "timeout", "300", "sh", "-c", "mkdir -p /mnt/scratch/trash && for d in jobs probe hot; do "
-              "[ -e /mnt/scratch/$d ] && mv /mnt/scratch/$d /mnt/scratch/trash/$d.$$; done; "
-              "(nohup rm -rf /mnt/scratch/trash >/dev/null 2>&1 &); true")
+        # Delete the previous run's trees now, before the clock starts. (Moving them
+        # aside and deleting in the background let them pile up until the OSDs filled.)
+        t_clean = time.time()
+        dexec("head", "timeout", "1800", "rm", "-rf", "/mnt/scratch/trash", "/mnt/scratch/jobs",
+              "/mnt/scratch/probe", "/mnt/scratch/hot", check=False)
+        log("cleanup took %ds" % (time.time() - t_clean))
         common = ["--run-id", run_id] + wargs
         for role, container in (("head", "head"), ("node", "node"), ("failcheck", "node")):
             start_detached(container, "exec python3 -u /harness/workload.py %s %s > /results/%s/%s.log 2>&1"
@@ -381,6 +389,10 @@ def main():
                 log("host MemAvailable %d MB < %d MB; aborting run" % (host_mem_available_mb(), args.min_host_mem))
                 aborted = ["host-memory-pressure"]
                 break
+            if time.time() - last_fusectl < 3 and raw_used() > 0.85:
+                log("cluster raw use above 85%; aborting run before it fills")
+                aborted = ["cluster-filling"]
+                break
             # A cluster daemon that died (e.g. OOM-killed) makes the rest of the run meaningless.
             down = [c for c in ("mon", "mgr", "mds", "osd0", "osd1", "osd2") if not container_state(c)[0]]
             if down:
@@ -425,9 +437,7 @@ def main():
             log("fault off: %s" % f)
 
     # H1 check: with the workload gone and faults off, every FUSE request should
-    # have been answered. Anything still "waiting" was never answered. Stop the
-    # background cleanup of old trees first (a legitimately busy request).
-    subprocess.run(prefix("head", "pkill", "-f", "rm -rf /mnt/scratch/trash"), capture_output=True)
+    # have been answered. Anything still "waiting" was never answered.
     time.sleep(30)
     idle_waiting = {c: fusectl(c) for c in CLIENTS}
     leaked = {c: int(v["waiting"]) for c, v in idle_waiting.items() if v.get("waiting", "0").isdigit() and int(v["waiting"]) > 0}
