@@ -21,3 +21,5 @@ run_id	stage	kernel	ceph	faults	workload_args	duration_s	outcome
 20261107-003621-B-octrim-truncate-msinject	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	octrim,slowosd,msinject	--workers 4 --hot 8 --hot-readers 8 --hot-interval 0.05 --hot-truncate	3601	inconclusive (no leak: idle waiting 0; transient slot saturation, D-state episodes 70-115 s all cleared; probe check blind after 114 s on an unkillable probe read, harness bug fixed): stall: buffered_and_direct_fail,dstate
 20261107-013741-B-baseline-2	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	none	--workers 4 --hot 4	3601	no repro
 20261107-023852-B-fullflap-2	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	fullflap	--workers 4 --hot 4	3602	no repro
+20261107-034033-B-baseline	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	none	--workers 4 --hot 4	3603	no repro
+20261107-044146-B-all-faults	B	6.1.188-1.el9.elrepo.x86_64	17.2.9	netem,msinject,mdsrecall,slowosd	--workers 4 --hot 4	0	INVALID: aborted at start, netem could not be applied to the VM node (no tc/NET_ADMIN in cfr-vm; fixed)

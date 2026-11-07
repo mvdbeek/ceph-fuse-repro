@@ -105,7 +105,7 @@ EOF
     chmod +x "$VM/run-vm.sh"
     log "starting cfr-vm (guest ${VM_MEM_MB} MB, $VM_CPUS vCPUs)"
     docker run -d --name cfr-vm --hostname vmhost --network "$NET" --ip 10.177.77.40 \
-        --device /dev/kvm --memory $((VM_MEM_MB + 1024))m --memory-swap $((VM_MEM_MB + 1024))m \
+        --device /dev/kvm --cap-add NET_ADMIN --memory $((VM_MEM_MB + 1024))m --memory-swap $((VM_MEM_MB + 1024))m \
         -v "$VM:/vm" -v "$ROOT/harness:/share/harness:ro" -v "$STATE/ctl:/share/ctl" \
         -v "$ROOT/results:/share/results" -v "$STATE/etc:/share/etc:ro" -v "$STATE/log-vm:/share/log" \
         --entrypoint /vm/run-vm.sh cfr-qemu >/dev/null

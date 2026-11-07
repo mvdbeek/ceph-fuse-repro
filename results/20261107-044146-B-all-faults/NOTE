@@ -1,0 +1,1 @@
+Aborted at start: netem could not be applied to the VM node (cfr-vm container had no tc and no NET_ADMIN). Nothing ran; no summary. Fixed in docker/qemu/Dockerfile and scripts/vm.sh; to be rerun.
