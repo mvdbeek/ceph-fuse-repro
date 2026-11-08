@@ -1,4 +1,4 @@
-From bf9145f6bb4925b68ae2cb76f07c51f41804e49c Mon Sep 17 00:00:00 2001
+From 58351687c6113ff9afd1247868682a8c73a0029e Mon Sep 17 00:00:00 2001
 From: mvdbeek <m.vandenbeek@gmail.com>
 Date: Sun, 8 Nov 2026 15:49:38 +0100
 Subject: [PATCH 2/2] test/osdc: add unittest_object_cacher for reads racing a
@@ -8,6 +8,8 @@ A read waiting for an OSD reply must complete when its range is discarded
 (fallocate punch hole, truncate) and the zeroed buffer is trimmed or
 released before the reply arrives. Without the fix in the previous commit the
 first two tests fail: the read's completion is never called.
+
+Signed-off-by: mvdbeek <m.vandenbeek@gmail.com>
 ---
  src/test/osdc/CMakeLists.txt        |   8 ++
  src/test/osdc/test_object_cacher.cc | 204 ++++++++++++++++++++++++++++

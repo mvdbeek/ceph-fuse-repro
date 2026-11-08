@@ -291,7 +291,7 @@ The third test passes before the fix because `bh_read_finish` collects waiters f
   - Stage B with the patched binary. The fix is in user space, and Stage A already gives the full lost-read signature without it.
   - The `main` patches were not compiled. `ObjectCacher`, `WritebackHandler` and the test helpers they use have the same API on `main` as on 17.2.9, where both patches were built and tested.
 
-**Upstream.** Ceph wants a tracker issue linked with `Fixes:`, and a `Signed-off-by:` line from the submitter (DCO). The patches carry neither.
+**Upstream.** The `main` patches are signed off and pushed to https://github.com/mvdbeek/ceph/tree/wip-objectcacher-discard-rx. A draft tracker issue is in `patches/upstream-main/tracker-issue.md`. Once the issue exists, add `Fixes: https://tracker.ceph.com/issues/<id>` to the fix commit before opening the PR.
 
 ## What to check on a stuck node
 
