@@ -16,6 +16,8 @@ Results so far: [results.md](results.md).
 | `harness/batch.sh`, `harness/batch-targeted.sh` | The long runs and the targeted runs behind results.md |
 | `harness/blackhole.sh` | Environmental alternative: drops large packets from one OSD to the node (path-MTU black hole) and probes |
 | `harness/oc_lostread.sh`, `harness/batch-oclost.sh` | Deterministic reproducer of the ObjectCacher lost read (results.md, Finding 7): hold one OSD's replies, read, punch a hole from the same client, force a trim, release. `harness/oc_lostread.sh punch wchurn 12` gives the full production signature; `CFR_STAGE=B` runs it in the guest |
+| `patches/` | The fix (results.md, Finding 8) for 17.2.9: `0001` adds `unittest_object_cacher`, `0002` is the fix in `ObjectCacher::Object::discard`. `patches/upstream-main/` has the same two changes as `git format-patch` output against ceph `main` |
+| `scripts/build-ceph-fuse.sh` | Builds ceph-fuse 17.2.9 and `unittest_object_cacher` with `patches/` applied (`--test-only`: the test without the fix), runs the test, and puts the binary in `state/patched` |
 | `harness/report.py` | Regenerates the run tables in results.md from `results/runs.tsv` |
 | `scripts/vm.sh`, `docker/qemu/` | Stage B KVM guest |
 | `harness/capture.sh` | Capture bundle: client admin sockets, D-state tasks, ps/wchan, fusectl, dmesg, MDS sessions/ops, OSD ops |
@@ -39,6 +41,16 @@ make capture        # manual capture bundle into results/
 make down           # stop and remove all containers (keeps state/)
 make purge          # down + delete state/
 ```
+
+To run the clients on a patched ceph-fuse (results.md, Finding 8):
+
+```sh
+scripts/build-ceph-fuse.sh             # ~1 h the first time, in a 6 GB rootless container; source in ~/src/ceph-build
+CFR_PATCHED=1 make up                  # or CFR_PATCHED=1 make mount on a running cluster (after make umount)
+CFR_PATCHED=1 harness/oc_lostread.sh punch wchurn 12
+```
+
+`make purge` deletes `state/patched`; rerun the build script, which then only copies the result.
 
 `run.py --help` lists the fault parameters. `--stop-on-repro` ends the run at the first failure.
 

@@ -1,0 +1,13 @@
+== 2026-11-08T14:44:16Z mode=punch churn=churn files=1 stage A kernel 7.3.0-4-t2-resolute, ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)
+== 1 target file(s) on osd.1, 12 churn files (512 KiB) elsewhere
+== 15:44:34 replies from osd.1 to node held
+== in flight: 1 ops to osd [1], fusectl waiting=1
+== discards that hit an rx buffer with a waiter: 1
+2026-11-08T14:44:39.305+0000 72bc127fc640 10 objectcacher.object(1000000021c.00000000/head) discard object[1000000021c.00000000/head oset 0x72bc1c00d9a0 wr 0/0] bh bh[ 0x72bc0404d2f0 0~131072 0x72bc04051a60 (0) v 0 rx] waiters = { 0->[0x72bc04024c40, ]}
+== churned 6144 KiB through the 2 MiB cache
+== zero buffers trimmed with waiters still attached: 0
+== 15:44:45 replies released
+== all 1 read(s) completed after release
+== objecter ops left: 3, fusectl waiting=1 max_background=12
+  391 fallocate S request_wait_answer
+== elapsed 30 s

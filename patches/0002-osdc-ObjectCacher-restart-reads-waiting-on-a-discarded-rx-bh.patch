@@ -1,0 +1,29 @@
+osdc/ObjectCacher: restart reads waiting on a discarded rx bh
+
+Object::discard() turns a bh with a read in flight (rx) into a zero bh but
+leaves the read's waiters on it. A zero bh is not pinned in the LRU, so
+trim() or release() can delete it, waiters included, before the OSD reply
+arrives; bh_read_finish() then finds no bh and the read never completes.
+In ceph-fuse the FUSE read request is never answered, the page stays
+locked, a later invalidate from the MDS blocks in
+fuse_reverse_inval_inode(), and the leaked Fc cap ref blocks other clients.
+
+Restart the waiters right away instead, as discard already does for bhs
+in other states; the retried read sees the zeroed range.
+
+--- a/src/osdc/ObjectCacher.cc
++++ b/src/osdc/ObjectCacher.cc
+@@ -647,6 +647,13 @@
+       bh->bl.clear();
+       bh->set_nocache(true);
+       oc->mark_zero(bh);
++      // a zero bh is not pinned, so trim() or release() may delete it
++      // before the read reply arrives, and bh_read_finish() could then not
++      // find the waiters. restart them now; they will see the zeroed range.
++      for ([[maybe_unused]] auto& [off, ctxs] : bh->waitfor_read) {
++        waiting_for_read.splice(waiting_for_read.end(), ctxs);
++      }
++      bh->waitfor_read.clear();
+       // we should mark all Rx bh to zero
+       continue;
+     } else {

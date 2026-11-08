@@ -1,0 +1,245 @@
+From bf9145f6bb4925b68ae2cb76f07c51f41804e49c Mon Sep 17 00:00:00 2001
+From: mvdbeek <m.vandenbeek@gmail.com>
+Date: Sun, 8 Nov 2026 15:49:38 +0100
+Subject: [PATCH 2/2] test/osdc: add unittest_object_cacher for reads racing a
+ discard
+
+A read waiting for an OSD reply must complete when its range is discarded
+(fallocate punch hole, truncate) and the zeroed buffer is trimmed or
+released before the reply arrives. Without the fix in the previous commit the
+first two tests fail: the read's completion is never called.
+---
+ src/test/osdc/CMakeLists.txt        |   8 ++
+ src/test/osdc/test_object_cacher.cc | 204 ++++++++++++++++++++++++++++
+ 2 files changed, 212 insertions(+)
+ create mode 100644 src/test/osdc/test_object_cacher.cc
+
+diff --git a/src/test/osdc/CMakeLists.txt b/src/test/osdc/CMakeLists.txt
+index addc4ba..8fa6521 100644
+--- a/src/test/osdc/CMakeLists.txt
++++ b/src/test/osdc/CMakeLists.txt
+@@ -41,3 +41,11 @@ add_executable(unittest_objecter_direct_reads
+   )
+ add_ceph_unittest(unittest_objecter_direct_reads)
+ target_link_libraries(unittest_objecter_direct_reads osdc global ${BLKID_LIBRARIES})
++
++# unittest_object_cacher
++add_executable(unittest_object_cacher
++  test_object_cacher.cc
++  $<TARGET_OBJECTS:unit-main>
++  )
++add_ceph_unittest(unittest_object_cacher)
++target_link_libraries(unittest_object_cacher osdc global ${BLKID_LIBRARIES})
+diff --git a/src/test/osdc/test_object_cacher.cc b/src/test/osdc/test_object_cacher.cc
+new file mode 100644
+index 0000000..81dd2f8
+--- /dev/null
++++ b/src/test/osdc/test_object_cacher.cc
+@@ -0,0 +1,204 @@
++// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:nil -*-
++// vim: ts=8 sw=2 sts=2 expandtab
++
++#include <vector>
++
++#include "gtest/gtest.h"
++
++#include "common/ceph_mutex.h"
++#include "global/global_context.h"
++#include "include/Context.h"
++#include "osdc/ObjectCacher.h"
++#include "osdc/WritebackHandler.h"
++
++namespace {
++
++// A writeback handler that holds every read until the test completes it,
++// so the test controls exactly when the "OSD reply" arrives.
++class HoldingWriteback : public WritebackHandler {
++public:
++  struct PendingRead {
++    object_t oid;
++    uint64_t len;
++    ceph::buffer::list *pbl;
++    Context *onfinish;
++  };
++  std::vector<PendingRead> reads;
++
++  void read(const object_t& oid, uint64_t object_no,
++            const object_locator_t& oloc, uint64_t off, uint64_t len,
++            snapid_t snapid, ceph::buffer::list *pbl, uint64_t trunc_size,
++            __u32 trunc_seq, int op_flags,
++            const ZTracer::Trace &parent_trace, Context *onfinish) override {
++    reads.push_back({oid, len, pbl, onfinish});
++  }
++
++  bool may_copy_on_write(const object_t&, uint64_t, uint64_t,
++                         snapid_t) override {
++    return false;
++  }
++
++  ceph_tid_t write(const object_t& oid, const object_locator_t& oloc,
++                   uint64_t off, uint64_t len,
++                   const SnapContext& snapc, const ceph::buffer::list &bl,
++                   ceph::real_time mtime, uint64_t trunc_size,
++                   __u32 trunc_seq, ceph_tid_t journal_tid,
++                   const ZTracer::Trace &parent_trace,
++                   Context *oncommit) override {
++    ADD_FAILURE() << "unexpected write";
++    return 0;
++  }
++
++  using WritebackHandler::write;
++
++  // reply to the oldest outstanding read of oid with a buffer of 0xab
++  // bytes; the caller holds the cache lock
++  void complete_read(const object_t& oid) {
++    for (auto p = reads.begin(); p != reads.end(); ++p) {
++      if (p->oid != oid)
++        continue;
++      PendingRead r = *p;
++      reads.erase(p);
++      ceph::buffer::ptr bp(r.len);
++      memset(bp.c_str(), 0xab, r.len);
++      r.pbl->append(bp);
++      r.onfinish->complete(r.len);
++      return;
++    }
++    ADD_FAILURE() << "no outstanding read of " << oid;
++  }
++};
++
++struct C_Done : public Context {
++  bool *done;
++  int *ret;
++  C_Done(bool *d, int *r) : done(d), ret(r) {}
++  void finish(int r) override {
++    *done = true;
++    *ret = r;
++  }
++};
++
++class TestObjectCacher : public ::testing::Test {
++protected:
++  static constexpr uint64_t LEN = 4096;
++
++  ceph::mutex lock = ceph::make_mutex("TestObjectCacher::lock");
++  HoldingWriteback wb;
++  ObjectCacher oc{g_ceph_context, "test", wb, lock, nullptr, nullptr,
++                  LEN,      // max cache size: any clean data triggers trim()
++                  100,      // max objects
++                  0, 0,     // max/target dirty: write-through
++                  0.0, true};
++  ObjectCacher::ObjectSet oset{nullptr, 0, 0};
++
++  void SetUp() override {
++    oc.start();
++  }
++
++  void TearDown() override {
++    {
++      std::lock_guard l{lock};
++      while (!wb.reads.empty())
++        wb.complete_read(wb.reads.front().oid);
++      oc.release_set(&oset);
++    }
++    oc.stop();
++  }
++
++  ObjectExtent extent(const object_t& oid) {
++    ObjectExtent ex(oid, 0, 0, LEN, 0);
++    ex.oloc.pool = 0;
++    ex.buffer_extents.emplace_back(0, LEN);
++    return ex;
++  }
++
++  // start a read of oid; returns readx()'s result
++  int readx(const object_t& oid, ceph::buffer::list *bl, Context *onfinish) {
++    auto rd = oc.prepare_read(CEPH_NOSNAP, bl, 0);
++    rd->extents.push_back(extent(oid));
++    return oc.readx(rd, &oset, onfinish);
++  }
++
++  // get clean data for another object into the cache, then hit it, so
++  // that _readx() calls trim() while that clean data exceeds max_size
++  void trim_via_other_object() {
++    object_t other("other");
++    ceph::buffer::list bl;
++    bool done = false;
++    int r = 0;
++    ASSERT_EQ(0, readx(other, &bl, new C_Done(&done, &r)));
++    wb.complete_read(other);
++    ASSERT_TRUE(done);
++    ceph::buffer::list bl2;
++    ASSERT_EQ((int)LEN, readx(other, &bl2, nullptr));
++  }
++};
++
++// A read waiting for an OSD reply must complete when its range is discarded
++// (punch hole, truncate) and the discarded buffer is then trimmed before
++// the reply arrives.
++TEST_F(TestObjectCacher, DiscardInFlightReadThenTrim)
++{
++  std::lock_guard l{lock};
++  object_t oid("target");
++  ceph::buffer::list bl;
++  bool done = false;
++  int r = 0;
++  ASSERT_EQ(0, readx(oid, &bl, new C_Done(&done, &r)));
++  ASSERT_FALSE(done);
++
++  oc.discard_set(&oset, {extent(oid)});
++  trim_via_other_object();
++  wb.complete_read(oid);
++
++  ASSERT_TRUE(done);
++  ASSERT_EQ((int)LEN, r);
++  // the read returns the discarded (zero) range, not the stale reply
++  ASSERT_TRUE(bl.is_zero());
++}
++
++// Same, with the discarded buffer removed by release_set() (cap release,
++// cache invalidation) instead of trim().
++TEST_F(TestObjectCacher, DiscardInFlightReadThenRelease)
++{
++  std::lock_guard l{lock};
++  object_t oid("target");
++  ceph::buffer::list bl;
++  bool done = false;
++  int r = 0;
++  ASSERT_EQ(0, readx(oid, &bl, new C_Done(&done, &r)));
++
++  oc.discard_set(&oset, {extent(oid)});
++  oc.release_set(&oset);
++  wb.complete_read(oid);
++
++  ASSERT_TRUE(done);
++  ASSERT_EQ((int)LEN, r);
++  ASSERT_TRUE(bl.is_zero());
++}
++
++// Without anything removing the discarded buffer, the read completes with
++// zeros as well and the late reply does not overwrite the discard.
++TEST_F(TestObjectCacher, DiscardInFlightRead)
++{
++  std::lock_guard l{lock};
++  object_t oid("target");
++  ceph::buffer::list bl;
++  bool done = false;
++  int r = 0;
++  ASSERT_EQ(0, readx(oid, &bl, new C_Done(&done, &r)));
++
++  oc.discard_set(&oset, {extent(oid)});
++  wb.complete_read(oid);
++
++  ASSERT_TRUE(done);
++  ASSERT_EQ((int)LEN, r);
++  ASSERT_TRUE(bl.is_zero());
++
++  ceph::buffer::list bl2;
++  ASSERT_EQ((int)LEN, readx(oid, &bl2, nullptr));
++  ASSERT_TRUE(bl2.is_zero());
++}
++
++} // anonymous namespace
+-- 
+2.53.0
+

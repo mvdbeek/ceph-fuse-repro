@@ -1,0 +1,5 @@
+WHO    MASK  LEVEL     OPTION                                 VALUE        RO
+mon          advanced  auth_allow_insecure_global_id_reclaim  false          
+osd.0        basic     osd_mclock_max_capacity_iops_ssd       8604.467218    
+osd.1        basic     osd_mclock_max_capacity_iops_ssd       5770.359618    
+osd.2        basic     osd_mclock_max_capacity_iops_ssd       5601.757325    

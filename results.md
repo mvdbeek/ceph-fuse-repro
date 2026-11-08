@@ -23,6 +23,7 @@ Raw data lives in `results/<run>/` (`run.json`, `summary.json`, `events.jsonl`, 
   - the production `fn_anonymous` hung-task stack, permanently.
 
   The reproducer triggers the discard with a same-client `fallocate` punch hole; truncate is protected by caps. Whether anything on js2-2xl9 punches holes, or reaches the discard another way, is not known. The bug is unchanged on ceph `main` and worth reporting upstream.
+- **A small fix in `ObjectCacher::Object::discard` closes it** (Finding 8): restart the waiters of an rx buffer when it is discarded. A new unit test fails on 17.2.9 and passes with the fix. With a patched ceph-fuse, the reproducer's reads all complete (3 of 3 single-file runs and 12 of 12 reads in the 12-file run), although the race fired in every case; the packaged ceph-fuse still hangs in the same session. Patches for 17.2.9 and ceph `main` are in `patches/`.
 - **ceph-fuse 17.2.9 segfaults on the admin-socket command `log dump`** (Finding 4). After that crash, a blocked invalidation hung the mount until `fusectl abort` released it.
 - **Brief cluster-FULL episodes don't reliably trigger the stall**: 0 stalls in about 11 flaps on 6.1.188 and 2 on 7.3 (Finding 5).
 - **The campaign was stopped by decision**: low odds of a spontaneous hit at this rate, and the environmental hypothesis is now testable on the real node.
@@ -247,6 +248,50 @@ Same-client writes over an rx buffer keep the waiters (`map_write` marks the buf
 - It is now worth tracing on the node. See [What to check on a stuck node](#what-to-check-on-a-stuck-node).
 
 **Reportable upstream.** The code is unchanged on ceph `main`: the same rx branch in `Object::discard` and an identical `trim()`. The reproducer is deterministic and needs no special build. One possible fix: `discard` should not unpin an rx buffer that still has waiters. Alternatively, `trim()` and `release()` could complete (retry) `waitfor_read` before deleting a buffer, as `discard` does for non-rx buffers.
+
+## Finding 8: the fix, with a unit test and the reproducer
+
+**Fix** (`patches/0002-…`, and `patches/upstream-main/0001-…` for ceph `main`). In `ObjectCacher::Object::discard`, the rx branch now moves the buffer's `waitfor_read` contexts to the list that `discard` already restarts for buffers in every other state:
+
+```cpp
+      oc->mark_zero(bh);
+      // a zero bh is not pinned, so trim() or release() may delete it
+      // before the read reply arrives, and bh_read_finish() could then not
+      // find the waiters. restart them now; they will see the zeroed range.
+      for ([[maybe_unused]] auto& [off, ctxs] : bh->waitfor_read) {
+        waiting_for_read.splice(waiting_for_read.end(), ctxs);
+      }
+      bh->waitfor_read.clear();
+```
+
+- **Why this is safe.** The retried `_readx` finds the zero buffer and returns zeros, which is the correct content of a discarded range.
+- **The late OSD reply** is still ignored: `discard` already bumps `last_read_tid`, so the reply cannot overwrite the discard.
+- **Same path as before.** Restarting from inside `discard`, with the cache lock held, is what `discard` already does for non-rx buffers.
+
+**Unit test** (`patches/0001-…`): `unittest_object_cacher`, a gtest built against `osdc`. A `WritebackHandler` holds every read until the test answers it, so the order is exact:
+
+| Test | Sequence | 17.2.9 | With the fix |
+|---|---|---|---|
+| `DiscardInFlightReadThenTrim` | read (held), `discard_set`, hit on another object that makes `_readx` call `trim()`, reply | FAILED: read never completes | OK, zeros |
+| `DiscardInFlightReadThenRelease` | read (held), `discard_set`, `release_set`, reply | FAILED: read never completes | OK, zeros |
+| `DiscardInFlightRead` | read (held), `discard_set`, reply (nothing deletes the buffer) | OK | OK, zeros |
+
+The third test passes before the fix because `bh_read_finish` collects waiters from any buffer still in the object. That is why the bug needs the trim or release between the discard and the reply.
+
+**Reproducer** (`scripts/build-ceph-fuse.sh`, then `CFR_PATCHED=1`). The build is ceph-fuse 17.2.9 from the release tarball, built on Rocky 9 with gcc 11 like the el9 packages, and run with its own `libceph-common` (and `libfmt`) through `LD_LIBRARY_PATH`. Stage A, same cluster, back to back:
+
+| Run | ceph-fuse | rx discards with waiters | trims of the zeroed buffer | Outcome |
+|---|---|---|---|---|
+| `oclost-patched-20261108-154341-punch-churn-1-r1..r3` | patched | 1, 1, 1 | 1, 1, 1 (`waiters = {}`) | all reads complete (3 of 3) |
+| `oclost-patched-20261108-154341-punch-wchurn-12` | patched | 12 | 12 (`waiters = {}`) | 12 of 12 reads complete |
+| `oclost-packaged-20261108-154640-punch-churn-1` | packaged | 1 | 1 (waiter still attached) | READ HUNG |
+
+- **Timing.** With the fix, the read is answered at the moment of the discard, while the OSD replies are still held. The log shows `restarting reads post-discard`, then `readx hit … zero`, then `result is 131072`. The punch hole's own OSD op waits for the release, as it should.
+- **Not run:**
+  - Stage B with the patched binary. The fix is in user space, and Stage A already gives the full lost-read signature without it.
+  - The `main` patches were not compiled. `ObjectCacher`, `WritebackHandler` and the test helpers they use have the same API on `main` as on 17.2.9, where both patches were built and tested.
+
+**Upstream.** Ceph wants a tracker issue linked with `Fixes:`, and a `Signed-off-by:` line from the submitter (DCO). The patches carry neither.
 
 ## What to check on a stuck node
 

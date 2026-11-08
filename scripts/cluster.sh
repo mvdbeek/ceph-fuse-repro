@@ -176,6 +176,7 @@ up() {
     wait_for "mds active" 180 bash -c "docker exec cfr-mon ceph mds stat | grep -q up:active"
     wait_for "HEALTH_OK/active+clean" 180 bash -c "docker exec cfr-mon ceph pg stat | grep -qv -E 'peering|creating|unknown|activating' && docker exec cfr-mon ceph pg stat | grep -q active+clean"
 
+    mkdir -p "$STATE/patched"
     for i in "${!CLIENTS[@]}"; do
         local c=${CLIENTS[$i]}
         log "starting client container $c"
@@ -183,12 +184,23 @@ up() {
             --memory $MEM_CLIENT --memory-swap $MEM_CLIENT --privileged --init --device /dev/fuse -e CEPH_USE_RANDOM_NONCE=1 \
             -v "$STATE/etc:/etc/ceph:ro" -v "$STATE/log:/var/log/ceph" -v "$STATE/run/$c:/var/run/ceph" \
             -v "$ROOT/harness:/harness:ro" -v "$STATE/ctl:/ctl" -v "$ROOT/results:/results" \
-            -v /sys/fs/fuse/connections:/fusectl:ro \
+            -v /sys/fs/fuse/connections:/fusectl:ro -v "$STATE/patched:/patched:ro" \
             --entrypoint sleep "$IMAGE" infinity >/dev/null
     done
     mkdir -p "$STATE/ctl" "$ROOT/results"
     mount_clients
     status
+}
+
+# CFR_PATCHED=1 runs a locally built ceph-fuse (scripts/build-ceph-fuse.sh puts it
+# and its libceph-common in state/patched) instead of the packaged one.
+fuse_cmd() {
+    if [[ ${CFR_PATCHED:-0} == 1 ]]; then
+        [[ -x $STATE/patched/bin/ceph-fuse ]] || { log "no state/patched/bin/ceph-fuse; run scripts/build-ceph-fuse.sh"; exit 1; }
+        echo "LD_LIBRARY_PATH=/patched/lib exec /patched/bin/ceph-fuse"
+    else
+        echo "exec ceph-fuse"
+    fi
 }
 
 mount_clients() {
@@ -199,7 +211,7 @@ mount_clients() {
         # Same invocation as production, apart from the id and the mountpoint. Run in
         # the foreground (detached) so libfuse's stderr, e.g. "fuse: writing device:
         # Invalid argument" for a reply the kernel rejected, is kept.
-        docker exec -d "cfr-$c" sh -c "exec ceph-fuse -f --id=galaxy-$c --conf=/etc/ceph/ceph.conf \
+        docker exec -d "cfr-$c" sh -c "$(fuse_cmd) -f --id=galaxy-$c --conf=/etc/ceph/ceph.conf \
             --client_mountpoint=$path /mnt/scratch $* </dev/null >>/var/log/ceph/ceph-fuse-$c.stderr 2>&1"
         wait_for "$c mount" 30 cexec "$c" mountpoint -q /mnt/scratch
         log "$c: mounted $path at /mnt/scratch"

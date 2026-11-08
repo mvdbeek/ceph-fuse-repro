@@ -1,0 +1,2000 @@
+[Sat Nov  7 05:44:36 2026]  do_user_addr_fault+0x1b5/0x820
+[Sat Nov  7 05:44:36 2026]  exc_page_fault+0x83/0x1c0
+[Sat Nov  7 05:44:36 2026]  asm_exc_page_fault+0x27/0x30
+[Sat Nov  7 05:44:36 2026] RIP: 0010:rep_movs_alternative+0x4a/0xa0
+[Sat Nov  7 05:44:36 2026] Code: cc cc cc 66 90 66 66 2e 0f 1f 84 00 00 00 00 00 48 8b 06 48 89 07 48 83 c6 08 48 83 c7 08 83 e9 08 74 db 83 f9 08 73 e8 eb c5 <f3> a4 c3 cc cc cc cc 48 8b 06 48 89 07 48 8d 47 08 48 83 e0 f8 48
+[Sat Nov  7 05:44:36 2026] RSP: 0018:ffffd136796d3818 EFLAGS: 00050206
+[Sat Nov  7 05:44:36 2026] RAX: 000000000000b530 RBX: 0000000000000000 RCX: 0000000000001f50
+[Sat Nov  7 05:44:36 2026] RDX: 0000000000010000 RSI: ffff8da11200e0b0 RDI: 000071604c097000
+[Sat Nov  7 05:44:36 2026] RBP: ffffd136796d38b8 R08: 0000000000008000 R09: ffffd136796d3b18
+[Sat Nov  7 05:44:36 2026] R10: 0000000000000000 R11: ffff8da112008000 R12: 0000000000000003
+[Sat Nov  7 05:44:36 2026] R13: ffffffff9d0223b0 R14: 0000000000010000 R15: 0000000000018000
+[Sat Nov  7 05:44:36 2026]  ? __pfx_simple_copy_to_iter+0x10/0x10
+[Sat Nov  7 05:44:36 2026]  ? _copy_to_iter+0x96/0x7a0
+[Sat Nov  7 05:44:36 2026]  ? nvme_queue_rq+0x1ab/0x220 [nvme]
+[Sat Nov  7 05:44:36 2026]  ? __check_object_size+0xb0/0x250
+[Sat Nov  7 05:44:36 2026]  ? __pfx_simple_copy_to_iter+0x10/0x10
+[Sat Nov  7 05:44:36 2026]  simple_copy_to_iter+0x42/0x70
+[Sat Nov  7 05:44:36 2026]  __skb_datagram_iter+0x1cb/0x310
+[Sat Nov  7 05:44:36 2026]  ? __pfx_simple_copy_to_iter+0x10/0x10
+[Sat Nov  7 05:44:36 2026]  skb_copy_datagram_iter+0x33/0xb0
+[Sat Nov  7 05:44:36 2026]  tcp_recvmsg_locked+0x830/0xad0
+[Sat Nov  7 05:44:36 2026]  tcp_recvmsg+0x87/0x1f0
+[Sat Nov  7 05:44:36 2026]  inet_recvmsg+0x36/0x150
+[Sat Nov  7 05:44:36 2026]  sock_recvmsg+0xb6/0xc0
+[Sat Nov  7 05:44:36 2026]  sock_read_iter+0x8a/0x100
+[Sat Nov  7 05:44:36 2026]  vfs_read+0x364/0x3a0
+[Sat Nov  7 05:44:36 2026]  ksys_read+0xc6/0xf0
+[Sat Nov  7 05:44:36 2026]  __x64_sys_read+0x19/0x30
+[Sat Nov  7 05:44:36 2026]  x64_sys_call+0x2029/0x23d0
+[Sat Nov  7 05:44:36 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 05:44:36 2026]  ? sock_poll+0x54/0x130
+[Sat Nov  7 05:44:36 2026]  ? ep_done_scan+0x127/0x150
+[Sat Nov  7 05:44:36 2026]  ? hrtimer_cancel+0x21/0x50
+[Sat Nov  7 05:44:36 2026]  ? ep_send_events+0x1cf/0x2a0
+[Sat Nov  7 05:44:36 2026]  ? do_epoll_wait+0x531/0x620
+[Sat Nov  7 05:44:36 2026]  ? __handle_mm_fault+0x877/0x1020
+[Sat Nov  7 05:44:36 2026]  ? __pfx_ep_autoremove_wake_function+0x10/0x10
+[Sat Nov  7 05:44:36 2026]  ? restore_fpregs_from_fpstate+0x46/0xe0
+[Sat Nov  7 05:44:36 2026]  ? switch_fpu_return+0x64/0x100
+[Sat Nov  7 05:44:36 2026]  ? do_syscall_64+0x28b/0x550
+[Sat Nov  7 05:44:36 2026]  ? irqentry_exit+0x3ea/0x7b0
+[Sat Nov  7 05:44:36 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 05:44:36 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 05:44:36 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 05:44:36 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 05:44:36 2026] RIP: 0033:0x7160598792bc
+[Sat Nov  7 05:44:36 2026] Code: ec 28 48 89 54 24 18 48 89 74 24 10 89 7c 24 08 e8 a9 89 f8 ff 48 8b 54 24 18 48 8b 74 24 10 41 89 c0 8b 7c 24 08 31 c0 0f 05 <48> 3d 00 f0 ff ff 77 34 44 89 c7 48 89 44 24 08 e8 ff 89 f8 ff 48
+[Sat Nov  7 05:44:36 2026] RSP: 002b:00007160554d2920 EFLAGS: 00000246 ORIG_RAX: 0000000000000000
+[Sat Nov  7 05:44:36 2026] RAX: ffffffffffffffda RBX: 0000716050106a20 RCX: 00007160598792bc
+[Sat Nov  7 05:44:36 2026] RDX: 000000000001b530 RSI: 000071604c080f50 RDI: 0000000000000010
+[Sat Nov  7 05:44:36 2026] RBP: 000000000001b530 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 05:44:36 2026] R10: 0000000000000000 R11: 0000000000000246 R12: 000000000001b530
+[Sat Nov  7 05:44:36 2026] R13: 000071604c080f50 R14: 000071604c071000 R15: 0000716050106db8
+[Sat Nov  7 05:44:36 2026]  </TASK>
+[Sat Nov  7 05:44:36 2026] memory: usage 327680kB, limit 327680kB, failcnt 2186
+[Sat Nov  7 05:44:36 2026] swap: usage 0kB, limit 0kB, failcnt 0
+[Sat Nov  7 05:44:36 2026] Memory cgroup stats for /user.slice/user-1001.slice/user@1001.service/user.slice/docker-7cb9c6d6594b67cedeb44177f2275d3bb1ee6ba3f139b96c9f4e5942f3cddeae.scope:
+[Sat Nov  7 05:44:36 2026] anon 331403264
+[Sat Nov  7 05:44:36 2026] file 172032
+[Sat Nov  7 05:44:36 2026] kernel 3801088
+[Sat Nov  7 05:44:36 2026] kernel_stack 671744
+[Sat Nov  7 05:44:36 2026] pagetables 1101824
+[Sat Nov  7 05:44:36 2026] sec_pagetables 0
+[Sat Nov  7 05:44:36 2026] percpu 6336
+[Sat Nov  7 05:44:36 2026] sock 167936
+[Sat Nov  7 05:44:36 2026] vmalloc 0
+[Sat Nov  7 05:44:36 2026] shmem 0
+[Sat Nov  7 05:44:36 2026] zswap 0
+[Sat Nov  7 05:44:36 2026] zswapped 0
+[Sat Nov  7 05:44:36 2026] zswap_incomp 0
+[Sat Nov  7 05:44:36 2026] file_mapped 0
+[Sat Nov  7 05:44:36 2026] file_dirty 4096
+[Sat Nov  7 05:44:36 2026] file_writeback 0
+[Sat Nov  7 05:44:36 2026] swapcached 0
+[Sat Nov  7 05:44:36 2026] anon_thp 0
+[Sat Nov  7 05:44:36 2026] file_thp 0
+[Sat Nov  7 05:44:36 2026] shmem_thp 0
+[Sat Nov  7 05:44:36 2026] inactive_anon 20680704
+[Sat Nov  7 05:44:36 2026] active_anon 310722560
+[Sat Nov  7 05:44:36 2026] inactive_file 20480
+[Sat Nov  7 05:44:36 2026] active_file 20480
+[Sat Nov  7 05:44:36 2026] unevictable 0
+[Sat Nov  7 05:44:36 2026] slab_reclaimable 727016
+[Sat Nov  7 05:44:36 2026] slab_unreclaimable 1241000
+[Sat Nov  7 05:44:36 2026] slab 1968016
+[Sat Nov  7 05:44:36 2026] hugetlb 0
+[Sat Nov  7 05:44:36 2026] workingset_refault_anon 0
+[Sat Nov  7 05:44:36 2026] workingset_refault_file 90640
+[Sat Nov  7 05:44:36 2026] workingset_activate_anon 0
+[Sat Nov  7 05:44:36 2026] workingset_activate_file 6545
+[Sat Nov  7 05:44:36 2026] workingset_restore_anon 0
+[Sat Nov  7 05:44:36 2026] workingset_restore_file 6572
+[Sat Nov  7 05:44:36 2026] workingset_nodereclaim 44
+[Sat Nov  7 05:44:36 2026] pgdemote_kswapd 0
+[Sat Nov  7 05:44:36 2026] pgdemote_direct 0
+[Sat Nov  7 05:44:36 2026] pgdemote_khugepaged 0
+[Sat Nov  7 05:44:36 2026] pgdemote_proactive 0
+[Sat Nov  7 05:44:36 2026] pgsteal_kswapd 9362
+[Sat Nov  7 05:44:36 2026] pgsteal_direct 123711
+[Sat Nov  7 05:44:36 2026] pgsteal_khugepaged 0
+[Sat Nov  7 05:44:36 2026] pgsteal_proactive 0
+[Sat Nov  7 05:44:36 2026] pgscan_kswapd 10229
+[Sat Nov  7 05:44:36 2026] pgscan_direct 171389
+[Sat Nov  7 05:44:36 2026] pgscan_khugepaged 0
+[Sat Nov  7 05:44:36 2026] pgscan_proactive 0
+[Sat Nov  7 05:44:36 2026] pgrefill 100442
+[Sat Nov  7 05:44:36 2026] pgpromote_success 0
+[Sat Nov  7 05:44:36 2026] pgscan 181618
+[Sat Nov  7 05:44:36 2026] pgsteal 133073
+[Sat Nov  7 05:44:36 2026] pswpin 0
+[Sat Nov  7 05:44:36 2026] pswpout 0
+[Sat Nov  7 05:44:36 2026] pgfault 4273841
+[Sat Nov  7 05:44:36 2026] pgmajfault 4875
+[Sat Nov  7 05:44:36 2026] pgactivate 45374
+[Sat Nov  7 05:44:36 2026] pgdeactivate 0
+[Sat Nov  7 05:44:36 2026] pglazyfree 0
+[Sat Nov  7 05:44:36 2026] pglazyfreed 0
+[Sat Nov  7 05:44:36 2026] swpin_zero 0
+[Sat Nov  7 05:44:36 2026] swpout_zero 0
+[Sat Nov  7 05:44:36 2026] zswpin 0
+[Sat Nov  7 05:44:36 2026] zswpout 0
+[Sat Nov  7 05:44:36 2026] zswpwb 0
+[Sat Nov  7 05:44:36 2026] thp_fault_alloc 0
+[Sat Nov  7 05:44:36 2026] thp_collapse_alloc 0
+[Sat Nov  7 05:44:36 2026] thp_swpout 0
+[Sat Nov  7 05:44:36 2026] thp_swpout_fallback 0
+[Sat Nov  7 05:44:36 2026] numa_pages_migrated 0
+[Sat Nov  7 05:44:36 2026] numa_pte_updates 0
+[Sat Nov  7 05:44:36 2026] numa_hint_faults 0
+[Sat Nov  7 05:44:36 2026] Memory cgroup min protection 0kB -- low protection 0kB
+[Sat Nov  7 05:44:36 2026] Tasks state (memory values in pages):
+[Sat Nov  7 05:44:36 2026] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[Sat Nov  7 05:44:36 2026] [ 657066]  1001 657066      277      129       11      118         0    40960        0           200 docker-init
+[Sat Nov  7 05:44:36 2026] [ 657096]  1001 657096   136476    79395    77019     2376         0   831488        0           200 ceph-mon
+[Sat Nov  7 05:44:36 2026] [3071365]  1001 3071365   154452     8211     3879     4332         0   217088        0           200 ceph
+[Sat Nov  7 05:44:36 2026] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=user.slice,mems_allowed=0,oom_memcg=/user.slice/user-1001.slice/user@1001.service/user.slice/docker-7cb9c6d6594b67cedeb44177f2275d3bb1ee6ba3f139b96c9f4e5942f3cddeae.scope,task_memcg=/user.slice/user-1001.slice/user@1001.service/user.slice/docker-7cb9c6d6594b67cedeb44177f2275d3bb1ee6ba3f139b96c9f4e5942f3cddeae.scope,task=ceph-mon,pid=657096,uid=1001
+[Sat Nov  7 05:44:36 2026] Memory cgroup out of memory: Killed process 657096 (ceph-mon) total-vm:545904kB, anon-rss:308076kB, file-rss:9504kB, shmem-rss:0kB, UID:1001 pgtables:812kB oom_score_adj:200
+[Sat Nov  7 05:44:37 2026] br-ea551213495f: port 1(veth8dd4ad5) entered disabled state
+[Sat Nov  7 05:44:37 2026] vethb4fb4dd: renamed from eth0
+[Sat Nov  7 05:44:37 2026] br-ea551213495f: port 1(veth8dd4ad5) entered disabled state
+[Sat Nov  7 05:44:37 2026] veth8dd4ad5 (unregistering): left allmulticast mode
+[Sat Nov  7 05:44:37 2026] veth8dd4ad5 (unregistering): left promiscuous mode
+[Sat Nov  7 05:44:37 2026] br-ea551213495f: port 1(veth8dd4ad5) entered disabled state
+[Sat Nov  7 05:45:09 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/257/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 05:45:10 2026] br-ea551213495f: port 1(veth60f0e0d) entered blocking state
+[Sat Nov  7 05:45:10 2026] br-ea551213495f: port 1(veth60f0e0d) entered disabled state
+[Sat Nov  7 05:45:10 2026] veth60f0e0d: entered allmulticast mode
+[Sat Nov  7 05:45:10 2026] veth60f0e0d: entered promiscuous mode
+[Sat Nov  7 05:45:11 2026] eth0: renamed from veth27ad179
+[Sat Nov  7 05:45:11 2026] br-ea551213495f: port 1(veth60f0e0d) entered blocking state
+[Sat Nov  7 05:45:11 2026] br-ea551213495f: port 1(veth60f0e0d) entered forwarding state
+[Sat Nov  7 05:45:21 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/267/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 05:45:22 2026] br-ea551213495f: port 6(vethe7c7fb5) entered blocking state
+[Sat Nov  7 05:45:22 2026] br-ea551213495f: port 6(vethe7c7fb5) entered disabled state
+[Sat Nov  7 05:45:22 2026] vethe7c7fb5: entered allmulticast mode
+[Sat Nov  7 05:45:22 2026] vethe7c7fb5: entered promiscuous mode
+[Sat Nov  7 05:45:22 2026] eth0: renamed from veth69a1a30
+[Sat Nov  7 05:45:22 2026] br-ea551213495f: port 6(vethe7c7fb5) entered blocking state
+[Sat Nov  7 05:45:22 2026] br-ea551213495f: port 6(vethe7c7fb5) entered forwarding state
+[Sat Nov  7 06:36:04 2026] docker0: port 1(veth3ce58f3) entered disabled state
+[Sat Nov  7 06:36:04 2026] veth27c89eb: renamed from eth0
+[Sat Nov  7 06:36:05 2026] docker0: port 1(veth3ce58f3) entered disabled state
+[Sat Nov  7 06:36:05 2026] veth3ce58f3 (unregistering): left allmulticast mode
+[Sat Nov  7 06:36:05 2026] veth3ce58f3 (unregistering): left promiscuous mode
+[Sat Nov  7 06:36:05 2026] docker0: port 1(veth3ce58f3) entered disabled state
+[Sat Nov  7 09:03:44 2026] kauditd_printk_skb: 7 callbacks suppressed
+[Sat Nov  7 09:03:44 2026] audit: type=1326 audit(1794038635.461:1728): auid=1001 uid=1001 gid=1001 ses=86 subj=snap.htop.htop pid=3537747 comm="infocmp" exe="/snap/htop/6664/usr/bin/infocmp" sig=0 arch=c000003e syscall=122 compat=0 ip=0x7c58b335befb code=0x50000
+[Sat Nov  7 09:03:44 2026] audit: type=1326 audit(1794038635.461:1729): auid=1001 uid=1001 gid=1001 ses=86 subj=snap.htop.htop pid=3537747 comm="infocmp" exe="/snap/htop/6664/usr/bin/infocmp" sig=0 arch=c000003e syscall=123 compat=0 ip=0x7c58b335becb code=0x50000
+[Sat Nov  7 09:03:44 2026] audit: type=1326 audit(1794038635.461:1730): auid=1001 uid=1001 gid=1001 ses=86 subj=snap.htop.htop pid=3537747 comm="infocmp" exe="/snap/htop/6664/usr/bin/infocmp" sig=0 arch=c000003e syscall=122 compat=0 ip=0x7c58b335befb code=0x50000
+[Sat Nov  7 09:03:44 2026] audit: type=1326 audit(1794038635.461:1731): auid=1001 uid=1001 gid=1001 ses=86 subj=snap.htop.htop pid=3537747 comm="infocmp" exe="/snap/htop/6664/usr/bin/infocmp" sig=0 arch=c000003e syscall=123 compat=0 ip=0x7c58b335becb code=0x50000
+[Sat Nov  7 09:03:44 2026] audit: type=1400 audit(1794038635.472:1732): apparmor="DENIED" operation="open" class="file" profile="snap.htop.htop" name="/proc/1/mounts" pid=3537722 comm="htop" requested_mask="r" denied_mask="r" fsuid=1001 ouid=0
+[Sat Nov  7 09:03:44 2026] audit: type=1326 audit(1794038635.482:1733): auid=1001 uid=1001 gid=1001 ses=86 subj=snap.htop.htop pid=3537722 comm="htop" exe="/snap/htop/6664/usr/local/bin/htop" sig=0 arch=c000003e syscall=122 compat=0 ip=0x71e0018a7efb code=0x50000
+[Sat Nov  7 09:03:44 2026] audit: type=1326 audit(1794038635.482:1734): auid=1001 uid=1001 gid=1001 ses=86 subj=snap.htop.htop pid=3537722 comm="htop" exe="/snap/htop/6664/usr/local/bin/htop" sig=0 arch=c000003e syscall=123 compat=0 ip=0x71e0018a7ecb code=0x50000
+[Sat Nov  7 09:03:44 2026] audit: type=1326 audit(1794038635.482:1735): auid=1001 uid=1001 gid=1001 ses=86 subj=snap.htop.htop pid=3537722 comm="htop" exe="/snap/htop/6664/usr/local/bin/htop" sig=0 arch=c000003e syscall=122 compat=0 ip=0x71e0018a7efb code=0x50000
+[Sat Nov  7 09:03:44 2026] audit: type=1326 audit(1794038635.482:1736): auid=1001 uid=1001 gid=1001 ses=86 subj=snap.htop.htop pid=3537722 comm="htop" exe="/snap/htop/6664/usr/local/bin/htop" sig=0 arch=c000003e syscall=123 compat=0 ip=0x71e0018a7ecb code=0x50000
+[Sat Nov  7 09:03:44 2026] audit: type=1400 audit(1794038635.483:1737): apparmor="DENIED" operation="open" class="file" profile="snap.htop.htop" name="/sys/module/zswap/parameters/enabled" pid=3537722 comm="htop" requested_mask="r" denied_mask="r" fsuid=1001 ouid=0
+[Sat Nov  7 09:07:07 2026] br-ea551213495f: port 9(veth83d54f4) entered disabled state
+[Sat Nov  7 09:07:07 2026] vethe0e781b: renamed from eth0
+[Sat Nov  7 09:07:08 2026] br-ea551213495f: port 9(veth83d54f4) entered disabled state
+[Sat Nov  7 09:07:08 2026] veth83d54f4 (unregistering): left allmulticast mode
+[Sat Nov  7 09:07:08 2026] veth83d54f4 (unregistering): left promiscuous mode
+[Sat Nov  7 09:07:08 2026] br-ea551213495f: port 9(veth83d54f4) entered disabled state
+[Sat Nov  7 09:07:09 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/308/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 09:07:09 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/309/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 09:07:10 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/309/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 09:07:10 2026] docker0: port 1(vetha4b8cc8) entered blocking state
+[Sat Nov  7 09:07:10 2026] docker0: port 1(vetha4b8cc8) entered disabled state
+[Sat Nov  7 09:07:10 2026] vetha4b8cc8: entered allmulticast mode
+[Sat Nov  7 09:07:10 2026] vetha4b8cc8: entered promiscuous mode
+[Sat Nov  7 09:07:10 2026] eth0: renamed from veth18aebaf
+[Sat Nov  7 09:07:10 2026] docker0: port 1(vetha4b8cc8) entered blocking state
+[Sat Nov  7 09:07:10 2026] docker0: port 1(vetha4b8cc8) entered forwarding state
+[Sat Nov  7 09:07:11 2026] docker0: port 1(vetha4b8cc8) entered disabled state
+[Sat Nov  7 09:07:11 2026] veth18aebaf: renamed from eth0
+[Sat Nov  7 09:07:11 2026] docker0: port 1(vetha4b8cc8) entered disabled state
+[Sat Nov  7 09:07:11 2026] vetha4b8cc8 (unregistering): left allmulticast mode
+[Sat Nov  7 09:07:11 2026] vetha4b8cc8 (unregistering): left promiscuous mode
+[Sat Nov  7 09:07:11 2026] docker0: port 1(vetha4b8cc8) entered disabled state
+[Sat Nov  7 09:07:12 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/308/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 09:07:13 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/311/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 09:07:13 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/311/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 09:07:14 2026] br-ea551213495f: port 9(vethb7c8382) entered blocking state
+[Sat Nov  7 09:07:14 2026] br-ea551213495f: port 9(vethb7c8382) entered disabled state
+[Sat Nov  7 09:07:14 2026] vethb7c8382: entered allmulticast mode
+[Sat Nov  7 09:07:14 2026] vethb7c8382: entered promiscuous mode
+[Sat Nov  7 09:07:14 2026] eth0: renamed from veth4eaf224
+[Sat Nov  7 09:07:14 2026] br-ea551213495f: port 9(vethb7c8382) entered blocking state
+[Sat Nov  7 09:07:14 2026] br-ea551213495f: port 9(vethb7c8382) entered forwarding state
+[Sat Nov  7 09:07:50 2026] eth0: Caught tx_queue_len zero misconfig
+[Sat Nov  7 09:29:39 2026] kauditd_printk_skb: 5 callbacks suppressed
+[Sat Nov  7 09:29:39 2026] audit: type=1400 audit(1794040190.609:1743): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3550255 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:46:45 2026] audit: type=1400 audit(1794041216.491:1744): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3597103 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.449:1745): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623584 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.454:1746): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623589 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.461:1747): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623597 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.462:1749): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623594 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.461:1748): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623595 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.466:1750): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623599 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.486:1751): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623604 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.506:1752): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623612 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.511:1753): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623616 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:53:19 2026] audit: type=1400 audit(1794041610.513:1754): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3623615 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] kauditd_printk_skb: 6 callbacks suppressed
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.041:1761): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643296 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.063:1762): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643299 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.066:1763): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643300 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.091:1764): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643303 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.098:1765): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643305 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.104:1766): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643306 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.129:1767): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643309 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.135:1768): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643310 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.160:1769): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643312 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:25 2026] audit: type=1400 audit(1794041676.203:1770): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3643315 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:49 2026] kauditd_printk_skb: 6 callbacks suppressed
+[Sat Nov  7 09:54:49 2026] audit: type=1400 audit(1794041700.836:1777): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3653835 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:50 2026] audit: type=1400 audit(1794041701.040:1778): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3654004 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:50 2026] audit: type=1400 audit(1794041701.279:1779): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3654139 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:50 2026] audit: type=1400 audit(1794041701.486:1780): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3654255 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:50 2026] audit: type=1400 audit(1794041701.703:1781): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3654438 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 09:54:51 2026] audit: type=1400 audit(1794041701.956:1782): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=3654613 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052512.792:1783): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119555 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052512.851:1784): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119557 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052512.864:1785): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119560 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052512.878:1786): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119561 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052512.906:1787): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119564 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052512.906:1788): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119565 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052512.926:1789): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119567 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052512.941:1790): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119569 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052512.975:1791): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119571 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:01 2026] audit: type=1400 audit(1794052513.017:1792): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=119573 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:13 2026] kauditd_printk_skb: 6 callbacks suppressed
+[Sat Nov  7 12:55:13 2026] audit: type=1400 audit(1794052524.932:1799): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=120578 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:26 2026] audit: type=1400 audit(1794052537.211:1800): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=127667 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:30 2026] audit: type=1400 audit(1794052542.001:1801): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=130589 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:31 2026] audit: type=1400 audit(1794052542.319:1802): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=130734 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:31 2026] audit: type=1400 audit(1794052542.652:1803): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=130972 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:31 2026] audit: type=1400 audit(1794052543.027:1804): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=131155 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:55:32 2026] audit: type=1400 audit(1794052543.479:1805): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=131418 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:04 2026] workqueue: delayed_vfree_work hogged CPU for >10000us 11 times, consider switching to WQ_UNBOUND
+[Sat Nov  7 12:58:29 2026] audit: type=1400 audit(1794052720.429:1806): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197706 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:29 2026] audit: type=1400 audit(1794052720.583:1807): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197723 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:30 2026] audit: type=1400 audit(1794052721.238:1808): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197775 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:30 2026] audit: type=1400 audit(1794052721.267:1809): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197778 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:30 2026] audit: type=1400 audit(1794052721.271:1810): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197779 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:30 2026] audit: type=1400 audit(1794052721.515:1811): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197782 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:31 2026] audit: type=1400 audit(1794052722.180:1812): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197787 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:31 2026] audit: type=1400 audit(1794052722.213:1813): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197791 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:32 2026] audit: type=1400 audit(1794052723.053:1814): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197833 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:32 2026] audit: type=1400 audit(1794052723.057:1815): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=197834 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:58:36 2026] kauditd_printk_skb: 6 callbacks suppressed
+[Sat Nov  7 12:58:36 2026] audit: type=1400 audit(1794052727.730:1822): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=198632 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:59:00 2026] audit: type=1400 audit(1794052751.107:1823): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=211090 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:59:00 2026] audit: type=1400 audit(1794052751.345:1824): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=211266 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:59:04 2026] audit: type=1400 audit(1794052755.275:1825): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=213385 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:59:04 2026] audit: type=1400 audit(1794052755.547:1826): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=213504 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:59:04 2026] audit: type=1400 audit(1794052755.871:1827): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=213700 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 12:59:05 2026] audit: type=1400 audit(1794052756.251:1828): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=213895 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053179.103:1829): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312027 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053179.237:1830): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312029 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053179.282:1831): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312031 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053179.293:1832): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312033 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053179.431:1833): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312035 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053179.674:1834): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312039 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053179.715:1835): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312041 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053179.842:1836): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312046 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053179.979:1837): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312049 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 13:06:08 2026] audit: type=1400 audit(1794053180.043:1838): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=312051 comm="bwrap" capability=21  capname="sys_admin"
+[Sat Nov  7 15:14:48 2026] eth0: Caught tx_queue_len zero misconfig
+[Sat Nov  7 15:44:16 2026] eth0: Caught tx_queue_len zero misconfig
+[Sat Nov  7 15:44:16 2026] GACT probability on
+[Sat Nov  7 15:53:50 2026] br-ea551213495f: port 9(vethb7c8382) entered disabled state
+[Sat Nov  7 15:53:50 2026] veth4eaf224: renamed from eth0
+[Sat Nov  7 15:53:50 2026] br-ea551213495f: port 9(vethb7c8382) entered disabled state
+[Sat Nov  7 15:53:50 2026] vethb7c8382 (unregistering): left allmulticast mode
+[Sat Nov  7 15:53:50 2026] vethb7c8382 (unregistering): left promiscuous mode
+[Sat Nov  7 15:53:50 2026] br-ea551213495f: port 9(vethb7c8382) entered disabled state
+[Sat Nov  7 15:53:54 2026] br-ea551213495f: port 8(vethb30a5f9) entered disabled state
+[Sat Nov  7 15:53:54 2026] vethc9c35ce: renamed from eth0
+[Sat Nov  7 15:53:54 2026] br-ea551213495f: port 7(vethb041914) entered disabled state
+[Sat Nov  7 15:53:54 2026] vethefd4660: renamed from eth0
+[Sat Nov  7 15:53:54 2026] br-ea551213495f: port 6(vethe7c7fb5) entered disabled state
+[Sat Nov  7 15:53:54 2026] veth69a1a30: renamed from eth0
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 8(vethb30a5f9) entered disabled state
+[Sat Nov  7 15:53:55 2026] vethb30a5f9 (unregistering): left allmulticast mode
+[Sat Nov  7 15:53:55 2026] vethb30a5f9 (unregistering): left promiscuous mode
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 8(vethb30a5f9) entered disabled state
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 1(veth60f0e0d) entered disabled state
+[Sat Nov  7 15:53:55 2026] veth27ad179: renamed from eth0
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 7(vethb041914) entered disabled state
+[Sat Nov  7 15:53:55 2026] vethb041914 (unregistering): left allmulticast mode
+[Sat Nov  7 15:53:55 2026] vethb041914 (unregistering): left promiscuous mode
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 7(vethb041914) entered disabled state
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 6(vethe7c7fb5) entered disabled state
+[Sat Nov  7 15:53:55 2026] vethe7c7fb5 (unregistering): left allmulticast mode
+[Sat Nov  7 15:53:55 2026] vethe7c7fb5 (unregistering): left promiscuous mode
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 6(vethe7c7fb5) entered disabled state
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 2(veth8e943d7) entered disabled state
+[Sat Nov  7 15:53:55 2026] veth1db3c35: renamed from eth0
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 1(veth60f0e0d) entered disabled state
+[Sat Nov  7 15:53:55 2026] veth60f0e0d (unregistering): left allmulticast mode
+[Sat Nov  7 15:53:55 2026] veth60f0e0d (unregistering): left promiscuous mode
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 1(veth60f0e0d) entered disabled state
+[Sat Nov  7 15:53:55 2026] br-ea551213495f: port 4(veth2bbcd84) entered disabled state
+[Sat Nov  7 15:53:55 2026] vethe2803ca: renamed from eth0
+[Sat Nov  7 15:53:56 2026] br-ea551213495f: port 5(veth5512ee9) entered disabled state
+[Sat Nov  7 15:53:56 2026] veth63131e5: renamed from eth0
+[Sat Nov  7 15:53:56 2026] br-ea551213495f: port 3(veth6c47106) entered disabled state
+[Sat Nov  7 15:53:56 2026] vethaae6f92: renamed from eth0
+[Sat Nov  7 15:53:56 2026] br-ea551213495f: port 2(veth8e943d7) entered disabled state
+[Sat Nov  7 15:53:56 2026] veth8e943d7 (unregistering): left allmulticast mode
+[Sat Nov  7 15:53:56 2026] veth8e943d7 (unregistering): left promiscuous mode
+[Sat Nov  7 15:53:56 2026] br-ea551213495f: port 2(veth8e943d7) entered disabled state
+[Sat Nov  7 15:53:56 2026] br-ea551213495f: port 5(veth5512ee9) entered disabled state
+[Sat Nov  7 15:53:56 2026] veth5512ee9 (unregistering): left allmulticast mode
+[Sat Nov  7 15:53:56 2026] veth5512ee9 (unregistering): left promiscuous mode
+[Sat Nov  7 15:53:56 2026] br-ea551213495f: port 5(veth5512ee9) entered disabled state
+[Sat Nov  7 15:53:56 2026] br-ea551213495f: port 4(veth2bbcd84) entered disabled state
+[Sat Nov  7 15:53:56 2026] veth2bbcd84 (unregistering): left allmulticast mode
+[Sat Nov  7 15:53:56 2026] veth2bbcd84 (unregistering): left promiscuous mode
+[Sat Nov  7 15:53:56 2026] br-ea551213495f: port 4(veth2bbcd84) entered disabled state
+[Sat Nov  7 15:53:57 2026] br-ea551213495f: port 3(veth6c47106) entered disabled state
+[Sat Nov  7 15:53:57 2026] veth6c47106 (unregistering): left allmulticast mode
+[Sat Nov  7 15:53:57 2026] veth6c47106 (unregistering): left promiscuous mode
+[Sat Nov  7 15:53:57 2026] br-ea551213495f: port 3(veth6c47106) entered disabled state
+[Sat Nov  7 15:53:58 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 15:53:59 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/313/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 15:53:59 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/313/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 15:53:59 2026] docker0: port 1(vethd65a8d0) entered blocking state
+[Sat Nov  7 15:53:59 2026] docker0: port 1(vethd65a8d0) entered disabled state
+[Sat Nov  7 15:53:59 2026] vethd65a8d0: entered allmulticast mode
+[Sat Nov  7 15:53:59 2026] vethd65a8d0: entered promiscuous mode
+[Sat Nov  7 15:53:59 2026] eth0: renamed from vethf526d58
+[Sat Nov  7 15:53:59 2026] docker0: port 1(vethd65a8d0) entered blocking state
+[Sat Nov  7 15:53:59 2026] docker0: port 1(vethd65a8d0) entered forwarding state
+[Sat Nov  7 15:54:00 2026] docker0: port 1(vethd65a8d0) entered disabled state
+[Sat Nov  7 15:54:00 2026] vethf526d58: renamed from eth0
+[Sat Nov  7 15:54:00 2026] docker0: port 1(vethd65a8d0) entered disabled state
+[Sat Nov  7 15:54:00 2026] vethd65a8d0 (unregistering): left allmulticast mode
+[Sat Nov  7 15:54:00 2026] vethd65a8d0 (unregistering): left promiscuous mode
+[Sat Nov  7 15:54:00 2026] docker0: port 1(vethd65a8d0) entered disabled state
+[Sat Nov  7 18:45:49 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:49 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/315/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:49 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/315/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:49 2026] br-7dea2b156993: port 1(vethe4cce5b) entered blocking state
+[Sat Nov  7 18:45:49 2026] br-7dea2b156993: port 1(vethe4cce5b) entered disabled state
+[Sat Nov  7 18:45:49 2026] vethe4cce5b: entered allmulticast mode
+[Sat Nov  7 18:45:49 2026] vethe4cce5b: entered promiscuous mode
+[Sat Nov  7 18:45:50 2026] eth0: renamed from veth7458c43
+[Sat Nov  7 18:45:50 2026] br-7dea2b156993: port 1(vethe4cce5b) entered blocking state
+[Sat Nov  7 18:45:50 2026] br-7dea2b156993: port 1(vethe4cce5b) entered forwarding state
+[Sat Nov  7 18:45:51 2026] br-7dea2b156993: port 1(vethe4cce5b) entered disabled state
+[Sat Nov  7 18:45:51 2026] veth7458c43: renamed from eth0
+[Sat Nov  7 18:45:51 2026] br-7dea2b156993: port 1(vethe4cce5b) entered disabled state
+[Sat Nov  7 18:45:51 2026] vethe4cce5b (unregistering): left allmulticast mode
+[Sat Nov  7 18:45:51 2026] vethe4cce5b (unregistering): left promiscuous mode
+[Sat Nov  7 18:45:51 2026] br-7dea2b156993: port 1(vethe4cce5b) entered disabled state
+[Sat Nov  7 18:45:52 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:52 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/317/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:52 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/317/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:52 2026] br-7dea2b156993: port 1(veth1e43086) entered blocking state
+[Sat Nov  7 18:45:52 2026] br-7dea2b156993: port 1(veth1e43086) entered disabled state
+[Sat Nov  7 18:45:52 2026] veth1e43086: entered allmulticast mode
+[Sat Nov  7 18:45:52 2026] veth1e43086: entered promiscuous mode
+[Sat Nov  7 18:45:52 2026] eth0: renamed from veth52f9bb8
+[Sat Nov  7 18:45:52 2026] br-7dea2b156993: port 1(veth1e43086) entered blocking state
+[Sat Nov  7 18:45:52 2026] br-7dea2b156993: port 1(veth1e43086) entered forwarding state
+[Sat Nov  7 18:45:56 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:56 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/319/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:56 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/319/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:57 2026] br-7dea2b156993: port 2(vethd793cad) entered blocking state
+[Sat Nov  7 18:45:57 2026] br-7dea2b156993: port 2(vethd793cad) entered disabled state
+[Sat Nov  7 18:45:57 2026] vethd793cad: entered allmulticast mode
+[Sat Nov  7 18:45:57 2026] vethd793cad: entered promiscuous mode
+[Sat Nov  7 18:45:57 2026] eth0: renamed from vethd25170a
+[Sat Nov  7 18:45:57 2026] br-7dea2b156993: port 2(vethd793cad) entered blocking state
+[Sat Nov  7 18:45:57 2026] br-7dea2b156993: port 2(vethd793cad) entered forwarding state
+[Sat Nov  7 18:45:57 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:57 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/321/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:57 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/321/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:45:58 2026] br-7dea2b156993: port 3(vethaa365fe) entered blocking state
+[Sat Nov  7 18:45:58 2026] br-7dea2b156993: port 3(vethaa365fe) entered disabled state
+[Sat Nov  7 18:45:58 2026] vethaa365fe: entered allmulticast mode
+[Sat Nov  7 18:45:58 2026] vethaa365fe: entered promiscuous mode
+[Sat Nov  7 18:45:58 2026] eth0: renamed from veth0e75f13
+[Sat Nov  7 18:45:58 2026] br-7dea2b156993: port 3(vethaa365fe) entered blocking state
+[Sat Nov  7 18:45:58 2026] br-7dea2b156993: port 3(vethaa365fe) entered forwarding state
+[Sat Nov  7 18:46:04 2026] br-7dea2b156993: port 3(vethaa365fe) entered disabled state
+[Sat Nov  7 18:46:04 2026] veth0e75f13: renamed from eth0
+[Sat Nov  7 18:46:04 2026] br-7dea2b156993: port 3(vethaa365fe) entered disabled state
+[Sat Nov  7 18:46:04 2026] vethaa365fe (unregistering): left allmulticast mode
+[Sat Nov  7 18:46:04 2026] vethaa365fe (unregistering): left promiscuous mode
+[Sat Nov  7 18:46:04 2026] br-7dea2b156993: port 3(vethaa365fe) entered disabled state
+[Sat Nov  7 18:46:05 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:05 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/323/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:05 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/323/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:06 2026] br-7dea2b156993: port 3(vetha31f54e) entered blocking state
+[Sat Nov  7 18:46:06 2026] br-7dea2b156993: port 3(vetha31f54e) entered disabled state
+[Sat Nov  7 18:46:06 2026] vetha31f54e: entered allmulticast mode
+[Sat Nov  7 18:46:06 2026] vetha31f54e: entered promiscuous mode
+[Sat Nov  7 18:46:06 2026] eth0: renamed from vethcbb26a4
+[Sat Nov  7 18:46:06 2026] br-7dea2b156993: port 3(vetha31f54e) entered blocking state
+[Sat Nov  7 18:46:06 2026] br-7dea2b156993: port 3(vetha31f54e) entered forwarding state
+[Sat Nov  7 18:46:06 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:06 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/325/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:07 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/325/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:07 2026] br-7dea2b156993: port 4(vethf122344) entered blocking state
+[Sat Nov  7 18:46:07 2026] br-7dea2b156993: port 4(vethf122344) entered disabled state
+[Sat Nov  7 18:46:07 2026] vethf122344: entered allmulticast mode
+[Sat Nov  7 18:46:07 2026] vethf122344: entered promiscuous mode
+[Sat Nov  7 18:46:07 2026] eth0: renamed from veth7d95fbf
+[Sat Nov  7 18:46:07 2026] br-7dea2b156993: port 4(vethf122344) entered blocking state
+[Sat Nov  7 18:46:07 2026] br-7dea2b156993: port 4(vethf122344) entered forwarding state
+[Sat Nov  7 18:46:15 2026] br-7dea2b156993: port 4(vethf122344) entered disabled state
+[Sat Nov  7 18:46:15 2026] veth7d95fbf: renamed from eth0
+[Sat Nov  7 18:46:15 2026] br-7dea2b156993: port 4(vethf122344) entered disabled state
+[Sat Nov  7 18:46:15 2026] vethf122344 (unregistering): left allmulticast mode
+[Sat Nov  7 18:46:15 2026] vethf122344 (unregistering): left promiscuous mode
+[Sat Nov  7 18:46:15 2026] br-7dea2b156993: port 4(vethf122344) entered disabled state
+[Sat Nov  7 18:46:16 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:16 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/327/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:16 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/327/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:16 2026] br-7dea2b156993: port 4(veth08cb154) entered blocking state
+[Sat Nov  7 18:46:16 2026] br-7dea2b156993: port 4(veth08cb154) entered disabled state
+[Sat Nov  7 18:46:16 2026] veth08cb154: entered allmulticast mode
+[Sat Nov  7 18:46:16 2026] veth08cb154: entered promiscuous mode
+[Sat Nov  7 18:46:16 2026] eth0: renamed from veth89c621e
+[Sat Nov  7 18:46:16 2026] br-7dea2b156993: port 4(veth08cb154) entered blocking state
+[Sat Nov  7 18:46:16 2026] br-7dea2b156993: port 4(veth08cb154) entered forwarding state
+[Sat Nov  7 18:46:17 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:17 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/329/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:17 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/329/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:18 2026] br-7dea2b156993: port 5(veth39966f9) entered blocking state
+[Sat Nov  7 18:46:18 2026] br-7dea2b156993: port 5(veth39966f9) entered disabled state
+[Sat Nov  7 18:46:18 2026] veth39966f9: entered allmulticast mode
+[Sat Nov  7 18:46:18 2026] veth39966f9: entered promiscuous mode
+[Sat Nov  7 18:46:18 2026] eth0: renamed from veth6dae1c1
+[Sat Nov  7 18:46:18 2026] br-7dea2b156993: port 5(veth39966f9) entered blocking state
+[Sat Nov  7 18:46:18 2026] br-7dea2b156993: port 5(veth39966f9) entered forwarding state
+[Sat Nov  7 18:46:26 2026] br-7dea2b156993: port 5(veth39966f9) entered disabled state
+[Sat Nov  7 18:46:26 2026] veth6dae1c1: renamed from eth0
+[Sat Nov  7 18:46:26 2026] br-7dea2b156993: port 5(veth39966f9) entered disabled state
+[Sat Nov  7 18:46:26 2026] veth39966f9 (unregistering): left allmulticast mode
+[Sat Nov  7 18:46:26 2026] veth39966f9 (unregistering): left promiscuous mode
+[Sat Nov  7 18:46:26 2026] br-7dea2b156993: port 5(veth39966f9) entered disabled state
+[Sat Nov  7 18:46:27 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:28 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/331/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:28 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/331/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:28 2026] br-7dea2b156993: port 5(veth7d1bd0f) entered blocking state
+[Sat Nov  7 18:46:28 2026] br-7dea2b156993: port 5(veth7d1bd0f) entered disabled state
+[Sat Nov  7 18:46:28 2026] veth7d1bd0f: entered allmulticast mode
+[Sat Nov  7 18:46:28 2026] veth7d1bd0f: entered promiscuous mode
+[Sat Nov  7 18:46:28 2026] eth0: renamed from veth0762639
+[Sat Nov  7 18:46:28 2026] br-7dea2b156993: port 5(veth7d1bd0f) entered blocking state
+[Sat Nov  7 18:46:28 2026] br-7dea2b156993: port 5(veth7d1bd0f) entered forwarding state
+[Sat Nov  7 18:46:29 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:29 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/333/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:29 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/333/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:30 2026] br-7dea2b156993: port 6(veth255736d) entered blocking state
+[Sat Nov  7 18:46:30 2026] br-7dea2b156993: port 6(veth255736d) entered disabled state
+[Sat Nov  7 18:46:30 2026] veth255736d: entered allmulticast mode
+[Sat Nov  7 18:46:30 2026] veth255736d: entered promiscuous mode
+[Sat Nov  7 18:46:30 2026] eth0: renamed from vethc16e506
+[Sat Nov  7 18:46:30 2026] br-7dea2b156993: port 6(veth255736d) entered blocking state
+[Sat Nov  7 18:46:30 2026] br-7dea2b156993: port 6(veth255736d) entered forwarding state
+[Sat Nov  7 18:46:46 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:46 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/335/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:46 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/335/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:47 2026] br-7dea2b156993: port 7(vethf9ebbf7) entered blocking state
+[Sat Nov  7 18:46:47 2026] br-7dea2b156993: port 7(vethf9ebbf7) entered disabled state
+[Sat Nov  7 18:46:47 2026] vethf9ebbf7: entered allmulticast mode
+[Sat Nov  7 18:46:47 2026] vethf9ebbf7: entered promiscuous mode
+[Sat Nov  7 18:46:47 2026] eth0: renamed from veth3275a36
+[Sat Nov  7 18:46:47 2026] br-7dea2b156993: port 7(vethf9ebbf7) entered blocking state
+[Sat Nov  7 18:46:47 2026] br-7dea2b156993: port 7(vethf9ebbf7) entered forwarding state
+[Sat Nov  7 18:46:48 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:48 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/337/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:48 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/337/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 18:46:48 2026] br-7dea2b156993: port 8(veth9c393b6) entered blocking state
+[Sat Nov  7 18:46:48 2026] br-7dea2b156993: port 8(veth9c393b6) entered disabled state
+[Sat Nov  7 18:46:48 2026] veth9c393b6: entered allmulticast mode
+[Sat Nov  7 18:46:48 2026] veth9c393b6: entered promiscuous mode
+[Sat Nov  7 18:46:49 2026] eth0: renamed from veth2d788ad
+[Sat Nov  7 18:46:49 2026] br-7dea2b156993: port 8(veth9c393b6) entered blocking state
+[Sat Nov  7 18:46:49 2026] br-7dea2b156993: port 8(veth9c393b6) entered forwarding state
+[Sat Nov  7 18:48:13 2026] eth0: Caught tx_queue_len zero misconfig
+[Sat Nov  7 18:55:06 2026] eth0: Caught tx_queue_len zero misconfig
+[Sat Nov  7 18:58:00 2026] INFO: task fn_anonymous:934613 blocked in I/O wait for more than 122 seconds.
+[Sat Nov  7 18:58:00 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 18:58:00 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 18:58:00 2026] task:fn_anonymous    state:D stack:0     pid:934613 tgid:934575 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 18:58:00 2026] Call Trace:
+[Sat Nov  7 18:58:00 2026]  <TASK>
+[Sat Nov  7 18:58:00 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 18:58:00 2026]  schedule+0x28/0xb0
+[Sat Nov  7 18:58:00 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 18:58:00 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 18:58:00 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 18:58:00 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 18:58:00 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 18:58:00 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 18:58:00 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 18:58:00 2026]  ? post_alloc_hook+0x78/0x120
+[Sat Nov  7 18:58:00 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 18:58:00 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 18:58:00 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 18:58:00 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 18:58:00 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 18:58:00 2026]  do_writev+0x85/0x120
+[Sat Nov  7 18:58:00 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 18:58:00 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 18:58:00 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 18:58:00 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 18:58:00 2026]  ? do_futex+0xeb/0x2d0
+[Sat Nov  7 18:58:00 2026]  ? __x64_sys_futex+0x120/0x210
+[Sat Nov  7 18:58:00 2026]  ? x64_sys_call+0xf32/0x23d0
+[Sat Nov  7 18:58:00 2026]  ? do_syscall_64+0xf6/0x550
+[Sat Nov  7 18:58:00 2026]  ? count_memcg_events+0xec/0x240
+[Sat Nov  7 18:58:00 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 18:58:00 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 18:58:00 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 18:58:00 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 18:58:00 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 18:58:00 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 18:58:00 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 18:58:00 2026] RIP: 0033:0x786e2c33bf4d
+[Sat Nov  7 18:58:00 2026] RSP: 002b:0000786e18ff7050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 18:58:00 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 0000786e2c33bf4d
+[Sat Nov  7 18:58:00 2026] RDX: 0000000000000002 RSI: 0000786e18ff70d0 RDI: 0000000000000016
+[Sat Nov  7 18:58:00 2026] RBP: 0000786e18ff70d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 18:58:00 2026] R10: 0000000000000000 R11: 0000000000000293 R12: 00005e22d1113a30
+[Sat Nov  7 18:58:00 2026] R13: 000001000000080c R14: 00005e22d0ff6ac0 R15: 00005e22cc10c0cb
+[Sat Nov  7 18:58:00 2026]  </TASK>
+[Sat Nov  7 19:00:03 2026] INFO: task fn_anonymous:934613 blocked in I/O wait for more than 245 seconds.
+[Sat Nov  7 19:00:03 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:00:03 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:00:03 2026] task:fn_anonymous    state:D stack:0     pid:934613 tgid:934575 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:00:03 2026] Call Trace:
+[Sat Nov  7 19:00:03 2026]  <TASK>
+[Sat Nov  7 19:00:03 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:00:03 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:00:03 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:00:03 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:00:03 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:00:03 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:00:03 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:00:03 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:00:03 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:00:03 2026]  ? post_alloc_hook+0x78/0x120
+[Sat Nov  7 19:00:03 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:00:03 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:00:03 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:00:03 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:00:03 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:00:03 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:00:03 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:00:03 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:00:03 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:00:03 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:00:03 2026]  ? do_futex+0xeb/0x2d0
+[Sat Nov  7 19:00:03 2026]  ? __x64_sys_futex+0x120/0x210
+[Sat Nov  7 19:00:03 2026]  ? x64_sys_call+0xf32/0x23d0
+[Sat Nov  7 19:00:03 2026]  ? do_syscall_64+0xf6/0x550
+[Sat Nov  7 19:00:03 2026]  ? count_memcg_events+0xec/0x240
+[Sat Nov  7 19:00:03 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 19:00:03 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:00:03 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:00:03 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:00:03 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:00:03 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:00:03 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:00:03 2026] RIP: 0033:0x786e2c33bf4d
+[Sat Nov  7 19:00:03 2026] RSP: 002b:0000786e18ff7050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:00:03 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 0000786e2c33bf4d
+[Sat Nov  7 19:00:03 2026] RDX: 0000000000000002 RSI: 0000786e18ff70d0 RDI: 0000000000000016
+[Sat Nov  7 19:00:03 2026] RBP: 0000786e18ff70d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:00:03 2026] R10: 0000000000000000 R11: 0000000000000293 R12: 00005e22d1113a30
+[Sat Nov  7 19:00:03 2026] R13: 000001000000080c R14: 00005e22d0ff6ac0 R15: 00005e22cc10c0cb
+[Sat Nov  7 19:00:03 2026]  </TASK>
+[Sat Nov  7 19:00:03 2026] INFO: task fallocate:947100 blocked in I/O wait for more than 122 seconds.
+[Sat Nov  7 19:00:03 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:00:03 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:00:03 2026] task:fallocate       state:D stack:0     pid:947100 tgid:947100 ppid:934280 task_flags:0x400000 flags:0x00080800
+[Sat Nov  7 19:00:03 2026] Call Trace:
+[Sat Nov  7 19:00:03 2026]  <TASK>
+[Sat Nov  7 19:00:03 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:00:03 2026]  ? psi_group_change+0x195/0x460
+[Sat Nov  7 19:00:03 2026]  ? pick_task_fair+0x488/0x7f0
+[Sat Nov  7 19:00:03 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:00:03 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:00:03 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:00:03 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:00:03 2026]  __filemap_get_folio_mpol+0x29c/0x400
+[Sat Nov  7 19:00:03 2026]  truncate_inode_pages_range+0x1e8/0x560
+[Sat Nov  7 19:00:03 2026]  truncate_pagecache_range+0x85/0xa0
+[Sat Nov  7 19:00:03 2026]  fuse_file_fallocate+0x3f4/0x430
+[Sat Nov  7 19:00:03 2026]  vfs_fallocate+0x178/0x3b0
+[Sat Nov  7 19:00:03 2026]  __x64_sys_fallocate+0x4a/0xc0
+[Sat Nov  7 19:00:03 2026]  x64_sys_call+0x16f6/0x23d0
+[Sat Nov  7 19:00:03 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:00:03 2026]  ? putname+0x41/0x90
+[Sat Nov  7 19:00:03 2026]  ? do_sys_openat2+0x9a/0xe0
+[Sat Nov  7 19:00:03 2026]  ? restore_fpregs_from_fpstate+0x46/0xe0
+[Sat Nov  7 19:00:03 2026]  ? switch_fpu_return+0x64/0x100
+[Sat Nov  7 19:00:03 2026]  ? do_syscall_64+0x28b/0x550
+[Sat Nov  7 19:00:03 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 19:00:03 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:00:03 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:00:03 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:00:03 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:00:03 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:00:03 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:00:03 2026] RIP: 0033:0x7755931c2e9a
+[Sat Nov  7 19:00:03 2026] RSP: 002b:00007ffd59e91288 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[Sat Nov  7 19:00:03 2026] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007755931c2e9a
+[Sat Nov  7 19:00:03 2026] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[Sat Nov  7 19:00:03 2026] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[Sat Nov  7 19:00:03 2026] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffd59e914f8
+[Sat Nov  7 19:00:03 2026] R13: 00005bce1114a12c R14: 00005bce1114bac0 R15: 0000000000000000
+[Sat Nov  7 19:00:03 2026]  </TASK>
+[Sat Nov  7 19:06:12 2026] INFO: task fn_anonymous:952921 blocked in I/O wait for more than 122 seconds.
+[Sat Nov  7 19:06:12 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:06:12 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:06:12 2026] task:fn_anonymous    state:D stack:0     pid:952921 tgid:952578 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:06:12 2026] Call Trace:
+[Sat Nov  7 19:06:12 2026]  <TASK>
+[Sat Nov  7 19:06:12 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:06:12 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:06:12 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:06:12 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:06:12 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:06:12 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:06:12 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:06:12 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:06:12 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:06:12 2026]  ? update_cfs_rq_load_avg+0x1e/0x260
+[Sat Nov  7 19:06:12 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:06:12 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:06:12 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:06:12 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:06:12 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:06:12 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:06:12 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:06:12 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:06:12 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:06:12 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:06:12 2026]  ? do_futex+0xeb/0x2d0
+[Sat Nov  7 19:06:12 2026]  ? __x64_sys_futex+0x120/0x210
+[Sat Nov  7 19:06:12 2026]  ? do_syscall_64+0x28b/0x550
+[Sat Nov  7 19:06:12 2026]  ? exit_to_user_mode_loop+0x414/0x5b0
+[Sat Nov  7 19:06:12 2026]  ? do_syscall_64+0x28b/0x550
+[Sat Nov  7 19:06:12 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:06:12 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:06:12 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:06:12 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:06:12 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:06:12 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:06:12 2026] RIP: 0033:0x7b2be24b6f4d
+[Sat Nov  7 19:06:12 2026] RSP: 002b:00007b2bceffb050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:06:12 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007b2be24b6f4d
+[Sat Nov  7 19:06:12 2026] RDX: 0000000000000002 RSI: 00007b2bceffb0d0 RDI: 0000000000000016
+[Sat Nov  7 19:06:12 2026] RBP: 00007b2bceffb0d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:06:12 2026] R10: 0000000000000000 R11: 0000000000000293 R12: 0000583dc776aa40
+[Sat Nov  7 19:06:12 2026] R13: 0000010000000844 R14: 0000583dc764dac0 R15: 0000583dbf8e50cb
+[Sat Nov  7 19:06:12 2026]  </TASK>
+[Sat Nov  7 19:06:12 2026] INFO: task fallocate:959445 blocked in I/O wait for more than 122 seconds.
+[Sat Nov  7 19:06:12 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:06:12 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:06:12 2026] task:fallocate       state:D stack:0     pid:959445 tgid:959445 ppid:934280 task_flags:0x400000 flags:0x00080800
+[Sat Nov  7 19:06:12 2026] Call Trace:
+[Sat Nov  7 19:06:12 2026]  <TASK>
+[Sat Nov  7 19:06:12 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:06:12 2026]  ? psi_group_change+0x195/0x460
+[Sat Nov  7 19:06:12 2026]  ? pick_task_fair+0x488/0x7f0
+[Sat Nov  7 19:06:12 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:06:12 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:06:12 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:06:12 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:06:12 2026]  __filemap_get_folio_mpol+0x29c/0x400
+[Sat Nov  7 19:06:12 2026]  truncate_inode_pages_range+0x1e8/0x560
+[Sat Nov  7 19:06:12 2026]  truncate_pagecache_range+0x85/0xa0
+[Sat Nov  7 19:06:12 2026]  fuse_file_fallocate+0x3f4/0x430
+[Sat Nov  7 19:06:12 2026]  vfs_fallocate+0x178/0x3b0
+[Sat Nov  7 19:06:12 2026]  __x64_sys_fallocate+0x4a/0xc0
+[Sat Nov  7 19:06:12 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:06:12 2026]  x64_sys_call+0x16f6/0x23d0
+[Sat Nov  7 19:06:12 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:06:12 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:06:12 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:06:12 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:06:12 2026] RIP: 0033:0x709755835e9a
+[Sat Nov  7 19:06:12 2026] RSP: 002b:00007ffc66b60dd8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[Sat Nov  7 19:06:12 2026] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 0000709755835e9a
+[Sat Nov  7 19:06:12 2026] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[Sat Nov  7 19:06:12 2026] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[Sat Nov  7 19:06:12 2026] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffc66b61048
+[Sat Nov  7 19:06:12 2026] R13: 000060d3748a812c R14: 000060d3748a9ac0 R15: 0000000000000000
+[Sat Nov  7 19:06:12 2026]  </TASK>
+[Sat Nov  7 19:08:15 2026] INFO: task fn_anonymous:952921 blocked in I/O wait for more than 245 seconds.
+[Sat Nov  7 19:08:15 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:08:15 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:08:15 2026] task:fn_anonymous    state:D stack:0     pid:952921 tgid:952578 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:08:15 2026] Call Trace:
+[Sat Nov  7 19:08:15 2026]  <TASK>
+[Sat Nov  7 19:08:15 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:08:15 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:08:15 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:08:15 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:08:15 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:08:15 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:08:15 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:08:15 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:08:15 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:08:15 2026]  ? update_cfs_rq_load_avg+0x1e/0x260
+[Sat Nov  7 19:08:15 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:08:15 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:08:15 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:08:15 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:08:15 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:08:15 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:08:15 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:08:15 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:08:15 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:08:15 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:08:15 2026]  ? do_futex+0xeb/0x2d0
+[Sat Nov  7 19:08:15 2026]  ? __x64_sys_futex+0x120/0x210
+[Sat Nov  7 19:08:15 2026]  ? do_syscall_64+0x28b/0x550
+[Sat Nov  7 19:08:15 2026]  ? exit_to_user_mode_loop+0x414/0x5b0
+[Sat Nov  7 19:08:15 2026]  ? do_syscall_64+0x28b/0x550
+[Sat Nov  7 19:08:15 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:08:15 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:08:15 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:08:15 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:08:15 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:08:15 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:08:15 2026] RIP: 0033:0x7b2be24b6f4d
+[Sat Nov  7 19:08:15 2026] RSP: 002b:00007b2bceffb050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:08:15 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007b2be24b6f4d
+[Sat Nov  7 19:08:15 2026] RDX: 0000000000000002 RSI: 00007b2bceffb0d0 RDI: 0000000000000016
+[Sat Nov  7 19:08:15 2026] RBP: 00007b2bceffb0d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:08:15 2026] R10: 0000000000000000 R11: 0000000000000293 R12: 0000583dc776aa40
+[Sat Nov  7 19:08:15 2026] R13: 0000010000000844 R14: 0000583dc764dac0 R15: 0000583dbf8e50cb
+[Sat Nov  7 19:08:15 2026]  </TASK>
+[Sat Nov  7 19:08:15 2026] INFO: task fallocate:959445 blocked in I/O wait for more than 245 seconds.
+[Sat Nov  7 19:08:15 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:08:15 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:08:15 2026] task:fallocate       state:D stack:0     pid:959445 tgid:959445 ppid:934280 task_flags:0x400000 flags:0x00080800
+[Sat Nov  7 19:08:15 2026] Call Trace:
+[Sat Nov  7 19:08:15 2026]  <TASK>
+[Sat Nov  7 19:08:15 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:08:15 2026]  ? psi_group_change+0x195/0x460
+[Sat Nov  7 19:08:15 2026]  ? pick_task_fair+0x488/0x7f0
+[Sat Nov  7 19:08:15 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:08:15 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:08:15 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:08:15 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:08:15 2026]  __filemap_get_folio_mpol+0x29c/0x400
+[Sat Nov  7 19:08:15 2026]  truncate_inode_pages_range+0x1e8/0x560
+[Sat Nov  7 19:08:15 2026]  truncate_pagecache_range+0x85/0xa0
+[Sat Nov  7 19:08:15 2026]  fuse_file_fallocate+0x3f4/0x430
+[Sat Nov  7 19:08:15 2026]  vfs_fallocate+0x178/0x3b0
+[Sat Nov  7 19:08:15 2026]  __x64_sys_fallocate+0x4a/0xc0
+[Sat Nov  7 19:08:15 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:08:15 2026]  x64_sys_call+0x16f6/0x23d0
+[Sat Nov  7 19:08:15 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:08:15 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:08:15 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:08:15 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:08:15 2026] RIP: 0033:0x709755835e9a
+[Sat Nov  7 19:08:15 2026] RSP: 002b:00007ffc66b60dd8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[Sat Nov  7 19:08:15 2026] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 0000709755835e9a
+[Sat Nov  7 19:08:15 2026] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[Sat Nov  7 19:08:15 2026] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[Sat Nov  7 19:08:15 2026] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffc66b61048
+[Sat Nov  7 19:08:15 2026] R13: 000060d3748a812c R14: 000060d3748a9ac0 R15: 0000000000000000
+[Sat Nov  7 19:08:15 2026]  </TASK>
+[Sat Nov  7 19:10:18 2026] INFO: task fn_anonymous:952921 blocked in I/O wait for more than 368 seconds.
+[Sat Nov  7 19:10:18 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:10:18 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:10:18 2026] task:fn_anonymous    state:D stack:0     pid:952921 tgid:952578 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:10:18 2026] Call Trace:
+[Sat Nov  7 19:10:18 2026]  <TASK>
+[Sat Nov  7 19:10:18 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:10:18 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:10:18 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:10:18 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:10:18 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:10:18 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:10:18 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:10:18 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:10:18 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:10:18 2026]  ? update_cfs_rq_load_avg+0x1e/0x260
+[Sat Nov  7 19:10:18 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:10:18 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:10:18 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:10:18 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:10:18 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:10:18 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:10:18 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:10:18 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:10:18 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:10:18 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:10:18 2026]  ? do_futex+0xeb/0x2d0
+[Sat Nov  7 19:10:18 2026]  ? __x64_sys_futex+0x120/0x210
+[Sat Nov  7 19:10:18 2026]  ? do_syscall_64+0x28b/0x550
+[Sat Nov  7 19:10:18 2026]  ? exit_to_user_mode_loop+0x414/0x5b0
+[Sat Nov  7 19:10:18 2026]  ? do_syscall_64+0x28b/0x550
+[Sat Nov  7 19:10:18 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:10:18 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:10:18 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:10:18 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:10:18 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:10:18 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:10:18 2026] RIP: 0033:0x7b2be24b6f4d
+[Sat Nov  7 19:10:18 2026] RSP: 002b:00007b2bceffb050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:10:18 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007b2be24b6f4d
+[Sat Nov  7 19:10:18 2026] RDX: 0000000000000002 RSI: 00007b2bceffb0d0 RDI: 0000000000000016
+[Sat Nov  7 19:10:18 2026] RBP: 00007b2bceffb0d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:10:18 2026] R10: 0000000000000000 R11: 0000000000000293 R12: 0000583dc776aa40
+[Sat Nov  7 19:10:18 2026] R13: 0000010000000844 R14: 0000583dc764dac0 R15: 0000583dbf8e50cb
+[Sat Nov  7 19:10:18 2026]  </TASK>
+[Sat Nov  7 19:10:18 2026] INFO: task fallocate:959445 blocked in I/O wait for more than 368 seconds.
+[Sat Nov  7 19:10:18 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:10:18 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:10:18 2026] task:fallocate       state:D stack:0     pid:959445 tgid:959445 ppid:934280 task_flags:0x400000 flags:0x00080800
+[Sat Nov  7 19:10:18 2026] Call Trace:
+[Sat Nov  7 19:10:18 2026]  <TASK>
+[Sat Nov  7 19:10:18 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:10:18 2026]  ? psi_group_change+0x195/0x460
+[Sat Nov  7 19:10:18 2026]  ? pick_task_fair+0x488/0x7f0
+[Sat Nov  7 19:10:18 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:10:18 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:10:18 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:10:18 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:10:18 2026]  __filemap_get_folio_mpol+0x29c/0x400
+[Sat Nov  7 19:10:18 2026]  truncate_inode_pages_range+0x1e8/0x560
+[Sat Nov  7 19:10:18 2026]  truncate_pagecache_range+0x85/0xa0
+[Sat Nov  7 19:10:18 2026]  fuse_file_fallocate+0x3f4/0x430
+[Sat Nov  7 19:10:18 2026]  vfs_fallocate+0x178/0x3b0
+[Sat Nov  7 19:10:18 2026]  __x64_sys_fallocate+0x4a/0xc0
+[Sat Nov  7 19:10:18 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:10:18 2026]  x64_sys_call+0x16f6/0x23d0
+[Sat Nov  7 19:10:18 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:10:18 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:10:18 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:10:18 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:10:18 2026] RIP: 0033:0x709755835e9a
+[Sat Nov  7 19:10:18 2026] RSP: 002b:00007ffc66b60dd8 EFLAGS: 00000246 ORIG_RAX: 000000000000011d
+[Sat Nov  7 19:10:18 2026] RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 0000709755835e9a
+[Sat Nov  7 19:10:18 2026] RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000003
+[Sat Nov  7 19:10:18 2026] RBP: 0000000000000003 R08: 0000000000000001 R09: 0000000000000000
+[Sat Nov  7 19:10:18 2026] R10: 0000000000400000 R11: 0000000000000246 R12: 00007ffc66b61048
+[Sat Nov  7 19:10:18 2026] R13: 000060d3748a812c R14: 000060d3748a9ac0 R15: 0000000000000000
+[Sat Nov  7 19:10:18 2026]  </TASK>
+[Sat Nov  7 19:13:19 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/308/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 19:13:19 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/339/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 19:13:19 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/339/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 19:13:19 2026] docker0: port 1(vethc096ca9) entered blocking state
+[Sat Nov  7 19:13:19 2026] docker0: port 1(vethc096ca9) entered disabled state
+[Sat Nov  7 19:13:19 2026] vethc096ca9: entered allmulticast mode
+[Sat Nov  7 19:13:19 2026] vethc096ca9: entered promiscuous mode
+[Sat Nov  7 19:13:20 2026] eth0: renamed from vethf83a661
+[Sat Nov  7 19:13:20 2026] docker0: port 1(vethc096ca9) entered blocking state
+[Sat Nov  7 19:13:20 2026] docker0: port 1(vethc096ca9) entered forwarding state
+[Sat Nov  7 19:13:20 2026] docker0: port 1(vethc096ca9) entered disabled state
+[Sat Nov  7 19:13:20 2026] vethf83a661: renamed from eth0
+[Sat Nov  7 19:13:20 2026] docker0: port 1(vethc096ca9) entered disabled state
+[Sat Nov  7 19:13:20 2026] vethc096ca9 (unregistering): left allmulticast mode
+[Sat Nov  7 19:13:20 2026] vethc096ca9 (unregistering): left promiscuous mode
+[Sat Nov  7 19:13:20 2026] docker0: port 1(vethc096ca9) entered disabled state
+[Sat Nov  7 19:13:21 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/308/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 19:13:21 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/341/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 19:13:21 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/341/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 19:13:22 2026] br-7dea2b156993: port 9(veth3b8dcb6) entered blocking state
+[Sat Nov  7 19:13:22 2026] br-7dea2b156993: port 9(veth3b8dcb6) entered disabled state
+[Sat Nov  7 19:13:22 2026] veth3b8dcb6: entered allmulticast mode
+[Sat Nov  7 19:13:22 2026] veth3b8dcb6: entered promiscuous mode
+[Sat Nov  7 19:13:22 2026] eth0: renamed from veth973ead6
+[Sat Nov  7 19:13:22 2026] br-7dea2b156993: port 9(veth3b8dcb6) entered blocking state
+[Sat Nov  7 19:13:22 2026] br-7dea2b156993: port 9(veth3b8dcb6) entered forwarding state
+[Sat Nov  7 19:22:35 2026] INFO: task fn_anonymous:1000373 blocked in I/O wait for more than 122 seconds.
+[Sat Nov  7 19:22:35 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:22:35 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:22:35 2026] task:fn_anonymous    state:D stack:0     pid:1000373 tgid:1000335 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:22:35 2026] Call Trace:
+[Sat Nov  7 19:22:35 2026]  <TASK>
+[Sat Nov  7 19:22:35 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:22:35 2026]  ? mas_store_prealloc+0x1b8/0x530
+[Sat Nov  7 19:22:35 2026]  ? kmem_cache_alloc_noprof+0x293/0x440
+[Sat Nov  7 19:22:35 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:22:35 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:22:35 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:22:35 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:22:35 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:22:35 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:22:35 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:22:35 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:22:35 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:22:35 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:22:35 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:22:35 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:22:35 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:22:35 2026]  ? __pte_offset_map+0x1c/0x130
+[Sat Nov  7 19:22:35 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:22:35 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:22:35 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:22:35 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:22:35 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:22:35 2026]  ? count_memcg_events+0xec/0x240
+[Sat Nov  7 19:22:35 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 19:22:35 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:22:35 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:22:35 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:22:35 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:22:35 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:22:35 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:22:35 2026] RIP: 0033:0x7e2250560f4d
+[Sat Nov  7 19:22:35 2026] RSP: 002b:00007e223cff7050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:22:35 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007e2250560f4d
+[Sat Nov  7 19:22:35 2026] RDX: 0000000000000002 RSI: 00007e223cff70d0 RDI: 0000000000000016
+[Sat Nov  7 19:22:35 2026] RBP: 00007e223cff70d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:22:35 2026] R10: 0000000000000001 R11: 0000000000000293 R12: 00005b8abff04820
+[Sat Nov  7 19:22:35 2026] R13: 00000100000008e2 R14: 00005b8abfde9ac0 R15: 00005b8a8c5df0cb
+[Sat Nov  7 19:22:35 2026]  </TASK>
+[Sat Nov  7 19:24:38 2026] INFO: task fn_anonymous:1000373 blocked in I/O wait for more than 245 seconds.
+[Sat Nov  7 19:24:38 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:24:38 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:24:38 2026] task:fn_anonymous    state:D stack:0     pid:1000373 tgid:1000335 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:24:38 2026] Call Trace:
+[Sat Nov  7 19:24:38 2026]  <TASK>
+[Sat Nov  7 19:24:38 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:24:38 2026]  ? mas_store_prealloc+0x1b8/0x530
+[Sat Nov  7 19:24:38 2026]  ? kmem_cache_alloc_noprof+0x293/0x440
+[Sat Nov  7 19:24:38 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:24:38 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:24:38 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:24:38 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:24:38 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:24:38 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:24:38 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:24:38 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:24:38 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:24:38 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:24:38 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:24:38 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:24:38 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:24:38 2026]  ? __pte_offset_map+0x1c/0x130
+[Sat Nov  7 19:24:38 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:24:38 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:24:38 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:24:38 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:24:38 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:24:38 2026]  ? count_memcg_events+0xec/0x240
+[Sat Nov  7 19:24:38 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 19:24:38 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:24:38 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:24:38 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:24:38 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:24:38 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:24:38 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:24:38 2026] RIP: 0033:0x7e2250560f4d
+[Sat Nov  7 19:24:38 2026] RSP: 002b:00007e223cff7050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:24:38 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007e2250560f4d
+[Sat Nov  7 19:24:38 2026] RDX: 0000000000000002 RSI: 00007e223cff70d0 RDI: 0000000000000016
+[Sat Nov  7 19:24:38 2026] RBP: 00007e223cff70d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:24:38 2026] R10: 0000000000000001 R11: 0000000000000293 R12: 00005b8abff04820
+[Sat Nov  7 19:24:38 2026] R13: 00000100000008e2 R14: 00005b8abfde9ac0 R15: 00005b8a8c5df0cb
+[Sat Nov  7 19:24:38 2026]  </TASK>
+[Sat Nov  7 19:26:41 2026] INFO: task fn_anonymous:1000373 blocked in I/O wait for more than 368 seconds.
+[Sat Nov  7 19:26:41 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:26:41 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:26:41 2026] task:fn_anonymous    state:D stack:0     pid:1000373 tgid:1000335 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:26:41 2026] Call Trace:
+[Sat Nov  7 19:26:41 2026]  <TASK>
+[Sat Nov  7 19:26:41 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:26:41 2026]  ? mas_store_prealloc+0x1b8/0x530
+[Sat Nov  7 19:26:41 2026]  ? kmem_cache_alloc_noprof+0x293/0x440
+[Sat Nov  7 19:26:41 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:26:41 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:26:41 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:26:41 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:26:41 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:26:41 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:26:41 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:26:41 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:26:41 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:26:41 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:26:41 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:26:41 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:26:41 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:26:41 2026]  ? __pte_offset_map+0x1c/0x130
+[Sat Nov  7 19:26:41 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:26:41 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:26:41 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:26:41 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:26:41 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:26:41 2026]  ? count_memcg_events+0xec/0x240
+[Sat Nov  7 19:26:41 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 19:26:41 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:26:41 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:26:41 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:26:41 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:26:41 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:26:41 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:26:41 2026] RIP: 0033:0x7e2250560f4d
+[Sat Nov  7 19:26:41 2026] RSP: 002b:00007e223cff7050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:26:41 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007e2250560f4d
+[Sat Nov  7 19:26:41 2026] RDX: 0000000000000002 RSI: 00007e223cff70d0 RDI: 0000000000000016
+[Sat Nov  7 19:26:41 2026] RBP: 00007e223cff70d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:26:41 2026] R10: 0000000000000001 R11: 0000000000000293 R12: 00005b8abff04820
+[Sat Nov  7 19:26:41 2026] R13: 00000100000008e2 R14: 00005b8abfde9ac0 R15: 00005b8a8c5df0cb
+[Sat Nov  7 19:26:41 2026]  </TASK>
+[Sat Nov  7 19:28:44 2026] INFO: task fn_anonymous:1000373 blocked in I/O wait for more than 491 seconds.
+[Sat Nov  7 19:28:44 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:28:44 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:28:44 2026] task:fn_anonymous    state:D stack:0     pid:1000373 tgid:1000335 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:28:44 2026] Call Trace:
+[Sat Nov  7 19:28:44 2026]  <TASK>
+[Sat Nov  7 19:28:44 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:28:44 2026]  ? mas_store_prealloc+0x1b8/0x530
+[Sat Nov  7 19:28:44 2026]  ? kmem_cache_alloc_noprof+0x293/0x440
+[Sat Nov  7 19:28:44 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:28:44 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:28:44 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:28:44 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:28:44 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:28:44 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:28:44 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:28:44 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:28:44 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:28:44 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:28:44 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:28:44 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:28:44 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:28:44 2026]  ? __pte_offset_map+0x1c/0x130
+[Sat Nov  7 19:28:44 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:28:44 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:28:44 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:28:44 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:28:44 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:28:44 2026]  ? count_memcg_events+0xec/0x240
+[Sat Nov  7 19:28:44 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 19:28:44 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:28:44 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:28:44 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:28:44 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:28:44 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:28:44 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:28:44 2026] RIP: 0033:0x7e2250560f4d
+[Sat Nov  7 19:28:44 2026] RSP: 002b:00007e223cff7050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:28:44 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007e2250560f4d
+[Sat Nov  7 19:28:44 2026] RDX: 0000000000000002 RSI: 00007e223cff70d0 RDI: 0000000000000016
+[Sat Nov  7 19:28:44 2026] RBP: 00007e223cff70d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:28:44 2026] R10: 0000000000000001 R11: 0000000000000293 R12: 00005b8abff04820
+[Sat Nov  7 19:28:44 2026] R13: 00000100000008e2 R14: 00005b8abfde9ac0 R15: 00005b8a8c5df0cb
+[Sat Nov  7 19:28:44 2026]  </TASK>
+[Sat Nov  7 19:30:46 2026] INFO: task fn_anonymous:1000373 blocked in I/O wait for more than 614 seconds.
+[Sat Nov  7 19:30:46 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:30:46 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:30:46 2026] task:fn_anonymous    state:D stack:0     pid:1000373 tgid:1000335 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:30:46 2026] Call Trace:
+[Sat Nov  7 19:30:46 2026]  <TASK>
+[Sat Nov  7 19:30:46 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:30:46 2026]  ? mas_store_prealloc+0x1b8/0x530
+[Sat Nov  7 19:30:46 2026]  ? kmem_cache_alloc_noprof+0x293/0x440
+[Sat Nov  7 19:30:46 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:30:46 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:30:46 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:30:46 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:30:46 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:30:46 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:30:46 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:30:46 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:30:46 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:30:46 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:30:46 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:30:46 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:30:46 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:30:46 2026]  ? __pte_offset_map+0x1c/0x130
+[Sat Nov  7 19:30:46 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:30:46 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:30:46 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:30:46 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:30:46 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:30:46 2026]  ? count_memcg_events+0xec/0x240
+[Sat Nov  7 19:30:46 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 19:30:46 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:30:46 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:30:46 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:30:46 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:30:46 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:30:46 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:30:46 2026] RIP: 0033:0x7e2250560f4d
+[Sat Nov  7 19:30:46 2026] RSP: 002b:00007e223cff7050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:30:46 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007e2250560f4d
+[Sat Nov  7 19:30:46 2026] RDX: 0000000000000002 RSI: 00007e223cff70d0 RDI: 0000000000000016
+[Sat Nov  7 19:30:46 2026] RBP: 00007e223cff70d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:30:46 2026] R10: 0000000000000001 R11: 0000000000000293 R12: 00005b8abff04820
+[Sat Nov  7 19:30:46 2026] R13: 00000100000008e2 R14: 00005b8abfde9ac0 R15: 00005b8a8c5df0cb
+[Sat Nov  7 19:30:46 2026]  </TASK>
+[Sat Nov  7 19:32:49 2026] INFO: task fn_anonymous:1000373 blocked in I/O wait for more than 737 seconds.
+[Sat Nov  7 19:32:49 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:32:49 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:32:49 2026] task:fn_anonymous    state:D stack:0     pid:1000373 tgid:1000335 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:32:49 2026] Call Trace:
+[Sat Nov  7 19:32:49 2026]  <TASK>
+[Sat Nov  7 19:32:49 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:32:49 2026]  ? mas_store_prealloc+0x1b8/0x530
+[Sat Nov  7 19:32:49 2026]  ? kmem_cache_alloc_noprof+0x293/0x440
+[Sat Nov  7 19:32:49 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:32:49 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:32:49 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:32:49 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:32:49 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:32:49 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:32:49 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:32:49 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:32:49 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:32:49 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:32:49 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:32:49 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:32:49 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:32:49 2026]  ? __pte_offset_map+0x1c/0x130
+[Sat Nov  7 19:32:49 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:32:49 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:32:49 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:32:49 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:32:49 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:32:49 2026]  ? count_memcg_events+0xec/0x240
+[Sat Nov  7 19:32:49 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 19:32:49 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:32:49 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:32:49 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:32:49 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:32:49 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:32:49 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:32:49 2026] RIP: 0033:0x7e2250560f4d
+[Sat Nov  7 19:32:49 2026] RSP: 002b:00007e223cff7050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:32:49 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007e2250560f4d
+[Sat Nov  7 19:32:49 2026] RDX: 0000000000000002 RSI: 00007e223cff70d0 RDI: 0000000000000016
+[Sat Nov  7 19:32:49 2026] RBP: 00007e223cff70d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:32:49 2026] R10: 0000000000000001 R11: 0000000000000293 R12: 00005b8abff04820
+[Sat Nov  7 19:32:49 2026] R13: 00000100000008e2 R14: 00005b8abfde9ac0 R15: 00005b8a8c5df0cb
+[Sat Nov  7 19:32:49 2026]  </TASK>
+[Sat Nov  7 19:34:52 2026] INFO: task fn_anonymous:1000373 blocked in I/O wait for more than 860 seconds.
+[Sat Nov  7 19:34:52 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:34:52 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:34:52 2026] task:fn_anonymous    state:D stack:0     pid:1000373 tgid:1000335 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:34:52 2026] Call Trace:
+[Sat Nov  7 19:34:52 2026]  <TASK>
+[Sat Nov  7 19:34:52 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:34:52 2026]  ? mas_store_prealloc+0x1b8/0x530
+[Sat Nov  7 19:34:52 2026]  ? kmem_cache_alloc_noprof+0x293/0x440
+[Sat Nov  7 19:34:52 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:34:52 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:34:52 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:34:52 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:34:52 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:34:52 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:34:52 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:34:52 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:34:52 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:34:52 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:34:52 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:34:52 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:34:52 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:34:52 2026]  ? __pte_offset_map+0x1c/0x130
+[Sat Nov  7 19:34:52 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:34:52 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:34:52 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:34:52 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:34:52 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:34:52 2026]  ? count_memcg_events+0xec/0x240
+[Sat Nov  7 19:34:52 2026]  ? handle_mm_fault+0x1b4/0x310
+[Sat Nov  7 19:34:52 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:34:52 2026]  ? irqentry_exit+0x3f/0x7b0
+[Sat Nov  7 19:34:52 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:34:52 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:34:52 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:34:52 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:34:52 2026] RIP: 0033:0x7e2250560f4d
+[Sat Nov  7 19:34:52 2026] RSP: 002b:00007e223cff7050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:34:52 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007e2250560f4d
+[Sat Nov  7 19:34:52 2026] RDX: 0000000000000002 RSI: 00007e223cff70d0 RDI: 0000000000000016
+[Sat Nov  7 19:34:52 2026] RBP: 00007e223cff70d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:34:52 2026] R10: 0000000000000001 R11: 0000000000000293 R12: 00005b8abff04820
+[Sat Nov  7 19:34:52 2026] R13: 00000100000008e2 R14: 00005b8abfde9ac0 R15: 00005b8a8c5df0cb
+[Sat Nov  7 19:34:52 2026]  </TASK>
+[Sat Nov  7 19:38:58 2026] INFO: task fn_anonymous:1012219 blocked in I/O wait for more than 122 seconds.
+[Sat Nov  7 19:38:58 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:38:58 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:38:58 2026] task:fn_anonymous    state:D stack:0     pid:1012219 tgid:1012177 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:38:58 2026] Call Trace:
+[Sat Nov  7 19:38:58 2026]  <TASK>
+[Sat Nov  7 19:38:58 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:38:58 2026]  ? mas_wr_store_entry+0x37a/0xb80
+[Sat Nov  7 19:38:58 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:38:58 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:38:58 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:38:58 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:38:58 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:38:58 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:38:58 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:38:58 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:38:58 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:38:58 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:38:58 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:38:58 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:38:58 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:38:58 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:38:58 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:38:58 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:38:58 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:38:58 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:38:58 2026]  ? __x64_sys_futex+0x120/0x210
+[Sat Nov  7 19:38:58 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:38:58 2026]  ? x64_sys_call+0xf32/0x23d0
+[Sat Nov  7 19:38:58 2026]  ? do_syscall_64+0xf6/0x550
+[Sat Nov  7 19:38:58 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:38:58 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:38:58 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:38:58 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:38:58 2026] RIP: 0033:0x7c2472dfef4d
+[Sat Nov  7 19:38:58 2026] RSP: 002b:00007c246c88a050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:38:58 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007c2472dfef4d
+[Sat Nov  7 19:38:58 2026] RDX: 0000000000000002 RSI: 00007c246c88a0d0 RDI: 0000000000000016
+[Sat Nov  7 19:38:58 2026] RBP: 00007c246c88a0d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:38:58 2026] R10: 0000000000000000 R11: 0000000000000293 R12: 00005652d1205160
+[Sat Nov  7 19:38:58 2026] R13: 0000010000000916 R14: 00005652d10f2ac0 R15: 00005652b49570cb
+[Sat Nov  7 19:38:58 2026]  </TASK>
+[Sat Nov  7 19:41:01 2026] INFO: task fn_anonymous:1012219 blocked in I/O wait for more than 245 seconds.
+[Sat Nov  7 19:41:01 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:41:01 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:41:01 2026] task:fn_anonymous    state:D stack:0     pid:1012219 tgid:1012177 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:41:01 2026] Call Trace:
+[Sat Nov  7 19:41:01 2026]  <TASK>
+[Sat Nov  7 19:41:01 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:41:01 2026]  ? mas_wr_store_entry+0x37a/0xb80
+[Sat Nov  7 19:41:01 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:41:01 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:41:01 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:41:01 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:41:01 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:41:01 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:41:01 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:41:01 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:41:01 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:41:01 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:41:01 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:41:01 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:41:01 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:41:01 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:41:01 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:41:01 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:41:01 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:41:01 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:41:01 2026]  ? __x64_sys_futex+0x120/0x210
+[Sat Nov  7 19:41:01 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:41:01 2026]  ? x64_sys_call+0xf32/0x23d0
+[Sat Nov  7 19:41:01 2026]  ? do_syscall_64+0xf6/0x550
+[Sat Nov  7 19:41:01 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:41:01 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:41:01 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:41:01 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:41:01 2026] RIP: 0033:0x7c2472dfef4d
+[Sat Nov  7 19:41:01 2026] RSP: 002b:00007c246c88a050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:41:01 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007c2472dfef4d
+[Sat Nov  7 19:41:01 2026] RDX: 0000000000000002 RSI: 00007c246c88a0d0 RDI: 0000000000000016
+[Sat Nov  7 19:41:01 2026] RBP: 00007c246c88a0d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:41:01 2026] R10: 0000000000000000 R11: 0000000000000293 R12: 00005652d1205160
+[Sat Nov  7 19:41:01 2026] R13: 0000010000000916 R14: 00005652d10f2ac0 R15: 00005652b49570cb
+[Sat Nov  7 19:41:01 2026]  </TASK>
+[Sat Nov  7 19:43:04 2026] INFO: task fn_anonymous:1012219 blocked in I/O wait for more than 368 seconds.
+[Sat Nov  7 19:43:04 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:43:04 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:43:04 2026] task:fn_anonymous    state:D stack:0     pid:1012219 tgid:1012177 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:43:04 2026] Call Trace:
+[Sat Nov  7 19:43:04 2026]  <TASK>
+[Sat Nov  7 19:43:04 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:43:04 2026]  ? mas_wr_store_entry+0x37a/0xb80
+[Sat Nov  7 19:43:04 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:43:04 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:43:04 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:43:04 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:43:04 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:43:04 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:43:04 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:43:04 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:43:04 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:43:04 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:43:04 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:43:04 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:43:04 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:43:04 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:43:04 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:43:04 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:43:04 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:43:04 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:43:04 2026]  ? __x64_sys_futex+0x120/0x210
+[Sat Nov  7 19:43:04 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:43:04 2026]  ? x64_sys_call+0xf32/0x23d0
+[Sat Nov  7 19:43:04 2026]  ? do_syscall_64+0xf6/0x550
+[Sat Nov  7 19:43:04 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:43:04 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:43:04 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:43:04 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:43:04 2026] RIP: 0033:0x7c2472dfef4d
+[Sat Nov  7 19:43:04 2026] RSP: 002b:00007c246c88a050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:43:04 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007c2472dfef4d
+[Sat Nov  7 19:43:04 2026] RDX: 0000000000000002 RSI: 00007c246c88a0d0 RDI: 0000000000000016
+[Sat Nov  7 19:43:04 2026] RBP: 00007c246c88a0d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:43:04 2026] R10: 0000000000000000 R11: 0000000000000293 R12: 00005652d1205160
+[Sat Nov  7 19:43:04 2026] R13: 0000010000000916 R14: 00005652d10f2ac0 R15: 00005652b49570cb
+[Sat Nov  7 19:43:04 2026]  </TASK>
+[Sat Nov  7 19:45:07 2026] INFO: task fn_anonymous:1012219 blocked in I/O wait for more than 491 seconds.
+[Sat Nov  7 19:45:07 2026]       Tainted: G         C          7.3.0-4-t2-resolute #4
+[Sat Nov  7 19:45:07 2026] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[Sat Nov  7 19:45:07 2026] task:fn_anonymous    state:D stack:0     pid:1012219 tgid:1012177 ppid:934256 task_flags:0x400040 flags:0x00080000
+[Sat Nov  7 19:45:07 2026] Call Trace:
+[Sat Nov  7 19:45:07 2026]  <TASK>
+[Sat Nov  7 19:45:07 2026]  __schedule+0x417/0x1910
+[Sat Nov  7 19:45:07 2026]  ? mas_wr_store_entry+0x37a/0xb80
+[Sat Nov  7 19:45:07 2026]  schedule+0x28/0xb0
+[Sat Nov  7 19:45:07 2026]  io_schedule+0x4c/0x80
+[Sat Nov  7 19:45:07 2026]  folio_wait_bit_common+0x133/0x330
+[Sat Nov  7 19:45:07 2026]  ? __pfx_wake_page_function+0x10/0x10
+[Sat Nov  7 19:45:07 2026]  __folio_lock+0x17/0x30
+[Sat Nov  7 19:45:07 2026]  invalidate_inode_pages2_range+0x2a1/0x3e0
+[Sat Nov  7 19:45:07 2026]  fuse_reverse_inval_inode+0x9c/0xd0
+[Sat Nov  7 19:45:07 2026]  fuse_notify+0x122/0xcc0
+[Sat Nov  7 19:45:07 2026]  ? fuse_copy_fill+0x1ca/0x210
+[Sat Nov  7 19:45:07 2026]  fuse_dev_do_write+0x2cf/0x450
+[Sat Nov  7 19:45:07 2026]  fuse_dev_write+0x72/0xb0
+[Sat Nov  7 19:45:07 2026]  do_iter_readv_writev+0x15e/0x2e0
+[Sat Nov  7 19:45:07 2026]  vfs_writev+0x179/0x3d0
+[Sat Nov  7 19:45:07 2026]  do_writev+0x85/0x120
+[Sat Nov  7 19:45:07 2026]  ? do_writev+0x85/0x120
+[Sat Nov  7 19:45:07 2026]  __x64_sys_writev+0x1c/0x30
+[Sat Nov  7 19:45:07 2026]  x64_sys_call+0xf95/0x23d0
+[Sat Nov  7 19:45:07 2026]  do_syscall_64+0xba/0x550
+[Sat Nov  7 19:45:07 2026]  ? __x64_sys_futex+0x120/0x210
+[Sat Nov  7 19:45:07 2026]  ? do_user_addr_fault+0x2e8/0x820
+[Sat Nov  7 19:45:07 2026]  ? x64_sys_call+0xf32/0x23d0
+[Sat Nov  7 19:45:07 2026]  ? do_syscall_64+0xf6/0x550
+[Sat Nov  7 19:45:07 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:45:07 2026]  ? do_syscall_64+0x33/0x550
+[Sat Nov  7 19:45:07 2026]  ? clear_bhb_loop+0x70/0xc0
+[Sat Nov  7 19:45:07 2026]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[Sat Nov  7 19:45:07 2026] RIP: 0033:0x7c2472dfef4d
+[Sat Nov  7 19:45:07 2026] RSP: 002b:00007c246c88a050 EFLAGS: 00000293 ORIG_RAX: 0000000000000014
+[Sat Nov  7 19:45:07 2026] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007c2472dfef4d
+[Sat Nov  7 19:45:07 2026] RDX: 0000000000000002 RSI: 00007c246c88a0d0 RDI: 0000000000000016
+[Sat Nov  7 19:45:07 2026] RBP: 00007c246c88a0d0 R08: 0000000000000000 R09: 0000000000000000
+[Sat Nov  7 19:45:07 2026] R10: 0000000000000000 R11: 0000000000000293 R12: 00005652d1205160
+[Sat Nov  7 19:45:07 2026] R13: 0000010000000916 R14: 00005652d10f2ac0 R15: 00005652b49570cb
+[Sat Nov  7 19:45:07 2026]  </TASK>
+[Sat Nov  7 20:02:18 2026] br-7dea2b156993: port 9(veth3b8dcb6) entered disabled state
+[Sat Nov  7 20:02:18 2026] veth973ead6: renamed from eth0
+[Sat Nov  7 20:02:18 2026] br-7dea2b156993: port 9(veth3b8dcb6) entered disabled state
+[Sat Nov  7 20:02:18 2026] veth3b8dcb6 (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:18 2026] veth3b8dcb6 (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:18 2026] br-7dea2b156993: port 9(veth3b8dcb6) entered disabled state
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 8(veth9c393b6) entered disabled state
+[Sat Nov  7 20:02:23 2026] veth2d788ad: renamed from eth0
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 6(veth255736d) entered disabled state
+[Sat Nov  7 20:02:23 2026] vethc16e506: renamed from eth0
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 8(veth9c393b6) entered disabled state
+[Sat Nov  7 20:02:23 2026] veth9c393b6 (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:23 2026] veth9c393b6 (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 8(veth9c393b6) entered disabled state
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 7(vethf9ebbf7) entered disabled state
+[Sat Nov  7 20:02:23 2026] veth3275a36: renamed from eth0
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 6(veth255736d) entered disabled state
+[Sat Nov  7 20:02:23 2026] veth255736d (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:23 2026] veth255736d (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 6(veth255736d) entered disabled state
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 4(veth08cb154) entered disabled state
+[Sat Nov  7 20:02:23 2026] veth89c621e: renamed from eth0
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 1(veth1e43086) entered disabled state
+[Sat Nov  7 20:02:23 2026] veth52f9bb8: renamed from eth0
+[Sat Nov  7 20:02:23 2026] br-7dea2b156993: port 5(veth7d1bd0f) entered disabled state
+[Sat Nov  7 20:02:23 2026] veth0762639: renamed from eth0
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 7(vethf9ebbf7) entered disabled state
+[Sat Nov  7 20:02:24 2026] vethf9ebbf7 (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:24 2026] vethf9ebbf7 (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 7(vethf9ebbf7) entered disabled state
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 3(vetha31f54e) entered disabled state
+[Sat Nov  7 20:02:24 2026] vethcbb26a4: renamed from eth0
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 2(vethd793cad) entered disabled state
+[Sat Nov  7 20:02:24 2026] vethd25170a: renamed from eth0
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 4(veth08cb154) entered disabled state
+[Sat Nov  7 20:02:24 2026] veth08cb154 (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:24 2026] veth08cb154 (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 4(veth08cb154) entered disabled state
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 1(veth1e43086) entered disabled state
+[Sat Nov  7 20:02:24 2026] veth1e43086 (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:24 2026] veth1e43086 (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 1(veth1e43086) entered disabled state
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 5(veth7d1bd0f) entered disabled state
+[Sat Nov  7 20:02:24 2026] veth7d1bd0f (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:24 2026] veth7d1bd0f (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 5(veth7d1bd0f) entered disabled state
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 3(vetha31f54e) entered disabled state
+[Sat Nov  7 20:02:24 2026] vetha31f54e (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:24 2026] vetha31f54e (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:24 2026] br-7dea2b156993: port 3(vetha31f54e) entered disabled state
+[Sat Nov  7 20:02:25 2026] br-7dea2b156993: port 2(vethd793cad) entered disabled state
+[Sat Nov  7 20:02:25 2026] vethd793cad (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:25 2026] vethd793cad (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:25 2026] br-7dea2b156993: port 2(vethd793cad) entered disabled state
+[Sat Nov  7 20:02:26 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 20:02:27 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/343/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 20:02:27 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/343/fs' does not support file handles, falling back to xino=off.
+[Sat Nov  7 20:02:27 2026] docker0: port 1(vethcb2e2c2) entered blocking state
+[Sat Nov  7 20:02:27 2026] docker0: port 1(vethcb2e2c2) entered disabled state
+[Sat Nov  7 20:02:27 2026] vethcb2e2c2: entered allmulticast mode
+[Sat Nov  7 20:02:27 2026] vethcb2e2c2: entered promiscuous mode
+[Sat Nov  7 20:02:27 2026] eth0: renamed from vethab1b58a
+[Sat Nov  7 20:02:27 2026] docker0: port 1(vethcb2e2c2) entered blocking state
+[Sat Nov  7 20:02:27 2026] docker0: port 1(vethcb2e2c2) entered forwarding state
+[Sat Nov  7 20:02:28 2026] docker0: port 1(vethcb2e2c2) entered disabled state
+[Sat Nov  7 20:02:28 2026] vethab1b58a: renamed from eth0
+[Sat Nov  7 20:02:28 2026] docker0: port 1(vethcb2e2c2) entered disabled state
+[Sat Nov  7 20:02:28 2026] vethcb2e2c2 (unregistering): left allmulticast mode
+[Sat Nov  7 20:02:28 2026] vethcb2e2c2 (unregistering): left promiscuous mode
+[Sat Nov  7 20:02:28 2026] docker0: port 1(vethcb2e2c2) entered disabled state
+[Sun Nov  8 03:09:30 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/345/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:09:41 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/346/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:11:02 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/349/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:11:19 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/347/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:11:25 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/350/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:34 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:34 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/352/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:34 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/352/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:35 2026] docker0: port 1(vethdf58a89) entered blocking state
+[Sun Nov  8 03:16:35 2026] docker0: port 1(vethdf58a89) entered disabled state
+[Sun Nov  8 03:16:35 2026] vethdf58a89: entered allmulticast mode
+[Sun Nov  8 03:16:35 2026] vethdf58a89: entered promiscuous mode
+[Sun Nov  8 03:16:35 2026] eth0: renamed from vethf960e44
+[Sun Nov  8 03:16:35 2026] docker0: port 1(vethdf58a89) entered blocking state
+[Sun Nov  8 03:16:35 2026] docker0: port 1(vethdf58a89) entered forwarding state
+[Sun Nov  8 03:16:37 2026] docker0: port 1(vethdf58a89) entered disabled state
+[Sun Nov  8 03:16:37 2026] vethf960e44: renamed from eth0
+[Sun Nov  8 03:16:37 2026] docker0: port 1(vethdf58a89) entered disabled state
+[Sun Nov  8 03:16:37 2026] vethdf58a89 (unregistering): left allmulticast mode
+[Sun Nov  8 03:16:37 2026] vethdf58a89 (unregistering): left promiscuous mode
+[Sun Nov  8 03:16:37 2026] docker0: port 1(vethdf58a89) entered disabled state
+[Sun Nov  8 03:16:38 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:39 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/354/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:39 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/354/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:39 2026] docker0: port 1(vetha5c5ede) entered blocking state
+[Sun Nov  8 03:16:39 2026] docker0: port 1(vetha5c5ede) entered disabled state
+[Sun Nov  8 03:16:39 2026] vetha5c5ede: entered allmulticast mode
+[Sun Nov  8 03:16:39 2026] vetha5c5ede: entered promiscuous mode
+[Sun Nov  8 03:16:39 2026] eth0: renamed from vethcaf1dc0
+[Sun Nov  8 03:16:39 2026] docker0: port 1(vetha5c5ede) entered blocking state
+[Sun Nov  8 03:16:39 2026] docker0: port 1(vetha5c5ede) entered forwarding state
+[Sun Nov  8 03:16:40 2026] docker0: port 1(vetha5c5ede) entered disabled state
+[Sun Nov  8 03:16:40 2026] vethcaf1dc0: renamed from eth0
+[Sun Nov  8 03:16:40 2026] docker0: port 1(vetha5c5ede) entered disabled state
+[Sun Nov  8 03:16:40 2026] vetha5c5ede (unregistering): left allmulticast mode
+[Sun Nov  8 03:16:40 2026] vetha5c5ede (unregistering): left promiscuous mode
+[Sun Nov  8 03:16:40 2026] docker0: port 1(vetha5c5ede) entered disabled state
+[Sun Nov  8 03:16:41 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:41 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/356/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:41 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/356/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:41 2026] docker0: port 1(veth3fa09e3) entered blocking state
+[Sun Nov  8 03:16:41 2026] docker0: port 1(veth3fa09e3) entered disabled state
+[Sun Nov  8 03:16:41 2026] veth3fa09e3: entered allmulticast mode
+[Sun Nov  8 03:16:41 2026] veth3fa09e3: entered promiscuous mode
+[Sun Nov  8 03:16:41 2026] eth0: renamed from veth3c50f18
+[Sun Nov  8 03:16:41 2026] docker0: port 1(veth3fa09e3) entered blocking state
+[Sun Nov  8 03:16:41 2026] docker0: port 1(veth3fa09e3) entered forwarding state
+[Sun Nov  8 03:16:42 2026] docker0: port 1(veth3fa09e3) entered disabled state
+[Sun Nov  8 03:16:42 2026] veth3c50f18: renamed from eth0
+[Sun Nov  8 03:16:42 2026] docker0: port 1(veth3fa09e3) entered disabled state
+[Sun Nov  8 03:16:42 2026] veth3fa09e3 (unregistering): left allmulticast mode
+[Sun Nov  8 03:16:42 2026] veth3fa09e3 (unregistering): left promiscuous mode
+[Sun Nov  8 03:16:42 2026] docker0: port 1(veth3fa09e3) entered disabled state
+[Sun Nov  8 03:16:46 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/348/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:46 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/358/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:47 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/358/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:16:47 2026] docker0: port 1(veth14c3438) entered blocking state
+[Sun Nov  8 03:16:47 2026] docker0: port 1(veth14c3438) entered disabled state
+[Sun Nov  8 03:16:47 2026] veth14c3438: entered allmulticast mode
+[Sun Nov  8 03:16:47 2026] veth14c3438: entered promiscuous mode
+[Sun Nov  8 03:16:47 2026] eth0: renamed from veth42a86f7
+[Sun Nov  8 03:16:47 2026] docker0: port 1(veth14c3438) entered blocking state
+[Sun Nov  8 03:16:47 2026] docker0: port 1(veth14c3438) entered forwarding state
+[Sun Nov  8 03:17:45 2026] docker0: port 1(veth14c3438) entered disabled state
+[Sun Nov  8 03:17:45 2026] veth42a86f7: renamed from eth0
+[Sun Nov  8 03:17:45 2026] docker0: port 1(veth14c3438) entered disabled state
+[Sun Nov  8 03:17:45 2026] veth14c3438 (unregistering): left allmulticast mode
+[Sun Nov  8 03:17:45 2026] veth14c3438 (unregistering): left promiscuous mode
+[Sun Nov  8 03:17:45 2026] docker0: port 1(veth14c3438) entered disabled state
+[Sun Nov  8 03:17:55 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:17:55 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/360/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:17:55 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/360/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:17:56 2026] docker0: port 1(veth5858f33) entered blocking state
+[Sun Nov  8 03:17:56 2026] docker0: port 1(veth5858f33) entered disabled state
+[Sun Nov  8 03:17:56 2026] veth5858f33: entered allmulticast mode
+[Sun Nov  8 03:17:56 2026] veth5858f33: entered promiscuous mode
+[Sun Nov  8 03:17:56 2026] eth0: renamed from veth1671e45
+[Sun Nov  8 03:17:56 2026] docker0: port 1(veth5858f33) entered blocking state
+[Sun Nov  8 03:17:56 2026] docker0: port 1(veth5858f33) entered forwarding state
+[Sun Nov  8 03:17:56 2026] docker0: port 1(veth5858f33) entered disabled state
+[Sun Nov  8 03:17:56 2026] veth1671e45: renamed from eth0
+[Sun Nov  8 03:17:56 2026] docker0: port 1(veth5858f33) entered disabled state
+[Sun Nov  8 03:17:56 2026] veth5858f33 (unregistering): left allmulticast mode
+[Sun Nov  8 03:17:56 2026] veth5858f33 (unregistering): left promiscuous mode
+[Sun Nov  8 03:17:56 2026] docker0: port 1(veth5858f33) entered disabled state
+[Sun Nov  8 03:17:57 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/348/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:17:57 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/362/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:17:57 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/362/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:17:58 2026] docker0: port 1(veth777d399) entered blocking state
+[Sun Nov  8 03:17:58 2026] docker0: port 1(veth777d399) entered disabled state
+[Sun Nov  8 03:17:58 2026] veth777d399: entered allmulticast mode
+[Sun Nov  8 03:17:58 2026] veth777d399: entered promiscuous mode
+[Sun Nov  8 03:17:58 2026] eth0: renamed from veth13bfcfe
+[Sun Nov  8 03:17:58 2026] docker0: port 1(veth777d399) entered blocking state
+[Sun Nov  8 03:17:58 2026] docker0: port 1(veth777d399) entered forwarding state
+[Sun Nov  8 03:20:22 2026] docker0: port 1(veth777d399) entered disabled state
+[Sun Nov  8 03:20:22 2026] veth13bfcfe: renamed from eth0
+[Sun Nov  8 03:20:22 2026] docker0: port 1(veth777d399) entered disabled state
+[Sun Nov  8 03:20:22 2026] veth777d399 (unregistering): left allmulticast mode
+[Sun Nov  8 03:20:22 2026] veth777d399 (unregistering): left promiscuous mode
+[Sun Nov  8 03:20:22 2026] docker0: port 1(veth777d399) entered disabled state
+[Sun Nov  8 03:20:29 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/348/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:20:29 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/364/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:20:29 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/364/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 03:20:30 2026] docker0: port 1(veth8223161) entered blocking state
+[Sun Nov  8 03:20:30 2026] docker0: port 1(veth8223161) entered disabled state
+[Sun Nov  8 03:20:30 2026] veth8223161: entered allmulticast mode
+[Sun Nov  8 03:20:30 2026] veth8223161: entered promiscuous mode
+[Sun Nov  8 03:20:30 2026] eth0: renamed from veth09c92a9
+[Sun Nov  8 03:20:30 2026] docker0: port 1(veth8223161) entered blocking state
+[Sun Nov  8 03:20:30 2026] docker0: port 1(veth8223161) entered forwarding state
+[Sun Nov  8 03:22:23 2026] docker0: port 1(veth8223161) entered disabled state
+[Sun Nov  8 03:22:23 2026] veth09c92a9: renamed from eth0
+[Sun Nov  8 03:22:23 2026] docker0: port 1(veth8223161) entered disabled state
+[Sun Nov  8 03:22:23 2026] veth8223161 (unregistering): left allmulticast mode
+[Sun Nov  8 03:22:23 2026] veth8223161 (unregistering): left promiscuous mode
+[Sun Nov  8 03:22:23 2026] docker0: port 1(veth8223161) entered disabled state
+[Sun Nov  8 06:06:06 2026] kauditd_printk_skb: 6 callbacks suppressed
+[Sun Nov  8 06:06:06 2026] audit: type=1400 audit(1794114378.515:1845): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=1161182 comm="bwrap" capability=21  capname="sys_admin"
+[Sun Nov  8 06:06:25 2026] audit: type=1400 audit(1794114397.544:1846): apparmor="DENIED" operation="capable" class="cap" profile="unpriv_bwrap" pid=1161453 comm="bwrap" capability=21  capname="sys_admin"
+[Sun Nov  8 15:15:12 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/187/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:15:13 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/366/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:15:13 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/366/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:15:13 2026] docker0: port 1(vethbc3d1b2) entered blocking state
+[Sun Nov  8 15:15:13 2026] docker0: port 1(vethbc3d1b2) entered disabled state
+[Sun Nov  8 15:15:13 2026] vethbc3d1b2: entered allmulticast mode
+[Sun Nov  8 15:15:13 2026] vethbc3d1b2: entered promiscuous mode
+[Sun Nov  8 15:15:13 2026] eth0: renamed from veth79fe811
+[Sun Nov  8 15:15:13 2026] docker0: port 1(vethbc3d1b2) entered blocking state
+[Sun Nov  8 15:15:13 2026] docker0: port 1(vethbc3d1b2) entered forwarding state
+[Sun Nov  8 15:36:10 2026] cc1plus invoked oom-killer: gfp_mask=0x100cca(GFP_HIGHUSER_MOVABLE), order=0, oom_score_adj=200
+[Sun Nov  8 15:36:10 2026] CPU: 8 UID: 1001 PID: 1442182 Comm: cc1plus Tainted: G         C          7.3.0-4-t2-resolute #4 PREEMPT(lazy) 
+[Sun Nov  8 15:36:10 2026] Tainted: [C]=CRAP
+[Sun Nov  8 15:36:10 2026] Hardware name: Apple Inc. MacBookPro15,1/Mac-937A206F2EE63C01, BIOS 2103.160.2.0.0 (iBridge: 24.16.6005.0.0,0) 08/20/2026
+[Sun Nov  8 15:36:10 2026] Call Trace:
+[Sun Nov  8 15:36:10 2026]  <TASK>
+[Sun Nov  8 15:36:10 2026]  dump_stack_lvl+0x5f/0x90
+[Sun Nov  8 15:36:10 2026]  dump_stack+0x10/0x18
+[Sun Nov  8 15:36:10 2026]  dump_header+0x48/0x1c7
+[Sun Nov  8 15:36:10 2026]  oom_kill_process.cold+0xb/0xb4
+[Sun Nov  8 15:36:10 2026]  out_of_memory+0x228/0x520
+[Sun Nov  8 15:36:10 2026]  mem_cgroup_out_of_memory+0xc8/0xe0
+[Sun Nov  8 15:36:10 2026]  try_charge_memcg+0x3ff/0x6f0
+[Sun Nov  8 15:36:10 2026]  charge_memcg+0x6c/0xe0
+[Sun Nov  8 15:36:10 2026]  __mem_cgroup_charge+0x2f/0xa0
+[Sun Nov  8 15:36:10 2026]  filemap_add_folio+0x5e/0x220
+[Sun Nov  8 15:36:10 2026]  __filemap_get_folio_mpol+0x1d2/0x400
+[Sun Nov  8 15:36:10 2026]  filemap_fault+0x112/0x12a0
+[Sun Nov  8 15:36:10 2026]  __do_fault+0x38/0x160
+[Sun Nov  8 15:36:10 2026]  do_fault+0x320/0x600
+[Sun Nov  8 15:36:10 2026]  ? __pte_offset_map+0x1c/0x130
+[Sun Nov  8 15:36:10 2026]  __handle_mm_fault+0x877/0x1020
+[Sun Nov  8 15:36:10 2026]  ? mt_find+0x20d/0x5d0
+[Sun Nov  8 15:36:10 2026]  handle_mm_fault+0xe4/0x310
+[Sun Nov  8 15:36:10 2026]  do_user_addr_fault+0x2e8/0x820
+[Sun Nov  8 15:36:10 2026]  exc_page_fault+0x83/0x1c0
+[Sun Nov  8 15:36:10 2026]  ? common_interrupt+0x61/0xe0
+[Sun Nov  8 15:36:10 2026]  asm_exc_page_fault+0x27/0x30
+[Sun Nov  8 15:36:10 2026] RIP: 0033:0x6278cdb042e9
+[Sun Nov  8 15:36:10 2026] Code: Unable to access opcode bytes at 0x6278cdb042bf.
+[Sun Nov  8 15:36:10 2026] RSP: 002b:00007fffef3b0eb0 EFLAGS: 00010206
+[Sun Nov  8 15:36:10 2026] RAX: 0000784030ced348 RBX: 00000000000000a8 RCX: 0000000000000005
+[Sun Nov  8 15:36:10 2026] RDX: 00006278cea92980 RSI: 0000000000000006 RDI: 00006278e10f2870
+[Sun Nov  8 15:36:10 2026] RBP: 0000000000000016 R08: 0000784030ced348 R09: 0000000000000020
+[Sun Nov  8 15:36:10 2026] R10: 0000000001ffffff R11: 0000000000000020 R12: 0000784030ced1f8
+[Sun Nov  8 15:36:10 2026] R13: 0000000000000002 R14: 0000000000000016 R15: 0000784099816910
+[Sun Nov  8 15:36:10 2026]  </TASK>
+[Sun Nov  8 15:36:10 2026] memory: usage 6291456kB, limit 6291456kB, failcnt 749200
+[Sun Nov  8 15:36:10 2026] swap: usage 0kB, limit 0kB, failcnt 0
+[Sun Nov  8 15:36:10 2026] Memory cgroup stats for /user.slice/user-1001.slice/user@1001.service/user.slice/docker-1779a4ba948e6d1153952ed6032e02e2b90476fa515e452a5005cd816fb42582.scope:
+[Sun Nov  8 15:36:10 2026] anon 6426808320
+[Sun Nov  8 15:36:10 2026] file 507904
+[Sun Nov  8 15:36:10 2026] kernel 15134720
+[Sun Nov  8 15:36:10 2026] kernel_stack 229376
+[Sun Nov  8 15:36:10 2026] pagetables 13733888
+[Sun Nov  8 15:36:10 2026] sec_pagetables 0
+[Sun Nov  8 15:36:10 2026] percpu 10800
+[Sun Nov  8 15:36:10 2026] sock 0
+[Sun Nov  8 15:36:10 2026] vmalloc 32768
+[Sun Nov  8 15:36:10 2026] shmem 0
+[Sun Nov  8 15:36:10 2026] zswap 0
+[Sun Nov  8 15:36:10 2026] zswapped 0
+[Sun Nov  8 15:36:10 2026] zswap_incomp 0
+[Sun Nov  8 15:36:10 2026] file_mapped 167936
+[Sun Nov  8 15:36:10 2026] file_dirty 0
+[Sun Nov  8 15:36:10 2026] file_writeback 0
+[Sun Nov  8 15:36:10 2026] swapcached 0
+[Sun Nov  8 15:36:10 2026] anon_thp 0
+[Sun Nov  8 15:36:10 2026] file_thp 0
+[Sun Nov  8 15:36:10 2026] shmem_thp 0
+[Sun Nov  8 15:36:10 2026] inactive_anon 6141046784
+[Sun Nov  8 15:36:10 2026] active_anon 285761536
+[Sun Nov  8 15:36:10 2026] inactive_file 155648
+[Sun Nov  8 15:36:10 2026] active_file 65536
+[Sun Nov  8 15:36:10 2026] unevictable 0
+[Sun Nov  8 15:36:10 2026] slab_reclaimable 285216
+[Sun Nov  8 15:36:10 2026] slab_unreclaimable 833352
+[Sun Nov  8 15:36:10 2026] slab 1118568
+[Sun Nov  8 15:36:10 2026] hugetlb 0
+[Sun Nov  8 15:36:10 2026] workingset_refault_anon 0
+[Sun Nov  8 15:36:10 2026] workingset_refault_file 9473627
+[Sun Nov  8 15:36:10 2026] workingset_activate_anon 0
+[Sun Nov  8 15:36:10 2026] workingset_activate_file 85274
+[Sun Nov  8 15:36:10 2026] workingset_restore_anon 0
+[Sun Nov  8 15:36:10 2026] workingset_restore_file 86987
+[Sun Nov  8 15:36:10 2026] workingset_nodereclaim 45724
+[Sun Nov  8 15:36:10 2026] pgdemote_kswapd 0
+[Sun Nov  8 15:36:10 2026] pgdemote_direct 0
+[Sun Nov  8 15:36:10 2026] pgdemote_khugepaged 0
+[Sun Nov  8 15:36:10 2026] pgdemote_proactive 0
+[Sun Nov  8 15:36:10 2026] pgsteal_kswapd 121908
+[Sun Nov  8 15:36:10 2026] pgsteal_direct 11391299
+[Sun Nov  8 15:36:10 2026] pgsteal_khugepaged 0
+[Sun Nov  8 15:36:10 2026] pgsteal_proactive 0
+[Sun Nov  8 15:36:10 2026] pgscan_kswapd 122096
+[Sun Nov  8 15:36:10 2026] pgscan_direct 102642733
+[Sun Nov  8 15:36:10 2026] pgscan_khugepaged 0
+[Sun Nov  8 15:36:10 2026] pgscan_proactive 0
+[Sun Nov  8 15:36:10 2026] pgrefill 1276365
+[Sun Nov  8 15:36:10 2026] pgpromote_success 0
+[Sun Nov  8 15:36:10 2026] pgscan 102764829
+[Sun Nov  8 15:36:10 2026] pgsteal 11513207
+[Sun Nov  8 15:36:10 2026] pswpin 0
+[Sun Nov  8 15:36:10 2026] pswpout 0
+[Sun Nov  8 15:36:10 2026] pgfault 70724976
+[Sun Nov  8 15:36:10 2026] pgmajfault 475647
+[Sun Nov  8 15:36:10 2026] pgactivate 42141846
+[Sun Nov  8 15:36:10 2026] pgdeactivate 0
+[Sun Nov  8 15:36:10 2026] pglazyfree 0
+[Sun Nov  8 15:36:10 2026] pglazyfreed 0
+[Sun Nov  8 15:36:10 2026] swpin_zero 0
+[Sun Nov  8 15:36:10 2026] swpout_zero 0
+[Sun Nov  8 15:36:10 2026] zswpin 0
+[Sun Nov  8 15:36:10 2026] zswpout 0
+[Sun Nov  8 15:36:10 2026] zswpwb 0
+[Sun Nov  8 15:36:10 2026] thp_fault_alloc 0
+[Sun Nov  8 15:36:10 2026] thp_collapse_alloc 0
+[Sun Nov  8 15:36:10 2026] thp_swpout 0
+[Sun Nov  8 15:36:10 2026] thp_swpout_fallback 0
+[Sun Nov  8 15:36:10 2026] numa_pages_migrated 0
+[Sun Nov  8 15:36:10 2026] numa_pte_updates 0
+[Sun Nov  8 15:36:10 2026] numa_hint_faults 0
+[Sun Nov  8 15:36:10 2026] Memory cgroup min protection 0kB -- low protection 0kB
+[Sun Nov  8 15:36:10 2026] Tasks state (memory values in pages):
+[Sun Nov  8 15:36:10 2026] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[Sun Nov  8 15:36:10 2026] [1413171]  1001 1413171     1240      612       45      567         0    57344        0           200 sleep
+[Sun Nov  8 15:36:10 2026] [1416939]  1001 1416939     4621     3872     3142      730         0    86016        0           200 ninja
+[Sun Nov  8 15:36:10 2026] [1442107]  1001 1442107     2077     1033      227      806         0    57344        0           200 ccache
+[Sun Nov  8 15:36:10 2026] [1442124]  1001 1442124     1182      516      100      416         0    53248        0           200 c++
+[Sun Nov  8 15:36:10 2026] [1442125]  1001 1442125   639263   608548   608011      537         0  5005312        0           200 cc1plus
+[Sun Nov  8 15:36:10 2026] [1442171]  1001 1442171     2144     1087      264      823         0    57344        0           200 ccache
+[Sun Nov  8 15:36:10 2026] [1442176]  1001 1442176     2119     1068      261      807         0    65536        0           200 ccache
+[Sun Nov  8 15:36:10 2026] [1442181]  1001 1442181     1182      537      100      437         0    57344        0           200 c++
+[Sun Nov  8 15:36:10 2026] [1442182]  1001 1442182   447810   412014   411478      536         0  3452928        0           200 cc1plus
+[Sun Nov  8 15:36:10 2026] [1442186]  1001 1442186     1182      547      100      447         0    53248        0           200 c++
+[Sun Nov  8 15:36:10 2026] [1442187]  1001 1442187   523765   491173   490639      534         0  4050944        0           200 cc1plus
+[Sun Nov  8 15:36:10 2026] [1442271]  1001 1442271     1938      899       69      830         0    53248        0           200 ccache
+[Sun Nov  8 15:36:10 2026] [1442272]  1001 1442272     1182      526       99      427         0    53248        0           200 c++
+[Sun Nov  8 15:36:10 2026] [1442273]  1001 1442273    75646    55008    54510      498         0   573440        0           200 cc1plus
+[Sun Nov  8 15:36:10 2026] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=user.slice,mems_allowed=0,oom_memcg=/user.slice/user-1001.slice/user@1001.service/user.slice/docker-1779a4ba948e6d1153952ed6032e02e2b90476fa515e452a5005cd816fb42582.scope,task_memcg=/user.slice/user-1001.slice/user@1001.service/user.slice/docker-1779a4ba948e6d1153952ed6032e02e2b90476fa515e452a5005cd816fb42582.scope,task=cc1plus,pid=1442125,uid=1001
+[Sun Nov  8 15:36:10 2026] Memory cgroup out of memory: Killed process 1442125 (cc1plus) total-vm:2557052kB, anon-rss:2432044kB, file-rss:2148kB, shmem-rss:0kB, UID:1001 pgtables:4888kB oom_score_adj:200
+[Sun Nov  8 15:36:10 2026] cc1plus invoked oom-killer: gfp_mask=0x100cca(GFP_HIGHUSER_MOVABLE), order=0, oom_score_adj=200
+[Sun Nov  8 15:36:10 2026] CPU: 3 UID: 1001 PID: 1442273 Comm: cc1plus Tainted: G         C          7.3.0-4-t2-resolute #4 PREEMPT(lazy) 
+[Sun Nov  8 15:36:10 2026] Tainted: [C]=CRAP
+[Sun Nov  8 15:36:10 2026] Hardware name: Apple Inc. MacBookPro15,1/Mac-937A206F2EE63C01, BIOS 2103.160.2.0.0 (iBridge: 24.16.6005.0.0,0) 08/20/2026
+[Sun Nov  8 15:36:10 2026] Call Trace:
+[Sun Nov  8 15:36:10 2026]  <TASK>
+[Sun Nov  8 15:36:10 2026]  dump_stack_lvl+0x5f/0x90
+[Sun Nov  8 15:36:10 2026]  dump_stack+0x10/0x18
+[Sun Nov  8 15:36:10 2026]  dump_header+0x48/0x1c7
+[Sun Nov  8 15:36:10 2026]  oom_kill_process.cold+0xb/0xb4
+[Sun Nov  8 15:36:10 2026]  out_of_memory+0x228/0x520
+[Sun Nov  8 15:36:10 2026]  mem_cgroup_out_of_memory+0xc8/0xe0
+[Sun Nov  8 15:36:10 2026]  try_charge_memcg+0x3ff/0x6f0
+[Sun Nov  8 15:36:10 2026]  charge_memcg+0x6c/0xe0
+[Sun Nov  8 15:36:10 2026]  __mem_cgroup_charge+0x2f/0xa0
+[Sun Nov  8 15:36:10 2026]  filemap_add_folio+0x5e/0x220
+[Sun Nov  8 15:36:10 2026]  __filemap_get_folio_mpol+0x1d2/0x400
+[Sun Nov  8 15:36:10 2026]  filemap_fault+0x112/0x12a0
+[Sun Nov  8 15:36:10 2026]  __do_fault+0x38/0x160
+[Sun Nov  8 15:36:10 2026]  do_fault+0x320/0x600
+[Sun Nov  8 15:36:10 2026]  ? __pte_offset_map+0x1c/0x130
+[Sun Nov  8 15:36:10 2026]  __handle_mm_fault+0x877/0x1020
+[Sun Nov  8 15:36:10 2026]  ? mt_find+0x20d/0x5d0
+[Sun Nov  8 15:36:10 2026]  handle_mm_fault+0xe4/0x310
+[Sun Nov  8 15:36:10 2026]  do_user_addr_fault+0x2e8/0x820
+[Sun Nov  8 15:36:10 2026]  exc_page_fault+0x83/0x1c0
+[Sun Nov  8 15:36:10 2026]  asm_exc_page_fault+0x27/0x30
+[Sun Nov  8 15:36:10 2026] RIP: 0033:0x5c4b7b4a3f15
+[Sun Nov  8 15:36:10 2026] Code: Unable to access opcode bytes at 0x5c4b7b4a3eeb.
+[Sun Nov  8 15:36:10 2026] RSP: 002b:00007ffe31f11240 EFLAGS: 00010206
+[Sun Nov  8 15:36:10 2026] RAX: 00005c4b9e510f20 RBX: 000079cb5df6d060 RCX: 000079cb5e4b5ca0
+[Sun Nov  8 15:36:10 2026] RDX: 0000000000000000 RSI: 00005c4b9e50efe0 RDI: 00000000000001f5
+[Sun Nov  8 15:36:10 2026] RBP: 0000000000000014 R08: 0000000000000000 R09: 0000000000000000
+[Sun Nov  8 15:36:10 2026] R10: 00005c4b9e510f40 R11: 000079cb5e4b5ca0 R12: 0000000000000002
+[Sun Nov  8 15:36:10 2026] R13: 00005c4b9e16aba0 R14: 000079cb5df69f58 R15: 00005c4b9e16a8b0
+[Sun Nov  8 15:36:10 2026]  </TASK>
+[Sun Nov  8 15:36:10 2026] memory: usage 6291456kB, limit 6291456kB, failcnt 749202
+[Sun Nov  8 15:36:10 2026] swap: usage 0kB, limit 0kB, failcnt 0
+[Sun Nov  8 15:36:10 2026] Memory cgroup stats for /user.slice/user-1001.slice/user@1001.service/user.slice/docker-1779a4ba948e6d1153952ed6032e02e2b90476fa515e452a5005cd816fb42582.scope:
+[Sun Nov  8 15:36:10 2026] anon 6424666112
+[Sun Nov  8 15:36:10 2026] file 507904
+[Sun Nov  8 15:36:10 2026] kernel 15134720
+[Sun Nov  8 15:36:10 2026] kernel_stack 229376
+[Sun Nov  8 15:36:10 2026] pagetables 13733888
+[Sun Nov  8 15:36:10 2026] sec_pagetables 0
+[Sun Nov  8 15:36:10 2026] percpu 10800
+[Sun Nov  8 15:36:10 2026] sock 0
+[Sun Nov  8 15:36:10 2026] vmalloc 32768
+[Sun Nov  8 15:36:10 2026] shmem 0
+[Sun Nov  8 15:36:10 2026] zswap 0
+[Sun Nov  8 15:36:10 2026] zswapped 0
+[Sun Nov  8 15:36:10 2026] zswap_incomp 0
+[Sun Nov  8 15:36:10 2026] file_mapped 110592
+[Sun Nov  8 15:36:10 2026] file_dirty 0
+[Sun Nov  8 15:36:10 2026] file_writeback 0
+[Sun Nov  8 15:36:10 2026] swapcached 0
+[Sun Nov  8 15:36:10 2026] anon_thp 0
+[Sun Nov  8 15:36:10 2026] file_thp 0
+[Sun Nov  8 15:36:10 2026] shmem_thp 0
+[Sun Nov  8 15:36:10 2026] inactive_anon 285761536
+[Sun Nov  8 15:36:10 2026] active_anon 6141046784
+[Sun Nov  8 15:36:10 2026] inactive_file 61440
+[Sun Nov  8 15:36:10 2026] active_file 16384
+[Sun Nov  8 15:36:10 2026] unevictable 0
+[Sun Nov  8 15:36:10 2026] slab_reclaimable 285216
+[Sun Nov  8 15:36:10 2026] slab_unreclaimable 833352
+[Sun Nov  8 15:36:10 2026] slab 1118568
+[Sun Nov  8 15:36:10 2026] hugetlb 0
+[Sun Nov  8 15:36:10 2026] workingset_refault_anon 0
+[Sun Nov  8 15:36:10 2026] workingset_refault_file 9473627
+[Sun Nov  8 15:36:10 2026] workingset_activate_anon 0
+[Sun Nov  8 15:36:10 2026] workingset_activate_file 85274
+[Sun Nov  8 15:36:10 2026] workingset_restore_anon 0
+[Sun Nov  8 15:36:10 2026] workingset_restore_file 86987
+[Sun Nov  8 15:36:10 2026] workingset_nodereclaim 45724
+[Sun Nov  8 15:36:10 2026] pgdemote_kswapd 0
+[Sun Nov  8 15:36:10 2026] pgdemote_direct 0
+[Sun Nov  8 15:36:10 2026] pgdemote_khugepaged 0
+[Sun Nov  8 15:36:10 2026] pgdemote_proactive 0
+[Sun Nov  8 15:36:10 2026] pgsteal_kswapd 121908
+[Sun Nov  8 15:36:10 2026] pgsteal_direct 11391299
+[Sun Nov  8 15:36:10 2026] pgsteal_khugepaged 0
+[Sun Nov  8 15:36:10 2026] pgsteal_proactive 0
+[Sun Nov  8 15:36:10 2026] pgscan_kswapd 122096
+[Sun Nov  8 15:36:10 2026] pgscan_direct 102643026
+[Sun Nov  8 15:36:10 2026] pgscan_khugepaged 0
+[Sun Nov  8 15:36:10 2026] pgscan_proactive 0
+[Sun Nov  8 15:36:10 2026] pgrefill 1276365
+[Sun Nov  8 15:36:10 2026] pgpromote_success 0
+[Sun Nov  8 15:36:10 2026] pgscan 102765122
+[Sun Nov  8 15:36:10 2026] pgsteal 11513207
+[Sun Nov  8 15:36:10 2026] pswpin 0
+[Sun Nov  8 15:36:10 2026] pswpout 0
+[Sun Nov  8 15:36:10 2026] pgfault 70724976
+[Sun Nov  8 15:36:10 2026] pgmajfault 475647
+[Sun Nov  8 15:36:10 2026] pgactivate 42141846
+[Sun Nov  8 15:36:10 2026] pgdeactivate 0
+[Sun Nov  8 15:36:10 2026] pglazyfree 0
+[Sun Nov  8 15:36:10 2026] pglazyfreed 0
+[Sun Nov  8 15:36:10 2026] swpin_zero 0
+[Sun Nov  8 15:36:10 2026] swpout_zero 0
+[Sun Nov  8 15:36:10 2026] zswpin 0
+[Sun Nov  8 15:36:10 2026] zswpout 0
+[Sun Nov  8 15:36:10 2026] zswpwb 0
+[Sun Nov  8 15:36:10 2026] thp_fault_alloc 0
+[Sun Nov  8 15:36:10 2026] thp_collapse_alloc 0
+[Sun Nov  8 15:36:10 2026] thp_swpout 0
+[Sun Nov  8 15:36:10 2026] thp_swpout_fallback 0
+[Sun Nov  8 15:36:10 2026] numa_pages_migrated 0
+[Sun Nov  8 15:36:10 2026] numa_pte_updates 0
+[Sun Nov  8 15:36:10 2026] numa_hint_faults 0
+[Sun Nov  8 15:36:10 2026] Memory cgroup min protection 0kB -- low protection 0kB
+[Sun Nov  8 15:36:10 2026] Tasks state (memory values in pages):
+[Sun Nov  8 15:36:10 2026] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[Sun Nov  8 15:36:10 2026] [1413171]  1001 1413171     1240      612       45      567         0    57344        0           200 sleep
+[Sun Nov  8 15:36:10 2026] [1416939]  1001 1416939     4621     3872     3142      730         0    86016        0           200 ninja
+[Sun Nov  8 15:36:10 2026] [1442107]  1001 1442107     2077     1033      227      806         0    57344        0           200 ccache
+[Sun Nov  8 15:36:10 2026] [1442124]  1001 1442124     1182      516      100      416         0    53248        0           200 c++
+[Sun Nov  8 15:36:10 2026] [1442171]  1001 1442171     2144     1087      264      823         0    57344        0           200 ccache
+[Sun Nov  8 15:36:10 2026] [1442176]  1001 1442176     2119     1068      261      807         0    65536        0           200 ccache
+[Sun Nov  8 15:36:10 2026] [1442181]  1001 1442181     1182      537      100      437         0    57344        0           200 c++
+[Sun Nov  8 15:36:10 2026] [1442182]  1001 1442182   447810   412014   411478      536         0  3452928        0           200 cc1plus
+[Sun Nov  8 15:36:10 2026] [1442186]  1001 1442186     1182      547      100      447         0    53248        0           200 c++
+[Sun Nov  8 15:36:10 2026] [1442187]  1001 1442187   523765   491173   490639      534         0  4050944        0           200 cc1plus
+[Sun Nov  8 15:36:10 2026] [1442271]  1001 1442271     1938      899       69      830         0    53248        0           200 ccache
+[Sun Nov  8 15:36:10 2026] [1442272]  1001 1442272     1182      526       99      427         0    53248        0           200 c++
+[Sun Nov  8 15:36:10 2026] [1442273]  1001 1442273    75646    55008    54510      498         0   573440        0           200 cc1plus
+[Sun Nov  8 15:36:10 2026] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=user.slice,mems_allowed=0,oom_memcg=/user.slice/user-1001.slice/user@1001.service/user.slice/docker-1779a4ba948e6d1153952ed6032e02e2b90476fa515e452a5005cd816fb42582.scope,task_memcg=/user.slice/user-1001.slice/user@1001.service/user.slice/docker-1779a4ba948e6d1153952ed6032e02e2b90476fa515e452a5005cd816fb42582.scope,task=cc1plus,pid=1442187,uid=1001
+[Sun Nov  8 15:36:10 2026] Memory cgroup out of memory: Killed process 1442187 (cc1plus) total-vm:2095060kB, anon-rss:1962556kB, file-rss:2136kB, shmem-rss:0kB, UID:1001 pgtables:3956kB oom_score_adj:200
+[Sun Nov  8 15:41:00 2026] docker0: port 1(vethbc3d1b2) entered disabled state
+[Sun Nov  8 15:41:00 2026] veth79fe811: renamed from eth0
+[Sun Nov  8 15:41:00 2026] docker0: port 1(vethbc3d1b2) entered disabled state
+[Sun Nov  8 15:41:00 2026] vethbc3d1b2 (unregistering): left allmulticast mode
+[Sun Nov  8 15:41:00 2026] vethbc3d1b2 (unregistering): left promiscuous mode
+[Sun Nov  8 15:41:00 2026] docker0: port 1(vethbc3d1b2) entered disabled state
+[Sun Nov  8 15:41:01 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:01 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/368/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:02 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/368/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:02 2026] br-86ef8ce70ffd: port 1(vetha11e9f1) entered blocking state
+[Sun Nov  8 15:41:02 2026] br-86ef8ce70ffd: port 1(vetha11e9f1) entered disabled state
+[Sun Nov  8 15:41:02 2026] vetha11e9f1: entered allmulticast mode
+[Sun Nov  8 15:41:02 2026] vetha11e9f1: entered promiscuous mode
+[Sun Nov  8 15:41:02 2026] eth0: renamed from veth1569382
+[Sun Nov  8 15:41:02 2026] br-86ef8ce70ffd: port 1(vetha11e9f1) entered blocking state
+[Sun Nov  8 15:41:02 2026] br-86ef8ce70ffd: port 1(vetha11e9f1) entered forwarding state
+[Sun Nov  8 15:41:03 2026] br-86ef8ce70ffd: port 1(vetha11e9f1) entered disabled state
+[Sun Nov  8 15:41:03 2026] veth1569382: renamed from eth0
+[Sun Nov  8 15:41:03 2026] br-86ef8ce70ffd: port 1(vetha11e9f1) entered disabled state
+[Sun Nov  8 15:41:03 2026] vetha11e9f1 (unregistering): left allmulticast mode
+[Sun Nov  8 15:41:03 2026] vetha11e9f1 (unregistering): left promiscuous mode
+[Sun Nov  8 15:41:03 2026] br-86ef8ce70ffd: port 1(vetha11e9f1) entered disabled state
+[Sun Nov  8 15:41:04 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:04 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/370/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:04 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/370/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:05 2026] br-86ef8ce70ffd: port 1(vethf1bb53e) entered blocking state
+[Sun Nov  8 15:41:05 2026] br-86ef8ce70ffd: port 1(vethf1bb53e) entered disabled state
+[Sun Nov  8 15:41:05 2026] vethf1bb53e: entered allmulticast mode
+[Sun Nov  8 15:41:05 2026] vethf1bb53e: entered promiscuous mode
+[Sun Nov  8 15:41:05 2026] eth0: renamed from veth2c36b52
+[Sun Nov  8 15:41:05 2026] br-86ef8ce70ffd: port 1(vethf1bb53e) entered blocking state
+[Sun Nov  8 15:41:05 2026] br-86ef8ce70ffd: port 1(vethf1bb53e) entered forwarding state
+[Sun Nov  8 15:41:08 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:08 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/372/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:08 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/372/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:09 2026] br-86ef8ce70ffd: port 2(veth7d21bba) entered blocking state
+[Sun Nov  8 15:41:09 2026] br-86ef8ce70ffd: port 2(veth7d21bba) entered disabled state
+[Sun Nov  8 15:41:09 2026] veth7d21bba: entered allmulticast mode
+[Sun Nov  8 15:41:09 2026] veth7d21bba: entered promiscuous mode
+[Sun Nov  8 15:41:09 2026] eth0: renamed from veth06d8703
+[Sun Nov  8 15:41:09 2026] br-86ef8ce70ffd: port 2(veth7d21bba) entered blocking state
+[Sun Nov  8 15:41:09 2026] br-86ef8ce70ffd: port 2(veth7d21bba) entered forwarding state
+[Sun Nov  8 15:41:09 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:10 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/374/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:10 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/374/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:10 2026] br-86ef8ce70ffd: port 3(veth9ff9d47) entered blocking state
+[Sun Nov  8 15:41:10 2026] br-86ef8ce70ffd: port 3(veth9ff9d47) entered disabled state
+[Sun Nov  8 15:41:10 2026] veth9ff9d47: entered allmulticast mode
+[Sun Nov  8 15:41:10 2026] veth9ff9d47: entered promiscuous mode
+[Sun Nov  8 15:41:10 2026] eth0: renamed from veth59270af
+[Sun Nov  8 15:41:10 2026] br-86ef8ce70ffd: port 3(veth9ff9d47) entered blocking state
+[Sun Nov  8 15:41:10 2026] br-86ef8ce70ffd: port 3(veth9ff9d47) entered forwarding state
+[Sun Nov  8 15:41:17 2026] br-86ef8ce70ffd: port 3(veth9ff9d47) entered disabled state
+[Sun Nov  8 15:41:17 2026] veth59270af: renamed from eth0
+[Sun Nov  8 15:41:17 2026] br-86ef8ce70ffd: port 3(veth9ff9d47) entered disabled state
+[Sun Nov  8 15:41:17 2026] veth9ff9d47 (unregistering): left allmulticast mode
+[Sun Nov  8 15:41:17 2026] veth9ff9d47 (unregistering): left promiscuous mode
+[Sun Nov  8 15:41:17 2026] br-86ef8ce70ffd: port 3(veth9ff9d47) entered disabled state
+[Sun Nov  8 15:41:17 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:18 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/376/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:18 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/376/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:18 2026] br-86ef8ce70ffd: port 3(veth6c83ec4) entered blocking state
+[Sun Nov  8 15:41:18 2026] br-86ef8ce70ffd: port 3(veth6c83ec4) entered disabled state
+[Sun Nov  8 15:41:18 2026] veth6c83ec4: entered allmulticast mode
+[Sun Nov  8 15:41:18 2026] veth6c83ec4: entered promiscuous mode
+[Sun Nov  8 15:41:18 2026] eth0: renamed from veth3ae7101
+[Sun Nov  8 15:41:18 2026] br-86ef8ce70ffd: port 3(veth6c83ec4) entered blocking state
+[Sun Nov  8 15:41:18 2026] br-86ef8ce70ffd: port 3(veth6c83ec4) entered forwarding state
+[Sun Nov  8 15:41:19 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:19 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/378/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:19 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/378/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:19 2026] br-86ef8ce70ffd: port 4(veth7c32fc7) entered blocking state
+[Sun Nov  8 15:41:19 2026] br-86ef8ce70ffd: port 4(veth7c32fc7) entered disabled state
+[Sun Nov  8 15:41:19 2026] veth7c32fc7: entered allmulticast mode
+[Sun Nov  8 15:41:19 2026] veth7c32fc7: entered promiscuous mode
+[Sun Nov  8 15:41:20 2026] eth0: renamed from veth543d3bb
+[Sun Nov  8 15:41:20 2026] br-86ef8ce70ffd: port 4(veth7c32fc7) entered blocking state
+[Sun Nov  8 15:41:20 2026] br-86ef8ce70ffd: port 4(veth7c32fc7) entered forwarding state
+[Sun Nov  8 15:41:27 2026] br-86ef8ce70ffd: port 4(veth7c32fc7) entered disabled state
+[Sun Nov  8 15:41:27 2026] veth543d3bb: renamed from eth0
+[Sun Nov  8 15:41:28 2026] br-86ef8ce70ffd: port 4(veth7c32fc7) entered disabled state
+[Sun Nov  8 15:41:28 2026] veth7c32fc7 (unregistering): left allmulticast mode
+[Sun Nov  8 15:41:28 2026] veth7c32fc7 (unregistering): left promiscuous mode
+[Sun Nov  8 15:41:28 2026] br-86ef8ce70ffd: port 4(veth7c32fc7) entered disabled state
+[Sun Nov  8 15:41:28 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:29 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/380/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:29 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/380/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:29 2026] br-86ef8ce70ffd: port 4(veth3c006dd) entered blocking state
+[Sun Nov  8 15:41:29 2026] br-86ef8ce70ffd: port 4(veth3c006dd) entered disabled state
+[Sun Nov  8 15:41:29 2026] veth3c006dd: entered allmulticast mode
+[Sun Nov  8 15:41:29 2026] veth3c006dd: entered promiscuous mode
+[Sun Nov  8 15:41:29 2026] eth0: renamed from veth8009b68
+[Sun Nov  8 15:41:29 2026] br-86ef8ce70ffd: port 4(veth3c006dd) entered blocking state
+[Sun Nov  8 15:41:29 2026] br-86ef8ce70ffd: port 4(veth3c006dd) entered forwarding state
+[Sun Nov  8 15:41:30 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:30 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/382/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:30 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/382/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:31 2026] br-86ef8ce70ffd: port 5(veth903c6c7) entered blocking state
+[Sun Nov  8 15:41:31 2026] br-86ef8ce70ffd: port 5(veth903c6c7) entered disabled state
+[Sun Nov  8 15:41:31 2026] veth903c6c7: entered allmulticast mode
+[Sun Nov  8 15:41:31 2026] veth903c6c7: entered promiscuous mode
+[Sun Nov  8 15:41:31 2026] eth0: renamed from veth1aa08ed
+[Sun Nov  8 15:41:31 2026] br-86ef8ce70ffd: port 5(veth903c6c7) entered blocking state
+[Sun Nov  8 15:41:31 2026] br-86ef8ce70ffd: port 5(veth903c6c7) entered forwarding state
+[Sun Nov  8 15:41:39 2026] br-86ef8ce70ffd: port 5(veth903c6c7) entered disabled state
+[Sun Nov  8 15:41:39 2026] veth1aa08ed: renamed from eth0
+[Sun Nov  8 15:41:39 2026] br-86ef8ce70ffd: port 5(veth903c6c7) entered disabled state
+[Sun Nov  8 15:41:39 2026] veth903c6c7 (unregistering): left allmulticast mode
+[Sun Nov  8 15:41:39 2026] veth903c6c7 (unregistering): left promiscuous mode
+[Sun Nov  8 15:41:39 2026] br-86ef8ce70ffd: port 5(veth903c6c7) entered disabled state
+[Sun Nov  8 15:41:40 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:40 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/384/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:40 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/384/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:41 2026] br-86ef8ce70ffd: port 5(vethd75a599) entered blocking state
+[Sun Nov  8 15:41:41 2026] br-86ef8ce70ffd: port 5(vethd75a599) entered disabled state
+[Sun Nov  8 15:41:41 2026] vethd75a599: entered allmulticast mode
+[Sun Nov  8 15:41:41 2026] vethd75a599: entered promiscuous mode
+[Sun Nov  8 15:41:41 2026] eth0: renamed from veth2dca6b2
+[Sun Nov  8 15:41:41 2026] br-86ef8ce70ffd: port 5(vethd75a599) entered blocking state
+[Sun Nov  8 15:41:41 2026] br-86ef8ce70ffd: port 5(vethd75a599) entered forwarding state
+[Sun Nov  8 15:41:42 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:42 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/386/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:42 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/386/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:42 2026] br-86ef8ce70ffd: port 6(veth332f83f) entered blocking state
+[Sun Nov  8 15:41:42 2026] br-86ef8ce70ffd: port 6(veth332f83f) entered disabled state
+[Sun Nov  8 15:41:42 2026] veth332f83f: entered allmulticast mode
+[Sun Nov  8 15:41:42 2026] veth332f83f: entered promiscuous mode
+[Sun Nov  8 15:41:43 2026] eth0: renamed from vethadd023b
+[Sun Nov  8 15:41:43 2026] br-86ef8ce70ffd: port 6(veth332f83f) entered blocking state
+[Sun Nov  8 15:41:43 2026] br-86ef8ce70ffd: port 6(veth332f83f) entered forwarding state
+[Sun Nov  8 15:41:59 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:41:59 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/388/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:42:00 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/388/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:42:00 2026] br-86ef8ce70ffd: port 7(veth253f5ca) entered blocking state
+[Sun Nov  8 15:42:00 2026] br-86ef8ce70ffd: port 7(veth253f5ca) entered disabled state
+[Sun Nov  8 15:42:00 2026] veth253f5ca: entered allmulticast mode
+[Sun Nov  8 15:42:00 2026] veth253f5ca: entered promiscuous mode
+[Sun Nov  8 15:42:00 2026] eth0: renamed from veth6e73c52
+[Sun Nov  8 15:42:00 2026] br-86ef8ce70ffd: port 7(veth253f5ca) entered blocking state
+[Sun Nov  8 15:42:00 2026] br-86ef8ce70ffd: port 7(veth253f5ca) entered forwarding state
+[Sun Nov  8 15:42:01 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/196/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:42:01 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/390/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:42:01 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/390/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:42:01 2026] br-86ef8ce70ffd: port 8(vetha587dbe) entered blocking state
+[Sun Nov  8 15:42:01 2026] br-86ef8ce70ffd: port 8(vetha587dbe) entered disabled state
+[Sun Nov  8 15:42:01 2026] vetha587dbe: entered allmulticast mode
+[Sun Nov  8 15:42:01 2026] vetha587dbe: entered promiscuous mode
+[Sun Nov  8 15:42:02 2026] eth0: renamed from vethf9516df
+[Sun Nov  8 15:42:02 2026] br-86ef8ce70ffd: port 8(vetha587dbe) entered blocking state
+[Sun Nov  8 15:42:02 2026] br-86ef8ce70ffd: port 8(vetha587dbe) entered forwarding state
+[Sun Nov  8 15:42:56 2026] overlayfs: fs on '/home/babysit/.local/share/docker/containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/366/fs' does not support file handles, falling back to xino=off.
+[Sun Nov  8 15:42:56 2026] docker0: port 1(vethfc40ebf) entered blocking state
+[Sun Nov  8 15:42:56 2026] docker0: port 1(vethfc40ebf) entered disabled state
+[Sun Nov  8 15:42:56 2026] vethfc40ebf: entered allmulticast mode
+[Sun Nov  8 15:42:56 2026] vethfc40ebf: entered promiscuous mode
+[Sun Nov  8 15:42:56 2026] eth0: renamed from veth263c948
+[Sun Nov  8 15:42:56 2026] docker0: port 1(vethfc40ebf) entered blocking state
+[Sun Nov  8 15:42:56 2026] docker0: port 1(vethfc40ebf) entered forwarding state
+[Sun Nov  8 15:43:07 2026] docker0: port 1(vethfc40ebf) entered disabled state
+[Sun Nov  8 15:43:07 2026] veth263c948: renamed from eth0
+[Sun Nov  8 15:43:07 2026] docker0: port 1(vethfc40ebf) entered disabled state
+[Sun Nov  8 15:43:07 2026] vethfc40ebf (unregistering): left allmulticast mode
+[Sun Nov  8 15:43:07 2026] vethfc40ebf (unregistering): left promiscuous mode
+[Sun Nov  8 15:43:07 2026] docker0: port 1(vethfc40ebf) entered disabled state
+[Sun Nov  8 15:43:52 2026] eth0: Caught tx_queue_len zero misconfig
