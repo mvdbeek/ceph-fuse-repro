@@ -1,73 +1,30 @@
 <!--
 Draft for https://tracker.ceph.com/projects/cephfs/issues/new
   Tracker:           Bug
-  Subject:           client: ObjectCacher loses a read when a discard (fallocate punch hole) hits an in-flight read and the zeroed bh is trimmed before the reply
+  Subject:           client: read hangs forever if the same client punches a hole over it and the cache trims the discarded bh before the OSD reply
   Component(FS):     Client, ceph-fuse
   Affected versions: v17.2.9
 -->
 
-## Summary
+A buffered read in ceph-fuse can hang forever when the same client punches a hole (`fallocate(FALLOC_FL_PUNCH_HOLE)`) over the range while the read is waiting for the OSD, and the ObjectCacher trims the discarded buffer before the OSD reply arrives. The reproducer below triggers it deterministically on 17.2.9, and the code is unchanged on main. A patch with a unit test is linked at the end.
 
-`ObjectCacher::Object::discard()` turns a BufferHead with a read in flight (rx) into a zero bh, but the read's `waitfor_read` contexts stay attached to it. Only rx/tx bhs are pinned in `bh_lru_rest`, so `trim()` or `release()` can delete the zero bh, waiters included, before the OSD reply arrives. `bh_read_finish()` then finds no bh for the range, and the read never completes.
+## Cause
 
-In ceph-fuse this leaves a FUSE read request that is never answered:
+`ObjectCacher::Object::discard()` turns the rx bh into a zero bh but leaves the read's `waitfor_read` contexts on it. For bhs in other states, `discard()` restarts the waiters. A zero bh is not pinned in `bh_lru_rest`, so `trim()` (or `release()`) can delete it, waiters included. When the reply arrives, `bh_read_finish()` finds no bh for the range, and nothing completes the read.
 
-- The page stays locked and the reader is stuck in D state. Further buffered reads queue behind it, and eventually block in `fuse_get_req` once the background slots fill.
-- A later MDS-driven invalidate (`fn_anonymous` → `fuse_reverse_inval_inode`) blocks on the locked folio.
-- The read's `Fc` cap reference is never dropped, so other clients block on that file.
-- `kill -9` of ceph-fuse leaves a zombie, because the invalidate thread is in D. Only `/sys/fs/fuse/connections/<id>/abort` releases the mount.
+The punch hole reaches the discard through `Client::_fallocate()` → `_invalidate_inode_cache()` → `discard_writeback()`. It needs only Fw/Fb, so nothing orders it after the client's own read in flight. Truncate reaches the same discard, but in our runs the Fr revoke waited for the read, so truncate never triggered the bug.
 
-Throughout, the cluster stays HEALTH_OK, and there are no outstanding objecter or MDS ops.
+## Effect
 
-This matches a stall we see in production on a Rocky 9 node running ceph-fuse 17.2.9 on kernel 6.1. We have not confirmed that a punch hole is the trigger there.
+The FUSE read is never answered, so the page stays locked:
 
-## Code path (as of main)
+- the reader is stuck in D state;
+- the read's Fc cap ref is never dropped, so other clients block on the file;
+- a later invalidate from the MDS blocks in `fuse_reverse_inval_inode` on the locked page.
 
-- `src/osdc/ObjectCacher.cc`, `ObjectCacher::Object::discard()`, rx branch:
-  - It bumps `last_read_tid`, clears `bl`, calls `mark_zero(bh)` and `continue`s, keeping `bh->waitfor_read`.
-  - For bhs in other states, it moves the waiters to `waiting_for_read` and restarts them with `finish_contexts()`.
-- `ObjectCacher::trim()` deletes zero/clean bhs from `bh_lru_rest`, and `ObjectCacher::release()` deletes zero/clean/error bhs. Neither looks at `waitfor_read`.
-- `ObjectCacher::bh_read_finish()` only wakes waiters of bhs that are still in `ob->data`.
+`kill -9` of ceph-fuse leaves a zombie, and only `/sys/fs/fuse/connections/<id>/abort` frees the mount. The cluster stays HEALTH_OK, with no outstanding OSD or MDS requests.
 
-Where the discard comes from in the client:
-
-- `Client::_fallocate()` with `FALLOC_FL_PUNCH_HOLE` calls `_invalidate_inode_cache(in, offset, length)`, which calls `objectcacher->discard_writeback()`. Only Fw/Fb are needed for this, so it is not ordered after the client's own read in flight.
-- Truncate (`update_inode_file_size`) reaches the same discard. In our runs the cap protocol ordered it after the read: the Fr revoke waited for the read's FILE_RD ref, and the reply arrived before the discard.
-
-## Reproducer
-
-This is deterministic with stock ceph-fuse 17.2.9 (Rocky 9 el9 packages) against a small containerized 17.2.9 cluster. The client kernel made no difference: 6.1.188 and 7.x behave the same.
-
-1. Mount with ceph-fuse, with `client_oc_size = 2097152` (a small cache makes a trim easy to force) and `debug_objectcacher = 10`.
-2. Create a 4 MiB file `F` whose first object maps to `osd.N`, plus a few 512 KiB files on other OSDs.
-3. Hold `osd.N`'s replies to the client. On the `osd.N` host:
-
-   ```
-   tc qdisc add dev eth0 root handle 1: prio
-   tc filter add dev eth0 parent 1: protocol ip prio 1 basic match 'cmp(u32 at 16 layer network eq <client-ip-hex>)' action drop
-   ```
-
-   TCP retransmits, so the session does not fail.
-4. Start a read: `dd if=F of=/dev/null bs=64k count=1 &`. The read is now in flight, with an rx bh and a waiter.
-5. From the same mount, punch a hole: `fallocate -p -o 0 -l 4194304 F &`. The client discards the range immediately (`discard … bh[… rx] waiters = { 0->[…] }`). The punch's own OSD op is held too.
-6. Read about 6 MiB of the other files through the same mount, for example with `POSIX_FADV_RANDOM`. `_readx()` → `trim()` deletes the zeroed bh (`trim trimming bh[… zero] waiters = { 0->[…] }`).
-7. Remove the tc filter. The reply arrives (`bh_read_finish … returned 0`), but `dd` never returns.
-
-Log from such a run (17.2.9, packaged ceph-fuse):
-
-```
-14:47:06.260 objectcacher.object(10000000261.00000000/head) discard object[10000000261.00000000/head oset 0x794e3c00a8a0 wr 0/0] bh bh[ 0x794e24008280 0~131072 0x794e24008070 (0) v 0 rx] waiters = { 0->[0x794e24008fa0, ]}
-14:47:10.375 objectcacher trim trimming bh[ 0x794e24008280 0~131072 0x794e24008070 (0) v 0 zero] waiters = { 0->[0x794e24008fa0, ]}
-14:47:15.139 objectcacher bh_read_finish 10000000261.00000000/head tid 2 0~131072 (bl is 131072) returned 0 outstanding reads 1
-```
-
-Afterwards, `dd`, `fallocate` and ceph-fuse's `fn_anonymous` thread are all in D in `folio_wait_bit_common`, and another client reading `F` hangs.
-
-With 12 such files in flight at once, the 12 lost reads fill `max_background` (12). On a 6.1.188 client:
-
-- buffered reads of any uncached file hang in `fuse_get_req`;
-- `stat`, O_DIRECT reads and writes still work;
-- this hung-task report never clears:
+With 12 such reads stuck at once, the kernel's FUSE `max_background` limit (12) is reached, and every new buffered read on the mount hangs in `fuse_get_req`, while `stat`, O_DIRECT and writes still work. On a 6.1.188 client the kernel then reports, and keeps reporting:
 
 ```
 INFO: task fn_anonymous:5346 blocked for more than 122 seconds.
@@ -78,18 +35,38 @@ INFO: task fn_anonymous:5346 blocked for more than 122 seconds.
  fuse_dev_do_write+0x305/0x4e0 [fuse]
 ```
 
-| Variant | Outcome |
-|---|---|
-| punch hole + churn, 1 file | 5 of 5 runs lost the read |
-| no punch hole, or no churn (controls) | all reads complete |
-| truncate + churn | all reads complete |
-| punch hole + churn, 12 files | 12 of 12 reads lost (6.1.188 and 7.x) |
+This is the state we found a production node in (Rocky 9, ceph-fuse 17.2.9, kernel 6.1). We have not confirmed that a punch hole caused it there.
 
-The harness and the run logs are at https://github.com/mvdbeek/ceph-fuse-repro (`harness/oc_lostread.sh`; the results are written up in `results.md`, Findings 7 and 8).
+## Reproducer
 
-## A possible fix
+Stock ceph-fuse 17.2.9 against a 17.2.9 test cluster:
 
-https://github.com/mvdbeek/ceph/tree/wip-objectcacher-discard-rx has a patch against main, offered in case it helps. In the rx branch of `discard()`, it restarts the waiters the way the other branch already does:
+1. Mount with `client_oc_size = 2097152` (a small cache, so that a trim is easy to cause) and `debug_objectcacher = 10`.
+2. Create a 4 MiB file `F` whose first object is on `osd.N`, and a few 512 KiB files on other OSDs.
+3. Delay `osd.N`'s replies by dropping its packets to the client on the OSD host. TCP retransmits, so the session survives:
+
+   ```
+   tc qdisc add dev eth0 root handle 1: prio
+   tc filter add dev eth0 parent 1: protocol ip prio 1 basic match 'cmp(u32 at 16 layer network eq <client-ip-hex>)' action drop
+   ```
+4. `dd if=F of=/dev/null bs=64k count=1 &`. The read waits for `osd.N`.
+5. From the same mount, `fallocate -p -o 0 -l 4194304 F &`.
+6. Read about 6 MiB of the other files through the mount, so that `_readx()` calls `trim()`.
+7. Remove the tc filter. The reply arrives, but `dd` never returns.
+
+Log of such a run:
+
+```
+14:47:06.260 objectcacher.object(10000000261.00000000/head) discard object[10000000261.00000000/head oset 0x794e3c00a8a0 wr 0/0] bh bh[ 0x794e24008280 0~131072 0x794e24008070 (0) v 0 rx] waiters = { 0->[0x794e24008fa0, ]}
+14:47:10.375 objectcacher trim trimming bh[ 0x794e24008280 0~131072 0x794e24008070 (0) v 0 zero] waiters = { 0->[0x794e24008fa0, ]}
+14:47:15.139 objectcacher bh_read_finish 10000000261.00000000/head tid 2 0~131072 (bl is 131072) returned 0 outstanding reads 1
+```
+
+This hung in 5 of 5 runs. It did not hang without the punch hole, without the step-6 reads, or with `truncate` in place of the punch hole. The client kernel (6.1.188 or 7.x) made no difference. The scripts and logs are at https://github.com/mvdbeek/ceph-fuse-repro (`harness/oc_lostread.sh`).
+
+## Patch
+
+https://github.com/mvdbeek/ceph/tree/wip-objectcacher-discard-rx (against main), in case it is useful. In the rx branch of `discard()`, it restarts the waiters as the other branch does. The retried read then finds the zero bh and returns zeros, and the bumped `last_read_tid` already makes the late reply a no-op:
 
 ```cpp
       oc->mark_zero(bh);
@@ -102,14 +79,6 @@ https://github.com/mvdbeek/ceph/tree/wip-objectcacher-discard-rx has a patch aga
       bh->waitfor_read.clear();
 ```
 
-The retried `_readx()` finds the zero bh and returns zeros, and the bumped `last_read_tid` already makes the late reply a no-op. The branch also adds `unittest_object_cacher` (gtest), whose `WritebackHandler` holds reads until the test answers them:
+The branch also adds `unittest_object_cacher`, which replays read → discard → trim (or release) → reply in exact order. Two of its three tests fail on 17.2.9, and all three pass with the patch. With the patch on 17.2.9, the reproducer no longer hangs: 3 of 3 runs, and 12 of 12 reads in a 12-file run. Each read returns zeros as soon as the hole is punched.
 
-| Test | v17.2.9 | With the patch |
-|---|---|---|
-| read in flight, discard, trim, reply | FAILED (read never completes) | OK |
-| read in flight, discard, release, reply | FAILED (read never completes) | OK |
-| read in flight, discard, reply | OK | OK |
-
-With the same change applied to 17.2.9, the reproducer above no longer hangs. The race fired in every run (3 of 3 single-file runs; 12 of 12 reads in the 12-file run), and each read was answered with zeros at the moment of the discard, while the OSD replies were still held. On the same cluster and in the same session, the packaged 17.2.9 ceph-fuse hung.
-
-The patch was built and tested on 17.2.9 only. It applies to main, where the code it touches is the same, but I have not built main.
+The patch was built and tested on 17.2.9; on main it applies to identical code, but I have not built it there.
